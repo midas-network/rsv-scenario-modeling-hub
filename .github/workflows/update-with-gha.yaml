@@ -1,0 +1,32 @@
+name: Update RSV data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-rsv-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run Python
+        working-directory: ./auxiliary-data
+        run: |
+         python extract-rsv.py
+
+      - name: Commit
+        run: |
+          git config user.name Github-Actions
+          git config user.email "<>"
+          git add .
+          git commit -m "RSV data update $(date)"
+          git push
