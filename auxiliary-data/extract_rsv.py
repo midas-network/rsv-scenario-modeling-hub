@@ -36,7 +36,7 @@ url_bases = [
     "https://www.cdc.gov/surveillance/nrevss/images/rsvstate/RSV14NumCent5AVG_State"]
 url_ext = ".htm"
 
-locations = pd.read_csv("../data-locations/locations.csv")
+locations = pd.read_csv("data-locations/locations.csv")
 states = list(locations["abbreviation"])
 to_remove = ["AS", "GU", "MP", "PR", "UM", "VI", "US"]
 for i in to_remove:
