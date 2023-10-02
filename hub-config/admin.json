@@ -1,0 +1,30 @@
+{
+    "schema_version":"https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v2.0.0/admin-schema.json",
+    "name": "RSV Scenario Modeling Hub",
+    "maintainer": "RSV Scenario Modeling Hub Coordination Team",
+    "contact": {
+        "name": "RSV Scenario Modeling Hub Coordination Team",
+        "email": "scenariohub@midasnetwork.us"
+    },
+    "repository_url": "https://github.com/midas-network/rsv-scenario-modeling-hub",
+    "hub_models": [
+        {
+            "team_abbr": "",
+            "model_abbr": "Ensemble",
+            "model_type": "ensemble"
+        },
+        {
+            "team_abbr": "",
+            "model_abbr": "Ensemble_LOP",
+            "model_type": "ensemble"
+        },
+        {
+            "team_abbr": "",
+            "model_abbr": "Ensemble_LOP_untrimmed",
+            "model_type": "ensemble"
+        }
+    ],
+    "timezone": "US/Eastern",
+    "file_format":["parquet"],
+    "model_output_dir": "model-output"
+}
