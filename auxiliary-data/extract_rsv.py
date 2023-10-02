@@ -78,4 +78,4 @@ for u in url_bases:
     df = df.rename(columns=dict(zip(range(len(headers)), headers)))
     df["repweekdate"] = pd.to_datetime(df["repweekdate"]).dt.strftime("%Y-%m-%d")
     # write the csv file
-    df.to_csv("auxiliary-data/nrevss" + filename, index=False)
+    df.to_csv("auxiliary-data/nrevss/" + filename, index=False)
