@@ -62,7 +62,7 @@ for u in url_bases:
                     filename = (t.caption.text.strip().replace("for " + state, "").
                                 replace("Insufficient Antigen Data:  ", "").
                                 replace("Insufficient Data:  ", "").lower().
-                                replace(" ", "_").replace("(", "").replace(")", "") + "_" + today_str + ".csv")
+                                replace(" ", "_").replace("(", "").replace(")", "") + ".csv")
                     headers = get_table_headers(t)
                     state_rows = get_table_rows(t)
                     rows.extend(state_rows)
@@ -78,4 +78,4 @@ for u in url_bases:
     df = df.rename(columns=dict(zip(range(len(headers)), headers)))
     df["repweekdate"] = pd.to_datetime(df["repweekdate"]).dt.strftime("%Y-%m-%d")
     # write the csv file
-    df.to_csv(filename, index=False)
+    df.to_csv("auxiliary-data/nrevss" + filename, index=False)
