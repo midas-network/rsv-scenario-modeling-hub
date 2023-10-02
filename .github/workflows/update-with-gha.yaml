@@ -18,10 +18,10 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
       - name: Run Python
-        working-directory: ./auxiliary-data
         run: |
-         python extract-rsv.py
+         python auxiliary-data/extract-rsv.py
 
       - name: Commit
         run: |
