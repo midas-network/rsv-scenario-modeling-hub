@@ -38,7 +38,7 @@ The repository stored and update additional data relevant to the RSV modeling ef
 data at national and state level.
 - The [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k)
 
-For more information, please consult the associated [README file](./auxiliary-data/README.md)
+For more information, please consult the associated [README file](./auxiliary-data/README.md).
 
 ## Data license and reuse
 
@@ -49,7 +49,7 @@ data (available under specified licenses as described above) and auxiliary data.
 
 ## Computational power
 Those teams interested in accessing additional computational power should 
-contact Katriona Shea at k-shea@psu.edu.
+contact Katriona Shea at k-shea@psu.edu. Additional resources might be available from the [MIDAS Coordination Center](https://midasnetwork.us) - please contact questions@midasnetwork.us for information. 
 
 ## The RSV Scenario Modeling Hub Coordination Team    
 
