@@ -33,7 +33,7 @@ scenariohub@midasnetwork.us .
 
 ## Auxiliary Data
 
-The repository stored and update additional data relevant to the RSV modeling efforts:
+The repository stores and updates additional data relevant to the RSV modeling efforts:
 - The National Respiratory and Enteric Virus Surveillance System (NREVSS)
 data at national and state level.
 - The [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k)
