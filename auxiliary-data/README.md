@@ -3,7 +3,8 @@
 This folder is used to store additional data relevant to the RSV modeling efforts. 
 It contains two folders: one per each CDC source and the python code to extract
 and update the data. 
-A [update-rsv-data](../.github/workflows/update-rsv-data.yaml) GitHub Action runs
+
+The data is updated weekly by the [update-rsv-data](../.github/workflows/update-rsv-data.yaml) GitHub Action, which runs
 weekly on Friday morning, 9:00 am UTC.
 
 ## The National Respiratory and Enteric Virus Surveillance System (NREVSS)
@@ -47,7 +48,7 @@ For each state, three tables are extracted:
 - RSV detections, by 5 week average 
   (`nrevss/rsv_numerator_data_5_week_average.csv`)
 
-All the states data are compiled together into one files. 
+All the states data are compiled together into one file. 
 
 
 ## Respiratory Syncytial Virus Hospitalization Surveillance Network (RSV-NET)
