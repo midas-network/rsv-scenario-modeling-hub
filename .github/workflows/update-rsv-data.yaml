@@ -2,6 +2,8 @@ name: Update RSV data
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * 5'
 
 jobs:
   update-rsv-data:
