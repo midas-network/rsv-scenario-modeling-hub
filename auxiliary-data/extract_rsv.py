@@ -112,4 +112,4 @@ df_rsvnet = pd.read_csv(io.StringIO(res.text),
                                'Week ending date': "string", 'Age Category': "string",
                                'Sex': "string", 'Race': "string", 'Rate': "float",
                                'Cumulative Rate': "float"})
-df_rsvnet.to_csv("auxiliary-data/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.csv")
+df_rsvnet.to_parquet("auxiliary-data/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet")
