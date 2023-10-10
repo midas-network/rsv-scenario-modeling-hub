@@ -37,6 +37,7 @@ The repository stores and updates additional data relevant to the RSV modeling e
 - The National Respiratory and Enteric Virus Surveillance System (NREVSS)
 data at national and state level.
 - The [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k)
+- The [National Emergency Department Visits for COVID-19, Influenza, and Respiratory Syncytial Virus](https://www.cdc.gov/ncird/surveillance/respiratory-illnesses/index.html)
 
 For more information, please consult the associated [README file](./auxiliary-data/README.md).
 
