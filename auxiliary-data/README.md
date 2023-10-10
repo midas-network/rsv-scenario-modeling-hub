@@ -1,11 +1,16 @@
 # Auxiliary Data
 
 This folder is used to store additional data relevant to the RSV modeling efforts. 
-It contains two folders: one per each CDC source and the python code to extract
+It contains three folders: one per each CDC source and the python code to extract
 and update the data. 
 
 The data is updated weekly by the [update-rsv-data](../.github/workflows/update-rsv-data.yaml) GitHub Action, which runs
 weekly on Friday morning, 9:00 am UTC.
+
+For the NREVSS and NSSP data, for each CSV file, a `as_of` column has been added 
+containing the date the data point has been last downloaded. As the source data are 
+expressed using a rolling time period, the rolling time series is updated weekly and
+the "historical" data are kept in the CSV file. 
 
 ## The National Respiratory and Enteric Virus Surveillance System (NREVSS)
 
@@ -61,3 +66,28 @@ conducts active, population-based surveillance for laboratory-confirmed RSV-asso
 in children younger than 18 years of age and adults. The network currently includes 58 counties in 12 states, 
 and data are collected and reported during the October 1-April 30 season each year. In some years, additional 
 months of data are collected.
+
+## National Emergency Department Visits for COVID-19, Influenza, and Respiratory Syncytial Virus (NSSP)
+
+The national and state level data are extracted from the 
+[National Emergency Department Visits webpage](https://www.cdc.gov/ncird/surveillance/respiratory-illnesses/index.html).
+
+For each CSV file, a `as_of` column has been added containing the date the data point
+has been last downloaded.
+
+> [...] emergency department visit data for multiple respiratory conditions as tracked by the National 
+Syndromic Surveillance Program (NSSP). NSSP is a collaboration among CDC, federal partners, state and 
+local health departments, and academic and private sector partners to collect, analyze, and share 
+electronic data received from multiple health care settings. Data are monitored for a subset of emergency 
+departments across the United States. 
+
+Three tables are extracted from this page:
+
+- Weekly Emergency Department Visits by Age Group 
+  (`nssp/resp_ed_count_weekly_national.csv`)
+- Weekly Emergency Department Visits by Age Group and 
+  Respiratory Illness, as a Percent of All Emergency Department Visits
+  (`resp_ed_percent_weekly_national.csv`)
+- Weekly Emergency Department Visits by Viral Respiratory 
+  Illness Type and State, as a Percent of All Emergency Department Visits
+  (`resp_ed_percent_weekly_state.csv`)

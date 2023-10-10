@@ -93,7 +93,7 @@ def get_nrevss_data(url_bases, url_ext, locations, location_name=None, folder_pa
         df_all.to_csv(file_dir, index=False)
 
 
-def get_nspp_data(req_res, file_name, folder_path="auxiliary-data/nspp/", date_colname="End Date of MMWR Week"):
+def get_nssp_data(req_res, file_name, folder_path="auxiliary-data/nssp/", date_colname="End Date of MMWR Week"):
     df_res = pd.read_csv(io.StringIO(req_res.text))
     df_res["as_of"] = date.today().strftime("%Y-%m-%d")
     df_res[date_colname] = pd.to_datetime(
@@ -134,10 +134,10 @@ df_rsvnet.to_parquet("auxiliary-data/rsv-net/weekly_rates_lab_confirmed_rsv_hosp
 
 # Weekly Emergency Department Visits by Age Group
 res = requests.get("https://www.cdc.gov/wcms/vizdata/live/CSELS_DHIS_NSSP/Resp_ED_Count_Weekly_National.csv")
-get_nspp_data(res, "Resp_ED_Count_Weekly_National.csv".lower())
+get_nssp_data(res, "Resp_ED_Count_Weekly_National.csv".lower())
 
 res = requests.get("https://www.cdc.gov/wcms/vizdata/live/CSELS_DHIS_NSSP/Resp_ED_Percent_Weekly_National.csv")
-get_nspp_data(res, "Resp_ED_Percent_Weekly_National.csv".lower())
+get_nssp_data(res, "Resp_ED_Percent_Weekly_National.csv".lower())
 
 res = requests.get("https://data.cdc.gov/api/views/vutn-jzwm/rows.csv?accessType=DOWNLOAD")
-get_nspp_data(res, "Resp_ED_Percent_Weekly_state.csv".lower(), date_colname="week_end")
+get_nssp_data(res, "Resp_ED_Percent_Weekly_state.csv".lower(), date_colname="week_end")
