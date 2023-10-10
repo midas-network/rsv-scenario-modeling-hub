@@ -87,7 +87,7 @@ Three tables are extracted from this page:
   (`nssp/resp_ed_count_weekly_national.csv`)
 - Weekly Emergency Department Visits by Age Group and 
   Respiratory Illness, as a Percent of All Emergency Department Visits
-  (`resp_ed_percent_weekly_national.csv`)
+  (`nssp/resp_ed_percent_weekly_national.csv`)
 - Weekly Emergency Department Visits by Viral Respiratory 
   Illness Type and State, as a Percent of All Emergency Department Visits
-  (`resp_ed_percent_weekly_state.csv`)
+  (`nssp/resp_ed_percent_weekly_state.csv`)
