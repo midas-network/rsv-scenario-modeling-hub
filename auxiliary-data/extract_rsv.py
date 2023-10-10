@@ -28,9 +28,24 @@ def get_table_rows(table):
     return table_rows
 
 
-def get_nrevss_data(url_bases, url_ext, locations, location_name=None, folder_path="auxiliary-data/nrevss/"):
+def historical_date(df, file_dir, date_colname):
     today = date.today()
     today_str = today.strftime("%Y-%m-%d")
+    df[date_colname] = pd.to_datetime(df[date_colname]).dt.strftime("%Y-%m-%d")
+    df["as_of"] = today_str
+
+    if os.path.isfile(file_dir):
+        df0 = pd.read_csv(file_dir)
+        df_ts = set(list(df[date_colname].drop_duplicates())).intersection(
+            list(df0[date_colname].drop_duplicates()))
+        df0 = df0[~df0[date_colname].isin(df_ts)]
+        df_all = pd.concat([df0, df], ignore_index=True)
+    else:
+        df_all = df
+    return df_all
+
+
+def get_nrevss_data(url_bases, url_ext, locations, location_name=None, folder_path="auxiliary-data/nrevss/"):
 
     for u in url_bases:
         headers = []
@@ -72,19 +87,20 @@ def get_nrevss_data(url_bases, url_ext, locations, location_name=None, folder_pa
         df = pd.DataFrame(rows)
         df = df.rename(columns=dict(zip(range(len(headers)), headers)))
         df["repweekdate"] = pd.to_datetime(df["repweekdate"]).dt.strftime("%Y-%m-%d")
-        df["as_of"] = today_str
-
         file_dir = folder_path + filename
-        if os.path.isfile(file_dir):
-            df0 = pd.read_csv(file_dir)
-            df_ts = set(list(df["repweekdate"].drop_duplicates())).intersection(
-                list(df0["repweekdate"].drop_duplicates()))
-            df0 = df0[~df0["repweekdate"].isin(df_ts)]
-            df_all = pd.concat([df0, df], ignore_index=True)
-        else:
-            df_all = df
+        df_all = historical_date(df, file_dir, "repweekdate")
         # write the csv file
         df_all.to_csv(file_dir, index=False)
+
+
+def get_nspp_data(req_res, file_name, folder_path="auxiliary-data/nspp/", date_colname="End Date of MMWR Week"):
+    df_res = pd.read_csv(io.StringIO(req_res.text))
+    df_res["as_of"] = date.today().strftime("%Y-%m-%d")
+    df_res[date_colname] = pd.to_datetime(
+        df_res[date_colname]).dt.strftime("%Y-%m-%d")
+    file_dir = folder_path + file_name
+    df_res_all = historical_date(df_res, file_dir, date_colname)
+    df_res_all.to_csv(file_dir, index=False)
 
 
 # RSV State Trends - The National Respiratory and Enteric Virus Surveillance System (NREVSS)
@@ -113,3 +129,15 @@ df_rsvnet = pd.read_csv(io.StringIO(res.text),
                                'Sex': "string", 'Race': "string", 'Rate': "float",
                                'Cumulative Rate': "float"})
 df_rsvnet.to_parquet("auxiliary-data/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet")
+
+# National Emergency Department Visits for COVID-19, Influenza, and Respiratory Syncytial Virus
+
+# Weekly Emergency Department Visits by Age Group
+res = requests.get("https://www.cdc.gov/wcms/vizdata/live/CSELS_DHIS_NSSP/Resp_ED_Count_Weekly_National.csv")
+get_nspp_data(res, "Resp_ED_Count_Weekly_National.csv".lower())
+
+res = requests.get("https://www.cdc.gov/wcms/vizdata/live/CSELS_DHIS_NSSP/Resp_ED_Percent_Weekly_National.csv")
+get_nspp_data(res, "Resp_ED_Percent_Weekly_National.csv".lower())
+
+res = requests.get("https://data.cdc.gov/api/views/vutn-jzwm/rows.csv?accessType=DOWNLOAD")
+get_nspp_data(res, "Resp_ED_Percent_Weekly_state.csv".lower(), date_colname="week_end")
