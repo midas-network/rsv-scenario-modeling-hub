@@ -30,7 +30,8 @@ The RSV-NET source files is standardized following these steps:
    years, 18-49 years, 50-64 years, 65+ years, 0-<6 months, 6-<12 months, 
    1-<2 years, 2-4 years and overall
    - Remove the seasonal summaries
-3. Re-code variable and associated values to the hub standard
+3. Re-code variable and associated values to the hub standard. See 
+   [`model-output/README.md`](../model-output/README.md) for more information
 4. Calculate the hospitalization number by applying:
    -  rate * population size / 100000
    - For the 6 months age group, the population size for the corresponding year
