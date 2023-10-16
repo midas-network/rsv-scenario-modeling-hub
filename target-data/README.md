@@ -1,7 +1,7 @@
 # Target Data
 
 This folder is used to store target data (also called "ground truth" or "truth
-data") relevent to the RSV modeling efforts.
+data") relevant to the RSV modeling efforts.
 It contains the data and code used to generate the data.
 
 ## RSV-NET data
