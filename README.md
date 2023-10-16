@@ -33,7 +33,7 @@ scenariohub@midasnetwork.us .
 
 ## Target data
 
-The [`target-data`](./target_data/) folder contains the RSV hospitalization data
+The [`target-data`](./target-data/) folder contains the RSV hospitalization data
 (also called "truth data") standardized from the 
 [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k).
 
