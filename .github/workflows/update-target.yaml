@@ -1,0 +1,35 @@
+name: Update target data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * 2'
+
+jobs:
+  update-target-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: r-lib/actions/setup-r@v3
+
+      - name: Install system dependencies
+        run: sudo apt-get install libcurl4-openssl-dev libudunits2-dev libgdal-dev
+
+      - name: Install dependencies
+        run: |
+          R -e 'install.packages(c("lubridate", "dplyr", "tidyr", "arrow"))'
+
+      - name: Update target data
+        run: Rscript target-data/get_target_data.R
+
+      - name: Commit
+        run: |
+          git config user.name Github-Actions
+          git config user.email "<>"
+          git add .
+          git commit -m "Update target data $(date)"
+          git push
