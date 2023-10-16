@@ -31,6 +31,13 @@ time points, intervention scenarios, and US jurisdictions.
 Those interested to participate, please read the README file and email us at 
 scenariohub@midasnetwork.us .
 
+Model projections should be submitted via pull request to the `model-output` 
+folder and associated metadata should be submitted at the same time to the 
+`model-metadata` folder of this GitHub repository. 
+Technical instructions for submission and required file formats can be found 
+[here](./model-output/README.md) and 
+[here, for the metadata file](./model_metadata/README.md)
+
 ## Target data
 
 The [`target-data`](./target-data/) folder contains the RSV hospitalization data
