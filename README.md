@@ -31,6 +31,15 @@ time points, intervention scenarios, and US jurisdictions.
 Those interested to participate, please read the README file and email us at 
 scenariohub@midasnetwork.us .
 
+## Target data
+
+The [`target-data`](./target_data/) folder contains the RSV hospitalization data
+(also called "truth data") standardized from the 
+[Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k).
+
+The weekly hospitalization number per location are going to be used as truth 
+data in the hub.
+
 ## Auxiliary Data
 
 The repository stores and updates additional data relevant to the RSV modeling 
