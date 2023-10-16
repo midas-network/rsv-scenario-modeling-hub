@@ -10,7 +10,7 @@ It contains multiple folders:
 
 The folder [`location_census`](./location_census/) contains two files:
 
-- [`location_census/location.csv`](./location_census/location.csv) containing
+- [`location_census/locations.csv`](./location_census/locations.csv) containing
   the state and national full name, 2 letter abbreviation and fips code as used 
   in the hub. The file also contains the population size
 - [`location_census/state_pop_data`](./location_census/state_pop_data.csv) 
