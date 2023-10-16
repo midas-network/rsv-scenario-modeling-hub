@@ -33,12 +33,22 @@ scenariohub@midasnetwork.us .
 
 ## Auxiliary Data
 
-The repository stores and updates additional data relevant to the RSV modeling efforts:
-- The National Respiratory and Enteric Virus Surveillance System (NREVSS)
-data at national and state level.
-- The [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k)
+The repository stores and updates additional data relevant to the RSV modeling 
+efforts:
 
-For more information, please consult the associated [README file](./auxiliary-data/README.md).
+- Population and census data:
+    - National and State level name and fips code as used in the Hub and
+    associated population size.
+    - State level population size per year and per age from the US Census 
+    Bureau.
+
+- RSV data:
+    - The National Respiratory and Enteric Virus Surveillance System (NREVSS)
+data at national and state level.
+    - The [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k).
+
+For more information, please consult the associated 
+[README file](./auxiliary-data/README.md).
 
 ## Data license and reuse
 
