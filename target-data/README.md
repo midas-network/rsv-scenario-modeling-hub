@@ -36,7 +36,7 @@ The RSV-NET source files is standardized following these steps:
    -  rate * population size / 100000
    - For the 6 months age group, the population size for the corresponding year
    divided by 2 is used.
-   - The population data from the year 2022 are used for the year 2023/
+   - The population data from the year 2022 are used for the year 2023
    - The population size information comes from the US Census Bureau, please
    consult the [`auxiliary-data`](./../auxiliary-data/) for more
    information
