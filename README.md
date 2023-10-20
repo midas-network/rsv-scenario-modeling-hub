@@ -18,6 +18,10 @@ We have specified a set of scenarios and target outcomes to allow alignment of
 model projections for collective insights. Scenarios have been designed in 
 consultation with academic modeling teams and government agencies (e.g., CDC).
 
+This repository follows the guidelines and standards outlined by the 
+[hubverse](https://hubdocs.readthedocs.io/), 
+which provides a set of data formats and open source tools for modeling hubs.
+
 ## How to participate    
 
 The RSV Scenario Modeling Hub is open to any team willing to provide projections
@@ -75,6 +79,7 @@ this license does NOT cover model code from the various teams, model scenario
 data (available under specified licenses as described above) and auxiliary data.
 
 ## Computational power
+
 Those teams interested in accessing additional computational power should 
 contact Katriona Shea at k-shea@psu.edu. Additional resources might be available from the [MIDAS Coordination Center](https://midasnetwork.us) - please contact questions@midasnetwork.us for information. 
 
