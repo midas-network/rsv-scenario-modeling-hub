@@ -108,7 +108,7 @@ state_bases = [
     "https://www.cdc.gov/surveillance/nrevss/images/rsvstate/RSV1PPCent3AVG_State",
     "https://www.cdc.gov/surveillance/nrevss/images/rsvstate/RSV4PPCent3AVG_State",
     "https://www.cdc.gov/surveillance/nrevss/images/rsvstate/RSV14NumCent5AVG_State"]
-hub_locations = pd.read_csv("data-locations/locations.csv")
+hub_locations = pd.read_csv("auxiliary-data/location_census/locations.csv")
 states = list(hub_locations["abbreviation"])
 to_remove = ["AS", "GU", "MP", "PR", "UM", "VI", "US"]
 for i in to_remove:
