@@ -163,3 +163,4 @@ cython_debug/
 .DS_Store
 .Rproj.user
 rsv-scenario-modeling-hub.Rproj
+.Rhistory
