@@ -26,9 +26,17 @@ The RSV-NET source files is standardized following these steps:
 
 1. Load the RSV-NET file from the [`auxiliary-data`](./../auxiliary-data/) folder
 2. Filter the source files to keep only the information of interest:
-   - Select overall race and sex and age groups of interest: 0-4 years, 5-17 
-   years, 18-49 years, 50-64 years, 65+ years, 0-<6 months, 6-<12 months, 
-   1-<2 years, 2-4 years and overall
+   - Select overall race and sex and age groups of interest (hub standard format
+   in parentheses) : 
+           - 0-4 years (`"0-4"`), 5-17 years (`"5-17"`), 
+           18-49 years (`"18-49"`), 50-64 years (`"50-64"`), 
+           65+ years (`"65-130"`),  0-<6 months (`"0-0.49"`), 
+           6-<12 months (`"0.5-0.99"`), 1-<2 years (`"1-1.99"`), 
+           2-4 years (`"2-4"`), 18+ (Adults) (`"18-130"`) and 
+           overall (`"0-130"`)
+           - As the data before the 2018-2019 season does not include children 
+           data, the overall age group has been removed from the selection 
+           for the seasons: 2014-2015, 2015-2016, 2016-2017, 2017-2018. 
    - Remove the seasonal summaries
 3. Re-code variable and associated values to the hub standard. See 
    [`model-output/README.md`](../model-output/README.md) for more information
@@ -41,7 +49,7 @@ The RSV-NET source files is standardized following these steps:
    consult the [`auxiliary-data`](./../auxiliary-data/) for more
    information
 5. Standardize the output to the hub format:
-   - output with sixcolumns:
+   - output with six columns:
      - `location`: fips code of the associated state, `"US"` for national 
           level
      - `date`: end of the epiweek in a "YYYY-MM-DD" format

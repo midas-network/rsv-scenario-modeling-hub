@@ -1,4 +1,4 @@
-# System and Librairies ----
+# System and Libraries ----
 library(dplyr)
 library(tidyr)
 library(lubridate)
@@ -18,10 +18,10 @@ location2fips <- setNames(df_loc$location, df_loc$location_name)
 age2st_age <- setNames(
   c("0-130", "18-49", "50-64", "65-130", "0-0.49",
     "1-1.99", "2-4", "0.5-0.99", "0-4",
-    "5-17"),
+    "5-17", "18-130"),
   c("Overall", "18-49 years", "50-64 years", "65+ years", "----0-<6 months",
     "----1-<2 years", "----2-4 years", "----6-<12 months", "0-4 years",
-    "5-17 years")
+    "5-17 years", "18+ (Adults)")
 )
 
 # Census - From US Census Bureau
@@ -37,13 +37,19 @@ census_pop <- dplyr::mutate(
   tidyr::pivot_longer(cols = contains("POPEST"), names_to = "year") %>%
   dplyr::mutate(year = as.numeric(gsub("[[:alpha:]]|_", "", year)))
 
+# Calculate census data by age group of interest
+# For the age groups: "0-0.49" and "0.5-0.99", use the year 0 divided by 2.
+# The other age groups include all the years included in the range:
+#   - "0-4" include all the years from 0 to 4: 0, 1, 2, 3, and 4.
+#   - "1-1.99" include the year 1
+#   - etc.
 census_agegroup <- lapply(unique(age2st_age), function(age_grp) {
   age_min = as.numeric(strsplit(age_grp, "-")[[1]][1])
   age_max = as.numeric(strsplit(age_grp, "-")[[1]][2])
   div = 1
   if (age_min < 1 & age_max < 1) div = 2
   if (age_min < 1) age_min <- 0
-  if (age_max < 1)  age_max <- 1
+  if (age_max < 1)  age_max <- 0
   df <- dplyr::filter(census_pop, age >= age_min, age <= age_max)
   df_age_group <-  dplyr::group_by(df, fips, year) %>%
     dplyr::summarise(tot_pop = sum(value) / div, .groups = "keep")  %>%
@@ -66,13 +72,17 @@ df <- arrow::read_parquet(
 # - Standardize column names (lower case, without space, dot)
 rsv <- df %>%
   dplyr::mutate(
-    date = as.Date(`Week ending date`, "%m/%d/%Y")) %>%
+    date = as.Date(`Week ending date`, "%m/%d/%Y"),
+    `Age Category` = ifelse(Season %in%
+                              c("2014-2015", "2015-2016", "2016-2017",
+                                "2017-2018") & `Age Category` == "Overall",
+                            "adult", `Age Category`)) %>%
   dplyr::filter(
     Sex == "Overall" & Race == "Overall" &  `MMWR Week` != "Overall" &
       `Age Category` %in% c(
         "0-4 years","5-17 years", "18-49 years", "50-64 years","65+ years",
         "Overall", "----0-<6 months",  "----6-<12 months",
-        "----1-<2 years" ,   "----2-4 years")
+        "----1-<2 years" ,   "----2-4 years", "18+ (Adults)")
   )
 full_ts <- seq(min(rsv$date),max(rsv$date), by = "week")
 full_df <- tidyr::expand(rsv, tidyr::nesting(State, `Age Category`),
