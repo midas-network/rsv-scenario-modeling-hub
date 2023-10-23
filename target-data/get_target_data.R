@@ -89,7 +89,7 @@ full_df <- tidyr::expand(rsv, tidyr::nesting(State, `Age Category`),
                          full_ts) %>%
   dplyr::rename(date = full_ts)
 
-rsv_standard <- dplyr::left_join(rsv, full_df,
+rsv_standard <- dplyr::full_join(rsv, full_df,
                                  by = c("State", "Age Category", "date")) %>%
   dplyr::mutate(
     week = lubridate::epiweek(date),

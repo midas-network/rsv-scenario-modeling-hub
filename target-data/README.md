@@ -42,8 +42,11 @@ The RSV-NET source files is standardized following these steps:
        webpage.
        
    - Remove the seasonal summaries
+   
 3. Re-code variable and associated values to the hub standard. See 
-   [`model-output/README.md`](../model-output/README.md) for more information
+   [`model-output/README.md`](../model-output/README.md) for more information,
+   including adding all the missing values to obtain a "square" time series
+   
 4. Calculate the hospitalization number by applying:
    -  rate * population size / 100000
    - For the 6 months age group, the population size for the corresponding year
