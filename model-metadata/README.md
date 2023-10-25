@@ -10,7 +10,7 @@ required information and be stored in a team-model specific sub-directory.
 
 ## Subdirectory
 
-Each sub-directory within the [`model-metadata/`](./) directory has the
+Each sub-directory within the ["model-metadata/"](./) directory has the
 format:
 
     team-model

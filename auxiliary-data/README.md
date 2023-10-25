@@ -2,18 +2,19 @@
 
 This folder is used to store additional data relevant to the RSV modeling efforts. 
 It contains multiple folders: 
-  - one per each RSV CDC source and the python code to extract and update 
-  the data. 
+  - one for RSV data from different CDC sources, including the python code to 
+  extract and update the data. 
   - one for location and population data
+  - one for birth rate data
   
 ## Location and Census Data
 
-The folder [`location_census`](./location_census/) contains two files:
+The folder ["location_census/"](./location_census/) contains two files:
 
-- [`location_census/locations.csv`](./location_census/locations.csv) containing
+- ["location_census/locations.csv"](./location_census/locations.csv) containing
   the state and national full name, 2 letter abbreviation and fips code as used 
   in the hub. The file also contains the population size
-- [`location_census/state_pop_data`](./location_census/state_pop_data.csv) 
+- ["location_census/state_pop_data"](./location_census/state_pop_data.csv) 
   contains the population size per year, state (and national level), age from
   2010 to 2022 (included). The data are coming from the US Census Bureau:
   - Annual Estimates of the Civilian Population by Single Year of Age and Sex 
@@ -27,18 +28,19 @@ The folder [`location_census`](./location_census/) contains two files:
   
 ## Birth Rate
 
-The folder [`birth_rate`](./birth_rate/) contains multiple files:
+The folder ["birth_rate"](./birth_rate/) contains multiple files:
 
-- `natality_` files containing total number of births per state and per year 
-  from the Centers for Disease Control and Prevention, National Center for 
-  Health Statistics. National Vital Statistics System, Natality on CDC WONDER 
-- [`birth_rate_2016_2022.txt`](./birth_rate/birth_rate_2016_2022.txt) containing
+- ["natality_"](./birth_rate/) files containing total number of births per 
+  state and per year from the Centers for Disease Control and Prevention, 
+  National Center for Health Statistics. National Vital Statistics System, 
+  Natality on CDC WONDER Online Database
+- ["birth_rate_2016_2022.txt"](./birth_rate/birth_rate_2016_2022.txt) containing
   the birth rate per state and year from the Centers for Disease Control and 
   Prevention, National Center for Health Statistics. National Vital Statistics 
   System, Natality on CDC WONDER Online Database
-- [`birth_rate_1995_2022.txt`](./birth_rate/birth_rate_2016_2022.txt) containing
-   the calculated birth rate and standardized birth rate from the `natality_` 
-   and other `birth_rate` files from 1995 to 2022 per year and per state.
+- ["birth_rate_1995_2022.txt"](./birth_rate/birth_rate_2016_2022.txt) containing
+   the calculated birth rate and standardized birth rate from the "natality_" 
+   and other "birth_rate" files from 1995 to 2022 per year and per state.
   
   
 ## RSV data
@@ -93,10 +95,11 @@ Table3: Stored file containing all the information on 2023-10-13
 The National Respiratory and Enteric Virus Surveillance System (NREVSS) provides
 data at national and state level.
 
-> Participating laboratories report weekly to CDC the total number of RSV tests performed that week, 
-and the number of those tests that were positive. Because reporting delays may be expected for some 
-laboratories, data shown for the most recent weeks, in particular the most recent two weeks, may be 
-less complete than others.
+> Participating laboratories report weekly to CDC the total number of RSV tests 
+performed that week, and the number of those tests that were positive. Because 
+reporting delays may be expected for some laboratories, data shown for the most 
+recent weeks, in particular the most recent two weeks, may be less complete 
+than others.
 
 ##### National
 
@@ -106,9 +109,9 @@ The National RSV Trends are extracted from the
 Two tables are extracted:
 
 -  Percent positive respiratory syncytial virus tests in the United States, 
-   by week ([`nrevss/rsv_data_us.csv`](./nrevss/rsv_data_us.csv))
+   by week (["nrevss/rsv_data_us.csv"](./nrevss/rsv_data_us.csv))
 -  RSV detections in the United States, by week 
-   ([`nrevss/rsv_numerator_data_us.csv`](./nrevss/rsv_numerator_data_us.csv))
+   (["nrevss/rsv_numerator_data_us.csv"](./nrevss/rsv_numerator_data_us.csv))
 
 ##### State
 
@@ -121,11 +124,11 @@ The National RSV Trends are extracted from the
 For each state, three tables are extracted:
 
 - Percent positive antigen detection RSV tests, by 3-week moving average 
-  ([`nrevss/rsv_antigen_3_week_average.csv`](./nrevss/rsv_antigen_3_week_average.csv))
+  (["nrevss/rsv_antigen_3_week_average.csv"](./nrevss/rsv_antigen_3_week_average.csv))
 - Percent positive RSV PCR tests, by 3-week moving average 
-  ([`nrevss/rsv_pcr_3_week_average.csv`](./nrevss/rsv_pcr_3_week_average.csv))
+  (["nrevss/rsv_pcr_3_week_average.csv"](./nrevss/rsv_pcr_3_week_average.csv))
 - RSV detections, by 5-week average 
-  ([`nrevss/rsv_numerator_data_5_week_average.csv`](./nrevss/rsv_numerator_data_5_week_average.csv))
+  (["nrevss/rsv_numerator_data_5_week_average.csv"](./nrevss/rsv_numerator_data_5_week_average.csv))
 
 All the states data are compiled together into one file.
 
@@ -143,19 +146,19 @@ departments across the United States.
 Three tables are extracted from this page:
 
 - Weekly Emergency Department Visits by Age Group 
-  ([`nssp/resp_ed_count_weekly_national.csv`](./nssp/resp_ed_count_weekly_national.csv))
+  (["nssp/resp_ed_count_weekly_national.csv"](./nssp/resp_ed_count_weekly_national.csv))
 - Weekly Emergency Department Visits by Age Group and 
   Respiratory Illness, as a Percent of All Emergency Department Visits
-  ([`nssp/resp_ed_percent_weekly_national.csv`](./nssp/resp_ed_percent_weekly_national.csv))
+  (["nssp/resp_ed_percent_weekly_national.csv"](./nssp/resp_ed_percent_weekly_national.csv))
 - Weekly Emergency Department Visits by Viral Respiratory 
   Illness Type and State, as a Percent of All Emergency Department Visits
-  ([`nssp/resp_ed_percent_weekly_state.csv`](./nssp/resp_ed_percent_weekly_state.csv))
+  (["nssp/resp_ed_percent_weekly_state.csv"](./nssp/resp_ed_percent_weekly_state.csv))
 
 ### Respiratory Syncytial Virus Hospitalization Surveillance Network (RSV-NET)
 
 The [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k)
 is also downloaded weekly and output in a PARQUET file: 
-[`rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet`](./rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet).
+["rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet"](./rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet).
 
 > The Respiratory Syncytial Virus Hospitalization Surveillance Network (RSV-NET) is a network that 
 conducts active, population-based surveillance for laboratory-confirmed RSV-associated hospitalizations 

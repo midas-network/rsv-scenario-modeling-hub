@@ -3,7 +3,7 @@
 This page is intended to provide teams with all the information they
 need to submit scenarios.  
 
-All projections should be submitted directly to the [`model-output/`](./) 
+All projections should be submitted directly to the ["model-output/"](./) 
 folder. Data in this directory should be added to the repository
 through a pull request. 
 
@@ -14,7 +14,7 @@ Due to file size limitation, the file can be submitted in a in a
 
 ## Subdirectory
 
-Each sub-directory within the [`model-output/`](./) directory has the
+Each sub-directory within the ["model-output/"](./) directory has the
 format:
 
     team-model
@@ -33,10 +33,10 @@ hyphens nor spaces.
 
 Each team-model team should have an associated metadata file. The file should
 be submitted with the first projection in the 
-[`model-metadata/`](../model-metadata/) folder, in a `team-model` sub-directory.
+["model-metadata/"](../model-metadata/) folder, in a `team-model` sub-directory.
 
 For more information on the metadata file format, please consult the associated
-[ReadMe](../model-metadata/README.md)
+[README](../model-metadata/README.md)
 
 ----
 
@@ -139,7 +139,7 @@ The "origin_date" and date in the filename should correspond.
 ### `scenario_id`
 
 The standard scenario id should be used as given in in the scenario 
-description in the [main Readme](https://github.com/midas-network/rsv-scenario-modeling-hub). 
+description in the [main README](https://github.com/midas-network/rsv-scenario-modeling-hub). 
 Scenario id's include a capitalized letter and date as YYYY-MM-DD, e.g., 
 `A-2023-10-27`.
 
