@@ -184,6 +184,12 @@ by the annual state population * 1000
   2010 to 2022 (included) from the US Census Bureau. Please see the auxiliary
   [README](./../README.md) for more information.
 - standardized from 2016 to 2022
+- output with 5 columns:
+     - `fips`: fips code of the associated state
+     - `year`: year
+     - `birth`: number of birth
+     - `pop`: population size
+     - `birth_rate`: birth / pop * 1000
 
 The output is available in one CSV file:
 [`birth_rate_1995_2022.csv`](./birth_rate_1995_2022.csv).

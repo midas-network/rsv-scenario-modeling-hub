@@ -62,6 +62,12 @@ efforts:
     - State level population size per year and per age from the US Census 
     Bureau.
 
+- Birth Rate:
+    - Birth Number and Rate per state and per year from 1995 to 2022 included.
+    - Data from the US Census Bureau and from the Centers for Disease Control 
+    and Prevention, National Center for Health Statistics. National Vital 
+    Statistics System, Natality on CDC WONDER Online Database.
+
 - RSV data:
     - The National Respiratory and Enteric Virus Surveillance System (NREVSS)
     data at national and state level.

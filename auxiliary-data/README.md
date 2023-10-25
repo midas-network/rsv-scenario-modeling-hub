@@ -25,6 +25,22 @@ The folder [`location_census`](./location_census/) contains two files:
   2022: available 
   [here](https://www.census.gov/data/datasets/time-series/demo/popest/2020s-state-detail.html)
   
+## Birth Rate
+
+The folder [`birth_rate`](./birth_rate/) contains multiple files:
+
+- `natality_` files containing total number of births per state and per year 
+  from the Centers for Disease Control and Prevention, National Center for 
+  Health Statistics. National Vital Statistics System, Natality on CDC WONDER 
+- [`birth_rate_2016_2022.txt`](./birth_rate/birth_rate_2016_2022.txt) containing
+  the birth rate per state and year from the Centers for Disease Control and 
+  Prevention, National Center for Health Statistics. National Vital Statistics 
+  System, Natality on CDC WONDER Online Database
+- [`birth_rate_1995_2022.txt`](./birth_rate/birth_rate_2016_2022.txt) containing
+   the calculated birth rate and standardized birth rate from the `natality_` 
+   and other `birth_rate` files from 1995 to 2022 per year and per state.
+  
+  
 ## RSV data
 
 The RSV data are available in three folders: one per each CDC source. The python 
