@@ -123,8 +123,8 @@ populations:
     July 1st estimates of the resident population, released by Census Bureau on
     June 30, 2022. The 2021 population estimates are based on the Blended Base 
     produced by the US Census Bureau in lieu of the April 1, 2020 decennial 
-    population count. Bridged race population figures are not available for year 
-    2021. 
+    population count. Bridged race population figures are not available for 
+    year 2021. 
     - The populations for year 2020 are from the postcensal single-race series of 
     July 1st estimates of the resident population, released by Census Bureau on 
     July 27, 2021; and the postcensal bridged-race series of July 1st estimates 
