@@ -60,7 +60,7 @@ census_agegroup <- lapply(unique(age2st_age), function(age_grp) {
 
 # RSV-Net
 df <- arrow::read_parquet(
-  "auxiliary-data/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet")
+  "auxiliary-data/rsv/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet")
 
 # Standardize:
 # - Load relevant age groups

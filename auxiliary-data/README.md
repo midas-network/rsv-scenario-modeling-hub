@@ -45,11 +45,12 @@ The folder ["birth_rate"](./birth_rate/) contains multiple files:
   
 ## RSV data
 
-The RSV data are available in three folders: one per each CDC source. The python 
-code to extract and update the data is also available.
+The folder ["rsv"](./rsv/) contains the RSV data divided in three sub-folders: 
+one per each CDC source and the python code to extract and update the data.
 
-The data is updated weekly by the [update-rsv-data](../.github/workflows/update-rsv-data.yaml) GitHub Action, which runs
-weekly on Friday morning, 9:00 am UTC.
+The data is updated weekly by the 
+[update-rsv-data](../.github/workflows/update-rsv-data.yaml) GitHub Action, 
+which runs weekly on Friday morning, 9:00 am UTC.
 
 ### NREVSS and NSSP data
 
@@ -109,9 +110,9 @@ The National RSV Trends are extracted from the
 Two tables are extracted:
 
 -  Percent positive respiratory syncytial virus tests in the United States, 
-   by week (["nrevss/rsv_data_us.csv"](./nrevss/rsv_data_us.csv))
+   by week (["rsv/nrevss/rsv_data_us.csv"](./rsv/nrevss/rsv_data_us.csv))
 -  RSV detections in the United States, by week 
-   (["nrevss/rsv_numerator_data_us.csv"](./nrevss/rsv_numerator_data_us.csv))
+   (["rsv/nrevss/rsv_numerator_data_us.csv"](.rsv/nrevss/rsv_numerator_data_us.csv))
 
 ##### State
 
@@ -124,11 +125,11 @@ The National RSV Trends are extracted from the
 For each state, three tables are extracted:
 
 - Percent positive antigen detection RSV tests, by 3-week moving average 
-  (["nrevss/rsv_antigen_3_week_average.csv"](./nrevss/rsv_antigen_3_week_average.csv))
+  (["rsv/nrevss/rsv_antigen_3_week_average.csv"](./rsv/nrevss/rsv_antigen_3_week_average.csv))
 - Percent positive RSV PCR tests, by 3-week moving average 
-  (["nrevss/rsv_pcr_3_week_average.csv"](./nrevss/rsv_pcr_3_week_average.csv))
+  (["rsv/nrevss/rsv_pcr_3_week_average.csv"](./rsv/nrevss/rsv_pcr_3_week_average.csv))
 - RSV detections, by 5-week average 
-  (["nrevss/rsv_numerator_data_5_week_average.csv"](./nrevss/rsv_numerator_data_5_week_average.csv))
+  (["rsv/nrevss/rsv_numerator_data_5_week_average.csv"](./rsv/nrevss/rsv_numerator_data_5_week_average.csv))
 
 All the states data are compiled together into one file.
 
@@ -146,19 +147,19 @@ departments across the United States.
 Three tables are extracted from this page:
 
 - Weekly Emergency Department Visits by Age Group 
-  (["nssp/resp_ed_count_weekly_national.csv"](./nssp/resp_ed_count_weekly_national.csv))
+  (["rsv/nssp/resp_ed_count_weekly_national.csv"](./rsv/nssp/resp_ed_count_weekly_national.csv))
 - Weekly Emergency Department Visits by Age Group and 
   Respiratory Illness, as a Percent of All Emergency Department Visits
-  (["nssp/resp_ed_percent_weekly_national.csv"](./nssp/resp_ed_percent_weekly_national.csv))
+  (["rsv/nssp/resp_ed_percent_weekly_national.csv"](./rsv/nssp/resp_ed_percent_weekly_national.csv))
 - Weekly Emergency Department Visits by Viral Respiratory 
   Illness Type and State, as a Percent of All Emergency Department Visits
-  (["nssp/resp_ed_percent_weekly_state.csv"](./nssp/resp_ed_percent_weekly_state.csv))
+  (["rsv/nssp/resp_ed_percent_weekly_state.csv"](./rsv/nssp/resp_ed_percent_weekly_state.csv))
 
 ### Respiratory Syncytial Virus Hospitalization Surveillance Network (RSV-NET)
 
 The [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k)
 is also downloaded weekly and output in a PARQUET file: 
-["rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet"](./rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet).
+["rsv/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet"](./rsv/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet).
 
 > The Respiratory Syncytial Virus Hospitalization Surveillance Network (RSV-NET) is a network that 
 conducts active, population-based surveillance for laboratory-confirmed RSV-associated hospitalizations 

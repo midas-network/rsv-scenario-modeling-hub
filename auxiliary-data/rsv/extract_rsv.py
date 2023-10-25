@@ -45,7 +45,7 @@ def historical_date(df, file_dir, date_colname):
     return df_all
 
 
-def get_nrevss_data(url_bases, url_ext, locations, location_name=None, folder_path="auxiliary-data/nrevss/"):
+def get_nrevss_data(url_bases, url_ext, locations, location_name=None, folder_path="auxiliary-data/rsv/nrevss/"):
 
     for u in url_bases:
         headers = []
@@ -93,7 +93,7 @@ def get_nrevss_data(url_bases, url_ext, locations, location_name=None, folder_pa
         df_all.to_csv(file_dir, index=False)
 
 
-def get_nssp_data(req_res, file_name, folder_path="auxiliary-data/nssp/", date_colname="End Date of MMWR Week"):
+def get_nssp_data(req_res, file_name, folder_path="auxiliary-data/rsv/nssp/", date_colname="End Date of MMWR Week"):
     df_res = pd.read_csv(io.StringIO(req_res.text))
     df_res["as_of"] = date.today().strftime("%Y-%m-%d")
     df_res[date_colname] = pd.to_datetime(
@@ -128,7 +128,7 @@ df_rsvnet = pd.read_csv(io.StringIO(res.text),
                                'Week ending date': "string", 'Age Category': "string",
                                'Sex': "string", 'Race': "string", 'Rate': "float",
                                'Cumulative Rate': "float"})
-df_rsvnet.to_parquet("auxiliary-data/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet")
+df_rsvnet.to_parquet("auxiliary-data/rsv/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet")
 
 # National Emergency Department Visits for COVID-19, Influenza, and Respiratory Syncytial Virus
 

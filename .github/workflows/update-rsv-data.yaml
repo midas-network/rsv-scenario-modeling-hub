@@ -23,7 +23,7 @@ jobs:
 
       - name: Run Python
         run: |
-         python auxiliary-data/extract_rsv.py
+         python auxiliary-data/rsv/extract_rsv.py
 
       - name: Commit
         run: |
