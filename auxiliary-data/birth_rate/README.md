@@ -1,5 +1,33 @@
 # Birth Rate
 
+## Birth Rate at State Level 1995 - 2022
+
+Using the source files, the birth rate is:
+- calculated by state from 1995 to 2015 by dividing the total number of births
+by the annual state population * 1000
+  - The population information from 1990 to 2000 comes from the US Census 
+  Bureau [State and County Intercensal Datasets: 1990-2000](https://www.census.gov/data/datasets/time-series/demo/popest/intercensal-1990-2000-state-and-county-characteristics.html)
+  - The population information from 2000 to 2010 comes from the US Census 
+  Bureau [State Intercensal Datasets: 2000-2010 ](https://www.census.gov/data/datasets/time-series/demo/popest/intercensal-2000-2010-state.html)
+  - The population information from 2010 to 2020 comes from the internal
+  [location_census/state_pop_data](./../location_census/state_pop_data.csv) 
+  containing the population size per year, state (and national level), age from
+  2010 to 2022 (included) from the US Census Bureau. Please see the auxiliary
+  [README](./../README.md) for more information.
+- standardized from 2016 to 2022
+- output with 5 columns:
+     - `fips`: fips code of the associated state
+     - `year`: year
+     - `birth`: number of birth
+     - `pop`: population size
+     - `birth_rate`: birth / pop * 1000
+
+The output is available in one CSV file:
+[birth_rate_1995_2022.csv](./birth_rate_1995_2022.csv).
+
+The code to generate the file is also available in a 
+[birth_rate R Script](./birth_rate.R).
+
 ## Source Files
 
 All the source files were extracted by using the Centers for Disease Control 
@@ -168,31 +196,3 @@ populations:
 
 More information: 
 [http://wonder.cdc.gov/wonder/help/Natality.html#Denominator-Population-Sources](http://wonder.cdc.gov/wonder/help/Natality.html#Denominator-Population-Sources).
-
-## Birth Rate at State Level 1995 - 2022
-
-Using the source files, the birth rate is:
-- calculated by state from 1995 to 2015 by dividing the total number of births
-by the annual state population * 1000
-  - The population information from 1990 to 2000 comes from the US Census 
-  Bureau [State and County Intercensal Datasets: 1990-2000](https://www.census.gov/data/datasets/time-series/demo/popest/intercensal-1990-2000-state-and-county-characteristics.html)
-  - The population information from 2000 to 2010 comes from the US Census 
-  Bureau [State Intercensal Datasets: 2000-2010 ](https://www.census.gov/data/datasets/time-series/demo/popest/intercensal-2000-2010-state.html)
-  - The population information from 2010 to 2020 comes from the internal
-  [location_census/state_pop_data](./../location_census/state_pop_data.csv) 
-  containing the population size per year, state (and national level), age from
-  2010 to 2022 (included) from the US Census Bureau. Please see the auxiliary
-  [README](./../README.md) for more information.
-- standardized from 2016 to 2022
-- output with 5 columns:
-     - `fips`: fips code of the associated state
-     - `year`: year
-     - `birth`: number of birth
-     - `pop`: population size
-     - `birth_rate`: birth / pop * 1000
-
-The output is available in one CSV file:
-[birth_rate_1995_2022.csv](./birth_rate_1995_2022.csv).
-
-The code to generate the file is also available in a 
-[birth_rate R Script](./birth_rate.R).
