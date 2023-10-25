@@ -3,7 +3,7 @@
 This page is intended to provide teams with all the information they
 need to submit scenarios.  
 
-All projections should be submitted directly to the ["model-output/"](./) 
+All projections should be submitted directly to the [model-output/](./) 
 folder. Data in this directory should be added to the repository
 through a pull request. 
 
@@ -14,7 +14,7 @@ Due to file size limitation, the file can be submitted in a in a
 
 ## Subdirectory
 
-Each sub-directory within the ["model-output/"](./) directory has the
+Each sub-directory within the [model-output/](./) directory has the
 format:
 
     team-model
@@ -33,7 +33,7 @@ hyphens nor spaces.
 
 Each team-model team should have an associated metadata file. The file should
 be submitted with the first projection in the 
-["model-metadata/"](../model-metadata/) folder, in a `team-model` sub-directory.
+[model-metadata/](../model-metadata/) folder, in a `team-model` sub-directory.
 
 For more information on the metadata file format, please consult the associated
 [README](../model-metadata/README.md)
@@ -176,10 +176,10 @@ required, all the incident and cumulative targets can also include other age
 group information (optional).
 
 Values in the `target` column must be one of the following character strings:
-- "inc hosp"
-- "cum hosp"
-- "peak size hosp"
-- "peak time hosp"
+- `"inc hosp"`
+- `"cum hosp"`
+- `"peak size hosp"`
+- `"peak time hosp"`
 
 
 #### inc hosp
@@ -280,9 +280,9 @@ character string to preserve any leading zeroes.
 
 Values in the `output_type` column are either
 
-- "sample" or 
-- "quantile" (optional) or
-- "cdf" (optional)
+- `"sample"` or 
+- `"quantile"` (optional) or
+- `"cdf"` (optional)
 
 
 This value indicates whether that row corresponds to a "sample" scenario or a

@@ -13,7 +13,7 @@ For more information, please consult:
 
 For each source file, the associated citation and notes are available below.
 
-### Birth Rate 2016 - 2022 (["birth_rate_2016_2022.txt"](./birth_rate_2016_2022.txt))
+### Birth Rate 2016 - 2022 ([birth_rate_2016_2022.txt](./birth_rate_2016_2022.txt))
 
 > Centers for Disease Control and Prevention, National Center for Health 
 Statistics. National Vital Statistics System, Natality on CDC WONDER Online 
@@ -54,11 +54,11 @@ populations:
     on June 22, 2017. 
 
 More information: 
-["http://wonder.cdc.gov/wonder/help/Natality-expanded.html#Denominator-Population-Sources"]("http://wonder.cdc.gov/wonder/help/Natality-expanded.html#Denominator-Population-Sources").
+[http://wonder.cdc.gov/wonder/help/Natality-expanded.html#Denominator-Population-Sources](http://wonder.cdc.gov/wonder/help/Natality-expanded.html#Denominator-Population-Sources).
 
 ### Natality
 
-#### Natality, 1995-2002 (["natality_1995_2002.txt"](./natality_1995_2002.txt))
+#### Natality, 1995-2002 ([natality_1995_2002.txt](./natality_1995_2002.txt))
 
 >Centers for Disease Control and Prevention, National Center for Health 
 Statistics. National Vital Statistics System, Natality on CDC WONDER Online
@@ -75,7 +75,7 @@ constraints.
 
 More information: [http://wonder.cdc.gov/wonder/help/Natality.html#Assurance of Confidentiality](http://wonder.cdc.gov/wonder/help/Natality.html#Assurance of Confidentiality).
 
-#### Natality, 2003-2006 (["natality_2003_2006.txt"](./natality_2003_2006.txt))
+#### Natality, 2003-2006 ([natality_2003_2006.txt](./natality_2003_2006.txt))
 
 > Centers for Disease Control and Prevention, National Center for Health 
 Statistics. National Vital Statistics System, Natality on CDC WONDER Online 
@@ -98,7 +98,7 @@ resident population, released by NCHS on October 26, 2012.
 More information: 
 [http://wonder.cdc.gov/wonder/help/Natality.html#Denominator-Population-Sources](http://wonder.cdc.gov/wonder/help/Natality.html#Denominator-Population-Sources).
 
-#### Natality, 2007-2022 (["natality_2007_2022.txt"](./natality_2007_2022.txt))
+#### Natality, 2007-2022 ([natality_2007_2022.txt](./natality_2007_2022.txt))
 
 > Centers for Disease Control and Prevention, National Center for Health 
 Statistics. National Vital Statistics System, Natality on CDC WONDER Online 
@@ -179,7 +179,7 @@ by the annual state population * 1000
   - The population information from 2000 to 2010 comes from the US Census 
   Bureau [State Intercensal Datasets: 2000-2010 ](https://www.census.gov/data/datasets/time-series/demo/popest/intercensal-2000-2010-state.html)
   - The population information from 2010 to 2020 comes from the internal
-  ["location_census/state_pop_data"](./../location_census/state_pop_data.csv) 
+  [location_census/state_pop_data](./../location_census/state_pop_data.csv) 
   containing the population size per year, state (and national level), age from
   2010 to 2022 (included) from the US Census Bureau. Please see the auxiliary
   [README](./../README.md) for more information.
@@ -192,7 +192,7 @@ by the annual state population * 1000
      - `birth_rate`: birth / pop * 1000
 
 The output is available in one CSV file:
-["birth_rate_1995_2022.csv"](./birth_rate_1995_2022.csv).
+[birth_rate_1995_2022.csv](./birth_rate_1995_2022.csv).
 
 The code to generate the file is also available in a 
-["birth_rate" R Script](./birth_rate.R).
+[birth_rate R Script](./birth_rate.R).

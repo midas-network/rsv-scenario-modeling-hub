@@ -36,8 +36,8 @@ Those interested to participate, please read the README file and email us at
 scenariohub@midasnetwork.us .
 
 Model projections should be submitted via pull request to the 
-["model-output/"](./model-output/) folder and associated metadata should be 
-submitted at the same time to the ["model-metadata/"](./model-metadata/) folder 
+[model-output/](./model-output/) folder and associated metadata should be 
+submitted at the same time to the [model-metadata/](./model-metadata/) folder 
 of this GitHub repository. 
 Technical instructions for submission and required file formats can be found 
 [here](./model-output/README.md) and 
@@ -45,7 +45,7 @@ Technical instructions for submission and required file formats can be found
 
 ## Target data
 
-The ["target-data/"](./target-data/) folder contains the RSV hospitalization data
+The [target-data/](./target-data/) folder contains the RSV hospitalization data
 (also called "truth data") standardized from the 
 [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k).
 
