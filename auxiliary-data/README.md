@@ -2,10 +2,25 @@
 
 This folder is used to store additional data relevant to the RSV modeling efforts. 
 It contains multiple folders: 
+  - one for vaccine coverage
   - one for RSV data from different CDC sources, including the python code to 
   extract and update the data. 
   - one for location and population data
   - one for birth rate data
+  
+## Vaccine Coverage
+
+The folder [vaccine_coverage/](./vaccine_coverage/) provides weekly 
+state-specific cumulative coverage for specific rounds.
+
+For round 1, the file 
+[vaccine_coverage/RSV_round1_Coverage_2023_2024.csv](./vaccine_coverage/RSV_round1_Coverage_2023_2024.csv) 
+provides vaccine coverage from summer 2023 to the end of the projection period 
+to apply to infants 0-5 months (`rsv_cov_infants_pes` and 
+`resv_cov_infants_opt`) and seniors over 60 years (`rsv_cover_over_60_pes` and 
+`rsv_cov_over60_opt`). Values represent the optimistic and pessimistic 
+assumptions prescribed in 
+RSV round 1
   
 ## Location and Census Data
 
