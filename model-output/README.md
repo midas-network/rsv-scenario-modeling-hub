@@ -401,13 +401,20 @@ numbers between 0 and 1.
 Accepted values in the  `age_group` column are:
 
 - "0-0.99" (required)
-- "1-4"
+- "1-4" (required)
 - "5-17"
 - "18-49"
 - "50-64"
 - "65-130" (required)
-- "1-64" (required)
+- "5-64" (required)
+- "0-130" (required)
+
+Any aggregation of the previous list, for example: "0-17" is also accepted. 
+
+If the submissions files contain projections for the overall population, 
+please use `0-130` as age-group. 
 
 Some of the `age_group` are optionals, however, the submission should contain 
-at least the age group marked as required:`"0-0.99"`, `"1-64"` and `"65-130"`.
+at least the age group marked as required:`"0-0.99"`, `"1-4"`, `"5-64"`, 
+`"65-130"`, and `"0-130"`.
 
