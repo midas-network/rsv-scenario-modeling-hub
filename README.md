@@ -140,7 +140,8 @@ We generally expect real coverage in 2023-24 to track with our pessimistic
 coverage assumptions, while we have chosen optimistic levels of coverage that 
 would reflect potential benefits in a future season with no shortage and more 
 awareness of these interventions. 
-**Senior and infant vaccination coverage curves will be provided for all projection weeks and target locations.** 
+**Senior and infant vaccination coverage curves are provided for all projection weeks and target locations**,
+in the [Github auxiliary data folder](./auxialiary-data/vaccine_coverage/)
 
 ##### VE Assumptions
 
@@ -235,6 +236,7 @@ Reported age groups include: [0-6 months[, [6-12 months[, [1-2 yr[, [2-4 yr[,
 [5-17 yr[, [18-49 yr[, [50-64 yr[, and 65+ years.  The standardized dataset 
 provided by SMH includes week- state- and age-specific RSV counts (the target), 
 rates, and population sizes. 
+**Note that different states joined RSVnet in different years (between 2014 and 2018) while RSV surveillance throughout the network was initially limited to adults. Children RSV surveillance began in the 2018-19 season.**
 
 The source of age distribution used for calibration (RSV-NET vs other 
 estimates) should be provided in the abstract metadata that is submitted with 
