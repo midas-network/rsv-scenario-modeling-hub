@@ -141,7 +141,7 @@ coverage assumptions, while we have chosen optimistic levels of coverage that
 would reflect potential benefits in a future season with no shortage and more 
 awareness of these interventions. 
 **Senior and infant vaccination coverage curves are provided for all projection weeks and target locations**,
-in the [Github auxiliary data folder](./auxialiary-data/vaccine_coverage/)
+in the [Github auxiliary data folder](./auxiliary-data/vaccine_coverage/)
 
 ##### VE Assumptions
 
