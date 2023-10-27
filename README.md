@@ -95,13 +95,14 @@ States from October through the end of March, the months of highest RSV
 activity. 
 
 For infants < 6 months the process is as follows: 
-	- during the RSV season Oct 2023-Mar 2024, a fraction of all newborns will 
-	receive long-acting monoclonals at birth (fraction based on weekly 
-	monoclonal coverage)
-	- a fraction of infants who are born from Apr-Sep 2023 and are <6 months at 
-	the start of the season will receive a catch up dose of monoclonals during 
-	the RSV season, Oct 2023-Mar 2024 (also based on weekly coverage). No 
-	infant >= 6 months can receive monoclonals.
+
+- during the RSV season Oct 2023-Mar 2024, a fraction of all newborns will 
+  receive long-acting monoclonals at birth (fraction based on weekly 
+  monoclonal coverage)
+- a fraction of infants who are born from Apr-Sep 2023 and are <6 months at 
+  the start of the season will receive a catch up dose of monoclonals during 
+  the RSV season, Oct 2023-Mar 2024 (also based on weekly coverage). No 
+  infant >= 6 months can receive monoclonals.
 
 ##### Seniors
 
@@ -153,22 +154,19 @@ considered are **70%** (scenarios B, D) and **90%** (scenarios A, C).
 For infants, VE values considered are **60%** (scenarios C, D) and 
 **80%** (scenarios A, B). 
 
-
 RCTs – senior vaccines:  
-
-    - [GSK](https://www.nejm.org/doi/full/10.1056/NEJMoa2209604)
-    - [Pfizer](https://www.nejm.org/doi/full/10.1056/NEJMoa2213836)
+- GSK, [Papi et al](https://www.nejm.org/doi/full/10.1056/NEJMoa2209604)
+- Pfizer, [Walsh et al](https://www.nejm.org/doi/full/10.1056/NEJMoa2213836)
     
 RCTs in infants - Nirsevimab:
-
-    - [Full term infants](https://www.nejm.org/doi/full/10.1056/NEJMoa2110275)
-    - [Pre-term infants](https://www.nejm.org/doi/full/10.1056/nejmoa1913556)
+- Full term infants, [Hammitt et al](https://www.nejm.org/doi/full/10.1056/NEJMoa2110275)
+- Pre-term infants, [Griffin et al](https://www.nejm.org/doi/full/10.1056/nejmoa1913556)
 
 It is at teams’ discretion to proportionate VE values into protection against 
 infection, protection against severe disease given infection, and any effect on 
 transmission. However note that the current thinking and available data 
-suggests a 
-[very limited protection against infection](https://www.nature.com/articles/s41591-023-02316-5), 
+suggests a very limited protection against infection, 
+[Wilkins et al](https://www.nature.com/articles/s41591-023-02316-5), 
 if any. There is no data on transmission and the possible impact on these 
 interventions on RSV shedding, so a small to moderate transmission effect 
 cannot be ruled out.
@@ -194,8 +192,9 @@ allowed.
 
 In this scenario, we consider no change to the historic policy of RSV 
 mitigation, which consists in a limited coverage of palivizumab monoclonals 
-to high-risk premature infants (
-[~2% of the US birth cohort receives a partial or full dose](https://www.tandfonline.com/doi/full/10.4161/hv.32082)). 
+to high-risk premature infants (~2% of the US birth cohort receives a partial or 
+full dose,
+[Ambrose et al](https://www.tandfonline.com/doi/full/10.4161/hv.32082)). 
 The calibration data available from 2017-present takes into account the impact 
 of this intervention. Teams have discretion to consider this policy explicitly 
 or ignore it given the small fraction of infants covered. We note that high 
@@ -311,18 +310,20 @@ These include work by Ginny Pitzer and colleagues in the US (see
 [Pitzer et al](https://pubmed.ncbi.nlm.nih.gov/25569275/) for state-specific 
 models driven by environmental drivers in the pre-intervention era, including 
 Table 2 for parameters; and 
-[here](https://pubmed.ncbi.nlm.nih.gov/36302926/) for an 
+[Zheng et al](https://pubmed.ncbi.nlm.nih.gov/36302926/) for an 
 updated model with interventions).  
 Risk of severity given infection was parametrized in these models based on 
 children cohort studies in the US and Kenya: see 
-[here](https://pubmed.ncbi.nlm.nih.gov/15499540/), 
-[here](https://pubmed.ncbi.nlm.nih.gov/3706232/), and 
-[here](https://pubmed.ncbi.nlm.nih.gov/19196675/). 
+[Nokes et al](https://pubmed.ncbi.nlm.nih.gov/15499540/), 
+[Glezen et al](https://pubmed.ncbi.nlm.nih.gov/3706232/), and 
+[Breese Hall at al](https://pubmed.ncbi.nlm.nih.gov/19196675/). 
 
 Since these studies have been published, there has been an increased 
-recognition of the burden of RSV among seniors (see [here](https://academic.oup.com/jid/article/223/1/147/585958), [here](https://publications.aap.org/pediatrics/article/146/1/e20193611/37046/Respiratory-Syncytial-Virus-Associated), 
+recognition of the burden of RSV among seniors (see 
+[Jackson et al](https://academic.oup.com/jid/article/223/1/147/585958), 
+[Rha et al](https://publications.aap.org/pediatrics/article/146/1/e20193611/37046/Respiratory-Syncytial-Virus-Associated), 
 and 
-[here](https://academic.oup.com/ofid/article/9/7/ofac300/6609557?login=false)
+[McLaughlin et al](https://academic.oup.com/ofid/article/9/7/ofac300/6609557?login=false)
 
 #### Prior Immunity
 
@@ -412,22 +413,22 @@ discretion.
   scenario and week, all age data for simulation 1 corresponds to the sum of
   age-specific estimates for simulation 1).
 - Geographic scope: state-level and national projections
-        - 12 states or a subset of 12 states, US overall recommended.
+  - 12 states or a subset of 12 states, US overall recommended.
 
 - Results: 
-        - Summary: Results must consist of a subset of weekly targets listed 
-        below; all are not required. 
-        - Weeks follow epi-weeks (Sun-Sat) dated by the last day of the week. 
-        - **Weekly Targets**: Weekly incident hospitalizations by location, 
-        all ages and age-specific
+  - Summary: Results must consist of a subset of weekly targets listed
+    below; all are not required. 
+  - Weeks follow epi-weeks (Sun-Sat) dated by the last day of the week. 
+  - **Weekly Targets**: Weekly incident hospitalizations by location, 
+    all ages and age-specific
 
 - Metadata: We will require a brief meta-data form, from all teams.
 
 - Uncertainty: 
-        - For trajectories (required submission): we require 100 trajectories.
-        - For quantiles (optional submission) We ask for 0.01, 0.025, 0.05,
-        every 5% to 0.95, 0.975, and 0.99. Teams are also encouraged to submit 
-        0 (min value) and 1 (max) quantiles if possible. 
+  - For trajectories (required submission): we require 100 trajectories.
+  - For quantiles (optional submission) We ask for 0.01, 0.025, 0.05,
+    every 5% to 0.95, 0.975, and 0.99. Teams are also encouraged to submit 
+    0 (min value) and 1 (max) quantiles if possible. 
 
 ## Target data
 
