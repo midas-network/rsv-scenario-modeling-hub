@@ -14,7 +14,7 @@ consider status quo RSV mitigation. Projections will be generated for a
 29-week period, running Sun Nov 12, 2023 to Sat June 1, 2024. The scenario
 structure is as follows:
 
-<img src= "https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/blob/main/rounds/round1_viz/rsv_round1.png">
+<img src= "https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/main/rounds/round1_viz/rsv_round1.png">
 
 ### Assumptions regarding RSV interventions
 
@@ -159,12 +159,12 @@ will keep receiving palivizumab this season.
 
 Fig 1: RSV  vaccination coverage ramp up in seniors 60+ yrs
 
-<img src= "https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/blob/main/rounds/round1_viz/SeniorRSV_Coverage_2023_2024.png">
+<img src= "https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/main/rounds/round1_viz/SeniorRSV_Coverage_2023_2024.png">
 
 Fig 2: RSV monoclonals usage ramp up in infants <6 mo throughout the RSV
 season Oct-Mar
 
-<img src= "https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/blob/main/rounds/round1_viz/InfantsRSV_Coverage_2023_2024.png">
+<img src= "https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/main/rounds/round1_viz/InfantsRSV_Coverage_2023_2024.png">
 
 ### RSV Model Calibration
 
