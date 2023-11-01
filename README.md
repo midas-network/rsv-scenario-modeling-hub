@@ -495,4 +495,5 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
  - Sung-mok Jung, University of North Carolina
  - Jessi Espino, University of Pittsburgh
  - John Levander, University of Pittsburgh
+ - Samantha Bents, NIH Fogarty
  - Katie Yan, Penn State University
