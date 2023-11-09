@@ -19,7 +19,7 @@ structure is as follows:
 ### Assumptions regarding RSV interventions
 
 Weekly cumulative age-specific coverage for vaccines and monoclonals are
-[provided](./auxiliary-data//vaccine_coverage/RSV_round1_Coverage_2023_2024.csv).
+[provided](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/main/auxiliary-data/vaccine_coverage/RSV_round1_Coverage_2023_2024.csv).
 
 We describe important details of the planned implementation of RSV
 interventions below as well as our rationale for vaccine coverage and
@@ -94,7 +94,8 @@ coverage assumptions, while we have chosen optimistic levels of coverage that
 would reflect potential benefits in a future season with no shortage and more
 awareness of these interventions.
 **Senior and infant vaccination coverage curves are provided for all projection weeks and target locations**,
-in the [Github auxiliary data folder](./auxiliary-data/vaccine_coverage/)
+in the 
+[Github auxiliary data folder](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/main/auxiliary-data/)
 
 ##### VE Assumptions
 
@@ -179,7 +180,8 @@ acute care hospitals in a subset of states (12 states as of August 2023).
 Age-specific weekly rates per 100,000 population are reported in this system.
 
 The data has been standardized and posted on the
-[SMH RSV github target-data/ folder](./target-data/) and is updated weekly.
+[SMH RSV github target-data/ folder](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/main/target-data/) 
+and is updated weekly.
 **The target in this data is the weekly number of hospitalizations in each given state (inc_hosp variable), for all ages and by age group**.
 To obtain counts, we have converted RSV-NET weekly rates based on state
 population sizes. This method assumes that RSV-NET hospitals are representative
@@ -198,7 +200,8 @@ the projections.
 #### Other RSV datasets available for calibration
 
 A few auxiliary datasets have been posted in the GitHub repositority
-[auxiliary-data/ folder](./auxiliary-data/) including:
+[auxiliary-data/ folder](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/main/auxiliary-data/) 
+including:
 
 - state-specific CDC surveillance from NVERSS (only last year of data available)
 - state-specific ED data (only last year of data available)
@@ -223,7 +226,8 @@ counts, as well as for hospital admission peak size and peak timing.
   admissions, based on RSV-NET. This dataset is updated daily and covers
   2017-2023. There should be no adjustment for reporting (=raw data from
   RSV-NET dataset to be projected). A current and standardized version of
-  the weekly data has been posted [here](./target-data/)
+  the weekly data has been posted
+  [here](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/main/target-data/)
 - No infection target
 - No case target
 - No death target
@@ -327,7 +331,7 @@ low level masking is allowed at groups’ discretion.
 We leave seeding intensity, timing and geographic distribution at the
 discretion of the teams. In addition to the RSV-NET hospital admission
 dataset, CDC’s NVERSS
-[viral surveillance dataset](https://github.com/midas-network/rsv-scenario-modeling-hub)
+[viral surveillance dataset](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data)
 is a good resource for state-specific information on epidemic intensity
 (e.g., weekly % positive, or weekly ILI*%positive), and can be used to adjust
 seeding.
