@@ -24,6 +24,7 @@
 #'  facet_wrap theme ggtitle
 #'
 #' @examples
+#' library(ggplot2)
 #' # Load and filter target data
 #' hosp <- read.csv("./target-data/rsvnet_hospitalization.csv")
 #' inc_hosp_data <- dplyr::filter(hosp, target == "inc hosp")
@@ -35,6 +36,7 @@ weekly_hosp_state <- function(
     y_title = "Weekly Hospitalizations", title = "RSV-NET") {
   # Prerequisite
   colors <- setNames(color, legend)
+  require(ggplot2)
   # Plot
   plot <- ggplot2::ggplot(subset(df, age_group == agegroup)) +
     geom_line(aes(as.Date(.data[[x_col]]), .data[[y_col]], color = legend),
