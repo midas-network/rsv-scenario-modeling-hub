@@ -16,11 +16,20 @@ state-specific cumulative coverage for specific rounds.
 For round 1, the file 
 [vaccine_coverage/RSV_round1_Coverage_2023_2024.csv](./vaccine_coverage/RSV_round1_Coverage_2023_2024.csv) 
 provides vaccine coverage from summer 2023 to the end of the projection period 
-to apply to infants 0-5 months (`rsv_cov_infants_pes` and 
+to apply to infants 0-6 months (`rsv_cov_infants_pes` and 
 `resv_cov_infants_opt`) and seniors over 60 years (`rsv_cover_over_60_pes` and 
 `rsv_cov_over60_opt`). Values represent the optimistic and pessimistic 
 assumptions prescribed in 
 RSV round 1
+
+The `rsv_n_dose_infants_opt` is the cumulative weekly number of monoclonal 
+doses administered to infants 0-6 months during October through March in the 
+optimistic scenario. This includes birth doses and catch up doses. 
+`rsv_n_dose_infants_pes` is the same for the pessimistic scenario.
+
+The R code to generate the `rsv_n_dose_indants_` is also available in the 
+ [vaccine_coverage/](./vaccine_coverage/) folder in a 
+ [add_doses.R](./vaccine_coverage/add_doses.R) file.
   
 ## Location and Census Data
 
