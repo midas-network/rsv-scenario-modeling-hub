@@ -76,7 +76,12 @@ The RSV-NET source files is standardized following these steps:
         - `"rate hosp"`: number of hospitalization per 100 000 
      - `value`: associated value
      - `population`: associated population size
-6. Write the output in a CSV format
+6. Append previous season: 2014-2015 and 20215-2016 (removed on the new 
+   version of the data (2023-11-10)) by using historical 
+   [target_data/rsvnet_hospitalization.csv](./rsvnet_hospitalization.csv)
+   data containing the last version of the 2014-2015 and 2015-2016 seasons
+   (commit [#f183e8a](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/f183e8a1a8d2387f02c2e007527af48226370d03/target-data/rsvnet_hospitalization.csv))     
+7. Write the output in a CSV format
 
 ### Visualization
 

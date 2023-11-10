@@ -117,7 +117,14 @@ rsv_output <-
   dplyr::select(location = fips, date, age_group, target, value,
                 population = tot_pop)
 
+# Append previous season (removed on the new version of the data (2023-11-10))
+# Use last version of the file containing the 2014-2015 and 2015-2016 seasons
+# from the RSV SMH GitHub Repository (commit #f183e8a)
+rsv_past_season <- read.csv("https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/f183e8a1a8d2387f02c2e007527af48226370d03/target-data/rsvnet_hospitalization.csv")
+rsv_past_season <- dplyr::filter(rsv_past_season, date < min(rsv_output$date))
+
 # Write output
+rsv_output <- rbind(rsv_output, rsv_past_season)
 write.csv(rsv_output, "target-data/rsvnet_hospitalization.csv",
           row.names = FALSE)
 
