@@ -22,10 +22,11 @@ location2fips <- setNames(c(df_loc$location, "US"),
 cov_rsv <- read.csv(
   "auxiliary-data/vaccine_coverage/RSV_round1_Coverage_2023_2024.csv") %>%
   dplyr::mutate(fips = location2fips[Geography]) %>%
+  dplyr::select(-age, -pop_0_6m) %>%
   dplyr::left_join(census_pop, by = "fips") %>%
   dplyr::mutate(
-    rsv_n_dose_infants_pes = rsv_cov_infants_pes * pop_0_6m,
-    rsv_n_dose_infants_opt = rsv_cov_infants_opt * pop_0_6m
+    rsv_n_dose_infants_pes = round(rsv_cov_infants_pes * pop_0_6m, 0),
+    rsv_n_dose_infants_opt = round(rsv_cov_infants_opt * pop_0_6m, 0)
   )
 
 # Write output file
