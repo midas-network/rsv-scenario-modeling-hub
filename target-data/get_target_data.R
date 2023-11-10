@@ -18,10 +18,12 @@ location2fips <- setNames(df_loc$location, df_loc$location_name)
 age2st_age <- setNames(
   c("0-130", "18-49", "50-64", "65-130", "0-0.49",
     "1-1.99", "2-4", "0.5-0.99", "0-4",
-    "5-17", "18-130"),
+    "5-17", "18-130", "0-130", "0-0.49", "0.5-0.99",
+    "1-1.99", "2-4", "18-130"),
   c("Overall", "18-49 years", "50-64 years", "65+ years", "----0-<6 months",
     "----1-<2 years", "----2-4 years", "----6-<12 months", "0-4 years",
-    "5-17 years", "18+ (Adults)")
+    "5-17 years", "18+ (Adults)", "All", "0-<6 months",  "6mo-<12 months",
+    "1-<2 years" ,   "2-4 years", "18+ years (Adults)")
 )
 
 # Census - From US Census Bureau
@@ -72,17 +74,13 @@ df <- arrow::read_parquet(
 # - Standardize column names (lower case, without space, dot)
 rsv <- df %>%
   dplyr::mutate(
-    date = as.Date(`Week ending date`, "%m/%d/%Y"),
-    `Age Category` = ifelse(Season %in%
-                              c("2014-2015", "2015-2016", "2016-2017",
-                                "2017-2018") & `Age Category` == "Overall",
-                            "adult", `Age Category`)) %>%
+    date = as.Date(`Week ending date`, "%m/%d/%Y")) %>%
   dplyr::filter(
-    Sex == "Overall" & Race == "Overall" &  `MMWR Week` != "Overall" &
+    Sex == "All" & Race == "All" &
       `Age Category` %in% c(
         "0-4 years","5-17 years", "18-49 years", "50-64 years","65+ years",
-        "Overall", "----0-<6 months",  "----6-<12 months",
-        "----1-<2 years" ,   "----2-4 years", "18+ (Adults)")
+        "All", "0-<6 months",  "6mo-<12 months",
+        "1-<2 years" ,   "2-4 years", "18+ years (Adults)")
   )
 full_ts <- seq(min(rsv$date),max(rsv$date), by = "week")
 full_df <- tidyr::expand(rsv, tidyr::nesting(State, `Age Category`),
@@ -94,7 +92,7 @@ rsv_standard <- dplyr::full_join(rsv, full_df,
   dplyr::mutate(
     week = lubridate::epiweek(date),
     year = lubridate::epiyear(date),
-    location = gsub("Entire Network \\(RSV-NET\\)", "US", State),
+    location = gsub("Entire Network \\(RSV-NET\\)|RSV-NET", "US", State),
     fips = location2fips[location],
     age_group = age2st_age[`Age Category`]) %>%
   dplyr::rename(value_rate = Rate, value_cumul_rate = `Cumulative Rate`,

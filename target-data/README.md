@@ -22,6 +22,14 @@ GitHub Action.
 
 ### Workflow
 
+As the source format of the data change on the 2023-11-09, the workflow and R
+script have been updated to adapt to the changes:
+- the overall age group has been removed from the selection for the seasons: 
+  2014-2015, 2015-2016, 2016-2017, 2017-2018
+- the two seasons 2014-2015 and 2015-2016 has been removed 
+- some value and variable have been renamed, for example "All" instead of 
+  "Overall"
+
 The RSV-NET source files is standardized following these steps:
 
 1. Load the RSV-NET file from the [auxiliary-data/](./../auxiliary-data/) folder
@@ -34,10 +42,12 @@ The RSV-NET source files is standardized following these steps:
        6-<12 months (`"0.5-0.99"`), 1-<2 years (`"1-1.99"`),  2-4 years (`"2-4"`),
        18+ (Adults) (`"18-130"`) and overall (`"0-130"`)
      
-     - As the data before the 2018-2019 season does not include children
-       data, the overall age group has been removed from the selection for the
-       seasons: 2014-2015, 2015-2016, 2016-2017, 2017-2018. For more information,
-       please consult the
+     - *Deprecated step as the overall value for these seasons is not included 
+       in the data anymore* 
+       As the data before the 2018-2019 season does not 
+       include children data, the overall age group has been removed from the 
+       selection for the seasons: 2014-2015, 2015-2016, 2016-2017, 2017-2018. 
+       For more information, please consult the
        [RSV-NET Overview and Methods](https://www.cdc.gov/rsv/research/rsv-net/overview-methods.html)
        webpage.
        
