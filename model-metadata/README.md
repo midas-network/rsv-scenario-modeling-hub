@@ -40,13 +40,22 @@ Will be displayed online.
 The name of your model that is less than 50 characters, no spaces.
 Will be displayed online.
 
-### `model_abbr`
+### Abbreviation
+
+#### `model_abbr`
 
 An abbreviated name for your model that is less than 30 alphanumeric characters. 
-The model abbreviation must be in the format of `[team_abbr]-[model_abbr]`,
-where each of the `[team_abbr]` and `[model_abbr]` are text strings that are 
-each less than 15 alphanumeric characters that do not include a hyphen or 
-whitespace.
+
+#### `team_abbr`
+
+An abbreviated name for your team that is less than 30 alphanumeric characters. 
+
+#### Team-model name and filename
+
+The team-model abbreviation used in all the file names must be in the 
+format of `[team_abbr]-[model_abbr]`, where each of the `[team_abbr]` and 
+`[model_abbr]` are text strings that are each less than 15 alphanumeric
+characters that do not include a hyphen or whitespace.
 
 Note that this is a uniquely identifying field in our system, so please choose 
 this name carefully, as it may not be changed once defined. The model 
@@ -111,6 +120,10 @@ and grant number.
 A brief description of the data sources used to inform the model, using as much 
 as possible standard terminology that includes a source name and the type of 
 data, such as `CDC RSV-NET`, etc.
+
+### `methods_long`
+
+A long description of your methodology.
 
 ### `citation`
 
