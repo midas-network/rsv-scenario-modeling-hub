@@ -118,6 +118,8 @@ The output file should contains eight columns:
 - `output_type` 
 - `output_type_id` 
 - `value`
+- `run_grouping`
+- `stochastic_run`
 
 No additional columns are allowed.
 
@@ -275,6 +277,10 @@ well as "US" for national scenarios.
 Please note that when writing FIPS codes, they should be written in as a 
 character string to preserve any leading zeroes.
 
+For the round 1, only the location included in RSV-NET target data are 
+expected:
+`"US","06","08","09","13","24","26","27","35","36","41","47","49"`
+
 
 ### `output_type`
 
@@ -295,25 +301,40 @@ quantile scenario, etc.
 
 #### `sample`
 
-For the optional simulation samples format only. Values in the `output_type_id` 
-column are numeric between `1` and `100` indicating an id sample number. 
-Each ID number represents one in 100 representative trajectories from the 
-simulations. 
+For the simulation samples format only. Value in the `output_type_id` 
+column is `NA`
 
-**All scenario-location-target-horizon-age_group group should have a unique 
-associated sample.**
+The id sample number is inputted via two columns:
+
+- `run_grouping`: an unique id representing a set of parameter shared
+   across runs
+- `stochastic_run` : a unique id to differentiate multiple stochastic runs. If 
+   no stochasticity: the column will contain an unique value
+
+Both columns should only contain integer number. 
+
+The submission file is expected to have 100 simulation samples 
+(or trajectories) for each "group". 
+For round 1, it is required to have the trajectories grouped at least by 
+`"age_group"` and `"horizon"`, so it is required that the combination of 
+the `run_grouping` and `stochastic_run` columns contains at least an unique
+identifier for each group containing all the possible value for `"age_group"` 
+and `"horizon"`.
+
+Fore more information and examples, please consult the 
+[Sample Format Wiki page]().
 
 For example:
 
-|origin_date|scenario_id|location|target|horizon|age_group|output_type|output_type_id|value|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|2023-11-12|A-2023-10-27|US|inc hosp|1|0-0.99|sample|1||
-|2023-11-12|A-2023-10-27|US|inc hosp|2|0-0.99|sample|1||
-|2023-11-12|A-2023-10-27|US|inc hosp|3|0-0.99|sample|1||
-||||||||||
-|2023-11-12|A-2023-10-27|US|inc hosp|1|0-0.99|sample|2||
-|2023-11-12|A-2023-10-27|US|inc hosp|2|0-0.99|sample|2||
-||||||||||
+|origin_date|scenario_id|location|target|horizon|age_group|output_type|output_type_id|run_grouping|stochastic_run|value|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|2023-11-12|A-2023-10-27|US|inc hosp|1|0-0.99|sample|NA|1|1||
+|2023-11-12|A-2023-10-27|US|inc hosp|2|0-0.99|sample|NA|1|1||
+|2023-11-12|A-2023-10-27|US|inc hosp|3|0-0.99|sample|NA|1|1||
+||||||||||||
+|2023-11-12|A-2023-10-27|US|inc hosp|1|0-0.99|sample|NA|2|1||
+|2023-11-12|A-2023-10-27|US|inc hosp|2|0-0.99|sample|NA|2|1||
+||||||||||||
 
 
 #### `quantile` 
@@ -321,6 +342,8 @@ For example:
 Values in the `output_type_id` column are quantiles in the format
 
     0.###
+
+and `NA` in the `run_grouping` and `stochastic_run` columns.
     
 For quantile scenarios, this value indicates the quantile for the `value` in
 this row. 
@@ -336,11 +359,11 @@ An optional `0`  and `1` value can also be provided.
 
 For example:
 
-|origin_date|scenario_id|location|target|horizon|age_group|output_type|output_type_id|value|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|2023-11-12|A-2023-10-27|US|inc hosp|1|0-0.99|quantile|0.010||
-|2023-11-12|A-2023-10-27|US|inc hosp|1|0-0.99|quantile|0.025||
-||||||||||
+|origin_date|scenario_id|location|target|horizon|age_group|output_type|output_type_id|run_grouping|stochastic_run|value|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|2023-11-12|A-2023-10-27|US|inc hosp|1|0-0.99|quantile|0.010|NA|NA||
+|2023-11-12|A-2023-10-27|US|inc hosp|1|0-0.99|quantile|0.025|NA|NA||
+||||||||||||
 
 
 #### `cdf`
@@ -352,6 +375,8 @@ week that is N weeks after `origin_date` in the format:
     EWYYYYWW
     
 
+and `NA` in the `run_grouping` and `stochastic_run` columns.
+    
 For instance `"EW202348"`` is the probability that hospitalizations peak within 
 the epiweek 2023-48 or before.
 
@@ -378,12 +403,13 @@ epiweek1
 
 ```
 
-The output file with the cdf should follow this example (following round 1 2023-2024):
-|origin_date|scenario_id|location|target|horizon|age_group|output_type|output_type_id|value|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|2023-11-12|A-2023-10-27|US|inc hosp|NA|0-0.99|cdf|EW202346||
-|2023-11-12|A-2023-10-27|US|inc hosp|NA|0-0.99|cdf|EW202347||
-||||||||||
+For example:
+
+|origin_date|scenario_id|location|target|horizon|age_group|output_type|output_type_id|run_grouping|stochastic_run|value|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|2023-11-12|A-2023-10-27|US|inc hosp|NA|0-0.99|cdf|EW202346|NA|NA||
+|2023-11-12|A-2023-10-27|US|inc hosp|NA|0-0.99|cdf|EW202347|NA|NA||
+||||||||||||
 
 
 ### `value`
@@ -409,12 +435,12 @@ Accepted values in the  `age_group` column are:
 - "5-64" (required)
 - "0-130" (required)
 
-Any aggregation of the previous list, for example: "0-17" is also accepted. 
-
-If the submissions files contain projections for the overall population, 
-please use `0-130` as age-group. 
+Aggregation of the previous list, for example: "0-17" is NOT accepted. 
 
 Some of the `age_group` are optionals, however, the submission should contain 
 at least the age group marked as required:`"0-0.99"`, `"1-4"`, `"5-64"`, 
 `"65-130"`, and `"0-130"`.
+
+**For the peak targets, only the age-group 0-130 is required.**
+
 
