@@ -11,6 +11,24 @@ Due to file size limitation, the file can be submitted in a in a
 `.parquet` or `.gz.parquet`.
 
 ----
+## Example
+
+The GitHub Repository contains multiple example files reproducing the 
+required and optional targets for RSV round 1 and different sample format: 
+
+- Team 2 - Model B: 
+  - Example file: [2023-11-12-team2-modelb.parquet](./team2-modelb)
+- Team 3 - Model C
+  - Example file: [2023-11-12-team3-modelc.parquet](./team3-modelc)
+- Team 4 - Model D:
+  - Example file: [2023-11-12-team4-modeld.parquet](./team4-modeld)
+- Team 5 - Model E:
+  - Example file: [2023-11-12-team5-modele.parquet](./team5-modele)
+
+For more information on the different sample format, please consult the 
+[Sample Format Wiki page](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki/Sample-File-Format).
+
+----
 
 ## Subdirectory
 
@@ -332,7 +350,7 @@ identifier for each group containing all the possible value for `"age_group"`
 and `"horizon"`.
 
 Fore more information and examples, please consult the 
-[Sample Format Wiki page]().
+[Sample Format Wiki page](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki/Sample-File-Format).
 
 For example:
 
