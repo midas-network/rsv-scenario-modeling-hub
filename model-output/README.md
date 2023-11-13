@@ -21,8 +21,8 @@ format:
     
 where 
 
-- `team` is the teamname and 
-- `model` is the name of your model. 
+- `team` is the abbreviated team name and 
+- `model` is the  abbreviated name of your model. 
 
 Both team and model should be less than 15 characters, and not include
 hyphens nor spaces.
@@ -31,9 +31,10 @@ hyphens nor spaces.
 
 ## Metadadata
 
-Each team-model team should have an associated metadata file. The file should
+Each submission team should have an associated metadata file. The file should
 be submitted with the first projection in the 
-[model-metadata/](../model-metadata/) folder, in a `team-model` sub-directory.
+[model-metadata/](../model-metadata/) folder, in a file named: 
+`team-model.yaml`.
 
 For more information on the metadata file format, please consult the associated
 [README](../model-metadata/README.md)
@@ -106,9 +107,8 @@ If the size of the file is larger than 100MB, it should be submitted in a
 
 ## Model results file format
 
-The file must have the following columns (in any order):
+The output file must contain eleven columns (in any order):
 
-The output file should contains eight columns:
 - `origin_date`
 - `scenario_id`
 - `target`
@@ -149,6 +149,7 @@ Scenario id's include a capitalized letter and date as YYYY-MM-DD, e.g.,
 ### `target`
 
 The submission can contain multiple output type information: 
+
 - 100 representative trajectories from the model simulations. We will 
   call this format "sample" output type. For more information, please
   consult the [sample](./data-processed#sample) 
@@ -163,9 +164,11 @@ The submission can contain multiple output type information:
   section. 
 
 The requested targets are (for "sample" type output):
+
 - weekly incident hospitalizations
 
 Optional target (for "quantile" or "cdf" type output):
+
 - quantile:
     - weekly cumulative hospitalizations
     - weekly incident hospitalizations
@@ -178,6 +181,7 @@ required, all the incident and cumulative targets can also include other age
 group information (optional).
 
 Values in the `target` column must be one of the following character strings:
+
 - `"inc hosp"`
 - `"cum hosp"`
 - `"peak size hosp"`
@@ -304,10 +308,15 @@ quantile scenario, etc.
 For the simulation samples format only. Value in the `output_type_id` 
 column is `NA`
 
-The id sample number is inputted via two columns:
+The id sample number is input via two columns:
 
-- `run_grouping`: an unique id representing a set of parameter shared
-   across runs
+- `run_grouping`: This column specifies any additional grouping if it controls 
+   for some factor driving the variance between trajectories (e.g., underlying 
+   parameters, baseline fit) that is shared across trajectories in different 
+   scenarios. I.e., if using this grouping will reduce overall variance 
+   compared to analyzing all trajectories as independent, this grouping should 
+   be recorded by giving all relevant rows the same number. If no such 
+   grouping exists, number each model run independently. 
 - `stochastic_run` : a unique id to differentiate multiple stochastic runs. If 
    no stochasticity: the column will contain an unique value
 
@@ -315,6 +324,7 @@ Both columns should only contain integer number.
 
 The submission file is expected to have 100 simulation samples 
 (or trajectories) for each "group". 
+
 For round 1, it is required to have the trajectories grouped at least by 
 `"age_group"` and `"horizon"`, so it is required that the combination of 
 the `run_grouping` and `stochastic_run` columns contains at least an unique
