@@ -471,4 +471,54 @@ at least the age group marked as required:`"0-0.99"`, `"1-4"`, `"5-64"`,
 
 **For the peak targets, only the age-group 0-130 is required.**
 
+----
+
+## Scenario validation
+
+To ensure proper data formatting, pull requests for new data or updates in
+model-output/ will be automatically validated
+
+When a pull request is submitted, the data are validated by running the
+scripts in [validation.R](../code/validation/validation.R). The intent for
+these tests are to validate the requirements above and all checks are 
+specifically enumerated 
+[on the Validation wiki page]([https://github.com/midas-network/flu-scenario-modeling-hub/wiki/Scenario-File-Checks](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki/Validation)).
+
+Please [let us know](https://github.com/midas-network/rsv-scenario-modeling-hub/issues) if
+the wiki is inaccurate or if any questions.
+
+#### Workflow
+
+When a pull request is submitted, the validation will be 
+automatically triggered.
+
+- If the pull request (PR) contains update on metadata 
+and/or abstract file(s):
+    - These files are manually validated, the automatic validation
+    will only returns a message indicating it did not run any
+    validation. 
+
+- If the PR contains model output submission file(s). The validation 
+automatically runs and output a message and a PDF file containing the 
+quantiles projections of the requested targets at national and State
+level (only if available in the submission file).
+
+    - The validation has 3 possible output:
+        - "Error": the validation has failled and returned a message 
+        indicating the error(s). The error(s) should be fixed to have the PR 
+        accepted
+        - "Warning": the PR can be accepted. However, it might be necessary 
+        for the submitting team to validate if the warning(s) is expected or 
+        not before merging the PR.
+        - "Success": the validation did not found any issue and returns a message 
+        indicating that the validation is a success and the PR can be merged.
+
+
+#### Run checks locally
+
+To run these checks locally rather than waiting for the results from a pull
+request, follow [these instructions](https://github.com/midas-network/flu-scenario-modeling-hub/wiki/Scenario-File-Checks#file-checks-running-locally)
+(section File Checks Running Locally).
+
+
 
