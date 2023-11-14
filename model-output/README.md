@@ -482,7 +482,7 @@ When a pull request is submitted, the data are validated by running the
 scripts in [validation.R](../code/validation/validation.R). The intent for
 these tests are to validate the requirements above and all checks are 
 specifically enumerated 
-[on the Validation wiki page]([https://github.com/midas-network/flu-scenario-modeling-hub/wiki/Scenario-File-Checks](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki/Validation)).
+[on the Validation wiki page]([https://github.com/midas-network/frsv-scenario-modeling-hub/wiki/Validation](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki/Validation)).
 
 Please [let us know](https://github.com/midas-network/rsv-scenario-modeling-hub/issues) if
 the wiki is inaccurate or if any questions.
@@ -517,7 +517,7 @@ level (only if available in the submission file).
 #### Run checks locally
 
 To run these checks locally rather than waiting for the results from a pull
-request, follow [these instructions](https://github.com/midas-network/flu-scenario-modeling-hub/wiki/Scenario-File-Checks#file-checks-running-locally)
+request, follow [these instructions](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki/Validation#file-checks-running-locally)
 (section File Checks Running Locally).
 
 
