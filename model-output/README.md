@@ -194,9 +194,12 @@ Optional target (for "quantile" or "cdf" type output):
 - cdf:
     - weekly peak timing hospitalizations
 
-For all the targets, the age groups `"0-0.99"`, `"1-64"` and `"65-130"` are 
+For the incident and cumulative targets, the age groups:
+`"0-0.99"`, `"1-4"`, `"5-64"`, `"65-130"`, and `"0-130"` are 
 required, all the incident and cumulative targets can also include other age 
 group information (optional).
+
+For the peak targets, only the age groups `"0-130"` is accepted.
 
 Values in the `target` column must be one of the following character strings:
 
