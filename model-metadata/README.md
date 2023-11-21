@@ -17,8 +17,8 @@ format:
     
 where 
 
-- `team` is the teamname and 
-- `model` is the name of your model. 
+- `team` is the abbraviated teamname (`team_abbr`) and 
+- `model` is the abbreviated name of your model (`model_abbr`). 
 
 Both team and model should be less than 15 characters, and not include
 hyphens nor spaces.
