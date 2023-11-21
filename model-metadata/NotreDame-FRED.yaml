@@ -1,0 +1,29 @@
+team_name: "NotreDame"
+team_abbr: "UND"
+model_name: "FRED"
+model_abbr: "fred"
+model_contributors: [
+  {
+    "name": "Moore S",
+    "affiliation": "University of Notre Dame",
+    "email": "smoore15@nd.edu"
+  },
+  {
+   "name": "Perkins TA",
+    "affiliation": "University of Notre Dame",
+    "email": "taperkins@nd.edu"
+  },
+  {
+    "name": "Espana G",
+    "affiliation": "CDC Center for Forecasting and Analysis",
+    "email": ""
+  }
+]
+license: "BSD Simplified"
+methods: "FRED is an agent-based model originally developed for influenza and adapted for RSV. We have calibrated the model parameters to reproduce previous RSV seasons, using targets for age-specific hospitalizations."
+methods_long: "RSV specific model parameters were obtained from the literature or calibrated using state-level RSV-net hospitalization data. Initial age-specific hospitalization probabilities were obtained from Van Effelterre et al. (2020) and estimated on a state-specific basis from RSVNet data for 2021-2023. The period of immune waning and the age-specific fraction of the population with residual immunity following the previous RSV season were also estimated from RSVnet data from 2021-2023. The model also incorporates partial immunity after first infection and age-specific parameters for susceptibility to infection and probability of symptomatic infection. Limitations: Partial immunity and susceptibility only distinguish between first and subsequent infections, therefore we cannot currently represent increasing immunity via additional infections beyond the first infection. The current version of the model is limited to targeting interventions by age as an integer, so interventions targeting infants cannot be limited to 0-5 months, 0-9 months, etc."
+model_version: "1.0"
+website_url: "https://github.com/confunguido/FRED"
+team_funding: "Funding provided by Scenario Modeling Hub fellowship to G Espana and S Moore."
+data_inputs: "State-level RSVNet hospitalizations through 10/14/23 were used to seed the model prior to the projection period with infections calculated using the age-specific hospitalization rates. Vaccination data provided by SMH. Model initially calibrated for each state against the 2022-2023 RSV season."
+citation: ""
