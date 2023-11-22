@@ -1,0 +1,12 @@
+team_name: UT
+model_name: ImmunoSEIRS
+model_abbr: UT-ImmunoSEIRS
+model_contributors: Kaiming Bi (The University of Texas at Austin) <kaiming.bi@austin.utexas.edu>, 
+Shraddha R Bandekar (University of Texas at Austin)<shraddha.bandekar@austin.utexas.edu>, Anass Bouchnita (The University of Texas at El Paso) <abouchnita@utep.edu>,  Spencer J. Fox (The University of Georgia) <sjfox@uga.edu>, Lauren Ancel Meyers (The University of Texas at Austin) <laurenmeyers@austin.utexas.edu>, UT COVID-19 Modeling Consortium.
+website_url: https://covid-19.tacc.utexas.edu/
+model_version: "1.0"
+methods: We develop a single viruses model that explicitly tracks the immunity caused by natural infections, vaccination and monoclonal antibodies and its impact on the average chances of infection, hospitalization and death.
+license: cc-by-4.0
+citation: NA
+
+
