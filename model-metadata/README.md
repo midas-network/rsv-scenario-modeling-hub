@@ -72,8 +72,25 @@ contributors.
 
 The syntax of this field should be
 
-    name1 (affiliation) <user@address>, name2 (affiliation) <user2@address>, name3 (affiliation) <user3@addreaa>
-
+```yaml
+[
+  {
+    "name": "Smith J",
+    "affiliation": "Affiliation",
+    "email": "user@address"
+  },
+  {
+   "name": "Smith S",
+    "affiliation": "Affiliation",
+    "email": "user2@address"
+  },
+  {
+    "name": "Smith C",
+    "affiliation": "Affiliation",
+    "email": "user3@address"
+  }
+]
+```
 ### `website_url`
 
 A url to a website that has additional data about your model.
