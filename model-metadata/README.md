@@ -81,8 +81,7 @@ The syntax of this field should be
   },
   {
    "name": "Smith S",
-    "affiliation": "Affiliation",
-    "email": "user2@address"
+    "affiliation": "Affiliation"
   },
   {
     "name": "Smith C",
