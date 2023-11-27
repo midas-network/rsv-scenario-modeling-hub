@@ -1,0 +1,36 @@
+team_name: "University of Texas at Austin"
+team_abbr: "UT"
+model_name: "UT-ImmunoSEIRS"
+model_abbr: "ImmunoSEIRS"
+model_contributors: [
+  {
+    "name": "Kaiming Bi",
+    "affiliation": "The University of Texas at Austin",
+    "email": "kaiming.bi@austin.utexas.edu"
+  },
+  {
+   "name": "Shraddha Ramdas Bandekar",
+    "affiliation": "The University of Texas at Austin",
+    "email": "shraddha.bandekar@austin.utexas.edu"
+  },
+  {
+    "name": "Anass Bouchnita",
+    "affiliation": "The University of Texas at El Paso",
+    "email": "abouchnita@utep.edu"
+  },
+  {
+    "name": "Spencer J. Fox",
+    "affiliation": "The University of Georgia",
+    "email": "sjfox@uga.edu"
+  },
+  {
+    "name": "Lauren Ancel Meyers",
+    "affiliation": "The University of Texas at Austin",
+    "email": "laurenmeyers@austin.utexas.edu"
+  }
+]
+license: "cc-by-4.0"
+methods: "We develop a single viruses model that explicitly tracks the immunity caused by natural infections, vaccination and monoclonal antibodies and its impact on the average chances of infection, hospitalization and death."
+model_version: "1.0"
+website_url: "https://covid-19.tacc.utexas.edu/"
+
