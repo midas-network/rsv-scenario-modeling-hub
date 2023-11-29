@@ -15,7 +15,7 @@ model_contributors: [
   }
 ]
 license: "MIT"
-methods: "Discrete heterogeneous rate model where rates are learned using regression weighing the recently seen data higher. Past seasons' rates are used as a proxy for seasonality."
+methods: "Discrete heterogeneous rate model where rates are learned using regression weighing the recently seen data higher. Underreporting rate is estimated from the previous season. Waning parameters are picked based on fitting the prior season."
 team funding:NSF Award # 2135784
 website_url: TBD
-model_version: 2022-08-14
+model_version: 2023-11-21
