@@ -1,7 +1,7 @@
 team_name: "University of Southern California"
 team_abbr: "USC"
 model_name: "SIkJalpha"
-model_abbr: "USC-SIkJalpha"
+model_abbr: "SIkJalpha"
 model_contributors: [
   {
     "name": "Ajitesh Srivastava",
@@ -16,6 +16,6 @@ model_contributors: [
 ]
 license: "MIT"
 methods: "Discrete heterogeneous rate model where rates are learned using regression weighing the recently seen data higher. Underreporting rate is estimated from the previous season. Waning parameters are picked based on fitting the prior season."
-team funding:NSF Award # 2135784
-website_url: TBD
-model_version: 2023-11-21
+team funding: "NSF Award # 2135784"
+website_url: "TBD"
+model_version: "2023-11-21"
