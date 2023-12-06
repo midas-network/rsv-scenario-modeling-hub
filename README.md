@@ -42,8 +42,9 @@ Model projections should be submitted via pull request to the
 submitted at the same time to the [model-metadata/](./model-metadata/) folder 
 of this GitHub repository. 
 Technical instructions for submission and required file formats can be found 
-[here](./model-output/README.md) and 
-[here, for the metadata file](./model_metadata/README.md)
+[here](./model-output/README.md), 
+[here, for the metadata file](./model_metadata/README.md) and in the 
+[Wiki](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki).
 
 ## Round 1: Impact of new interventions - Mid-season projections for the 2023-24 season
 

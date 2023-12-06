@@ -27,14 +27,19 @@ if (length(pr_sub_files) > 0) {
     url_link <- URLdecode(pr_sub_files_lst[[x]]$raw_url)
     # Run validation and visualization
     # validation and visualization for parquet file format
-    if (grepl(".zip$|.gz$|.parquet$|.pqt$", url_link)) {
+    if (grepl(".gz$|.parquet$|.pqt$", url_link)) {
       # download file
       download.file(url_link, basename(url_link))
+      df <- arrow::read_parquet(basename(url_link))
       # generate visualization pdf
-      test_viz <- try(generate_validation_plots(
-        path_proj = basename(url_link), lst_gs = NULL,
-        save_path = paste0(getwd(), "/proj_plot"), y_sqrt = FALSE,
-        plot_quantiles = c(0.025, 0.975)))
+      if (any("quantile" %in% df$output_type)) {
+        test_viz <- try(generate_validation_plots(
+          path_proj = basename(url_link), lst_gs = NULL,
+          save_path = paste0(getwd(), "/proj_plot"), y_sqrt = FALSE,
+          plot_quantiles = c(0.025, 0.975)))
+      } else {
+        test_viz <- NA
+      }
       # run validation
       test <- capture.output(try(validate_submission(
         basename(url_link), lst_gs = NULL, pop_path = pop_path,
@@ -86,10 +91,10 @@ if (any(!is.na(test_viz))) {
 
   if (any(unlist(purrr::map(test_viz, class)) == "try-error")) {
     message_plot <- capture.output(
-      cat(paste0(message_plot, "\n\n\U000274c Error: ",
+      paste0(message_plot, "\n\n\U000274c Error: ",
                  "The visualization encounters an issue and might not be available,",
                  " if the validation does not return any error, please feel free to ",
-                 "tag `@LucieContamin` for any question.")))
+                 "tag `@LucieContamin` for any question."))
   }
 
   gh::gh(paste0("POST /repos/", "midas-network/rsv-scenario-modeling-hub/",

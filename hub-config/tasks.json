@@ -47,7 +47,8 @@
 					"target_metadata":[
 						{
 							"target_id":"inc hosp",
-						 	"target_name":"Weekly incident RSV hospitalizations",
+							"target_name": "Incident hospitalization",
+						 	"description":"Weekly incident RSV hospitalizations",
 						 	"target_units":"count",
 						 	"target_keys":{
 						 		"target":["inc hosp"]
@@ -99,7 +100,8 @@
 					"target_metadata":[
 						{
 							"target_id": "inc hosp",
-							"target_name":"Weekly incident RSV hospitalizations",
+							"target_name": "Incident hospitalization",
+							"description":"Weekly incident RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{
 								"target":["inc hosp"]
@@ -110,7 +112,8 @@
 						},
 						{
 							"target_id": "cum hosp",
-							"target_name":"Weekly incident cumulative RSV hospitalizations",
+							"target_name": "Cumulative hospitalization",
+							"description":"Weekly incident cumulative RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{
 								"target":["cum hosp"]
@@ -162,7 +165,8 @@
 					"target_metadata":[
 						{
 							"target_id": "peak size hosp",
-							"target_name":"Magnitude of the peak of weekly incident hospitalizations ",
+							"target_name": "Peak size of hospitalization",
+							"description":"Magnitude of the peak of weekly incident hospitalizations ",
 							"target_units":"count",
 							"target_keys":{
 								"target":["peak size hosp"]
@@ -215,7 +219,8 @@
 					"target_metadata":[
 						{
 							"target_id": "peak time hosp",
-							"target_name":"Cumulative probability of the incident hospitalization peak",
+							"target_name": "Peak timing of hospitalization",
+							"description":"Cumulative probability of the incident hospitalization peak",
 							"target_units":"population",
 							"target_keys":{
 								"target":["peak time hosp"]
