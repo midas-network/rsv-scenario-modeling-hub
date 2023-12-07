@@ -1,24 +1,23 @@
-team_name: “Columbia University”
-team_abbr: “CU”
-model_name: “RSV SVIRS”
-model_abbr: “RSV_SVIRS"
+team_name: "Columbia University"
+team_abbr: "CU"
+model_name: "RSV_SVIRS"
+model_abbr: "RSV_SVIRS"
 model_contributors: [
   {
-    "name": “Pei S“,
-    "affiliation": “Columbia University”,
-    "email": “sp3449@cumc.columbia.edu”
-  },
-  {
-   "name": “Yamana T”,
-    "affiliation": “Columbia University”,
-    "email": “tky2104@cumc.columbia.edu”
+   "name": "Pei Sen",
+    "affiliation": "Columbia University",
+    "email": "sp3449@cumc.columbia.edu"
+  },  
+ {
+    "name": "Yamana Teresa",
+    "affiliation": "Columbia University",
+    "email": "tky2104@cumc.columbia.edu"
   }
 ]
-license: "cc-by-4.0, https://creativecommons.org/licenses/by/4.0/"
-methods: “SVIRS compartmental model with Ensemble Adjustment Kalman Filter”
-methods_long: “State-level SVIRS compartmental model, fit to observation using Ensemble Adjustment Kalman Filter (EAKF).  Each state’s population divided into age categories: <1, 1-4, 5-64, and 65+.  Contacts between age groups are based on estimates from the Polymod study.”
+license: "cc-by-4.0"
+methods: "Age-structured SVIRS model coupled with Ensemble Adjustment Kalman Filter. Inputs CDC RSV-NET, POLYMOD contact matrix, and seasonal absolute humidity"
+methods_long: "Age-structured state-level SVIRS model coupled with Ensemble Adjustment Kalman Filter. Model is fit to CDC RSV-NET data.  Model transmission rate is modified by seasonal absolute humidity.  Contacts between age groups are informed by the POLYMOD study. 300 ensemble members initialized once per location; the 5 scenarios being from these initializations.  However initial stochasticity is introduced if/when an ensemble member's parameter or state variable value goes out of bounds, in which case that value is reinitialized.  Vaccination and monocolonal antibody is applied as specified by the scenarios.  Additionally, we assume that each intervention provides a 20% protection against infection."
 model_version: "1.0"
-website_url: ""
-team_funding: "funding information"
-data_inputs: “RSV-Net hospitalization data. Population data from US Census. Polymod contact rates.”
-citation: ""
+team_funding: "CSTE NU38OT00297"
+data_inputs: "CDC RSV-NET, POLYMOD contact matrix, and seasonal absolute humidity"
+
