@@ -75,16 +75,16 @@ The syntax of this field should be
 ```yaml
 [
   {
-    "name": "Smith J",
+    "name": "LastName FirstName",
     "affiliation": "Affiliation",
     "email": "user@address"
   },
   {
-   "name": "Smith S",
+   "name": "LastName FirstName",
     "affiliation": "Affiliation"
   },
   {
-    "name": "Smith C",
+    "name": "LastName FirstName",
     "affiliation": "Affiliation",
     "email": "user3@address"
   }
