@@ -1,0 +1,24 @@
+team_name: “Columbia University”
+team_abbr: “CU”
+model_name: “RSV SVIRS”
+model_abbr: “RSV_SVIRS"
+model_contributors: [
+  {
+    "name": “Pei S“,
+    "affiliation": “Columbia University”,
+    "email": “sp3449@cumc.columbia.edu”
+  },
+  {
+   "name": “Yamana T”,
+    "affiliation": “Columbia University”,
+    "email": “tky2104@cumc.columbia.edu”
+  }
+]
+license: "cc-by-4.0, https://creativecommons.org/licenses/by/4.0/"
+methods: “SVIRS compartmental model with Ensemble Adjustment Kalman Filter”
+methods_long: “State-level SVIRS compartmental model, fit to observation using Ensemble Adjustment Kalman Filter (EAKF).  Each state’s population divided into age categories: <1, 1-4, 5-64, and 65+.  Contacts between age groups are based on estimates from the Polymod study.”
+model_version: "1.0"
+website_url: ""
+team_funding: "funding information"
+data_inputs: “RSV-Net hospitalization data. Population data from US Census. Polymod contact rates.”
+citation: ""
