@@ -27,7 +27,7 @@ optimistic scenario. This includes birth doses and catch up doses.
 `rsv_n_dose_infants_pes` is the same for the pessimistic scenario.
 
 The R code to generate the `rsv_n_dose_indants_` is also available in the 
- [vaccine_coverage/](./vaccine_coverage/) folder in a 
+ [vaccine_coverage/](./vaccine_coverage/) folder in an 
  [add_doses.R](./vaccine_coverage/add_doses.R) file.
   
 ## Location and Census Data
@@ -196,3 +196,22 @@ states by season, by week and by age category, sex, race.
 For more information about RSV-NET, please consult the 
 [CDC RSV-NET Overview and Methods](https://www.cdc.gov/rsv/research/rsv-net/overview-methods.html) 
 webpage. 
+
+### Weekly Respiratory Virus Vaccination Data, National Immunization Survey
+
+The [Weekly Respiratory Virus Vaccination Data, Children 6 Months-17 Years and Adults 18 Years and Older, National Immunization Survey](https://data.cdc.gov/Vaccinations/Weekly-Respiratory-Virus-Vaccination-Data-Children/5c6r-xi2t/about_data)
+is also downloaded weekly and output in a PARQUET file: 
+[rsv/rsv-vax/weekly_respiratory_virus_vaccination_data.parquet](./rsv/rsv-vax/weekly_respiratory_virus_vaccination_data.parquet).
+
+> The weekly respiratory virus vaccination data come from the National Immunization Survey-Adult COVID Module 
+> (NIS-ACM), National Immunization Survey-Child COVID Module (NIS-CCM), and the National Immunization Survey-Flu 
+> (NIS-Flu). The NIS-ACM provides data on Influenza (flu), COVID-19, and RSV vaccination for adults aged ≥18 years 
+> in the United States.
+
+The output file contains vaccination survey data on Influenza, COVID-19, and RSV vaccination for adults aged 
+≥18 years in the United States and Children 6 Months-17 Years for a specific subset.
+
+For more information, please consult the 
+[homepage](https://data.cdc.gov/Vaccinations/Weekly-Respiratory-Virus-Vaccination-Data-Children/5c6r-xi2t/about_data) 
+of the data and the [surveys method](https://www.cdc.gov/vaccines/imz-managers/nis/about.html#current-surveys) 
+webpage information

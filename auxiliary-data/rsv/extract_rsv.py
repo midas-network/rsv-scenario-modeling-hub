@@ -130,8 +130,13 @@ df_rsvnet = pd.read_csv(io.StringIO(res.text),
                                'Cumulative Rate': "float"})
 df_rsvnet.to_parquet("auxiliary-data/rsv/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet")
 
-# National Emergency Department Visits for COVID-19, Influenza, and Respiratory Syncytial Virus
+# Weekly Respiratory Virus Vaccination Data, Children 6 Months-17 Years and Adults 18 Years and 
+# Older, National Immunization Survey
+res = requests.get("https://data.cdc.gov/resource/5c6r-xi2t.csv")
+df_rsvvax = pd.read_csv(io.StringIO(res.text))
+df_rsvvax.to_parquet("auxiliary-data/rsv/rsv-vax/weekly_respiratory_virus_vaccination_data.parquet")
 
+# National Emergency Department Visits for COVID-19, Influenza, and Respiratory Syncytial Virus
 # Weekly Emergency Department Visits by Age Group
 res = requests.get("https://www.cdc.gov/wcms/vizdata/live/CSELS_DHIS_NSSP/Resp_ED_Count_Weekly_National.csv")
 get_nssp_data(res, "Resp_ED_Count_Weekly_National.csv".lower())
