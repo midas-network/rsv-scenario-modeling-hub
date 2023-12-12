@@ -45,13 +45,13 @@ Will be displayed online.
 #### `model_abbr`
 
 An abbreviated name for your model that is less than 30 alphanumeric characters 
-(`_` also accepted, please avoid using other punctuation characted including `-`, 
+(`_` also accepted, please avoid using other punctuation characters including `-`, 
 `/`, etc.). 
 
 #### `team_abbr`
 
 An abbreviated name for your team that is less than 30 alphanumeric characters. 
-(`_` also accepted, please avoid using other punctuation characted including `-`, 
+(`_` also accepted, please avoid using other punctuation characters including `-`, 
 `/`, etc.). 
 
 #### Team-model name and filename
