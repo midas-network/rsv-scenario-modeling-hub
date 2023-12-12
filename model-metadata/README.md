@@ -44,11 +44,15 @@ Will be displayed online.
 
 #### `model_abbr`
 
-An abbreviated name for your model that is less than 30 alphanumeric characters. 
+An abbreviated name for your model that is less than 30 alphanumeric characters 
+(`_` also accepted, please avoid using other punctuation characters including `-`, 
+`/`, etc.). 
 
 #### `team_abbr`
 
 An abbreviated name for your team that is less than 30 alphanumeric characters. 
+(`_` also accepted, please avoid using other punctuation characters including `-`, 
+`/`, etc.). 
 
 #### Team-model name and filename
 
@@ -75,16 +79,16 @@ The syntax of this field should be
 ```yaml
 [
   {
-    "name": "Smith J",
+    "name": "LastName FirstName",
     "affiliation": "Affiliation",
     "email": "user@address"
   },
   {
-   "name": "Smith S",
+   "name": "LastName FirstName",
     "affiliation": "Affiliation"
   },
   {
-    "name": "Smith C",
+    "name": "LastName FirstName",
     "affiliation": "Affiliation",
     "email": "user3@address"
   }
