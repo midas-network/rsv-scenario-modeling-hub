@@ -21,6 +21,6 @@ model_contributors: [
 ]
 license: "NA"
 methods: "Mechanistic age-structured susceptible-infected model with reduced susceptibility to non-primary infections adapted from Pitzer et al."
-team funding: "NA"
+team_funding: "NA"
 website_url: "NA"
 model_version: "2023-12-12"
