@@ -1,20 +1,20 @@
 team_name: "NotreDame"
-team_abbr: "UND"
+team_abbr: "NotreDame"
 model_name: "FRED"
-model_abbr: "fred"
+model_abbr: "FRED"
 model_contributors: [
   {
-    "name": "Moore S",
+    "name": "Moore Sean",
     "affiliation": "University of Notre Dame",
     "email": "smoore15@nd.edu"
   },
   {
-   "name": "Perkins TA",
+   "name": "Perkins Alex",
     "affiliation": "University of Notre Dame",
     "email": "taperkins@nd.edu"
   },
   {
-    "name": "Espana G",
+    "name": "Espana Guido",
     "affiliation": "CDC Center for Forecasting and Analysis",
     "email": ""
   }
@@ -26,4 +26,4 @@ model_version: "1.0"
 website_url: "https://github.com/confunguido/FRED"
 team_funding: "Funding provided by Scenario Modeling Hub fellowship to G Espana and S Moore."
 data_inputs: "State-level RSVNet hospitalizations through 10/14/23 were used to seed the model prior to the projection period with infections calculated using the age-specific hospitalization rates. Vaccination data provided by SMH. Model initially calibrated for each state against the 2022-2023 RSV season."
-citation: ""
+
