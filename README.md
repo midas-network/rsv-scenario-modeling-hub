@@ -480,6 +480,32 @@ data (available under specified licenses as described above) and auxiliary data.
 Those teams interested in accessing additional computational power should 
 contact Katriona Shea at k-shea@psu.edu. Additional resources might be available from the [MIDAS Coordination Center](https://midasnetwork.us) - please contact questions@midasnetwork.us for information. 
 
+## Teams and models
+
+- [Columbia University — RSV_SVIRS](./model-metadata/CU-RSV_SVIRS.yaml)
+    - Yamana Teresa (CU), Pei Sen (CU)
+
+- [National Institutes of Health - RSV_WIN](./model-metadata/NIH-RSV_WIN.yaml)
+    - Samantha Bents (Fogarty International Center, NIH), 
+    Cécile Viboud (Fogarty International Center, NIH),
+    Chelsea Hansen (Fogarty International Center, NIH)
+
+- [University of Southern California - SIkJalpha](./model-metadata/USC-SIkJalpha.yaml)
+    -  Ajitesh Srivastava (USC), Majd Al Aawar (USC)
+
+- [University of Texas at Austin - UT-ImmunoSEIRS](./model-metadata/UT-ImmunoSEIRS.yaml)
+    -  Kaiming Bi (UTA), Shraddha Ramdas Bandekar (UTA), 
+    Anass Bouchnita (The University of Texas at El Paso), 
+    Spencer J. Fox (The University of Georgia),
+    Lauren Ancel Meyers (UTA)
+
+- [University of Virginia - EpiHiper Scenario Modeling for RSV](./model-metadata/UVA-EpiHiperRSV.yaml)
+    - Jiangzhuo Chen (UVA), Stefan Hoops (UVA), Bryan Lewis (UVA),
+    Srini Venkatramanan (UVA), Lacey Critchley (UVA), 
+    Parantapa Bhattacharya (UVA), Dustin Machi (UVA), 
+    Madhav Marathe (UVA)
+
+
 ## The RSV Scenario Modeling Hub Coordination Team    
 
  - Shaun Truelove, Johns Hopkins University
@@ -498,3 +524,4 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
  - John Levander, University of Pittsburgh
  - Samantha Bents, NIH Fogarty
  - Katie Yan, Penn State University
+
