@@ -54,7 +54,7 @@ of modeling this pathogen at the scale of the US given limited availability of
 epidemiological data. A secondary goal is to use nascent RSV modeling 
 capabilities to generate ensemble projections for the impact of new 
 interventions that are coming online during the 2023-24 season. We will 
-consider 5 scenarios in total, following a 2*2 table describing the impact 
+consider 5 scenarios in total, following a 2\*2 table describing the impact 
 of long-acting monoclonals targeted at infants (first dimension, optimistic 
 and pessimistic protection) and senior vaccination (second dimension, 
 optimistic and pessimistic protection). A 5th counterfactual scenario will 
@@ -483,12 +483,15 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
 ## Teams and models
 
 - [Columbia University — RSV_SVIRS](./model-metadata/CU-RSV_SVIRS.yaml)
-    - Yamana Teresa (CU), Pei Sen (CU)
+    - Teresa Yamana (CU), Sen Pei (CU)
 
 - [National Institutes of Health - RSV_WIN](./model-metadata/NIH-RSV_WIN.yaml)
     - Samantha Bents (Fogarty International Center, NIH), 
     Cécile Viboud (Fogarty International Center, NIH),
     Chelsea Hansen (Fogarty International Center, NIH)
+
+- [University of Notre Dame - FRED](./model-metadata/NotreDame-FRED.yaml)
+    -  Sean Moore (UND), Alex Perkins (UND, Guido Espana (CDC Center for Forecasting and Analysis)
 
 - [University of Southern California - SIkJalpha](./model-metadata/USC-SIkJalpha.yaml)
     -  Ajitesh Srivastava (USC), Majd Al Aawar (USC)
