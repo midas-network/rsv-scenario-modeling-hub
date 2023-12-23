@@ -1,6 +1,6 @@
 # RSV Scenario Modeling Hub
 
-Last updated: 27-10-2023 for **Round 1 Scenarios**.
+Last updated: 23-12-2023 for **Round 1 Scenarios**.
 
 ## Rationale    
 
