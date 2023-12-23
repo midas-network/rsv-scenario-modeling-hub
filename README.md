@@ -205,6 +205,31 @@ risk premature infants <6mo who previously would have received palivizumab
 comparable effectiveness. Due to shortages in 2023-24, older high risk babies
 will keep receiving palivizumab this season.
 
+
+### Handling intrinsic transmissibility and severity in the 
+calibration process
+
+It is important that all scenario simulations share the same values (or ranges of 
+values) for intrinsic transmissibility and severity of RSV infection at the start of 
+projections (that is, severity and transmissibility in the absence of interventions, 
+where severity is risk of hospitalization given infection). To do so, teams should 
+ensure that the calibration step uses similar transmissibility and severity 
+parameters across scenarios. Only by using assumptions that lead to starting 
+conditions for transmissibility and severity that effectively come from a shared 
+distribution across scenarios, we can evaluate the impact of different interventions 
+in the projection period. 
+
+We suggest that teams use one of the 3 following options for calibration (i) choose 
+one of the 5 proposed scenarios for calibration (ideally, the scenario that seems the 
+most plausible given what is known about interventions until the cut-off date on 
+Nov-11), or (ii) use real-world coverage in infants and seniors that has been 
+reported until the cut-off date in the calibration step. Once transmissibility and 
+severity have been estimated, go back to the start of interventions prescribed in 
+scenarios A-E (ie, early Oct) and apply assumed level of interventions in each 
+scenario until Nov 11 and throughout the projection period. iii) use a shared 
+distribution of parameters that is consistent with all scenarios.
+
+
 Fig 1: RSV  vaccination coverage ramp up in seniors 60+ yrs 
 
 <img src= "./rounds/round1_viz/SeniorRSV_Coverage_2023_2024.png">
