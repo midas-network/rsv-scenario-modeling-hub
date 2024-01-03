@@ -1,6 +1,6 @@
 # RSV Scenario Modeling Hub
 
-Last updated: 27-10-2023 for **Round 1 Scenarios**.
+Last updated: 23-12-2023 for **Round 1 Scenarios**.
 
 ## Rationale    
 
@@ -54,7 +54,7 @@ of modeling this pathogen at the scale of the US given limited availability of
 epidemiological data. A secondary goal is to use nascent RSV modeling 
 capabilities to generate ensemble projections for the impact of new 
 interventions that are coming online during the 2023-24 season. We will 
-consider 5 scenarios in total, following a 2*2 table describing the impact 
+consider 5 scenarios in total, following a 2\*2 table describing the impact 
 of long-acting monoclonals targeted at infants (first dimension, optimistic 
 and pessimistic protection) and senior vaccination (second dimension, 
 optimistic and pessimistic protection). A 5th counterfactual scenario will 
@@ -204,6 +204,31 @@ risk premature infants <6mo who previously would have received palivizumab
 (the older treatment) will now receive the new monoclonal nirsevimab, with 
 comparable effectiveness. Due to shortages in 2023-24, older high risk babies
 will keep receiving palivizumab this season.
+
+
+### Handling intrinsic transmissibility and severity in the 
+calibration process
+
+It is important that all scenario simulations share the same values (or ranges of 
+values) for intrinsic transmissibility and severity of RSV infection at the start of 
+projections (that is, severity and transmissibility in the absence of interventions, 
+where severity is risk of hospitalization given infection). To do so, teams should 
+ensure that the calibration step uses similar transmissibility and severity 
+parameters across scenarios. Only by using assumptions that lead to starting 
+conditions for transmissibility and severity that effectively come from a shared 
+distribution across scenarios, we can evaluate the impact of different interventions 
+in the projection period. 
+
+We suggest that teams use one of the 3 following options for calibration (i) choose 
+one of the 5 proposed scenarios for calibration (ideally, the scenario that seems the 
+most plausible given what is known about interventions until the cut-off date on 
+Nov-11), or (ii) use real-world coverage in infants and seniors that has been 
+reported until the cut-off date in the calibration step. Once transmissibility and 
+severity have been estimated, go back to the start of interventions prescribed in 
+scenarios A-E (ie, early Oct) and apply assumed level of interventions in each 
+scenario until Nov 11 and throughout the projection period. iii) use a shared 
+distribution of parameters that is consistent with all scenarios.
+
 
 Fig 1: RSV  vaccination coverage ramp up in seniors 60+ yrs 
 
@@ -480,6 +505,38 @@ data (available under specified licenses as described above) and auxiliary data.
 Those teams interested in accessing additional computational power should 
 contact Katriona Shea at k-shea@psu.edu. Additional resources might be available from the [MIDAS Coordination Center](https://midasnetwork.us) - please contact questions@midasnetwork.us for information. 
 
+## Teams and models
+
+- [Columbia University — RSV_SVIRS](./model-metadata/CU-RSV_SVIRS.yaml)
+    - Teresa Yamana (CU), Sen Pei (CU)
+
+- [National Institutes of Health - RSV_WIN](./model-metadata/NIH-RSV_WIN.yaml)
+    - Samantha Bents (Fogarty International Center, NIH), 
+    Cécile Viboud (Fogarty International Center, NIH),
+    Chelsea Hansen (Fogarty International Center, NIH)
+
+- [University of Notre Dame - FRED](./model-metadata/NotreDame-FRED.yaml)
+    -  Sean Moore (UND), Alex Perkins (UND, Guido Espana (CDC Center for Forecasting and Analysis)
+
+- [University of Southern California - SIkJalpha](./model-metadata/USC-SIkJalpha.yaml)
+    -  Ajitesh Srivastava (USC), Majd Al Aawar (USC)
+
+- [University of Texas at Austin - UT-ImmunoSEIRS](./model-metadata/UT-ImmunoSEIRS.yaml)
+    -  Kaiming Bi (UTA), Shraddha Ramdas Bandekar (UTA), 
+    Anass Bouchnita (The University of Texas at El Paso), 
+    Spencer J. Fox (The University of Georgia),
+    Lauren Ancel Meyers (UTA)
+
+- [University of Virginia - EpiHiper Scenario Modeling for RSV](./model-metadata/UVA-EpiHiperRSV.yaml)
+    - Jiangzhuo Chen (UVA), Stefan Hoops (UVA), Bryan Lewis (UVA),
+    Srini Venkatramanan (UVA), Lacey Critchley (UVA), 
+    Parantapa Bhattacharya (UVA), Dustin Machi (UVA), 
+    Madhav Marathe (UVA)
+
+- [Predictive Sciences, Inc. - PROF[(./model-metadata/PSI-PROF.yaml)
+    - James Turtle, Michal Ben-Nun, Pete Riley
+
+
 ## The RSV Scenario Modeling Hub Coordination Team    
 
  - Shaun Truelove, Johns Hopkins University
@@ -498,3 +555,4 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
  - John Levander, University of Pittsburgh
  - Samantha Bents, NIH Fogarty
  - Katie Yan, Penn State University
+

@@ -1,5 +1,5 @@
-# Packages required for the validation (update cache on the 2023-11-14)
-SMHValidation #v0.0.21
+# Packages required for the validation (update cache on the 2023-12-13)
+SMHValidation #v0.0.22
 hubUtils
 arrow
 covidcast

@@ -1,0 +1,29 @@
+team_name: "Predictive Science"
+team_abbr: "PSI"
+model_name: "Package for Respiratory Disease Open-source Forecasting"
+model_abbr: "PROF"
+model_contributors: [
+  {
+    "name": "James Turtle",
+    "affiliation": "Predictive Science Inc",
+    "email": "jturtle@predsci.com"
+  },
+  {
+    "name": "Michal Ben-Nun",
+    "affiliation": "Predictive Science Inc",
+    "email": "mbennun@predsci.com"
+  },
+  {
+    "name": "Pete Riley",
+    "affiliation": "Predictive Science Inc",
+    "email": "pete@predsci.com"
+  }
+]
+license: "CC-BY-4.0"
+methods: "A deterministic SIS age-discretized model with multiple immunity compartments."
+methods_long: "The model includes terms for seasonal forcing, up to 3 prior exposures to RSV, infant and/or elder vaccination, birth rate, death rate, and ageing.  Parameters describing pathogen characteristics were primarily fit using pre-pandemic data.  Initial susceptible states are estimated by filtering candidate reduced-beta trajectories for the pandemic seasons (2020-21 and 2021-20), followed by normal-beta trajectories for 2022-23.  We also make an adjustment to the ascertainment rate based on the 2022-23 season.  The filtered candidate trajectories then use current season data to adjust timing, and are again filtered to the final posterior set.  Current season calibrations are made using Scenario C assumptions."
+model_version: "2023-12-20"
+website_url: "TBD"
+team_funding: "CSTE/CDC – Cooperative Agreement 1 NU38OT000297, Subaward PO8169"
+data_inputs: "RSV-NET historic incidence rates, population distributions and birth rates from U.S. Census"
+
