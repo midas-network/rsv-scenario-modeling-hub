@@ -533,7 +533,7 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
     Parantapa Bhattacharya (UVA), Dustin Machi (UVA), 
     Madhav Marathe (UVA)
 
-- [Predictive Sciences, Inc. - PROF[(./model-metadata/PSI-PROF.yaml)
+- [Predictive Sciences - PROF](./model-metadata/PSI-PROF.yaml)
     - James Turtle, Michal Ben-Nun, Pete Riley
 
 
