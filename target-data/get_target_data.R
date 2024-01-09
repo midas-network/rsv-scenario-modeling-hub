@@ -123,8 +123,12 @@ rsv_output <-
 rsv_past_season <- read.csv("https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/f183e8a1a8d2387f02c2e007527af48226370d03/target-data/rsvnet_hospitalization.csv")
 rsv_past_season <- dplyr::filter(rsv_past_season, date < min(rsv_output$date))
 
+# Archive past files
+old_files <- dir("target-data/", full.names = TRUE, pattern = "rsvnet_hospitalization.csv")
+file.rename(old_files, gsub("target-data/", "target-data/archive", old_files))
+
 # Write output
 rsv_output <- rbind(rsv_output, rsv_past_season)
-write.csv(rsv_output, "target-data/rsvnet_hospitalization.csv",
+write.csv(rsv_output, paste0("target-data/", Sys.Date(), "_rsvnet_hospitalization.csv"),
           row.names = FALSE)
 
