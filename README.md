@@ -515,6 +515,11 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
     Cécile Viboud (Fogarty International Center, NIH),
     Chelsea Hansen (Fogarty International Center, NIH)
 
+- [Predictive Sciences - Package for Respiratory Disease Open-source Forecasting](./model-metadata/PSI-PROF.yaml)
+    - James Turtle (Predictive Science Inc), 
+    Michal Ben-Nun (Predictive Science Inc), 
+    Pete Riley (Predictive Science Inc)
+
 - [University of Notre Dame - FRED](./model-metadata/NotreDame-FRED.yaml)
     -  Sean Moore (UND), Alex Perkins (UND, Guido Espana (CDC Center for Forecasting and Analysis)
 
@@ -533,8 +538,6 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
     Parantapa Bhattacharya (UVA), Dustin Machi (UVA), 
     Madhav Marathe (UVA)
 
-- [Predictive Sciences - PROF](./model-metadata/PSI-PROF.yaml)
-    - James Turtle, Michal Ben-Nun, Pete Riley
 
 
 ## The RSV Scenario Modeling Hub Coordination Team    
