@@ -16,7 +16,7 @@ The source data is downloaded and updated weekly in the
 associated documentation for more information.
 
 Following the source data update, the target data 
-[target_data/rsvnet_hospitalization.csv](./rsvnet_hospitalization.csv)
+[target_data/DATE_rsvnet_hospitalization.csv](./)
 is updated weekly with [update target](./../.github/workflows/update-target.yaml) 
 GitHub Action.
 
@@ -76,12 +76,16 @@ The RSV-NET source files is standardized following these steps:
         - `"rate hosp"`: number of hospitalization per 100 000 
      - `value`: associated value
      - `population`: associated population size
-6. Append previous season: 2014-2015 and 20215-2016 (removed on the new 
+6. Append previous season: 2014-2015 and 2015-2016 (removed on the new 
    version of the data (2023-11-10)) by using historical 
-   [target_data/rsvnet_hospitalization.csv](./rsvnet_hospitalization.csv)
    data containing the last version of the 2014-2015 and 2015-2016 seasons
-   (commit [#f183e8a](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/f183e8a1a8d2387f02c2e007527af48226370d03/target-data/rsvnet_hospitalization.csv))     
-7. Write the output in a CSV format
+   (commit [#f183e8a](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/f183e8a1a8d2387f02c2e007527af48226370d03/target-data/rsvnet_hospitalization.csv)) 
+7. Archive past version of the output     
+8. Write the output in a CSV format with the date in the filename
+
+### Past version
+
+Past weekly versions of the file are available in the [archive/](./archive/) folder.
 
 ### Visualization
 

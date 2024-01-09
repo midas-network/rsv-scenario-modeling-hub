@@ -181,8 +181,8 @@ Three tables are extracted from this page:
 ### Respiratory Syncytial Virus Hospitalization Surveillance Network (RSV-NET)
 
 The [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k)
-is also downloaded weekly and output in a PARQUET file: 
-[rsv/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet](./rsv/rsv-net/weekly_rates_lab_confirmed_rsv_hosp.parquet).
+is also downloaded weekly and output in a PARQUET file with the download date added in the name of the file: 
+[rsv/rsv-net/DATE_weekly_rates_lab_confirmed_rsv_hosp.parquet](./rsv/rsv-net/).
 
 > The Respiratory Syncytial Virus Hospitalization Surveillance Network (RSV-NET) is a network that 
 conducts active, population-based surveillance for laboratory-confirmed RSV-associated hospitalizations 
