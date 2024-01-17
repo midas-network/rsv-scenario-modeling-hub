@@ -510,6 +510,10 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
 - [Columbia University — RSV_SVIRS](./model-metadata/CU-RSV_SVIRS.yaml)
     - Teresa Yamana (CU), Sen Pei (CU)
 
+- [National Institutes of Health - RSV_MSIRS](./model-metadata/NIH-RSV_MSIRS.yaml)
+    - Kaiyuan Sun (Fogarty International Center, NIH), 
+    Cécile Viboud (Fogarty International Center, NIH)
+
 - [National Institutes of Health - RSV_WIN](./model-metadata/NIH-RSV_WIN.yaml)
     - Samantha Bents (Fogarty International Center, NIH), 
     Cécile Viboud (Fogarty International Center, NIH),
