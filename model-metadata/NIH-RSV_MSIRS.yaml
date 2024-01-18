@@ -1,0 +1,22 @@
+team_name: "National Institutes of Health"
+team_abbr: "NIH"
+model_name: "RSV_MSIRS"
+model_abbr: "RSV_MSIRS"
+model_contributors: [
+  {
+    "name": "Kaiyuan Sun",
+    "affiliation": "Fogarty International Center, National Institutes of Health",
+    "email": "kaiyuan.sun@nih.gov"
+  },
+  {
+   "name": "Cecile Viboud",
+    "affiliation": "Fogarty International Center, National Institutes of Health",
+    "email": "viboudc@mail.nih.gov"
+  }
+
+]
+license: "NA"
+methods: "Mechanistic age-structured compartmental MSIRS model with pandemic NPIs"
+team_funding: "NA"
+website_url: "NA"
+model_version: "2024-01-16"

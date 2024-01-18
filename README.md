@@ -510,6 +510,17 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
 - [Columbia University — RSV_SVIRS](./model-metadata/CU-RSV_SVIRS.yaml)
     - Teresa Yamana (CU), Sen Pei (CU)
 
+- [MOBS Lab at Northeastern University - GLEAM RSV Model](./model-metadata/MOBS_NEU-GLEAM_RSV.yaml)
+    - Alessandro Vespignani (Network Science Institute, NEU), 
+    Matteo Chinazzi (The Roux Institute, NEU, Portland (ME)),
+    Jessica T. Davis (Network Science Institute, NEU), 
+    Clara Bay (Network Science Institute, NEU), 
+    Guillaume St-Onge (Network Science Institute, NEU)
+
+- [National Institutes of Health - RSV_MSIRS](./model-metadata/NIH-RSV_MSIRS.yaml)
+    - Kaiyuan Sun (Fogarty International Center, NIH), 
+    Cécile Viboud (Fogarty International Center, NIH)
+
 - [National Institutes of Health - RSV_WIN](./model-metadata/NIH-RSV_WIN.yaml)
     - Samantha Bents (Fogarty International Center, NIH), 
     Cécile Viboud (Fogarty International Center, NIH),
