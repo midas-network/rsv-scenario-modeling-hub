@@ -521,6 +521,10 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
     - Kaiyuan Sun (Fogarty International Center, NIH), 
     Cécile Viboud (Fogarty International Center, NIH)
 
+- [National Institutes of Health - RSV_Phenomenological](./model-metadata/NIH-RSV_Phenomenological.yaml)
+    - Kaiyuan Sun (Fogarty International Center, NIH), 
+    Cécile Viboud (Fogarty International Center, NIH)
+
 - [National Institutes of Health - RSV_WIN](./model-metadata/NIH-RSV_WIN.yaml)
     - Samantha Bents (Fogarty International Center, NIH), 
     Cécile Viboud (Fogarty International Center, NIH),
