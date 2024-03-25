@@ -55,7 +55,7 @@ appropriate.
 The SMH code of conduct committee consists of three members:
 
 - [Lucie Contamin](mailto:contamin@pitt.edu)
-- [Emily Howerton](mailto:ehowerton@psu.edu)
+- [Emily Howerton](mailto:eh6323@princeton.edu)
 - [Bryan Lewis](mailto:brylew@virginia.edu)
 
 
