@@ -54,7 +54,7 @@ model_contributors: [
     "email": "vmurali4@jhu.edu"
   }
 ]
-license: "LICENSE"
+license: "mit"
 methods: "Compartmental model of RSV transmission and disease dynamics using flepiMoP framework"
 methods_long: "flepiMoP is a comprehensive open-source software pipeline for creating and simulating compartmental models of infectious disease transmission and inferring parameters through these models. We implement an SIR model stratified by age, level of prior infection and level of immunity from maternally acquired antibodies. Seasonality is introduced using a sinusoidal seasonal forcing."
 model_version: "1.0"
