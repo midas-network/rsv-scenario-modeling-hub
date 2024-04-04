@@ -12,12 +12,12 @@ model_contributors: [
     "name": "Alison Hill",
     "affiliation": "Institute for Computational Medicine, Johns Hopkins University",
     "email": "alhill@jhmi.edu"
-  }
+  },
   {
     "name": "Justin Lessler",
-    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill ",
+    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill",
     "email": "jlessler@unc.edu"
-  }
+  },
   {
     "name": "Sara Loo",
     "affiliation": "Department of International Health, Johns Hopkins University",
@@ -25,7 +25,7 @@ model_contributors: [
   },
   {
     "name": "Joseph Lemaitre",
-    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill ",
+    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill",
     "email": "jo.lemaitresamra@gmail.com"
   },
   {
@@ -45,7 +45,7 @@ model_contributors: [
   },
   {
     "name": "Sung-mok Jung",
-    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill ",
+    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill",
      "email": "sungmok@ad.unc.edu"
   },
   {
