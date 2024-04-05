@@ -1,0 +1,66 @@
+team_name: "Johns Hopkins University and University of North Carolina at Chapel Hill"
+team_abbr: "JHU_UNC"
+model_name: "flepiMoP RSV model"
+model_abbr: "flepiMoP"
+model_contributors: [
+  {
+    "name": "Shaun Truelove",
+    "affiliation": "Department of International Health, Johns Hopkins University",
+    "email": "shauntruelove@jhu.edu"
+  },
+  {
+    "name": "Alison Hill",
+    "affiliation": "Institute for Computational Medicine, Johns Hopkins University",
+    "email": "alhill@jhmi.edu"
+  },
+  {
+    "name": "Justin Lessler",
+    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill",
+    "email": "jlessler@unc.edu"
+  },
+  {
+    "name": "Sara Loo",
+    "affiliation": "Department of International Health, Johns Hopkins University",
+    "email": "sloo2@jhu.edu"
+  },
+  {
+    "name": "Joseph Lemaitre",
+    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill",
+    "email": "jo.lemaitresamra@gmail.com"
+  },
+  {
+   "name": "Anjalika Nande",
+    "affiliation": "Institute for Computational Medicine, Johns Hopkins University",
+    "email": "anande1@jhu.edu"
+  },
+  {
+    "name": "Anne Hebert",
+    "affiliation": "Institute for Computational Medicine, Johns Hopkins University",
+     "email": "ahebert4@jhu.edu"
+  },
+  {
+    "name": "Madeleine Gastonguay",
+    "affiliation": "Institute for Computational Medicine, Johns Hopkins University",
+     "email": "mgaston1@jhu.edu"
+  },
+  {
+    "name": "Sung-mok Jung",
+    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill",
+     "email": "sungmok@ad.unc.edu"
+  },
+  {
+    "name": "Vivek Murali",
+    "affiliation": "Institute for Computational Medicine, Johns Hopkins University",
+    "email": "vmurali4@jhu.edu"
+  }
+]
+license: "mit"
+methods: "Compartmental model of RSV transmission and disease dynamics using flepiMoP framework"
+methods_long: "flepiMoP is a comprehensive open-source software pipeline for creating and simulating compartmental models of infectious disease transmission and inferring parameters through these models. We implement an SIR model stratified by age, level of prior infection and level of immunity from maternally acquired antibodies. Seasonality is introduced using a sinusoidal seasonal forcing."
+model_version: "1.0"
+website_url: "https://www.flepimop.org/"
+team_funding: "The development of this model was supported by from funds from Council of the National Science Foundation (2127976; ST, AH), Centers for Disease Control and Prevention (200-2016-91781; ST, AH, JL, JCL, SL, S-m.J), US Department of Health and Human Services / Department of Homeland Security (ST, CPS, JK, ECL, AH, JL), California Department of Public Health (ST, JL), Johns Hopkins University (ST, JL), Amazon Web Services (ST, AH, JL, JCL), National Institutes of Health (R01GM140564; JL, 5R01AI102939; JCL)."
+data_inputs: "AHRQ historical data and RSV-Net data from the CDC"
+citation: "Lemaitre, JC., et al. flepiMoP: the evolution of a flexible infectious disease modeling pipeline during the COVID-19 pandemic. Epidemics (2024): 100753."
+
+
