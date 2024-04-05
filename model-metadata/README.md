@@ -32,12 +32,12 @@ associated model-output folder containing the associated projections.
 
 ### `team_name`
 
-The name of your team that is less than 50 characters, no spaces. 
+The name of your team that is less than 50 characters. 
 Will be displayed online.
 
 ### `model_name`
 
-The name of your model that is less than 50 characters, no spaces.
+The name of your model that is less than 50 characters.
 Will be displayed online.
 
 ### Abbreviation
