@@ -293,7 +293,7 @@ age group.** To obtain counts, we have converted RSV-NET weekly rates based
 on state population sizes. This method assumes that RSV-NET hospitals are 
 representative of the whole state. To obtain national US counts, we have used the 
 rates provided for the “overall RSV-NET network”. The data covers 2017-present. 
-Reported age groups include: [0-6 months], [6-12 months], [1-2 yr], [2-4 yr], 
+Reported age groups include: [0-5 months], [6-11 months], [1 yr], [2-4 yr], 
 [5-17 yr], [18-49 yr], [50-64 yr], and [65-74] and 75+ years. The standardized 
 dataset provided by SMH includes week- state- and age-specific RSV counts 
 (the target), rates, and population sizes. 
