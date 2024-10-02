@@ -99,7 +99,8 @@ fraction of all US babies, see later) is at teams’ discretion. The
 timing of administration of long-acting monoclonals depends on the 
 scenario modeled (Aug 15-Mar 30 or Oct 1-Mar 30). 
 The process is as follows: 
-    - Newborns: During the RSV campaign, a fraction of all newborns 
+
+  - Newborns: During the RSV campaign, a fraction of all newborns 
     will receive long-acting monoclonals at birth (fraction based on 
     weekly monoclonal coverage). Specifically, for scenarios A-B (early 
     timing of interventions), a fraction of children born Aug 15 - Mar 
@@ -107,7 +108,7 @@ The process is as follows:
     scenarios C-D (classic timing of interventions), a fraction of 
     children born Oct 1 - Mar 30 receive a birth dose of monoclonals 
     based on weekly coverage.
-    - Babies (0-7m):  During the RSV campaign, a fraction of infants 
+  - Babies (0-7m):  During the RSV campaign, a fraction of infants
     who were born prior to the start of the RSV campaign and are aged
     0-7 months at the start of the RSV campaign will receive a dose 
     of monoclonals. This administration takes place at an accelerated 
