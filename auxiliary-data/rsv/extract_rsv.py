@@ -23,3 +23,18 @@ df_rsvvax = pd.read_csv(io.StringIO(res.text))
 df_rsvvax.to_parquet("auxiliary-data/rsv/rsv-vax/weekly_respiratory_virus_vaccination_data.parquet")
 
 
+# Percent Positivity of Respiratory Syncytial Virus Nucleic Acid Amplification 
+# Tests by HHS Region, National Respiratory and Enteric Virus Surveillance System
+res = requests.get("https://data.cdc.gov/api/views/3cxc-4k8q/rows.csv?accessType=DOWNLOAD")
+df_pos = pd.read_csv(io.StringIO(res.text))
+df_pos.to_parquet("auxiliary-data/rsv/nrevss/weekly_positivity.parquet")
+
+# 2023 Respiratory Virus Response - NSSP Emergency Department Visits - COVID-19,
+# Flu, RSV, Combined
+res = requests.get("https://data.cdc.gov//api/views/rdmq-nq56/rows.csv?accessType=DOWNLOAD")
+df_edstate = pd.read_csv(io.StringIO(res.text))
+df_edstate.to_parquet("auxiliary-data/rsv/nssp/ed_state.parquet")
+
+res = requests.get("https://data.cdc.gov//api/views/7xva-uux8/rows.csv?accessType=DOWNLOAD")
+df_eddemo = pd.read_csv(io.StringIO(res.text))
+df_eddemo.to_parquet("auxiliary-data/rsv/nssp/ed_demo.parquet")
