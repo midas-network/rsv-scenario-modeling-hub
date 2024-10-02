@@ -48,7 +48,7 @@ The RSV-NET source files is standardized following these steps:
        include children data, the overall age group has been removed from the 
        selection for the seasons: 2014-2015, 2015-2016, 2016-2017, 2017-2018. 
        For more information, please consult the
-       [RSV-NET Overview and Methods](https://www.cdc.gov/rsv/research/rsv-net/overview-methods.html)
+       [RSV-NET Overview and Methods](https://www.cdc.gov/rsv/php/surveillance/rsv-net.html)
        webpage.
        
    - Remove the seasonal summaries
@@ -61,7 +61,7 @@ The RSV-NET source files is standardized following these steps:
    -  rate * population size / 100000
    - For the 6 months age group, the population size for the corresponding year
    divided by 2 is used.
-   - The population data from the year 2022 are used for the year 2023
+   - The population data from the year 2022 are used for the year 2023 & 2024
    - The population size information comes from the US Census Bureau, please
    consult the [auxiliary-data/](./../auxiliary-data/) for more
    information
