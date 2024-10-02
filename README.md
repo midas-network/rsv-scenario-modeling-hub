@@ -450,7 +450,7 @@ low level masking is allowed at groups’ discretion.
 
 We leave seeding intensity, timing and geographic distribution at the 
 discretion of the teams. In addition to the RSV-NET hospital admission 
-dataset, CDC’s NVERSS 
+dataset, CDC’s NREVSS 
 [viral surveillance dataset](./auxiliary-data/rsv/nrevss) 
 is a good resource for state-specific information on epidemic intensity 
 (e.g., weekly % positive, or weekly ILI*%positive), and can be used to adjust 
