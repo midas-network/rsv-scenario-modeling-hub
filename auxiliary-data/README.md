@@ -143,8 +143,8 @@ Both the
 [2023 Respiratory Virus Response - NSSP Emergency Department Visit Trajectories by State and Sub State Regions- COVID-19, Flu, RSV, Combined](https://data.cdc.gov/Public-Health-Surveillance/2023-Respiratory-Virus-Response-NSSP-Emergency-Dep/rdmq-nq56/about_data), 
 [2023 Respiratory Virus Response - NSSP Emergency Department Visits - COVID-19, Flu, RSV, Combined – by Demographic Category](https://data.cdc.gov/Public-Health-Surveillance/2023-Respiratory-Virus-Response-NSSP-Emergency-Dep/7xva-uux8/about_data)
 are downloaded weekly and output in PARQUET files: 
-- [rsv/nssp/ed_state.parquet](./rsv/nssp/ed_state.parquet).
-- [rsv/nssp/ed_demo.parquet](./rsv/nssp/ed_demo.parquet).
+- [rsv/nssp/ed_state.parquet](./rsv/nssp/ed_state.parquet)
+- [rsv/nssp/ed_demo.parquet](./rsv/nssp/ed_demo.parquet)
 
 > 2023 Respiratory Virus Response - NSSP Emergency Department (ED) Visit 
 > Trajectories by State and Sub-State Regions- COVID-19, Flu, RSV, Combined. 
@@ -220,7 +220,7 @@ Two tables are extracted:
 -  Percent positive respiratory syncytial virus tests in the United States, 
    by week ([rsv/nrevss/rsv_data_us.csv](./rsv/archive/nrevss/rsv_data_us.csv))
 -  RSV detections in the United States, by week 
-   ([rsv/nrevss/rsv_numerator_data_us.csv](.rsv/archive/nrevss/rsv_numerator_data_us.csv))
+   ([rsv/nrevss/rsv_numerator_data_us.csv](./rsv/archive/nrevss/rsv_numerator_data_us.csv))
 
 ##### State
 
