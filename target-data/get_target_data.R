@@ -19,15 +19,17 @@ age2st_age <- setNames(
   c("0-130", "18-49", "50-64", "65-130", "0-0.49",
     "1-1.99", "2-4", "0.5-0.99", "0-4",
     "5-17", "18-130", "0-130", "0-0.49", "0.5-0.99",
-    "1-1.99", "2-4", "18-130"),
+    "1-1.99", "2-4", "18-130", "65-74",
+    "75-130"),
   c("Overall", "18-49 years", "50-64 years", "65+ years", "----0-<6 months",
     "----1-<2 years", "----2-4 years", "----6-<12 months", "0-4 years",
     "5-17 years", "18+ (Adults)", "All", "0-<6 months",  "6mo-<12 months",
-    "1-<2 years" ,   "2-4 years", "18+ years (Adults)")
+    "1-<2 years" ,   "2-4 years", "18+ years (Adults)", "65-74 years",
+    "75+ years")
 )
 
 # Census - From US Census Bureau
-# - Add columns for 2023 with the same values as 2022
+# - Add columns for 2023 and 2024 with the same values as 2022
 census_pop <- read.csv("auxiliary-data/location_census/state_pop_data.csv")
 census_pop <- dplyr::mutate(
   census_pop,
@@ -81,7 +83,7 @@ rsv <- df %>%
     Sex == "All" & Race == "All" &
       `Age Category` %in% c(
         "0-4 years","5-17 years", "18-49 years", "50-64 years","65+ years",
-        "All", "0-<6 months",  "6mo-<12 months",
+        "All", "0-<6 months",  "6mo-<12 months", "75+ years", "65-74 years",
         "1-<2 years" ,   "2-4 years", "18+ years (Adults)")
   )
 full_ts <- seq(min(rsv$date),max(rsv$date), by = "week")
