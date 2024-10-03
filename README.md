@@ -352,15 +352,16 @@ well as for hospital admission peak size and peak timing.
 ##### Required
 
 - Hospital admissions should be provided for the following age groups: 
-  all ages,  <1 yr, 1-4, 5-64, **65-74, and 75+**. (Most of the RSV 
-  burden on hospitalizations comes from the 0-1 and 6-74 and 75+ age 
-  groups.)
+  all ages,  <1 yr, 1-4, 5-64, 65+. (Most of the RSV 
+  burden on hospitalizations comes from the 0-1 and 65+ age groups.)
 
 
 ##### Additional age details (optional)
 
 - Weekly state-specific and national RSV hospitalizations among individuals 
-  <1 yr, 1-4, 5-17, 18-49, 50-64, 65-74, 75+ and all ages
+  <1 yr, 1-4, 5-17, 18-49, 50-64, 65-74, 75+ and all ages  (Most of the RSV 
+  burden on hospitalizations comes from the 0-1 and 65-74 and 75+ age 
+  groups.)
 
 
 #### Optional targets (if submitting quantiles in addition to trajectories)
