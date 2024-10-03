@@ -196,11 +196,12 @@ The submission can contain multiple output type information:
   please consult the [cdf](.data-processed#cdf) 
   section. 
 
-The requested targets are (for "sample" type output):
+
+**The requested targets are (for "sample" type output):**
 
 - weekly incident hospitalizations
 
-Optional target (for "quantile" or "cdf" type output):
+**Optional target (for "quantile" or "cdf" type output):**
 
 - quantile:
     - weekly cumulative hospitalizations
@@ -209,7 +210,7 @@ Optional target (for "quantile" or "cdf" type output):
 - cdf:
     - weekly peak timing hospitalizations
 
-Addition for round 2:
+Additional optional target starting round 2:
 
 - sample:
     - weekly incident infection
