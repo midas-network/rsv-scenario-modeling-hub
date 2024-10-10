@@ -7,27 +7,12 @@ It contains multiple folders:
   extract and update the data. 
   - one for location and population data
   - one for birth rate data
+  - one archive for past version and past round associated files
   
 ## Vaccine Coverage
 
 The folder [vaccine_coverage/](./vaccine_coverage/) provides weekly 
 state-specific cumulative coverage for specific rounds.
-
-### Round 1 - 2023 / 2024
-
-For round 1, the file 
-[vaccine_coverage/RSV_round1_Coverage_2023_2024.csv](./vaccine_coverage/RSV_round1_Coverage_2023_2024.csv) 
-provides vaccine coverage (percentage) from summer 2023 to the end of the 
-projection period to apply to infants 0-6 months (`rsv_cov_infants_pes` and 
-`resv_cov_infants_opt`) and seniors over 60 years (`rsv_cover_over_60_pes` and 
-`rsv_cov_over60_opt`). Values represent the optimistic and pessimistic 
-assumptions prescribed in RSV round 1
-
-The `rsv_n_dose_infants_opt` is the cumulative weekly number of monoclonal 
-doses administered to infants 0-6 months during October through March in the 
-optimistic scenario. This includes birth doses and catch up doses. 
-`rsv_n_dose_infants_pes` is the same for the pessimistic scenario.
-
 
 ### Round 2 - 2024 / 2025
 
@@ -42,12 +27,6 @@ Coverage should be considered additive to that of last season. The same coverage
 values apply to all intervention scenarios (A-D), while the counterfactual (F) 
 assumes no coverage.
 
-
-### Associated code
-
-The R code to generate the `rsv_n_dose_infants_` is also available in the 
- [vaccine_coverage/](./vaccine_coverage/) folder in an 
- [add_doses.R](./vaccine_coverage/add_doses.R) file.
   
 ## Location and Census Data
 
@@ -176,6 +155,33 @@ are downloaded weekly and output in PARQUET files:
 For more information, please consult the 
 [NSSP homepage](https://www.cdc.gov/nssp/index.html)
 
+----
+
+## Archive
+
+### Vaccine Coverage
+
+#### Round 1 - 2023 / 2024
+
+For round 1, the file 
+[vaccine_coverage/RSV_round1_Coverage_2023_2024.csv](./archive/vaccine_coverage/RSV_round1_Coverage_2023_2024.csv) 
+provides vaccine coverage (percentage) from summer 2023 to the end of the 
+projection period to apply to infants 0-6 months (`rsv_cov_infants_pes` and 
+`resv_cov_infants_opt`) and seniors over 60 years (`rsv_cover_over_60_pes` and 
+`rsv_cov_over60_opt`). Values represent the optimistic and pessimistic 
+assumptions prescribed in RSV round 1
+
+The `rsv_n_dose_infants_opt` is the cumulative weekly number of monoclonal 
+doses administered to infants 0-6 months during October through March in the 
+optimistic scenario. This includes birth doses and catch up doses. 
+`rsv_n_dose_infants_pes` is the same for the pessimistic scenario.
+
+### Associated code
+
+The R code to generate the `rsv_n_dose_infants_` is also available in the 
+ [vaccine_coverage/](./archive/vaccine_coverage/) folder in an 
+ [add_doses.R](./archive/vaccine_coverage/add_doses.R) file.
+
 
 ### Past NREVSS and NSSP version data [ARCHIVED version]
 
@@ -237,9 +243,9 @@ The National RSV Trends were extracted from the
 Two tables are extracted:
 
 -  Percent positive respiratory syncytial virus tests in the United States, 
-   by week ([rsv/nrevss/rsv_data_us.csv](./rsv/archive/nrevss/rsv_data_us.csv))
+   by week ([rsv/nrevss/rsv_data_us.csv](./archive/nrevss/rsv_data_us.csv))
 -  RSV detections in the United States, by week 
-   ([rsv/nrevss/rsv_numerator_data_us.csv](./rsv/archive/nrevss/rsv_numerator_data_us.csv))
+   ([rsv/nrevss/rsv_numerator_data_us.csv](./archive/nrevss/rsv_numerator_data_us.csv))
 
 ##### State
 
@@ -252,11 +258,11 @@ The National RSV Trends were extracted from the
 For each state, three tables are extracted:
 
 - Percent positive antigen detection RSV tests, by 3-week moving average 
-  ([rsv/nrevss/rsv_antigen_3_week_average.csv](./rsv/archive/nrevss/rsv_antigen_3_week_average.csv))
+  ([rsv/nrevss/rsv_antigen_3_week_average.csv](./archive/nrevss/rsv_antigen_3_week_average.csv))
 - Percent positive RSV PCR tests, by 3-week moving average 
-  ([rsv/nrevss/rsv_pcr_3_week_average.csv](./rsv/archive/nrevss/rsv_pcr_3_week_average.csv))
+  ([rsv/nrevss/rsv_pcr_3_week_average.csv](./archive/nrevss/rsv_pcr_3_week_average.csv))
 - RSV detections, by 5-week average 
-  ([rsv/nrevss/rsv_numerator_data_5_week_average.csv](./rsv/archive/nrevss/rsv_numerator_data_5_week_average.csv))
+  ([rsv/nrevss/rsv_numerator_data_5_week_average.csv](./archive/nrevss/rsv_numerator_data_5_week_average.csv))
 
 All the states data are compiled together into one file.
 
