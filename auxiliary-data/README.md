@@ -13,6 +13,8 @@ It contains multiple folders:
 The folder [vaccine_coverage/](./vaccine_coverage/) provides weekly 
 state-specific cumulative coverage for specific rounds.
 
+### Round 1 - 2023 / 2024
+
 For round 1, the file 
 [vaccine_coverage/RSV_round1_Coverage_2023_2024.csv](./vaccine_coverage/RSV_round1_Coverage_2023_2024.csv) 
 provides vaccine coverage (percentage) from summer 2023 to the end of the 
@@ -25,6 +27,23 @@ The `rsv_n_dose_infants_opt` is the cumulative weekly number of monoclonal
 doses administered to infants 0-6 months during October through March in the 
 optimistic scenario. This includes birth doses and catch up doses. 
 `rsv_n_dose_infants_pes` is the same for the pessimistic scenario.
+
+
+### Round 2 - 2024 / 2025
+
+For round 2, the file 
+[vaccine_coverage/RSV_round2_vax_coverage_seniors_2024_25.csv](./vaccine_coverage/RSV_round2_vax_coverage_seniors_2024_25.csv) 
+provides weekly vaccine coverage (cumulative percentage, cumulative no of doses, 
+size of eligible population) for seniors from summer 2024 to the end of the 
+projection period for RSVnet states. Separate values are provided for seniors 
+60-74 high risk and 75+.
+
+Coverage should be considered additive to that of last season. The same coverage 
+values apply to all intervention scenarios (A-D), while the counterfactual (F) 
+assumes no coverage.
+
+
+### Associated code
 
 The R code to generate the `rsv_n_dose_infants_` is also available in the 
  [vaccine_coverage/](./vaccine_coverage/) folder in an 

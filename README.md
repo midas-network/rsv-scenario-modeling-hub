@@ -69,10 +69,14 @@ The scenario structure is as follows:
 ### Assumptions regarding RSV interventions
 
 Weekly cumulative age-specific coverage for senior vaccines, maternal 
-vaccine, and monoclonals will be provided. Because of the shifting population 
-denominator of infants coming in and aging out of eligibility, and the 
-issue with seniors not being recommended for revaccination, we will provide 
-coverage as no. of doses and no. of eligible population per week. 
+vaccine, and monoclonals are available in the 
+[auxiliary data folder](./auxiliary-data/), in the 
+[vaccine_coverage subfolder](./auxiliary-data/vaccine_coverage/). 
+
+Because of the shifting population denominator of infants coming in 
+and aging out of eligibility, and the issue with seniors not being 
+recommended for revaccination, we will provide coverage as no. of 
+doses and no. of eligible population per week. 
 
 Below, we describe important details of the planned implementation of RSV 
 interventions as well as our rationale for intervention coverage and 
