@@ -117,6 +117,16 @@ Other links of interest:
 - [Weekly Cumulative RSV Vaccination Coverage and Intent, Overall, by Selected Demographics and Jurisdiction, Among Adults 75 and Older and 60-74 Years with High-Risk Conditions Ever Vaccinated, United States](https://data.cdc.gov/Vaccinations/Weekly-Cumulative-RSV-Vaccination-Coverage-and-Int/k4cb-dxd7/about_data)
 - [Weekly Differences in Cumulative Respiratory Syncytial Virus (RSV) Vaccination Coverage and Comparison, Overall, by Jurisdiction, Among Adults 75 Years and Older and Adults 60─74 Years with High-Risk Conditions](https://data.cdc.gov/Vaccinations/Weekly-Differences-in-Cumulative-Respiratory-Syncy/qtvj-5vyb/about_data)
 
+### 2023 - 2024  Weekly Respiratory Virus Vaccination Data
+
+The repository also contains [2023-2024 Weekly RSV vaccination data](./rsv/rsv-vax/20232024/)
+in a CSV format and with an associated PNG file.
+The CSV file is a compilation of 
+- [weekly RSV coverage in seniors 60+ nationally and by state, from the CDC National immunization survey](https://data.cdc.gov/Vaccinations/Weekly-Cumulative-Percentage-of-Adults-60-Years-an/qve4-fp9c/about_data)
+- [monthly RSV nirsevimab coverage in babies 0-8 mo, nationally, from the  CDC National immunization survey](https://data.cdc.gov/Pregnancy-Vaccination/Monthly-Nirsevimab-Receipt-and-Intent-Among-Female/8ame-63pc/about_data)
+- [monthly RSV vaccine coverage in pregnant moms, nationally, from the CDC vaccine safety datalink surveillance](https://data.cdc.gov/Pregnancy-Vaccination/Weekly-Respiratory-Syncytial-Virus-RSV-Vaccination/g4jn-64pd/about_data)
+
+
 ### The National Respiratory and Enteric Virus Surveillance System (NREVSS)
 
 The [Percent Positivity of Respiratory Syncytial Virus Nucleic Acid Amplification Tests by HHS Region, National Respiratory and Enteric Virus Surveillance System](https://data.cdc.gov/Laboratory-Surveillance/Percent-Positivity-of-Respiratory-Syncytial-Virus-/3cxc-4k8q/about_data)
