@@ -152,12 +152,19 @@ Other links of interest:
 
 ### 2023 - 2024  Weekly Respiratory Virus Vaccination Data
 
-The repository also contains [2023-2024 Weekly RSV vaccination data](./rsv/rsv-vax/20232024/)
-in a CSV format and with an associated PNG file.
-The CSV file is a compilation of 
-- [weekly RSV coverage in seniors 60+ nationally and by state, from the CDC National immunization survey](https://data.cdc.gov/Vaccinations/Weekly-Cumulative-Percentage-of-Adults-60-Years-an/qve4-fp9c/about_data)
-- [monthly RSV nirsevimab coverage in babies 0-8 mo, nationally, from the  CDC National immunization survey](https://data.cdc.gov/Pregnancy-Vaccination/Monthly-Nirsevimab-Receipt-and-Intent-Among-Female/8ame-63pc/about_data)
-- [monthly RSV vaccine coverage in pregnant moms, nationally, from the CDC vaccine safety datalink surveillance](https://data.cdc.gov/Pregnancy-Vaccination/Weekly-Respiratory-Syncytial-Virus-RSV-Vaccination/g4jn-64pd/about_data)
+The repository also contains 2 CSV files about 
+[2023-2024 Weekly RSV vaccination data](./rsv/rsv-vax/20232024/).
+
+- [2023_24_observed_coverage_60plus_NIS.csv](./rsv/rsv-vax/20232024/2023_24_observed_coverage_60plus_NIS.csv)
+- [2023_2024_observed_coverage_maternal_vaccine_nirsevimab_NIS.csv](./rsv/rsv-vax/20232024/2023_2024_observed_coverage_maternal_vaccine_nirsevimab_NIS.csv) 
+from the monthly estimates of receipt for nirsevimab reported by adult females 
+ged 18–49 years with infants under the age of 8 months. Data is from the 
+[National Immunization Survey-Adult COVID Module (NIS-ACM)](https://www.cdc.gov/rsvvaxview/dashboard/2023-24-nirsevimab-coverage-infants.html).
+- [2023_24_nirsevimab_coverage.csv](./rsv/rsv-vax/20232024/2023_24_nirsevimab_coverage.csv)
+from Monthly Cumulative Number and Percent of Children <20 Months Who Received Nirsevimab by 
+Age Group and Jurisdiction, United States Provided By 
+[National Center for Immunization and Respiratory Diseases (NCIRD)](https://data.cdc.gov/Vaccinations/Monthly-Cumulative-Number-and-Percent-of-Children-/ku7p-zn4c/about_data)
+
 
 
 ### The National Respiratory and Enteric Virus Surveillance System (NREVSS)
