@@ -33,7 +33,9 @@ assumes no coverage.
 
 - [RSV_RD2_maternal_vaccine_2024_25.csv](./vaccine_coverage/RSV_RD2_maternal_vaccine_2024_25.csv) 
 has weekly state-specific coverage for maternal vaccine. The weekdate is the 
-Saturday at the end of each week. Columns are provided for total state pop 
+Saturday at the end of each week. This date represents the date when the mother 
+was vaccinated, so that the vaccine effect on the infant would start on average 
+one month later after the baby is born. Columns are provided for total state pop 
 size (`Total_pop`), annual number of births (`Births_per_year`), Scenarios 
 (`"A"` through `"D"`), No of weekly vaccine doses administered 
 (`Maternal_vaccine_weekly_doses`), No of eligible mothers throughout the 
