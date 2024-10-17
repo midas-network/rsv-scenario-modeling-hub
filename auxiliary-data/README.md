@@ -51,7 +51,7 @@ Catch Up). `Eligible_babies_entire_season` reflects the number of babies in each
 category (catchup/newborn) who are **eligible for nirsevimab at any time point during 
 the campaign.** Weekly incident and cumulative coverages are estimated based on 
 this eligible population
-- [RSV_RD2_nirsevimab.byweekofage_2024_25.csv](./vaccine_coverage/RSV_RD2_nirsevimab.byweekofage_2024_25.csv) 
+- [RSV_RD2_nirsevimab_byweekofage_2024_25.csv](./vaccine_coverage/RSV_RD2_nirsevimab_byweekofage_2024_25.csv) 
 is a version of the above file where the catch-up babies have been disaggregated 
 by single week of age. This is the age at **receipt** of nirsevimab. Eligible babies 
 counts the number of babies would are of that age in any given week of the season, 
