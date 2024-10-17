@@ -167,7 +167,10 @@ Age Group and Jurisdiction assessed through the Immunization Information System 
 ged 18–49 years with infants under the age of 8 months obtained from the 
 [National Immunization Survey-Adult COVID Module (NIS-ACM)](https://www.cdc.gov/rsvvaxview/dashboard/2023-24-nirsevimab-coverage-infants.html).
 
-
+The NIS and IIS estimates are based on different groups of children recommended to receive nirsevimab. 
+The IIS estimates include only "catch-up: babies" ie excludes babies who would become eligible on or 
+after October 1, 2023 (i.e., babies born October 2023 - March 2024 are excluded). Further, IIS is 
+based on an administrative database which may miss  a fraction of immunizations.
 
 ### The National Respiratory and Enteric Virus Surveillance System (NREVSS)
 
