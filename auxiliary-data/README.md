@@ -152,18 +152,20 @@ Other links of interest:
 
 ### 2023 - 2024  Weekly Respiratory Virus Vaccination Data
 
-The repository also contains 2 CSV files about 
+The repository also contains 3 CSV files about 
 [2023-2024 Weekly RSV vaccination data](./rsv/rsv-vax/20232024/).
 
 - [2023_24_observed_coverage_60plus_NIS.csv](./rsv/rsv-vax/20232024/2023_24_observed_coverage_60plus_NIS.csv)
 - [2023_2024_observed_coverage_maternal_vaccine_nirsevimab_NIS.csv](./rsv/rsv-vax/20232024/2023_2024_observed_coverage_maternal_vaccine_nirsevimab_NIS.csv) 
-from the monthly estimates of receipt for nirsevimab reported by adult females 
-ged 18–49 years with infants under the age of 8 months. Data is from the 
-[National Immunization Survey-Adult COVID Module (NIS-ACM)](https://www.cdc.gov/rsvvaxview/dashboard/2023-24-nirsevimab-coverage-infants.html).
+contains the monthly estimates of receipt for nirsevimab reported by adult females 
+aged 18–49 years with infants under the age of 8 months. Data is from the 
+[National Immunization Survey-Adult COVID Module (NIS-ACM)](https://www.cdc.gov/rsvvaxview/dashboard/2023-24-nirsevimab-coverage-infants.html). Also contains maternal vaccine coverage estimates for pregnant persons 18-49 years old based on EHR data from the Vaccine Safety Datalink, obtained from [National Center for Immunization and Respiratory Diseases (NCIRD)](https://data.cdc.gov/Pregnancy-Vaccination/Weekly-Respiratory-Syncytial-Virus-RSV-Vaccination/g4jn-64pd/about_data) 
 - [2023_24_nirsevimab_coverage.csv](./rsv/rsv-vax/20232024/2023_24_nirsevimab_coverage.csv)
 from Monthly Cumulative Number and Percent of Children <20 Months Who Received Nirsevimab by 
-Age Group and Jurisdiction, United States Provided By 
-[National Center for Immunization and Respiratory Diseases (NCIRD)](https://data.cdc.gov/Vaccinations/Monthly-Cumulative-Number-and-Percent-of-Children-/ku7p-zn4c/about_data)
+Age Group and Jurisdiction assessed through the Immunization Information System (IIS) obtained from 
+[National Center for Immunization and Respiratory Diseases (NCIRD)](https://data.cdc.gov/Vaccinations/Monthly-Cumulative-Number-and-Percent-of-Children-/ku7p-zn4c/about_data). Note that the IIS underestimates the true coverage. The file also contains monthly national estimates of eceipt for nirsevimab reported by adult females 
+ged 18–49 years with infants under the age of 8 months obtained from the 
+[National Immunization Survey-Adult COVID Module (NIS-ACM)](https://www.cdc.gov/rsvvaxview/dashboard/2023-24-nirsevimab-coverage-infants.html).
 
 
 
