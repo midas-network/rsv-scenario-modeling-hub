@@ -234,6 +234,312 @@
 			],
 		"submissions_due":{
 			"start":"2023-11-14","end":"2023-12-14"}
+		},
+		{
+			"round_id_from_variable":true,
+			"round_id":"origin_date",
+			"model_tasks":[
+				{
+					"task_ids":
+					{
+						"origin_date":{
+							"required":["2024-07-28"],
+							"optional":null
+						}, "scenario_id":{
+							"required":[
+							  "A-2024-09-20","B-2024-09-20","C-2024-09-20","D-2024-09-20",
+							  "E-2024-09-20"],
+							"optional": null
+						}, "target":{
+							"required":["inc hosp"],
+							"optional":["inc inf"]
+						}, "horizon":{
+							"required":[
+							  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,
+							  25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45],
+							"optional":null
+						},"location":{
+							"required":[
+							  "US","06","08","09","13","24","26","27","35","36","41","47",
+							  "49"],
+							"optional":[
+							  "01", "02", "04", "05", "10", "11", "12", "15", "16", "17",
+							  "18", "19", "20", "21", "22", "23", "25", "28", "29", "30",
+							  "31", "32", "33", "34", "37", "38", "39", "40", "42", "44",
+							  "45", "46", "48", "50", "51", "53", "54", "55", "56", "60",
+							  "66", "69", "72", "74", "78"]
+						},"age_group":{
+							"required":["0-0.99","1-4","65-130","5-64","0-130"],
+							"optional":["5-17","18-49","50-64", "65-74", "75-130"]
+						}
+					},
+					"output_type":{
+						"sample":{
+							"output_type_id":{
+								"min_samples_per_task": 100,
+								"max_samples_per_task": 300,
+								"samples_joint_across": ["horizon", "age_group", "scenario_id"]
+							},
+							"value":{
+								"type":"double",
+								"minimum": 0
+							}
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id":"inc hosp",
+						 	"target_name":"Weekly incident RSV hospitalizations",
+						 	"target_units":"count",
+						 	"target_keys":{
+						 		"target":["inc hosp"]
+						 	},
+						 	"target_type":"discrete",
+						 	"is_step_ahead":true,
+						 	"time_unit":"week"
+						 },
+						 {
+							"target_id":"inc inf",
+						 	"target_name":"Weekly incident RSV infection",
+						 	"target_units":"count",
+						 	"target_keys":{
+						 		"target":["inc inf"]
+						 	},
+						 	"target_type":"discrete",
+						 	"is_step_ahead":true,
+						 	"time_unit":"week"
+						 }
+					]
+				},
+				{
+					"task_ids":
+					{
+					  "origin_date":{
+							"required":["2024-07-28"],
+							"optional":null
+						}, "scenario_id":{
+							"required":[
+							  "A-2024-09-20","B-2024-09-20","C-2024-09-20","D-2024-09-20",
+							  "E-2024-09-20"],
+							"optional": null
+						},
+						"target":{
+							"required":null,
+							"optional":["inc hosp","cum hosp", "inc inf", "cum inf"]
+						},
+						"horizon":{
+							"required":[
+							  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,
+							  25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45],
+							"optional":null},
+						"location":{
+							"required":null,
+							"optional":[
+							  "US", "01", "02", "04", "05", "06", "08", "09", "10", "11",
+							  "12", "13", "15", "16", "17", "18", "19", "20", "21", "22",
+							  "23", "24", "25", "26", "27", "28", "29", "30", "31", "32",
+							  "33", "34", "35", "36", "37", "38", "39", "40", "41", "42",
+							  "44", "45", "46", "47", "48", "49", "50", "51", "53", "54",
+							  "55", "56", "60", "66", "69", "72", "74", "78"]
+						},
+						"age_group":{
+							"required":["0-0.99","1-4","65-130","5-64","0-130"],
+							"optional":["5-17","18-49","50-64", "65-74", "75-130"]
+						}
+					},
+					"output_type":{
+						"quantile":{
+							"output_type_id":{
+								"required":[0.01,0.025,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,
+								  0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.975,0.99],
+								"optional":[0,1]
+							},
+							"value":{
+								"type":"double",
+								"minimum":0
+							}
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id": "inc hosp",
+							"target_name":"Weekly incident RSV hospitalizations",
+							"target_units":"count",
+							"target_keys":{
+								"target":["inc hosp"]
+							},
+							"target_type": "discrete",
+							"is_step_ahead": true,
+							"time_unit": "week"
+						},
+						{
+							"target_id": "cum hosp",
+							"target_name":"Weekly incident cumulative RSV hospitalizations",
+							"target_units":"count",
+							"target_keys":{
+								"target":["cum hosp"]
+							},
+							"target_type": "discrete",
+							"is_step_ahead": true,
+							"time_unit": "week"
+						},
+						{
+							"target_id": "inc inf",
+							"target_name":"Weekly incident RSV infection",
+							"target_units":"count",
+							"target_keys":{
+								"target":["inc inf"]
+							},
+							"target_type": "discrete",
+							"is_step_ahead": true,
+							"time_unit": "week"
+						},
+						{
+							"target_id": "cum inf",
+							"target_name":"Weekly incident cumulative RSV infection",
+							"target_units":"count",
+							"target_keys":{
+								"target":["cum inf"]
+							},
+							"target_type": "discrete",
+							"is_step_ahead": true,
+							"time_unit": "week"
+						}
+					]
+				},
+				{
+					"task_ids":{
+						"origin_date":{
+							"required":["2024-07-28"],
+							"optional":null
+						}, "scenario_id":{
+							"required":[
+							  "A-2024-09-20","B-2024-09-20","C-2024-09-20","D-2024-09-20",
+							  "E-2024-09-20"],
+							"optional": null
+						},
+						"target":{
+							"required":null,
+							"optional":["peak size hosp"]
+						},
+						"horizon":{
+							"required":null,
+							"optional":null},
+						"location":{
+							"required":null,
+							"optional":[
+							  "US", "01", "02", "04", "05", "06", "08", "09", "10", "11",
+							  "12", "13", "15", "16", "17", "18", "19", "20", "21", "22",
+							  "23", "24", "25", "26", "27", "28", "29", "30", "31", "32",
+							  "33", "34", "35", "36", "37", "38", "39", "40", "41", "42",
+							  "44", "45", "46", "47", "48", "49", "50", "51", "53", "54",
+							  "55", "56", "60", "66", "69", "72", "74", "78"]
+						},
+						"age_group":{
+							"required":["0-130"],
+							"optional":null
+						}
+					},
+					"output_type":{
+						"quantile":{
+							"output_type_id":{
+								"required":[
+								  0.01,0.025,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,
+								  0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.975,0.99],
+								"optional":[0,1]
+							},
+							"value":{
+								"type":"double",
+								"minimum":0
+							}
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id": "peak size hosp",
+							"target_name":"Magnitude of the peak of weekly incident hospitalizations ",
+							"target_units":"count",
+							"target_keys":{
+								"target":["peak size hosp"]
+							},
+							"target_type": "discrete",
+							"is_step_ahead":false
+						}
+					]
+				},
+				{
+					"task_ids":{
+						"origin_date":{
+							"required":["2024-07-28"],
+							"optional":null
+						}, "scenario_id":{
+							"required":[
+							  "A-2024-09-20","B-2024-09-20","C-2024-09-20","D-2024-09-20",
+							  "E-2024-09-20"],
+							"optional":null
+						},
+						"target":{
+							"required":null,
+							"optional":["peak time hosp"]
+						},
+						"horizon":{
+							"required":null,
+							"optional":null
+						},
+						"location":{
+							"required":null,
+							"optional":[
+							  "US", "01", "02", "04", "05", "06", "08", "09", "10", "11",
+							  "12", "13", "15", "16", "17", "18", "19", "20", "21", "22",
+							  "23", "24", "25", "26", "27", "28", "29", "30", "31", "32",
+							  "33", "34", "35", "36", "37", "38", "39", "40", "41", "42",
+							  "44", "45", "46", "47", "48", "49", "50", "51", "53", "54",
+							  "55", "56", "60", "66", "69", "72", "74", "78"]
+						},
+						"age_group":{
+							"required":["0-130"],
+							"optional":null
+						}
+					},
+					"output_type":{
+						"cdf":{
+							"output_type_id":{
+								"required":[
+								  "EW202431", "EW202432", "EW202433", "EW202434", "EW202435",
+								  "EW202436", "EW202437", "EW202438", "EW202439", "EW202440",
+								  "EW202441", "EW202442", "EW202443", "EW202444", "EW202445",
+								  "EW202446", "EW202447", "EW202448", "EW202449", "EW202450",
+								  "EW202451", "EW202452", "EW202501", "EW202502", "EW202503",
+								  "EW202504", "EW202505", "EW202506", "EW202507", "EW202508",
+								  "EW202509", "EW202510", "EW202511", "EW202512", "EW202513",
+								  "EW202514", "EW202515", "EW202516", "EW202517", "EW202518",
+								  "EW202519", "EW202520", "EW202521", "EW202522", "EW202523"],
+								"optional":null
+							},
+							"value":{
+								"type":"double",
+								"minimum":0,
+								"maximum":1
+							}
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id": "peak time hosp",
+							"target_name":"Cumulative probability of the incident hospitalization peak",
+							"target_units":"population",
+							"target_keys":{
+								"target":["peak time hosp"]
+							},
+							"target_type": "discrete",
+							"is_step_ahead": true,
+							"time_unit": "week"
+						}
+					]
+				}
+			],
+		"submissions_due":{
+			"start":"2024-10-29","end":"2024-12-14"}
 		}
 	]
 }
