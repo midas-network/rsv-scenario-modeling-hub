@@ -15,18 +15,33 @@ df_loc <- read.csv("auxiliary-data/location_census/locations.csv")
 location2fips <- setNames(df_loc$location, df_loc$location_name)
 
 # Age Group
-age2st_age <- setNames(
-  c("0-130", "18-49", "50-64", "65-130", "0-0.49",
-    "1-1.99", "2-4", "0.5-0.99", "0-4",
-    "5-17", "18-130", "0-130", "0-0.49", "0.5-0.99",
-    "1-1.99", "2-4", "18-130", "65-74",
-    "75-130"),
-  c("Overall", "18-49 years", "50-64 years", "65+ years", "----0-<6 months",
-    "----1-<2 years", "----2-4 years", "----6-<12 months", "0-4 years",
-    "5-17 years", "18+ (Adults)", "All", "0-<6 months",  "6mo-<12 months",
-    "1-<2 years" ,   "2-4 years", "18+ years (Adults)", "65-74 years",
-    "75+ years")
-)
+age2st_age <-
+  setNames(c("0-130", "0-130",
+             "0-4",
+             "5-17",
+             "18-49",
+             "50-64",
+             "65-130", "65-130",
+             "0-0.49", "0-0.49",
+             "0.5-0.99", "0.5-0.99",
+             "75-130", "75-130",
+             "65-74",
+             "1-1.99", "1-1.99",
+             "2-4", "2-4",
+             "18-130", "18-130", "18-130"),
+           c("Overall", "All",
+             "0-4 years",
+             "5-17 years",
+             "18-49 years",
+             "50-64 years",
+             "65+ years", "≥65 years",
+             "----0-<6 months", "0-<6 months",
+             "6mo-<12 months", "----6-<12 months",
+             "75+ years", "≥75 years",
+             "65-74 years",
+             "----1-<2 years", "1-<2 years",
+             "----2-4 years", "2-4 years",
+             "18+ (Adults)", "18+ years (Adults)", "≥18 years (Adults)"))
 
 # Census - From US Census Bureau
 # - Add columns for 2023 and 2024 with the same values as 2022
@@ -81,10 +96,13 @@ rsv <- df %>%
                    tryFormats = c("%m/%d/%Y", "%Y-%m-%d"))) %>%
   dplyr::filter(
     Sex == "All" & Race == "All" &
-      `Age Category` %in% c(
-        "0-4 years","5-17 years", "18-49 years", "50-64 years","65+ years",
-        "All", "0-<6 months",  "6mo-<12 months", "75+ years", "65-74 years",
-        "1-<2 years" ,   "2-4 years", "18+ years (Adults)")
+      `Age Category` %in%
+      c("Overall", "All", "0-4 years", "5-17 years", "18-49 years",
+        "50-64 years", "65+ years", "≥65 years", "----0-<6 months",
+        "0-<6 months", "6mo-<12 months", "----6-<12 months", "75+ years",
+        "≥75 years", "65-74 years", "----1-<2 years", "1-<2 years",
+        "----2-4 years", "2-4 years", "18+ (Adults)", "18+ years (Adults)",
+        "≥18 years (Adults)")
   )
 full_ts <- seq(min(rsv$date),max(rsv$date), by = "week")
 full_df <- tidyr::expand(rsv, tidyr::nesting(State, `Age Category`),

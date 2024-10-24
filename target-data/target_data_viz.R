@@ -47,7 +47,7 @@ weekly_hosp_state <- function(
     labs(x = "Date", y = y_title, color = "Legend") +
     scale_color_manual(values = colors) +
     facet_wrap(~location, scales = "fixed", ncol = facet_ncol) +
-    theme(legend.position = c(0.8, 0.05)) +
+    theme(legend.position = c(0.9, 0.05)) +
     ggtitle(paste0(title, ", ", agegroup, " years"))
 
   return(plot)
