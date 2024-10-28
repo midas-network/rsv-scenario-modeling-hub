@@ -3,10 +3,7 @@ on:
   pull_request_target:
     types: [synchronize, opened, reopened]
     branches:
-      - master
-    paths:
-      - 'model-output'
-
+      - main
 
 jobs:
     validates-viz-files:
