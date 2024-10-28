@@ -62,6 +62,11 @@ which represents one week of babies.
 In all files, the first and last weeks of the campaign have lower vaccination rates 
 than other weeks to account for the fact that the campaign starts and ends at precise 
 dates which do not exactly match with the start of a week  (eg Aug 15, Sep 1... etc).
+
+**For teams that require US-level vaccine coverage, we advice to either do a 
+weighted mean of the state coverage proportions, where the weights are the state 
+population sizes. Or you can also sum all the state-level no of doses and 
+state-level populations**
   
 ## Location and Census Data
 
