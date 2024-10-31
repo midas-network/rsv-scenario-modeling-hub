@@ -6,12 +6,12 @@ model_contributors: [
     {
         "name": "Marco Ajelli",
         "affiliation": "Indiana University Bloomington",
-        "email": "majelli@iu.edu",
+        "email": "majelli@iu.edu"
     },
     {
         "name": "Shreeya Mhade",
         "affiliation": "Indiana University Bloomington",
-        "email": "smhade@iu.edu",
+        "email": "smhade@iu.edu"
     },
     {
         "name": "Paulo C. Ventura",
@@ -21,23 +21,23 @@ model_contributors: [
     {
         "name": "Maria Litvinova",
         "affiliation": "Indiana University Bloomington",
-        "email": "malitv@iu.edu",
+        "email": "malitv@iu.edu"
     },
     {
         "name": "Snigdha Agrawal",
         "affiliation": "Indiana University Bloomington",
-        "email": "snagrawa@iu.edu",
+        "email": "snagrawa@iu.edu"
     },
     {
         "name": "Allisandra G. Kummer",
         "affiliation": "Indiana University Bloomington",
-        "email": "alkummer@iu.edu",
+        "email": "alkummer@iu.edu"
     },
     {
         "name": "Kedir Turi",
         "affiliation": "Indiana University Bloomington",
-        "email": "knturi@iu.edu",
-    },
+        "email": "knturi@iu.edu"
+    }
 ]
 license: "CC-BY_SA-4.0"
 methods: "Age-structured ordinary differential equations model"
