@@ -20,13 +20,15 @@ The scenario structure is as follows:
 <img src= "https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/main/rounds/round2_viz/rsv_round2.png">
 
 
-### Assumptions regarding RSV interventions
-
 Weekly cumulative age-specific coverage for senior vaccines, maternal 
-vaccine, and monoclonals will be provided. Because of the shifting population 
-denominator of infants coming in and aging out of eligibility, and the 
-issue with seniors not being recommended for revaccination, we will provide 
-coverage as no. of doses and no. of eligible population per week. 
+vaccine, and monoclonals are available in the 
+[auxiliary data folder](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data/), in the 
+[vaccine_coverage subfolder](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data/vaccine_coverage/). 
+
+Because of the shifting population denominator of infants coming in 
+and aging out of eligibility, and the issue with seniors not being 
+recommended for revaccination, we will provide coverage as no. of 
+doses and no. of eligible population per week. 
 
 Below, we describe important details of the planned implementation of RSV 
 interventions as well as our rationale for intervention coverage and 
@@ -53,7 +55,8 @@ fraction of all US babies, see later) is at teams’ discretion. The
 timing of administration of long-acting monoclonals depends on the 
 scenario modeled (Aug 15-Mar 30 or Oct 1-Mar 30). 
 The process is as follows: 
-    - Newborns: During the RSV campaign, a fraction of all newborns 
+
+  - Newborns: During the RSV campaign, a fraction of all newborns 
     will receive long-acting monoclonals at birth (fraction based on 
     weekly monoclonal coverage). Specifically, for scenarios A-B (early 
     timing of interventions), a fraction of children born Aug 15 - Mar 
@@ -61,7 +64,7 @@ The process is as follows:
     scenarios C-D (classic timing of interventions), a fraction of 
     children born Oct 1 - Mar 30 receive a birth dose of monoclonals 
     based on weekly coverage.
-    - Babies (0-7m):  During the RSV campaign, a fraction of infants 
+  - Babies (0-7m):  During the RSV campaign, a fraction of infants
     who were born prior to the start of the RSV campaign and are aged
     0-7 months at the start of the RSV campaign will receive a dose 
     of monoclonals. This administration takes place at an accelerated 
@@ -239,7 +242,8 @@ care hospitals in a subset of states (13 states as of August 2024; WA joined for
 the 2024-25 season). Age-specific weekly rates per 100,000 population are 
 reported in this system. 
 
-The data has been standardized and posted on the [SMH RSV github](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/target-data/) 
+The data has been standardized and posted on the 
+[SMH RSV github](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/target-data/) 
 and will be updated weekly. **The target in this data is the weekly number of 
 hospitalizations in each given state (inc_hosp variable), for all ages and by 
 age group.** To obtain counts, we have converted RSV-NET weekly rates based 
@@ -305,15 +309,16 @@ well as for hospital admission peak size and peak timing.
 ##### Required
 
 - Hospital admissions should be provided for the following age groups: 
-  all ages,  <1 yr, 1-4, 5-64, **65-74, and 75+**. (Most of the RSV 
-  burden on hospitalizations comes from the 0-1 and 6-74 and 75+ age 
-  groups.)
+  all ages,  <1 yr, 1-4, 5-64, 65+. (Most of the RSV 
+  burden on hospitalizations comes from the 0-1 and 65+ age groups.)
 
 
 ##### Additional age details (optional)
 
 - Weekly state-specific and national RSV hospitalizations among individuals 
-  <1 yr, 1-4, 5-17, 18-49, 50-64, 65-74, 75+ and all ages
+  <1 yr, 1-4, 5-17, 18-49, 50-64, 65-74, 75+ and all ages  (Most of the RSV 
+  burden on hospitalizations comes from the 0-1 and 65-74 and 75+ age 
+  groups.)
 
 
 #### Optional targets (if submitting quantiles in addition to trajectories)
@@ -403,7 +408,7 @@ low level masking is allowed at groups’ discretion.
 
 We leave seeding intensity, timing and geographic distribution at the 
 discretion of the teams. In addition to the RSV-NET hospital admission 
-dataset, CDC’s NVERSS 
+dataset, CDC’s NREVSS 
 [viral surveillance dataset](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data/rsv/nrevss) 
 is a good resource for state-specific information on epidemic intensity 
 (e.g., weekly % positive, or weekly ILI*%positive), and can be used to adjust 
