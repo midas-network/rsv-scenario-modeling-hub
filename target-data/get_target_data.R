@@ -75,7 +75,8 @@ df <- arrow::read_parquet(
 # - Standardize column names (lower case, without space, dot)
 rsv <- df %>%
   dplyr::mutate(
-    date = as.Date(`Week ending date`, "%m/%d/%Y")) %>%
+    date = as.Date(`Week ending date`,
+                   tryFormats = c("%m/%d/%Y", "%Y-%m-%d"))) %>%
   dplyr::filter(
     Sex == "All" & Race == "All" &
       `Age Category` %in% c(

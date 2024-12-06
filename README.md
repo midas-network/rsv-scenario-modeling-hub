@@ -507,8 +507,22 @@ contact Katriona Shea at k-shea@psu.edu. Additional resources might be available
 
 ## Teams and models
 
+- [CEPH Lab at Indiana University - MetaRSV](.model-metadata/CEPH-MetaRSV.yaml)
+    -  Marco Ajelli (Indiana University Bloomington),
+    Shreeya Mhade (Indiana University Bloomington),
+    Paulo C. Ventura (Indiana University Bloomington),
+    Maria Litvinova (Indiana University Bloomington),
+    Snigdha Agrawal(Indiana University Bloomington)
+
 - [Columbia University — RSV_SVIRS](./model-metadata/CU-RSV_SVIRS.yaml)
     - Teresa Yamana (CU), Sen Pei (CU)
+ 
+- [Johns Hopkins University and University of North Carolina at Chapel Hill - flepiMoP](./model-metadata/JHU_UNC-flepiMop.yaml)
+    - Shaun Truelove (JHU), Alison Hill (JHU),
+    Justin Lessler (UNC), Sara Loo (JHU), 
+    Joseph Lemaitre (UNC), Anjalika Nande (JHU),
+    Anne Hebert (JHU), Madeleine Gastonguay (JHU),
+    Sung-mok Jung (UNC), Vivek Murali (JHU)
 
 - [MOBS Lab at Northeastern University - GLEAM RSV Model](./model-metadata/MOBS_NEU-GLEAM_RSV.yaml)
     - Alessandro Vespignani (Network Science Institute, NEU), 

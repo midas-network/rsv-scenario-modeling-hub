@@ -114,7 +114,7 @@ Table3: Stored file containing all the information on 2023-10-13
 |     | 2021-10-13  | 2023-10-13 |
 |     |             |            |
 
-#### The National Respiratory and Enteric Virus Surveillance System (NREVSS)
+#### The National Respiratory and Enteric Virus Surveillance System (NREVSS) [Archive]
 
 The National Respiratory and Enteric Virus Surveillance System (NREVSS) provides
 data at national and state level.
@@ -124,6 +124,8 @@ performed that week, and the number of those tests that were positive. Because
 reporting delays may be expected for some laboratories, data shown for the most 
 recent weeks, in particular the most recent two weeks, may be less complete 
 than others.
+
+**As of May 10, 2024, the data previously included on the page was moved to the a new NREVSS Interactive Dashboard. We last downloaded the data on May 10, 2024 and will not be updated.**
 
 ##### National
 

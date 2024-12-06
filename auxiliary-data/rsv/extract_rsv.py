@@ -104,21 +104,21 @@ def get_nssp_data(req_res, file_name, folder_path="auxiliary-data/rsv/nssp/", da
 
 
 # RSV State Trends - The National Respiratory and Enteric Virus Surveillance System (NREVSS)
-state_bases = [
-    "https://www.cdc.gov/surveillance/nrevss/images/rsvstate/RSV1PPCent3AVG_State",
-    "https://www.cdc.gov/surveillance/nrevss/images/rsvstate/RSV4PPCent3AVG_State",
-    "https://www.cdc.gov/surveillance/nrevss/images/rsvstate/RSV14NumCent5AVG_State"]
-hub_locations = pd.read_csv("auxiliary-data/location_census/locations.csv")
-states = list(hub_locations["abbreviation"])
-to_remove = ["AS", "GU", "MP", "PR", "UM", "VI", "US"]
-for i in to_remove:
-    states.remove(i)
-get_nrevss_data(state_bases, ".htm", states)
+# state_bases = [
+#     "https://www.cdc.gov/surveillance/nrevss/images/rsvstate/RSV1PPCent3AVG_State",
+#     "https://www.cdc.gov/surveillance/nrevss/images/rsvstate/RSV4PPCent3AVG_State",
+#     "https://www.cdc.gov/surveillance/nrevss/images/rsvstate/RSV14NumCent5AVG_State"]
+# hub_locations = pd.read_csv("auxiliary-data/location_census/locations.csv")
+# states = list(hub_locations["abbreviation"])
+# to_remove = ["AS", "GU", "MP", "PR", "UM", "VI", "US"]
+# for i in to_remove:
+#     states.remove(i)
+# get_nrevss_data(state_bases, ".htm", states)
 
 # RSV National Trends - The National Respiratory and Enteric Virus Surveillance System (NREVSS)
-nat_bases = {"https://www.cdc.gov/surveillance/nrevss/images/trend_images/RSV124PP_",
-             "https://www.cdc.gov/surveillance/nrevss/images/trend_images/RSV14Num_"}
-get_nrevss_data(nat_bases, ".htm", ["Nat"], location_name="the ")
+# nat_bases = {"https://www.cdc.gov/surveillance/nrevss/images/trend_images/RSV124PP_",
+ #            "https://www.cdc.gov/surveillance/nrevss/images/trend_images/RSV14Num_"}
+# get_nrevss_data(nat_bases, ".htm", ["Nat"], location_name="the ")
 
 # Weekly Rates of Laboratory-Confirmed RSV Hospitalizations - Respiratory Syncytial Virus Hospitalization
 # Surveillance Network (RSV-NET)
