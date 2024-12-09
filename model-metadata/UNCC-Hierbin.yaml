@@ -19,11 +19,10 @@ model_contributors: [
     "email": "rpaul9@charlotte.edu"
   }
 ]
-license: "LICENSE"
-methods: "Short description of the model"
-methods_long: "Long description of the model"
+license: "CC-BY-4.0"
+methods: "Hybrid data-driven and mechanistic model"
+methods_long: "We first applied a data-driven method (long-short term memory) to track the hospitalization trajectory, and perform model fitting and calibration based on historical data. The baseline scenario is developed. Then a mechanistic model is applied on the baseline scenario to further simulate various scenarios."
 model_version: "1.0"
-website_url: "https://url_to_team2_modelb_website.com"
-team_funding: "NSF DMS-"
-data_inputs: "Description of Data Inputs"
-citation: "Smith J, Smith S, Smith C. ModelA citation. Journal. 2020 Aug. doi: 10.1fdf038/s12345-678-90123-45."
+website_url: TBD
+team_funding: "NSF DMS2436227"
+data_inputs: "RSVNet weekly incident hospitalization data and other data provided by the RSV SMH"
