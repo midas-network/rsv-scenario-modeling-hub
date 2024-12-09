@@ -1,1 +1,29 @@
-
+team_name: "UNC Charlotte"
+team_abbr: "UNCC"
+model_name: "Hierbin"
+model_abbr: "Hierbin"
+model_contributors: [
+  {
+    "name": "Chen S",
+    "affiliation": "UNC Charlotte",
+    "email": "schen56@charlotte.edu"
+  },
+  {
+   "name": "Janies D",
+    "affiliation": "UNC Charlotte",
+    "email": "djanies@charlotte.edu"
+  },
+  {
+    "name": "Paul R",
+    "affiliation": "UNC Charlotte",
+    "email": "rpaul9@charlotte.edu"
+  }
+]
+license: "LICENSE"
+methods: "Short description of the model"
+methods_long: "Long description of the model"
+model_version: "1.0"
+website_url: "https://url_to_team2_modelb_website.com"
+team_funding: "NSF DMS-"
+data_inputs: "Description of Data Inputs"
+citation: "Smith J, Smith S, Smith C. ModelA citation. Journal. 2020 Aug. doi: 10.1fdf038/s12345-678-90123-45."
