@@ -34,11 +34,6 @@ model_contributors: [
     "email": "anande1@jhu.edu"
   },
   {
-    "name": "Anne Hebert",
-    "affiliation": "Institute for Computational Medicine, Johns Hopkins University",
-     "email": "ahebert4@jhu.edu"
-  },
-  {
     "name": "Madeleine Gastonguay",
     "affiliation": "Institute for Computational Medicine, Johns Hopkins University",
      "email": "mgaston1@jhu.edu"
@@ -47,6 +42,14 @@ model_contributors: [
     "name": "Sung-mok Jung",
     "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill",
      "email": "sungmok@ad.unc.edu"
+  },
+  {
+    "name": "Timothy Willard",
+    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill"
+  },
+  {
+    "name": "Carl Pearson",
+    "affiliation": "Department of Epidemiology, Gillings School of Global Public Health, University of North Carolina at Chapel Hill"
   },
   {
     "name": "Vivek Murali",
