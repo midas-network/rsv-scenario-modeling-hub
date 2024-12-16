@@ -621,7 +621,7 @@ for information.
     -  Chen S (UNCC), Janies D (UNCC), Paul R (UNCC)
 
 - [University of Notre Dame - FRED](./model-metadata/NotreDame-FRED.yaml)
-    -  Sean Moore (UND), Alex Perkins (UND, Guido Espana (CDC Center for Forecasting and Analysis)
+    -  Sean Moore (UND), Alex Perkins (UND), Guido Espana (CDC Center for Forecasting and Analysis)
 
 - [University of Southern California - SIkJalpha](./model-metadata/USC-SIkJalpha.yaml)
     -  Ajitesh Srivastava (USC), Majd Al Aawar (USC)
