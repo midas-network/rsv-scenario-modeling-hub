@@ -579,7 +579,9 @@ for information.
     Shreeya Mhade (Indiana University Bloomington),
     Paulo C. Ventura (Indiana University Bloomington),
     Maria Litvinova (Indiana University Bloomington),
-    Snigdha Agrawal(Indiana University Bloomington)
+    Snigdha Agrawal (Indiana University Bloomington),
+    Allisandra G. Kummer (Indiana University Bloomington),
+    Kedir Turi (Indiana University Bloomington)
 
 - [Columbia University — RSV_SVIRS](./model-metadata/CU-RSV_SVIRS.yaml)
     - Teresa Yamana (CU), Sen Pei (CU)
@@ -588,36 +590,38 @@ for information.
     - Shaun Truelove (JHU), Alison Hill (JHU),
     Justin Lessler (UNC), Sara Loo (JHU), 
     Joseph Lemaitre (UNC), Anjalika Nande (JHU),
-    Anne Hebert (JHU), Madeleine Gastonguay (JHU),
-    Sung-mok Jung (UNC), Vivek Murali (JHU)
+    Madeleine Gastonguay (JHU), Sung-mok Jung (UNC), 
+    Timothy Willard (UNC), Carl Pearson (UNC),
+    Vivek Murali (JHU)
 
 - [MOBS Lab at Northeastern University - GLEAM RSV Model](./model-metadata/MOBS_NEU-GLEAM_RSV.yaml)
     - Alessandro Vespignani (Network Science Institute, NEU), 
-    Matteo Chinazzi (The Roux Institute, NEU, Portland (ME)),
+    Matteo Chinazzi (The Roux Institute, NEU, Portland (ME); 
+    Network Science Institute, NEU),
     Jessica T. Davis (Network Science Institute, NEU), 
     Clara Bay (Network Science Institute, NEU), 
-    Guillaume St-Onge (Network Science Institute, NEU)
+    Guillaume St-Onge (The Roux Institute, NEU, Portland (ME); 
+    Network Science Institute, NEU),
 
 - [National Institutes of Health - RSV_MSIRS](./model-metadata/NIH-RSV_MSIRS.yaml)
     - Kaiyuan Sun (Fogarty International Center, NIH), 
     Cécile Viboud (Fogarty International Center, NIH)
 
-- [National Institutes of Health - RSV_Phenomenological](./model-metadata/NIH-RSV_Phenomenological.yaml)
-    - Kaiyuan Sun (Fogarty International Center, NIH), 
-    Cécile Viboud (Fogarty International Center, NIH)
-
 - [National Institutes of Health - RSV_WIN](./model-metadata/NIH-RSV_WIN.yaml)
-    - Samantha Bents (Fogarty International Center, NIH), 
-    Cécile Viboud (Fogarty International Center, NIH),
-    Chelsea Hansen (Fogarty International Center, NIH)
-
+    - Chelsea Hansen (Fogarty International Center, NIH), 
+    Samantha Bents (Fogarty International Center, NIH), 
+    Cécile Viboud (Fogarty International Center, NIH)
+    
 - [Predictive Sciences - Package for Respiratory Disease Open-source Forecasting](./model-metadata/PSI-PROF.yaml)
     - James Turtle (Predictive Science Inc), 
     Michal Ben-Nun (Predictive Science Inc), 
     Pete Riley (Predictive Science Inc)
+    
+- [University of North Carolina Charlotte - Hierbin](./model-metadata/UNCC-Hierbin.yaml)
+    -  Chen S (UNCC), Janies D (UNCC), Paul R (UNCC)
 
 - [University of Notre Dame - FRED](./model-metadata/NotreDame-FRED.yaml)
-    -  Sean Moore (UND), Alex Perkins (UND, Guido Espana (CDC Center for Forecasting and Analysis)
+    -  Sean Moore (UND), Alex Perkins (UND), Guido Espana (CDC Center for Forecasting and Analysis)
 
 - [University of Southern California - SIkJalpha](./model-metadata/USC-SIkJalpha.yaml)
     -  Ajitesh Srivastava (USC), Majd Al Aawar (USC)
@@ -630,10 +634,14 @@ for information.
 
 - [University of Virginia - EpiHiper Scenario Modeling for RSV](./model-metadata/UVA-EpiHiperRSV.yaml)
     - Jiangzhuo Chen (UVA), Stefan Hoops (UVA), Bryan Lewis (UVA),
-    Srini Venkatramanan (UVA), Lacey Critchley (UVA), 
-    Parantapa Bhattacharya (UVA), Dustin Machi (UVA), 
-    Madhav Marathe (UVA)
+    Srini Venkatramanan (UVA), Parantapa Bhattacharya (UVA),
+    Dustin Machi (UVA), Madhav Marathe (UVA)
 
+### Past Teams and Models
+
+- [National Institutes of Health - RSV_Phenomenological](./model-metadata/NIH-RSV_Phenomenological.yaml)
+    - Kaiyuan Sun (Fogarty International Center, NIH), 
+    Cécile Viboud (Fogarty International Center, NIH)
 
 
 ## The RSV Scenario Modeling Hub Coordination Team    
