@@ -151,14 +151,15 @@ rsv_past_season <- dplyr::filter(rsv_past_season, date < min(rsv_output$date))
 
 # Archive past files
 old_files <- dir("target-data/", full.names = TRUE,
-                 pattern = "rsvnet_hospitalization.csv")
-file.rename(old_files, gsub("target-data/",
-                            "auxiliary-data/target-data/archive", old_files))
+                 pattern = "time-series.csv")
+file.rename(old_files,
+            gsub("target-data(/)+", paste0("target-data/",
+                                           as.Date(file.info(old_files)$ctime),
+                                           "_"), old_files))
 
 # Write output
 rsv_output <- rbind(rsv_output, rsv_past_season)
 rsv_output <- dplyr::rename(rsv_output, signal = target, observation = value)
-write.csv(rsv_output,
-          paste0("target-data/", Sys.Date(), "_rsvnet_hospitalization.csv"),
+write.csv(rsv_output, "target-data/time-series.csv",
           row.names = FALSE)
 
