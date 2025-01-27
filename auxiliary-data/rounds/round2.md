@@ -17,7 +17,7 @@ will consider no RSV mitigation strategy implemented in either 2023-24 or 2024-2
 
 The scenario structure is as follows:
 
-<img src= "https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/main/rounds/round2_viz/rsv_round2.png">
+<img src= "https://raw.githubusercontent.com/midas-network/rsv-scenario-modeling-hub/main/auxiliary-data/rounds/round2_viz/rsv_round2.png">
 
 
 Weekly cumulative age-specific coverage for senior vaccines, maternal 

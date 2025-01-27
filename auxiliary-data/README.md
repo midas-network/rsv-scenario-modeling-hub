@@ -2,12 +2,15 @@
 
 This folder is used to store additional data relevant to the RSV modeling efforts. 
 It contains multiple folders: 
-  - one for vaccine coverage
+  - one for vaccine coverage ([vaccine_coverage/](./vaccine_coverage/))
   - one for RSV data from different CDC sources, including the python code to 
-  extract and update the data. 
-  - one for location and population data
-  - one for birth rate data
-  - one archive for past version and past round associated files
+  extract and update the data ([rsv/](./rsv/))
+  - one for location and population data ([location_census/](./location_census/))
+  - one for birth rate data ([birth_rate/](./birth_rate/))
+  - past round specification information ([rounds/](./rounds/))
+  - one archive for past version and past round associated auxiliary data files
+  ([archive/](./archive/))
+
   
 ## Vaccine Coverage
 
@@ -217,7 +220,8 @@ are downloaded weekly and output in PARQUET files:
 For more information, please consult the 
 [NSSP homepage](https://www.cdc.gov/nssp/index.html)
 
-----
+
+---
 
 ## Archive
 

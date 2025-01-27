@@ -64,7 +64,7 @@ will consider no RSV mitigation strategy implemented in either 2023-24 or 2024-2
 
 The scenario structure is as follows:
 
-<img src= "./rounds/round2_viz/rsv_round2.png">
+<img src= "./auxiliary-data/rounds/round2_viz/rsv_round2.png">
 
 ### Assumptions regarding RSV interventions
 
