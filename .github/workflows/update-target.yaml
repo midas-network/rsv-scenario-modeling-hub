@@ -26,7 +26,7 @@ jobs:
           R -e 'install.packages(c("lubridate", "dplyr", "tidyr", "arrow"))'
 
       - name: Update target data
-        run: Rscript target-data/get_target_data.R
+        run: Rscript src/get_target_data.R
 
       - name: Commit
         run: |

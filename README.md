@@ -532,6 +532,9 @@ The [target-data/](./target-data/) folder contains the RSV hospitalization data
 The weekly hospitalization number per location are going to be used as truth 
 data in the hub.
 
+More information on the source, workflow and archive files are
+available in the [auxiliary-data/target-data/](.auxiliary-data/target-data/) folder.
+
 ## Auxiliary Data
 
 The repository stores and updates additional data relevant to the RSV modeling 
