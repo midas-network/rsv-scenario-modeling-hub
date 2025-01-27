@@ -1,12 +1,16 @@
 {
-    "schema_version":"https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v2.0.0/admin-schema.json",
+    "schema_version":"https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v5.0.0/admin-schema.json",
     "name": "RSV Scenario Modeling Hub",
     "maintainer": "RSV Scenario Modeling Hub Coordination Team",
     "contact": {
         "name": "RSV Scenario Modeling Hub Coordination Team",
         "email": "scenariohub@midasnetwork.us"
     },
-    "repository_url": "https://github.com/midas-network/rsv-scenario-modeling-hub",
+    "repository_url": {
+        "host": "github",
+        "owner": "midas-network",
+        "name": "rsv-scenario-modeling-hub"
+    },
     "hub_models": [
         {
             "team_abbr": "",
