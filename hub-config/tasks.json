@@ -1,5 +1,5 @@
 {
-"schema_version": "https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v5.0.0/tasks-schema.json",
+"schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v5.0.0/tasks-schema.json",
 	"rounds":[
 		{
 			"round_id_from_variable":true,
@@ -34,10 +34,10 @@
 					"output_type":{
 						"sample":{
 							"output_type_id_params": {
-							  "type": "integer",
-							  "min_samples_per_task": 100,
-								"max_samples_per_task": 100,
-								"compound_taskid_set": ["origin_date", "scenario_id", "target", "location"]
+								"type": "integer",
+							    "min_samples_per_task": 100,
+							    "max_samples_per_task": 100,
+							    "compound_taskid_set": ["origin_date", "scenario_id", "target", "location"]
 							},
 							"value":{
 								"type":"double",
@@ -60,7 +60,8 @@
 						 	"time_unit":"week"
 						 }
 					]
-				},{
+				},
+				{
 					"task_ids":
 					{
 						"origin_date":{
@@ -97,7 +98,59 @@
 								"minimum":0
 							},
 							"is_required": true
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id": "inc hosp",
+							"target_name": "Incident hospitalization",
+							"description":"Weekly incident RSV hospitalizations",
+							"target_units":"count",
+							"target_keys":{"target":"inc hosp"},
+							"target_type": "discrete",
+							"is_step_ahead": true,
+							"time_unit": "week"
 						},
+						{
+							"target_id": "cum hosp",
+							"target_name": "Cumulative hospitalization",
+							"description":"Weekly incident cumulative RSV hospitalizations",
+							"target_units":"count",
+							"target_keys":{"target":"cum hosp"},
+							"target_type": "discrete",
+							"is_step_ahead":true,
+							"time_unit": "week"
+						}
+					]
+				},
+				{
+					"task_ids":
+					{
+						"origin_date":{
+							"required":["2023-11-12"],
+							"optional":null
+						},
+						"scenario_id":{
+							"required":["A-2023-10-27","B-2023-10-27","C-2023-10-27","D-2023-10-27","E-2023-10-27"],
+							"optional":null
+						},
+						"target":{
+							"required":null,
+							"optional":["inc hosp","cum hosp"]
+						},
+						"horizon":{
+							"required":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],
+							"optional":null},
+						"location":{
+							"required":null,
+							"optional":["US","06","08","09","13","24","26","27","35","36","41","47","49"]
+						},
+						"age_group":{
+							"required":["0-0.99","1-4","65-130","5-64","0-130"],
+							"optional":["5-17","18-49","50-64"]
+						}
+					},
+					"output_type":{
 						"quantile":{
 							"output_type_id":{
 								"required":[0, 1]
@@ -168,7 +221,47 @@
 								"minimum":0
 							},
 							"is_required": true
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id": "peak size hosp",
+							"target_name": "Peak size of hospitalization",
+							"description":"Magnitude of the peak of weekly incident hospitalizations ",
+							"target_units":"count",
+							"target_keys":{"target":"peak size hosp"},
+							"target_type": "discrete",
+							"is_step_ahead":false
+						}
+					]
+				},
+				{
+					"task_ids":{
+						"origin_date":{
+							"required":["2023-11-12"],
+							"optional":null
 						},
+						"scenario_id":{
+							"required":["A-2023-10-27","B-2023-10-27","C-2023-10-27","D-2023-10-27","E-2023-10-27"],
+							"optional":null
+						},
+						"target":{
+							"required":null,
+							"optional":["peak size hosp"]
+						},
+						"horizon":{
+							"required":null,
+							"optional":null},
+						"location":{
+							"required":null,
+							"optional":["US","06","08","09","13","24","26","27","35","36","41","47","49"]
+						},
+						"age_group":{
+							"required":["0-130"],
+							"optional":null
+						}
+					},
+					"output_type":{
 						"quantile":{
 							"output_type_id":{
 								"required":[0, 1]
@@ -370,7 +463,84 @@
 								"minimum":0
 							},
 							"is_required": true
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id": "inc hosp",
+							"target_name":"Weekly incident RSV hospitalizations",
+							"target_units":"count",
+							"target_keys":{"target":"inc hosp"},
+							"target_type": "discrete",
+							"is_step_ahead": true,
+							"time_unit": "week"
 						},
+						{
+							"target_id": "cum hosp",
+							"target_name":"Weekly incident cumulative RSV hospitalizations",
+							"target_units":"count",
+							"target_keys":{"target":"cum hosp"},
+							"target_type": "discrete",
+							"is_step_ahead": true,
+							"time_unit": "week"
+						},
+						{
+							"target_id": "inc inf",
+							"target_name":"Weekly incident RSV infection",
+							"target_units":"count",
+							"target_keys":{"target":"inc inf"},
+							"target_type": "discrete",
+							"is_step_ahead": true,
+							"time_unit": "week"
+						},
+						{
+							"target_id": "cum inf",
+							"target_name":"Weekly incident cumulative RSV infection",
+							"target_units":"count",
+							"target_keys":{"target":"cum inf"},
+							"target_type": "discrete",
+							"is_step_ahead": true,
+							"time_unit": "week"
+						}
+					]
+				},
+				{
+					"task_ids":
+					{
+					  "origin_date":{
+							"required":["2024-07-28"],
+							"optional":null
+						}, "scenario_id":{
+							"required":[
+							  "A-2024-09-20","B-2024-09-20","C-2024-09-20","D-2024-09-20",
+							  "E-2024-09-20"],
+							"optional": null
+						},
+						"target":{
+							"required":null,
+							"optional":["inc hosp","cum hosp", "inc inf", "cum inf"]
+						},
+						"horizon":{
+							"required":[
+							  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,
+							  25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45],
+							"optional":null},
+						"location":{
+							"required":null,
+							"optional":[
+							  "US", "01", "02", "04", "05", "06", "08", "09", "10", "11",
+							  "12", "13", "15", "16", "17", "18", "19", "20", "21", "22",
+							  "23", "24", "25", "26", "27", "28", "29", "30", "31", "32",
+							  "33", "34", "35", "36", "37", "38", "39", "40", "41", "42",
+							  "44", "45", "46", "47", "48", "49", "50", "51", "53", "54",
+							  "55", "56", "60", "66", "69", "72", "74", "78"]
+						},
+						"age_group":{
+							"required":["0-0.99","1-4","65-130","5-64","0-130"],
+							"optional":["5-17","18-49","50-64", "65-74", "75-130"]
+						}
+					},
+					"output_type":{
 						"quantile":{
 							"output_type_id":{
 								"required":[0, 1]
@@ -466,7 +636,53 @@
 								"minimum":0
 							},
 							"is_required": true
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id": "peak size hosp",
+							"target_name":"Magnitude of the peak of weekly incident hospitalizations ",
+							"target_units":"count",
+							"target_keys":{"target":"peak size hosp"},
+							"target_type": "discrete",
+							"is_step_ahead":false
+						}
+					]
+				},
+				{
+					"task_ids":{
+						"origin_date":{
+							"required":["2024-07-28"],
+							"optional":null
+						}, "scenario_id":{
+							"required":[
+							  "A-2024-09-20","B-2024-09-20","C-2024-09-20","D-2024-09-20",
+							  "E-2024-09-20"],
+							"optional": null
 						},
+						"target":{
+							"required":null,
+							"optional":["peak size hosp"]
+						},
+						"horizon":{
+							"required":null,
+							"optional":null},
+						"location":{
+							"required":null,
+							"optional":[
+							  "US", "01", "02", "04", "05", "06", "08", "09", "10", "11",
+							  "12", "13", "15", "16", "17", "18", "19", "20", "21", "22",
+							  "23", "24", "25", "26", "27", "28", "29", "30", "31", "32",
+							  "33", "34", "35", "36", "37", "38", "39", "40", "41", "42",
+							  "44", "45", "46", "47", "48", "49", "50", "51", "53", "54",
+							  "55", "56", "60", "66", "69", "72", "74", "78"]
+						},
+						"age_group":{
+							"required":["0-130"],
+							"optional":null
+						}
+					},
+					"output_type":{
 						"quantile":{
 							"output_type_id":{
 								"required":[0,1]
