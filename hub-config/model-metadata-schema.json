@@ -12,7 +12,7 @@
             "description": "Abbreviated name of the team submitting the model",
             "type": "string",
             "pattern": "^[a-zA-Z0-9_+]+$",
-            "maxLength": 16
+            "maxLength": 20
         },
         "model_name": {
             "description": "The name of the model",
@@ -22,7 +22,7 @@
             "description": "Abbreviated name of the model",
             "type": "string",
             "pattern": "^[a-zA-Z0-9_+]+$",
-            "maxLength": 16
+            "maxLength": 20
         },
         "model_version": {
             "description": "Identifier of the version of the model",
@@ -54,24 +54,24 @@
         },
         "website_url": {
             "description": "Public facing website for the model",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
         },
         "repo_url": {
             "description": "Repository containing code for the model",
-            "type": "string",
-            "format": "uri"
+            "type": "string"
         },
         "license": {
             "description": "License for use of model output data",
             "type": "string",
             "enum": [
+                "BSD Simplified",
                 "CC0-1.0",
                 "cc0-1.0",
                 "cc-by-4.0",
                 "CC-BY-4.0",
                 "cc-by_sa-4.0",
                 "CC-BY_SA-4.0",
+                "NA",
                 "ppdl",
                 "PPDL",
                 "obc-by",
@@ -101,7 +101,7 @@
         "methods": {
             "description": "A brief (200 char.) description of the methods used by this model",
             "type": "string",
-            "maxLength": 200
+            "maxLength": 300
         },
         "methods_long": {
             "description": "A full description of the methods used by this model. Among other details, this should include whether spatial correlation is considered and how the model accounts for uncertainty.",
