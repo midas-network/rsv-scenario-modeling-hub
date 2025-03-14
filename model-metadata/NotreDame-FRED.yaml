@@ -15,8 +15,7 @@ model_contributors: [
   },
   {
     "name": "Espana Guido",
-    "affiliation": "CDC Center for Forecasting and Analysis",
-    "email": ""
+    "affiliation": "CDC Center for Forecasting and Analysis"
   }
 ]
 license: "BSD Simplified"
