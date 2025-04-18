@@ -3,7 +3,7 @@ name: Update RSV data
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 9 * * 6'
+    - cron: '0 9 * * '
 
 jobs:
   update-rsv-data:
@@ -11,7 +11,14 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+              .github
+              src
+              auxiliary-data
+              target-data
 
       - name: Setup Python
         uses: actions/setup-python@v3
