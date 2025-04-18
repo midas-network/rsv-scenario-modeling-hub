@@ -10,7 +10,8 @@ It contains multiple folders:
   - one for location and population data ([location_census/](./location_census/))
   - one for birth rate data ([birth_rate/](./birth_rate/))
   - past round specification information ([rounds/](./rounds/))
-  - reports ([reports/](./reports/))
+  - one for reports ([reports/](./reports/))
+  - one for model examples ([model_examples](./model_examples))
   - one archive for past version and past round associated auxiliary data files
   ([archive/](./archive/))
 
@@ -249,6 +250,11 @@ The [rounds](./rounds/) folder contains the round information in a markdown
 format with a folder names roundX_viz with X being the round number, 
 containing associated visualization (for example, scenario table in a PNG 
 format).
+
+## Model examples
+
+The [model_examples](./model_examples/) folder contains model-output and 
+model-metadata examples, using round 1 specification. 
 
 ## Archive
 

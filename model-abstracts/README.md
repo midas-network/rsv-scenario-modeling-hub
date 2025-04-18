@@ -60,9 +60,3 @@ sections (or headings).
 For more information on the markdown format, please consult the 
 [GitHub - Basic writing and formatting syntax help page](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
-### Examples
-
-The [model-abstract/](./) contains an example abstract file from 
-a `team2-modelb` team. The abstract file associated with the example
-is a copy of a template file, the example here is mainly design
-to illustrate the organization of the folder and the file naming system. 
