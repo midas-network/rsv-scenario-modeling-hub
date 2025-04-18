@@ -1,0 +1,123 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Schema for Modeling Hub model metadata",
+    "description": "This is the schema for model metadata files, please refer to https://github.com/cdcepi/FluSight-forecast-hub/blob/main/model-metadata/README.md for more information.",
+    "type": "object",
+    "properties": {
+        "team_name": {
+            "description": "The name of the team submitting the model",
+            "type": "string"
+        },
+        "team_abbr": {
+            "description": "Abbreviated name of the team submitting the model",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_+]+$",
+            "maxLength": 20
+        },
+        "model_name": {
+            "description": "The name of the model",
+            "type": "string"
+        },
+        "model_abbr": {
+            "description": "Abbreviated name of the model",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_+]+$",
+            "maxLength": 20
+        },
+        "model_version": {
+            "description": "Identifier of the version of the model",
+            "type": "string"
+        },
+        "model_contributors": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "affiliation": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "orcid": {
+                        "type": "string",
+                        "pattern": "^\\d{4}\\-\\d{4}\\-\\d{4}\\-[\\dX]{4}$"
+                    }
+                },
+                "additionalProperties": false,
+                "required": ["name", "affiliation"]
+            }
+        },
+        "website_url": {
+            "description": "Public facing website for the model",
+            "type": "string"
+        },
+        "repo_url": {
+            "description": "Repository containing code for the model",
+            "type": "string"
+        },
+        "license": {
+            "description": "License for use of model output data",
+            "type": "string",
+            "enum": [
+                "BSD Simplified",
+                "CC0-1.0",
+                "cc0-1.0",
+                "cc-by-4.0",
+                "CC-BY-4.0",
+                "cc-by_sa-4.0",
+                "CC-BY_SA-4.0",
+                "NA",
+                "ppdl",
+                "PPDL",
+                "obc-by",
+                "ODC-by",
+                "odbl",
+                "ODbL",
+                "ogl-3.0",
+                "OGL-3.0",
+                "mit",
+                "MIT"
+            ]
+        },
+        "citation": {
+            "description": "One or more citations for this model",
+            "type": "string",
+            "examples": ["Gibson GC , Reich NG , Sheldon D. Real-time mechanistic bayesian forecasts of Covid-19 mortality. medRxiv. 2020. https://doi.org/10.1101/2020.12.22.20248736"]
+        },
+        "team_funding": {
+            "description": "Any information about funding source for the team or members of the team.",
+            "type": "string",
+            "examples": ["National Institutes of General Medical Sciences (R01GM123456). The content is solely the responsibility of the authors and does not necessarily represent the official views of NIGMS."]
+        },
+        "data_inputs": {
+            "description": "List or description of data inputs used by the model",
+            "type": "string"
+        },
+        "methods": {
+            "description": "A brief (200 char.) description of the methods used by this model",
+            "type": "string",
+            "maxLength": 300
+        },
+        "methods_long": {
+            "description": "A full description of the methods used by this model. Among other details, this should include whether spatial correlation is considered and how the model accounts for uncertainty.",
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "team_name",
+        "team_abbr",
+        "model_name",
+        "model_abbr",
+        "model_contributors",
+        "website_url",
+        "model_version",
+        "methods",
+        "license"
+    ]
+}

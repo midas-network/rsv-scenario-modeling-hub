@@ -6,6 +6,9 @@ RSV Scenario Modeling Hub.
 Each model is required to have metadata in yaml format and should contains
 required information and be stored in a team-model specific sub-directory.
 
+Examples files are available in the 
+[auxiliary-data/model_examples](../auxiliary-data/model_examples) folder
+
 ----
 
 ## Subdirectory

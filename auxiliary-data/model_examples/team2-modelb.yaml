@@ -1,0 +1,29 @@
+team_name: "Team 2"
+team_abbr: "team2"
+model_name: "Model B"
+model_abbr: "modelb"
+model_contributors: [
+  {
+    "name": "Smith J",
+    "affiliation": "Affiliation",
+    "email": "user@address"
+  },
+  {
+   "name": "Smith S",
+    "affiliation": "Affiliation",
+    "email": "user2@address"
+  },
+  {
+    "name": "Smith C",
+    "affiliation": "Affiliation",
+    "email": "user3@address"
+  }
+]
+license: "LICENSE"
+methods: "Short description of the model"
+methods_long: "Long description of the model"
+model_version: "1.0"
+website_url: "https://url_to_team2_modelb_website.com"
+team_funding: "funding information"
+data_inputs: "Description of Data Inputs"
+citation: "Smith J, Smith S, Smith C. ModelA citation. Journal. 2020 Aug. doi: 10.1fdf038/s12345-678-90123-45."

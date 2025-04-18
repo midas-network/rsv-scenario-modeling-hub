@@ -17,13 +17,13 @@ The GitHub Repository contains multiple example files reproducing the
 required and optional targets for RSV round 1 and different sample format: 
 
 - Team 2 - Model B: 
-  - Example file: [2023-11-12-team2-modelb.parquet](./team2-modelb)
+  - Example file: [2023-11-12-team2-modelb.parquet](../auxiliary-data/model_examples/team2-modelb)
 - Team 3 - Model C
-  - Example file: [2023-11-12-team3-modelc.parquet](./team3-modelc)
+  - Example file: [2023-11-12-team3-modelc.parquet](../auxiliary-data/model_examples/team3-modelc)
 - Team 4 - Model D:
-  - Example file: [2023-11-12-team4-modeld.parquet](./team4-modeld)
+  - Example file: [2023-11-12-team4-modeld.parquet](../auxiliary-data/model_examples/team4-modeld)
 - Team 5 - Model E:
-  - Example file: [2023-11-12-team5-modele.parquet](./team5-modele)
+  - Example file: [2023-11-12-team5-modele.parquet](../auxiliary-data/model_examples/team5-modele)
 
 For more information on the different sample format, please consult the 
 [Sample Format Wiki page](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki/Sample-File-Format).
