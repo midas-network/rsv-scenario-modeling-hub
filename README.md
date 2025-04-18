@@ -576,6 +576,8 @@ efforts in the [auxiliary-data/](./auxiliary-data/) folder:
     
 - Rounds: Information on ongoing round and previous round available in the 
   repository
+  
+- Model Examples: Model output and metadata example files
 
 For more information, please consult the associated 
 [README file](./auxiliary-data/README.md).
