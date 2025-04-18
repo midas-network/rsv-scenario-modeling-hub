@@ -149,18 +149,17 @@ rsv_past_season <-
                   "f183e8a1a8d2387f02c2e007527af48226370d03/",
                   "target-data/rsvnet_hospitalization.csv"))
 rsv_past_season <- dplyr::filter(rsv_past_season, date < min(rsv_output$date))
+rsv_output <- rbind(rsv_output, rsv_past_season)
 
-# Archive past files
-old_files <- dir("target-data/", full.names = TRUE,
-                 pattern = "time-series.csv")
-file.rename(old_files,
-            gsub("target-data(/)+", paste0("target-data/",
-                                           as.Date(file.info(old_files)$ctime),
-                                           "_"), old_files))
+# Archive complete version
+archive_name <- paste0("auxiliary-data/target-data/archive/",
+                       as.Date(Sys.time()), "_rsvnet_hospitalization.csv")
+archive_rsv_output <- dplyr::rename(rsv_output, signal = target,
+                                    observation = value)
+write.csv(archive_rsv_output, archive_name, row.names = FALSE)
 
 # Write output
-rsv_output <- rbind(rsv_output, rsv_past_season)
-rsv_output <- dplyr::rename(rsv_output, signal = target, observation = value)
-write.csv(rsv_output, "target-data/time-series.csv",
-          row.names = FALSE)
+rsv_output <- dplyr::filter(rsv_output, target == "inc hosp") |>
+  dplyr::select(date, location, age_group, target, observation = value)
+write.csv(rsv_output, "target-data/time-series.csv", row.names = FALSE)
 
