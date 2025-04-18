@@ -84,7 +84,6 @@ The RSV-NET source files is standardized following these steps:
    version of the data (2023-11-10)) by using historical 
    data containing the last version of the 2014-2015 and 2015-2016 seasons
    (commit [#f183e8a](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/f183e8a1a8d2387f02c2e007527af48226370d03/target-data/rsvnet_hospitalization.csv)) 
-7. Archive past version of the output     
 8. Write the output in a CSV format with the date in the file name
 
 ### Past version

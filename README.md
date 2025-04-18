@@ -528,17 +528,24 @@ discretion.
 The [target-data/](./target-data/) folder contains the RSV hospitalization data
 (also called "truth data") standardized from the 
 [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k).
+in the 
+[hubverse format](https://hubverse.io/en/latest/user-guide/target-data.html).
 
-The weekly hospitalization number per location are going to be used as truth 
-data in the hub.
+The weekly hospitalization number per location is used as truth data in the hub.
 
 More information on the source, workflow and archive files are
-available in the [auxiliary-data/target-data/](.auxiliary-data/target-data/) folder.
+available in the [auxiliary-data/target-data/](./auxiliary-data/target-data/) 
+folder.
+
+The code to generate the data are available in the [src](./src) folder.
 
 ## Auxiliary Data
 
 The repository stores and updates additional data relevant to the RSV modeling 
 efforts in the [auxiliary-data/](./auxiliary-data/) folder:
+
+- Vaccine Coverage: data on vaccination coverage that can be used for a 
+  specific round
 
 - Population and census data:
     - National and State level name and fips code as used in the Hub and
@@ -557,6 +564,18 @@ efforts in the [auxiliary-data/](./auxiliary-data/) folder:
     data at national and state level [ARCHIVED].
     - The [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k)
     - The [National Emergency Department Visits for COVID-19, Influenza, and Respiratory Syncytial Virus](https://www.cdc.gov/respiratory-viruses/data/emergency-department-visits.html)
+
+- Target Data Archive: archive of the target-data time-series data. The data 
+  are automatically updated on Monday, and a version with additional information
+  (rate, population size). The data are automatically moved to this folder, 
+  with the date append to the file name.
+
+- Reports: Reports from RSV Scenario Modeling Hub rounds results. Each report 
+    contains an executive summary with key messages and results, and analyses 
+    of ensemble and individual projections.
+    
+- Rounds: Information on ongoing round and previous round available in the 
+  repository
 
 For more information, please consult the associated 
 [README file](./auxiliary-data/README.md).
