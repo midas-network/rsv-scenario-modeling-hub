@@ -19,7 +19,7 @@ structure is as follows:
 ### Assumptions regarding RSV interventions
 
 Weekly cumulative age-specific coverage for vaccines and monoclonals are 
-[provided](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/main/auxiliary-data/vaccine_coverage/RSV_round1_Coverage_2023_2024.csv).
+[provided](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/main/auxiliary-data/archive/vaccine_coverage/RSV_round1_Coverage_2023_2024.csv).
 
 We describe important details of the planned implementation of RSV 
 interventions below as well as our rationale for vaccine coverage and 
@@ -94,7 +94,7 @@ coverage assumptions, while we have chosen optimistic levels of coverage that
 would reflect potential benefits in a future season with no shortage and more 
 awareness of these interventions. 
 **Senior and infant vaccination coverage curves are provided for all projection weeks and target locations**,
-in the [Github vaccine coverage auxiliary data folder](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/main/auxiliary-data/vaccine_coverage/)
+in the [Github vaccine coverage auxiliary data folder](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/main/auxiliary-data/archive/vaccine_coverage/)
 
 ##### VE Assumptions
 
