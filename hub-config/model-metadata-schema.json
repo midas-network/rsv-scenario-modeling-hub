@@ -12,7 +12,7 @@
             "description": "Abbreviated name of the team submitting the model",
             "type": "string",
             "pattern": "^[a-zA-Z0-9_+]+$",
-            "maxLength": 20
+            "maxLength": 30
         },
         "model_name": {
             "description": "The name of the model",
@@ -22,7 +22,7 @@
             "description": "Abbreviated name of the model",
             "type": "string",
             "pattern": "^[a-zA-Z0-9_+]+$",
-            "maxLength": 20
+            "maxLength": 30
         },
         "model_version": {
             "description": "Identifier of the version of the model",
@@ -101,7 +101,7 @@
         "methods": {
             "description": "A brief (200 char.) description of the methods used by this model",
             "type": "string",
-            "maxLength": 300
+            "maxLength": 400
         },
         "methods_long": {
             "description": "A full description of the methods used by this model. Among other details, this should include whether spatial correlation is considered and how the model accounts for uncertainty.",
