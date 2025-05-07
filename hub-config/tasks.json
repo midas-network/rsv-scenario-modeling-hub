@@ -1,5 +1,5 @@
 {
-"schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v5.0.0/tasks-schema.json",
+"schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v5.1.0/tasks-schema.json",
 	"rounds":[
 		{
 			"round_id_from_variable":true,
@@ -50,6 +50,8 @@
 						{
 							"target_id":"inc hosp",
 							"target_name": "Incident hospitalization",
+							"alternative_name": "incident hospitalization count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645",
 						 	"description":"Weekly incident RSV hospitalizations",
 						 	"target_units":"count",
 						 	"target_keys":{
@@ -104,6 +106,9 @@
 						{
 							"target_id": "inc hosp",
 							"target_name": "Incident hospitalization",
+							"alternative_name": "incident hospitalization count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645",
+
 							"description":"Weekly incident RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"inc hosp"},
@@ -114,6 +119,8 @@
 						{
 							"target_id": "cum hosp",
 							"target_name": "Cumulative hospitalization",
+							"alternative_name": "cumulative hospitalization count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000644",
 							"description":"Weekly incident cumulative RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"cum hosp"},
@@ -166,6 +173,8 @@
 						{
 							"target_id": "inc hosp",
 							"target_name": "Incident hospitalization",
+							"alternative_name": "incident hospitalization count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645",
 							"description":"Weekly incident RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"inc hosp"},
@@ -176,6 +185,8 @@
 						{
 							"target_id": "cum hosp",
 							"target_name": "Cumulative hospitalization",
+							"alternative_name": "cumulative hospitalization count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000644",
 							"description":"Weekly incident cumulative RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"cum hosp"},
@@ -227,7 +238,9 @@
 						{
 							"target_id": "peak size hosp",
 							"target_name": "Peak size of hospitalization",
-							"description":"Magnitude of the peak of weekly incident hospitalizations ",
+							"alternative_name": "peak hospitalization count",
+							"uri": "http://w3id.org/midas-metadata/midas100",
+							"description":"Magnitude of the peak of weekly incident hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"peak size hosp"},
 							"target_type": "discrete",
@@ -277,6 +290,8 @@
 						{
 							"target_id": "peak size hosp",
 							"target_name": "Peak size of hospitalization",
+							"alternative_name": "peak hospitalization count",
+							"uri": "http://w3id.org/midas-metadata/midas100",
 							"description":"Magnitude of the peak of weekly incident hospitalizations ",
 							"target_units":"count",
 							"target_keys":{"target":"peak size hosp"},
@@ -329,6 +344,8 @@
 						{
 							"target_id": "peak time hosp",
 							"target_name": "Peak timing of hospitalization",
+							"alternative_name": "peak hospitalization time cumulative distribution",
+							"uri": "http://w3id.org/midas-metadata/midas101",
 							"description":"Cumulative probability of the incident hospitalization peak",
 							"target_units":"population",
 							"target_keys":{"target":"peak time hosp"},
@@ -399,6 +416,8 @@
 						{
 							"target_id":"inc hosp",
 						 	"target_name":"Weekly incident RSV hospitalizations",
+							"alternative_name": "incident hospitalization count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645",
 						 	"target_units":"count",
 						 	"target_keys":{"target":"inc hosp"},
 						 	"target_type":"discrete",
@@ -408,6 +427,8 @@
 						 {
 							"target_id":"inc inf",
 						 	"target_name":"Weekly incident RSV infection",
+							"alternative_name": "incident infection count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000643",
 						 	"target_units":"count",
 						 	"target_keys":{"target":"inc inf"},
 						 	"target_type":"discrete",
@@ -469,6 +490,8 @@
 						{
 							"target_id": "inc hosp",
 							"target_name":"Weekly incident RSV hospitalizations",
+							"alternative_name": "incident hospitalization count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645",
 							"target_units":"count",
 							"target_keys":{"target":"inc hosp"},
 							"target_type": "discrete",
@@ -477,7 +500,9 @@
 						},
 						{
 							"target_id": "cum hosp",
-							"target_name":"Weekly incident cumulative RSV hospitalizations",
+							"target_name":"Weekly cumulative RSV hospitalizations",
+							"alternative_name": "cumulative hospitalization count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000644",
 							"target_units":"count",
 							"target_keys":{"target":"cum hosp"},
 							"target_type": "discrete",
@@ -487,6 +512,8 @@
 						{
 							"target_id": "inc inf",
 							"target_name":"Weekly incident RSV infection",
+							"alternative_name": "incident infection count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000643",
 							"target_units":"count",
 							"target_keys":{"target":"inc inf"},
 							"target_type": "discrete",
@@ -495,7 +522,9 @@
 						},
 						{
 							"target_id": "cum inf",
-							"target_name":"Weekly incident cumulative RSV infection",
+							"target_name":"Weekly cumulative RSV infection",
+							"alternative_name": "cumulative infection count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000642",
 							"target_units":"count",
 							"target_keys":{"target":"cum inf"},
 							"target_type": "discrete",
@@ -556,6 +585,8 @@
 						{
 							"target_id": "inc hosp",
 							"target_name":"Weekly incident RSV hospitalizations",
+							"alternative_name": "incident hospitalization count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645",
 							"target_units":"count",
 							"target_keys":{"target":"inc hosp"},
 							"target_type": "discrete",
@@ -564,7 +595,9 @@
 						},
 						{
 							"target_id": "cum hosp",
-							"target_name":"Weekly incident cumulative RSV hospitalizations",
+							"target_name":"Weekly cumulative RSV hospitalizations",
+							"alternative_name": "cumulative hospitalization count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000644",
 							"target_units":"count",
 							"target_keys":{"target":"cum hosp"},
 							"target_type": "discrete",
@@ -574,6 +607,8 @@
 						{
 							"target_id": "inc inf",
 							"target_name":"Weekly incident RSV infection",
+							"alternative_name": "incident infection count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000643",
 							"target_units":"count",
 							"target_keys":{"target":"inc inf"},
 							"target_type": "discrete",
@@ -582,7 +617,9 @@
 						},
 						{
 							"target_id": "cum inf",
-							"target_name":"Weekly incident cumulative RSV infection",
+							"target_name":"Weekly cumulative RSV infection",
+							"alternative_name": "cumulative infection count",
+							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000642",
 							"target_units":"count",
 							"target_keys":{"target":"cum inf"},
 							"target_type": "discrete",
@@ -697,7 +734,10 @@
 					"target_metadata":[
 						{
 							"target_id": "peak size hosp",
-							"target_name":"Magnitude of the peak of weekly incident hospitalizations ",
+							"target_name": "Peak size of hospitalization",
+							"alternative_name": "peak hospitalization count",
+							"uri": "http://w3id.org/midas-metadata/midas100",
+							"description":"Magnitude of the peak of weekly incident hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"peak size hosp"},
 							"target_type": "discrete",
@@ -764,7 +804,10 @@
 					"target_metadata":[
 						{
 							"target_id": "peak time hosp",
-							"target_name":"Cumulative probability of the incident hospitalization peak",
+							"target_name": "Peak timing of hospitalization",
+							"alternative_name": "peak hospitalization time cumulative distribution",
+							"uri": "http://w3id.org/midas-metadata/midas101",
+							"description":"Cumulative probability of the incident hospitalization peak",
 							"target_units":"population",
 							"target_keys":{"target":"peak time hosp"},
 							"target_type": "discrete",
