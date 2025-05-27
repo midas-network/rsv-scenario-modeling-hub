@@ -42,10 +42,10 @@ df_rsvvax.to_parquet("auxiliary-data/rsv/rsv-vax/weekly_respiratory_virus_vaccin
 
 # Percent Positivity of Respiratory Syncytial Virus Nucleic Acid Amplification
 # Tests by HHS Region, National Respiratory and Enteric Virus Surveillance System
-#df_pos = request_get_link("https://data.cdc.gov/api/views/3cxc-4k8q/rows.csv?accessType=DOWNLOAD")
-#print("RSV NREVSS Downloaded")
-#df_pos.to_parquet("auxiliary-data/rsv/nrevss/weekly_positivity.parquet")
-#
+df_pos = request_get_link("https://data.cdc.gov/api/views/3cxc-4k8q/rows.csv?accessType=DOWNLOAD")
+print("RSV NREVSS Downloaded")
+df_pos.to_parquet("auxiliary-data/rsv/nrevss/weekly_positivity.parquet")
+
 ## 2023 Respiratory Virus Response - NSSP Emergency Department Visits - COVID-19,
 ## Flu, RSV, Combined
 #df_edstate = (
