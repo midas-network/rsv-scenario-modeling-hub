@@ -1,5 +1,6 @@
 import io
 import requests
+from datetime import date
 import pandas as pd
 
 
@@ -30,9 +31,9 @@ df_rsvnet = (
                                    'Sex': "string", 'Race': "string", 'Rate': "float",
                                    'Cumulative Rate': "float"}))
 print("RSV-NET Downloaded")
-#df_rsvnet.to_parquet("auxiliary-data/rsv/rsv-net/" + str(date.today()) +
-#                     "_weekly_rates_lab_confirmed_rsv_hosp.parquet")
-#
+df_rsvnet.to_parquet("auxiliary-data/rsv/rsv-net/" + str(date.today()) +
+                     "_weekly_rates_lab_confirmed_rsv_hosp.parquet")
+
 ## Weekly Respiratory Virus Vaccination Data, Children 6 Months-17 Years and Adults 18 Years and
 ## Older, National Immunization Survey
 #df_rsvvax = request_get_link("https://data.cdc.gov/resource/5c6r-xi2t.csv")
