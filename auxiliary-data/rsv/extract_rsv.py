@@ -46,13 +46,13 @@ df_pos = request_get_link("https://data.cdc.gov/api/views/3cxc-4k8q/rows.csv?acc
 print("RSV NREVSS Downloaded")
 df_pos.to_parquet("auxiliary-data/rsv/nrevss/weekly_positivity.parquet")
 
-## 2023 Respiratory Virus Response - NSSP Emergency Department Visits - COVID-19,
-## Flu, RSV, Combined
-#df_edstate = (
-#    request_get_link("https://data.cdc.gov//api/views/rdmq-nq56/rows.csv?accessType=DOWNLOAD"))
-#print("RSV NSSP - State Downloaded")
-#df_edstate.to_parquet("auxiliary-data/rsv/nssp/ed_state.parquet")
-#
+# 2023 Respiratory Virus Response - NSSP Emergency Department Visits - COVID-19,
+# Flu, RSV, Combined
+df_edstate = (
+    request_get_link("https://data.cdc.gov//api/views/rdmq-nq56/rows.csv?accessType=DOWNLOAD"))
+print("RSV NSSP - State Downloaded")
+df_edstate.to_parquet("auxiliary-data/rsv/nssp/ed_state.parquet")
+
 #df_eddemo = (
 #    request_get_link("https://data.cdc.gov//api/views/7xva-uux8/rows.csv?accessType=DOWNLOAD"))
 #print("RSV NSSP - Demographics Downloaded")
