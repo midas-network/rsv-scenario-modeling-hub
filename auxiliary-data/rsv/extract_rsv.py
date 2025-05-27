@@ -1,27 +1,27 @@
-print("Import")
 import io
 import requests
 from datetime import date
 import pandas as pd
 
 
-#print("Function ...")
-#
-#def request_get_link(link, output_dtype=None):
-#    df = None
-#    try:
-#        result = requests.get(link, timeout=30)
-#        if result.status_code == 200:
-#            df = pd.read_csv(io.StringIO(result.text), dtype=output_dtype)
-#        else:
-#            print("Error getting page; HTTP status " + str(result.status_code))
-#    except Exception as e:
-#        print("Error for link: " + link)
-#        print(e)
-#    return df
-#
-#
-#print("Downloading ...")
+print("Function ...")
+
+
+def request_get_link(link, output_dtype=None):
+    df = None
+    try:
+        result = requests.get(link, timeout=30)
+        if result.status_code == 200:
+            df = pd.read_csv(io.StringIO(result.text), dtype=output_dtype)
+        else:
+            print("Error getting page; HTTP status " + str(result.status_code))
+    except Exception as e:
+        print("Error for link: " + link)
+        print(e)
+    return df
+
+
+print("Downloading ...")
 ## Weekly Rates of Laboratory-Confirmed RSV Hospitalizations - Respiratory Syncytial Virus
 ## Hospitalization Surveillance Network (RSV-NET)
 #df_rsvnet = (
@@ -58,4 +58,3 @@ import pandas as pd
 #    request_get_link("https://data.cdc.gov//api/views/7xva-uux8/rows.csv?accessType=DOWNLOAD"))
 #print("RSV NSSP - Demographics Downloaded")
 #df_eddemo.to_parquet("auxiliary-data/rsv/nssp/ed_demo.parquet")
-#
