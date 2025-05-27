@@ -53,7 +53,7 @@ df_edstate = (
 print("RSV NSSP - State Downloaded")
 df_edstate.to_parquet("auxiliary-data/rsv/nssp/ed_state.parquet")
 
-#df_eddemo = (
-#    request_get_link("https://data.cdc.gov//api/views/7xva-uux8/rows.csv?accessType=DOWNLOAD"))
-#print("RSV NSSP - Demographics Downloaded")
-#df_eddemo.to_parquet("auxiliary-data/rsv/nssp/ed_demo.parquet")
+df_eddemo = (
+    request_get_link("https://data.cdc.gov//api/views/7xva-uux8/rows.csv?accessType=DOWNLOAD"))
+print("RSV NSSP - Demographics Downloaded")
+df_eddemo.to_parquet("auxiliary-data/rsv/nssp/ed_demo.parquet")
