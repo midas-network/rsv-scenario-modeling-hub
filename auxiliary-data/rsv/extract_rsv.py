@@ -18,6 +18,7 @@ def request_get_link(link, output_dtype=None):
     return df
 
 
+print("Downloading ...")
 # Weekly Rates of Laboratory-Confirmed RSV Hospitalizations - Respiratory Syncytial Virus
 # Hospitalization Surveillance Network (RSV-NET)
 df_rsvnet = (
