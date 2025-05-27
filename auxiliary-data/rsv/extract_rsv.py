@@ -1,8 +1,10 @@
+print("Import")
 import io
 import requests
 from datetime import date
 import pandas as pd
 
+print("Function ...")
 
 def request_get_link(link, output_dtype=None):
     df = None
