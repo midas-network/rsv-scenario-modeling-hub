@@ -2,10 +2,10 @@ name: Update target data
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: [Update RSV data]
-    types:
-      - completed
+#  workflow_run:
+#    workflows: [Update RSV data]
+#    types:
+#      - completed
 
 jobs:
   update-target-data:
