@@ -361,7 +361,7 @@
 			"disease": [
 			  {
 			    "name": "respiratory syncytial virus infectious disease",
-			    "uri": "http://purl.obolibrary.org/obo/MONDO_001577"
+			    "uri": "http://purl.obolibrary.org/obo/MONDO_0001577"
 			  }
 			]
 		},
@@ -828,7 +828,7 @@
 			"disease": [
 			  {
 			    "name": "respiratory syncytial virus infectious disease",
-			    "uri": "http://purl.obolibrary.org/obo/MONDO_001577"
+			    "uri": "http://purl.obolibrary.org/obo/MONDO_0001577"
 			  }
 			]
 		}
