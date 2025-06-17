@@ -357,7 +357,13 @@
 				}
 			],
 		  "submissions_due":{
-			"start":"2023-11-14","end":"2023-12-14"}
+			"start":"2023-11-14","end":"2023-12-14"},
+			"disease": [
+			  {
+			    "name": "respiratory syncytial virus infectious disease",
+			    "uri": "http://purl.obolibrary.org/obo/MONDO_001577"
+			  }
+			]
 		},
 		{
 			"round_id_from_variable":true,
@@ -818,7 +824,13 @@
 				}
 			],
 		  "submissions_due":{
-			"start":"2024-10-29","end":"2024-12-14"}
+			"start":"2024-10-29","end":"2024-12-14"},
+			"disease": [
+			  {
+			    "name": "respiratory syncytial virus infectious disease",
+			    "uri": "http://purl.obolibrary.org/obo/MONDO_001577"
+			  }
+			]
 		}
 	]
 }
