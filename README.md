@@ -576,6 +576,8 @@ efforts in the [auxiliary-data/](./auxiliary-data/) folder:
     
 - Rounds: Information on ongoing round and previous round available in the 
   repository
+    - [Round 1 - 2023/2024](./auxiliary-data/rounds/round1.md)
+    - [Round 1 - 2024/2025](./auxiliary-data/rounds/round2.md)
   
 - Model Examples: Model output and metadata example files
 
