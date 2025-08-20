@@ -325,60 +325,6 @@
 						},
 						"target":{
 							"required":null,
-							"optional":["peak size hosp"]
-						},
-						"horizon":{
-							"required":null,
-							"optional":null},
-						"location":{
-							"required":null,
-							"optional":["US","06","08","09","13","24","26","27","35","36","41","47","49"]
-						},
-						"age_group":{
-							"required":["0-130"],
-							"optional":null
-						}
-					},
-					"output_type":{
-						"quantile":{
-							"output_type_id":{
-								"required":[0, 1]
-							},
-							"value":{
-								"type":"double",
-								"minimum":0
-							},
-							"is_required": false
-						}
-					},
-					"target_metadata":[
-						{
-							"target_id": "peak size hosp",
-							"target_name": "Peak size of hospitalization",
-							"alternative_name": "peak hospitalization count",
-							"uri": "http://w3id.org/midas-metadata/midas100",
-							"description":"Magnitude of the peak of weekly incident hospitalizations ",
-							"target_units":"count",
-							"target_keys":{
-								"target":"peak size hosp"
-							},
-							"target_type": "discrete",
-							"is_step_ahead":false
-						}
-					]
-				},
-				{
-					"task_ids":{
-						"origin_date":{
-							"required":["2023-11-12"],
-							"optional":null
-						},
-						"scenario_id":{
-							"required":["A-2023-10-27","B-2023-10-27","C-2023-10-27","D-2023-10-27","E-2023-10-27"],
-							"optional":null
-						},
-						"target":{
-							"required":null,
 							"optional":["peak time hosp"]
 						},
 						"horizon":{
