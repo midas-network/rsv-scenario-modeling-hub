@@ -18,6 +18,7 @@ license: "cc-by-4.0"
 methods: "Age-structured SVIRS model coupled with Ensemble Adjustment Kalman Filter. Inputs CDC RSV-NET, POLYMOD contact matrix, and seasonal absolute humidity"
 methods_long: "Age-structured state-level SVIRS compartmental model coupled with Ensemble Adjustment Kalman Filter. Model is fit to CDC RSV-NET data.  Each state’s population divided into age categories: <1, 1-4, 5-64, and 65+.  Model transmission rate is modified by seasonal absolute humidity.  Contacts between age groups are informed by the POLYMOD study. 300 ensemble members are initialized for each location.  Vaccination and monocolonal antibody is applied as specified by the scenarios after the model fitting is complete.  Additionally, we assume that each intervention provides a 20% protection against infection."
 model_version: "1.0"
+website_url: "TBD"
 team_funding: "CSTE NU38OT00297"
 data_inputs: "CDC RSV-NET, POLYMOD contact matrix, and seasonal absolute humidity"
 
