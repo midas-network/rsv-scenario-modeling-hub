@@ -1,6 +1,7 @@
 name: Validate Submission
 on:
   pull_request_target:
+    types: [synchronize, opened, reopened]
     branches:
       - main
 
@@ -13,6 +14,11 @@ jobs:
           uses: actions/checkout@v3
           with:
             fetch-depth: 1
+            sparse-checkout: |
+              .github
+              src
+              hub-config
+              auxiliary-data
 
         - name: Setup R
           uses: r-lib/actions/setup-r@v2
@@ -20,11 +26,10 @@ jobs:
         - name: Install system dependencies
           run: sudo apt-get install libcurl4-openssl-dev libudunits2-dev libgdal-dev
 
-
         - name: Cache R packages
           id: cache
           if: runner.os != 'Windows'
-          uses: actions/cache@v2
+          uses: actions/cache@v4
           with:
             path: ${{ env.R_LIBS_USER }}
             key: ${{ runner.os }}-${{ hashFiles('.github/requirements.txt') }}-1
@@ -40,16 +45,25 @@ jobs:
           env:
             GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
-        - name: Run Validation
+        - name: Run Validation - Open/reopen
+          if: ( github.event.action != 'synchronize' )
           run: |
-            Rscript code/validation/validation.R
+            Rscript src/validation.R
           env:
             GH_PR_NUMBER: ${{ github.event.pull_request.number }}
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+        - name: Run Validation - Synchronize
+          if: ( github.event.action == 'synchronize' )
+          run: |
+            Rscript src/validation.R
+          env:
+            GH_PR_NUMBER: ${{ github.event.pull_request.number }}
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
 
         - name: Upload Projection Plot as Artifact
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           if: always()
           with:
             name: validation_plot_${{ github.event.pull_request.number }}

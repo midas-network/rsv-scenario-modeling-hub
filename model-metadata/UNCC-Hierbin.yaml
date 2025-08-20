@@ -1,0 +1,28 @@
+team_name: "UNC Charlotte"
+team_abbr: "UNCC"
+model_name: "Hierbin"
+model_abbr: "Hierbin"
+model_contributors: [
+  {
+    "name": "Chen S",
+    "affiliation": "UNC Charlotte",
+    "email": "schen56@charlotte.edu"
+  },
+  {
+   "name": "Janies D",
+    "affiliation": "UNC Charlotte",
+    "email": "djanies@charlotte.edu"
+  },
+  {
+    "name": "Paul R",
+    "affiliation": "UNC Charlotte",
+    "email": "rpaul9@charlotte.edu"
+  }
+]
+license: "CC-BY-4.0"
+methods: "Hybrid data-driven and mechanistic model"
+methods_long: "We first applied a data-driven method (long-short term memory) to track the hospitalization trajectory, and perform model fitting and calibration based on historical data. The baseline scenario is developed. Then a mechanistic model is applied on the baseline scenario to further simulate various scenarios."
+model_version: "1.0"
+website_url: TBD
+team_funding: "NSF DMS2436227"
+data_inputs: "RSVNet weekly incident hospitalization data and other data provided by the RSV SMH"

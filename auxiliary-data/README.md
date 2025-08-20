@@ -2,33 +2,91 @@
 
 This folder is used to store additional data relevant to the RSV modeling efforts. 
 It contains multiple folders: 
-  - one for vaccine coverage
+
+  - one for vaccine coverage ([vaccine_coverage/](./vaccine_coverage/))
   - one for RSV data from different CDC sources, including the python code to 
-  extract and update the data. 
-  - one for location and population data
-  - one for birth rate data
+  extract and update the data ([rsv/](./rsv/))
+  - one for target-data archive ([target-data/](./target-data))
+  - one for location and population data ([location_census/](./location_census/))
+  - one for birth rate data ([birth_rate/](./birth_rate/))
+  - past round specification information ([rounds/](./rounds/))
+  - one for reports ([reports/](./reports/))
+  - one for model examples ([model_examples](./model_examples))
+  - one archive for past version and past round associated auxiliary data files
+  ([archive/](./archive/))
+
   
 ## Vaccine Coverage
 
 The folder [vaccine_coverage/](./vaccine_coverage/) provides weekly 
 state-specific cumulative coverage for specific rounds.
 
-For round 1, the file 
-[vaccine_coverage/RSV_round1_Coverage_2023_2024.csv](./vaccine_coverage/RSV_round1_Coverage_2023_2024.csv) 
-provides vaccine coverage (percentage) from summer 2023 to the end of the 
-projection period to apply to infants 0-6 months (`rsv_cov_infants_pes` and 
-`resv_cov_infants_opt`) and seniors over 60 years (`rsv_cover_over_60_pes` and 
-`rsv_cov_over60_opt`). Values represent the optimistic and pessimistic 
-assumptions prescribed in RSV round 1
+### Round 2 - 2024 / 2025
 
-The `rsv_n_dose_infants_opt` is the cumulative weekly number of monoclonal 
-doses administered to infants 0-6 months during October through March in the 
-optimistic scenario. This includes birth doses and catch up doses. 
-`rsv_n_dose_infants_pes` is the same for the pessimistic scenario.
+#### Senior
 
-The R code to generate the `rsv_n_dose_indants_` is also available in the 
- [vaccine_coverage/](./vaccine_coverage/) folder in an 
- [add_doses.R](./vaccine_coverage/add_doses.R) file.
+For round 2, the file 
+[vaccine_coverage/RSV_round2_vax_coverage_seniors_2024_25.csv](./vaccine_coverage/RSV_round2_vax_coverage_seniors_2024_25.csv) 
+provides weekly vaccine coverage (cumulative percentage, cumulative no of doses, 
+size of eligible population) for seniors from summer 2024 to the end of the 
+projection period for RSVnet states. Separate values are provided for seniors 
+60-74 high risk and 75+.
+
+Coverage should be considered additive to that of last season. The same coverage 
+values apply to all intervention scenarios (A-D), while the counterfactual (F) 
+assumes no coverage.
+
+#### Maternal & Infant
+
+- [RSV_RD2_maternal_vaccine_2024_25.csv](./vaccine_coverage/RSV_RD2_maternal_vaccine_2024_25.csv) 
+has weekly state-specific coverage for maternal vaccine. The weekdate is the 
+Saturday at the end of each week. This date represents the date when the mother 
+was vaccinated, so that the vaccine effect on the infant would start on average 
+one month later after the baby is born. Columns are provided for total state pop 
+size (`Total_pop`), annual number of births (`Births_per_year`), Scenarios 
+(`"A"` through `"D"`), No of weekly vaccine doses administered 
+(`Maternal_vaccine_weekly_doses`), No of eligible mothers throughout the 
+season (`Eligible_mothers_entire_season`, calculated as the no of moms who 
+are eligible for vaccination at **any time point of the campaign**), weekly 
+incident coverage (`Weekly_incident_cov`, calculated as weekly doses 
+divided by the number of eligible mothers), and cumulative coverage 
+(calculated as the cumulative sum of weekly incidence coverage)
+- [RSV_RD2_nirsevimab_aggregated_2024_25.csv](./vaccine_coverage/RSV_RD2_nirsevimab_aggregated_2024_25.csv) 
+has a similar structure as the maternal vaccine file for nirsevimab. 
+Note that the column `Dose_Type` indicates whether a baby is vaccinated at 
+birth (at a constant rate throughout the season; New Born) or during the 
+catch-up campaign (accelerated immunization in the first month of the season; 
+Catch Up). `Eligible_babies_entire_season` reflects the number of babies in each 
+category (catchup/newborn) who are **eligible for nirsevimab at any time point during 
+the campaign.** Weekly incident and cumulative coverages are estimated based on 
+this eligible population
+- [RSV_RD2_nirsevimab_byweekofage_2024_25.csv](./vaccine_coverage/RSV_RD2_nirsevimab_byweekofage_2024_25.csv) 
+is a version of the above file where the catch-up babies have been disaggregated 
+by single week of age. This is the age at **receipt** of nirsevimab. Eligible babies 
+counts the number of babies would are of that age in any given week of the season, 
+which represents one week of babies.
+
+In all files, the first and last weeks of the campaign have lower vaccination rates 
+than other weeks to account for the fact that the campaign starts and ends at precise 
+dates which do not exactly match with the start of a week  (eg Aug 15, Sep 1... etc).
+
+**For teams that require US-level vaccine coverage, we advise to either do a 
+weighted mean of the state coverage proportions, where the weights are the state 
+population sizes. Or you can also sum all the state-level no of doses and 
+state-level populations**
+  
+
+## Reports
+
+The [reports](./reports/) folder contains reports from previous Scenario 
+Modeling Hub rounds. At the time they were produced, some of these reports were 
+intended to be shared only with certain stakeholders and have disclaimers to 
+that effect. All reports have since become publicly available.
+
+Each report contains an executive summary with key messages and results, 
+and analyses of ensemble and individual projections. Results at national and 
+state level are available for all targets.
+
   
 ## Location and Census Data
 
@@ -64,7 +122,13 @@ The folder [birth_rate/](./birth_rate/) contains multiple files:
 - [birth_rate_1995_2022.txt](./birth_rate/birth_rate_2016_2022.txt) containing
    the calculated birth rate and standardized birth rate from the "natality_" 
    and other "birth_rate" files from 1995 to 2022 per year and per state.
-  
+
+## Target Data
+
+The [target-data](./target-data) folder contains archive of the target-data
+data with additional information (hospitalization rate, population size). 
+The data are automatically updated on Monday, with the date append to the 
+file name.
   
 ## RSV data
 
@@ -74,111 +138,6 @@ one per each CDC source and the python code to extract and update the data.
 The data is updated weekly by the 
 [update-rsv-data](../.github/workflows/update-rsv-data.yaml) GitHub Action, 
 which runs weekly on Friday morning, 9:00 am UTC.
-
-### NREVSS and NSSP data
-
-For the NREVSS and NSSP data, for each CSV file, an `as_of` column has been added 
-containing the date the data point has been last downloaded, see table 1 for example.
-
-Table 1: File downloaded on 2023-10-06 and stored in the repository on 2023-10-06
-
-| ... | report_date |   as_of    |
-|:---:|:-----------:|:----------:|
-|     | 2021-10-02  | 2023-10-06 |
-|     | 2021-10-09  | 2023-10-06 |
-|     |             |            |
-
-The source data are expressed using a rolling time period, meaning each week the
-data contains only the last one or two years of data. For example table 2, starts
-a week after table 1 and will contain an additional most recent week of data.
-
-Table2: File downloaded on 2023-10-13
-
-| ... | report_date |   as_of    |
-|:---:|:-----------:|:----------:|
-|     | 2021-10-09  | 2023-10-13 |
-|     | 2021-10-13  | 2023-10-13 |
-|     |             |            |
-
-To preserve all the data in the repository, the rolling time series is 
-updated weekly and the "historical" data are kept in the CSV file. For 
-example, table 3 contains the "historical" data from table 1 and the 
-last updated version of the time series from table 2.
-
-Table3: Stored file containing all the information on 2023-10-13
-
-| ... | report_date |   as_of    |
-|:---:|:-----------:|:----------:|
-|     | 2021-10-02  | 2023-10-06 |
-|     | 2021-10-09  | 2023-10-13 |
-|     | 2021-10-13  | 2023-10-13 |
-|     |             |            |
-
-#### The National Respiratory and Enteric Virus Surveillance System (NREVSS) [Archive]
-
-The National Respiratory and Enteric Virus Surveillance System (NREVSS) provides
-data at national and state level.
-
-> Participating laboratories report weekly to CDC the total number of RSV tests 
-performed that week, and the number of those tests that were positive. Because 
-reporting delays may be expected for some laboratories, data shown for the most 
-recent weeks, in particular the most recent two weeks, may be less complete 
-than others.
-
-**As of May 10, 2024, the data previously included on the page was moved to the a new NREVSS Interactive Dashboard. We last downloaded the data on May 10, 2024 and will not be updated.**
-
-##### National
-
-The National RSV Trends are extracted from the 
-[NREVSS-RSV National Trends webpage](https://www.cdc.gov/surveillance/nrevss/rsv/natl-trend.html).
-
-Two tables are extracted:
-
--  Percent positive respiratory syncytial virus tests in the United States, 
-   by week ([rsv/nrevss/rsv_data_us.csv](./rsv/nrevss/rsv_data_us.csv))
--  RSV detections in the United States, by week 
-   ([rsv/nrevss/rsv_numerator_data_us.csv](.rsv/nrevss/rsv_numerator_data_us.csv))
-
-##### State
-
-The National RSV Trends are extracted from the 
-[NREVSS-RSV State Trends webpage](https://www.cdc.gov/surveillance/nrevss/rsv/state.html).
-
-> State-level trends are only displayed when two or more labs report RSV testing data for at least 
-36 of the prior 52 weeks presented by diagnostic method.
-
-For each state, three tables are extracted:
-
-- Percent positive antigen detection RSV tests, by 3-week moving average 
-  ([rsv/nrevss/rsv_antigen_3_week_average.csv](./rsv/nrevss/rsv_antigen_3_week_average.csv))
-- Percent positive RSV PCR tests, by 3-week moving average 
-  ([rsv/nrevss/rsv_pcr_3_week_average.csv](./rsv/nrevss/rsv_pcr_3_week_average.csv))
-- RSV detections, by 5-week average 
-  ([rsv/nrevss/rsv_numerator_data_5_week_average.csv](./rsv/nrevss/rsv_numerator_data_5_week_average.csv))
-
-All the states data are compiled together into one file.
-
-#### National Emergency Department Visits for COVID-19, Influenza, and Respiratory Syncytial Virus (NSSP)
-
-The national and state level data are extracted from the 
-[National Emergency Department Visits webpage](https://www.cdc.gov/ncird/surveillance/respiratory-illnesses/index.html).
-
-> [...] emergency department visit data for multiple respiratory conditions as tracked by the National 
-Syndromic Surveillance Program (NSSP). NSSP is a collaboration among CDC, federal partners, state and 
-local health departments, and academic and private sector partners to collect, analyze, and share 
-electronic data received from multiple health care settings. Data are monitored for a subset of emergency 
-departments across the United States. 
-
-Three tables are extracted from this page:
-
-- Weekly Emergency Department Visits by Age Group 
-  ([rsv/nssp/resp_ed_count_weekly_national.csv](./rsv/nssp/resp_ed_count_weekly_national.csv))
-- Weekly Emergency Department Visits by Age Group and 
-  Respiratory Illness, as a Percent of All Emergency Department Visits
-  ([rsv/nssp/resp_ed_percent_weekly_national.csv](./rsv/nssp/resp_ed_percent_weekly_national.csv))
-- Weekly Emergency Department Visits by Viral Respiratory 
-  Illness Type and State, as a Percent of All Emergency Department Visits
-  ([rsv/nssp/resp_ed_percent_weekly_state.csv](./rsv/nssp/resp_ed_percent_weekly_state.csv))
 
 ### Respiratory Syncytial Virus Hospitalization Surveillance Network (RSV-NET)
 
@@ -217,3 +176,91 @@ For more information, please consult the
 [homepage](https://data.cdc.gov/Vaccinations/Weekly-Respiratory-Virus-Vaccination-Data-Children/5c6r-xi2t/about_data) 
 of the data and the [surveys method](https://www.cdc.gov/vaccines/imz-managers/nis/about.html#current-surveys) 
 webpage information
+
+Other links of interest:
+- [Weekly Respiratory Syncytial Virus (RSV) Vaccination Coverage among Pregnant or Recently Pregnant Persons 18-49 Years, by Race and Ethnicity](https://data.cdc.gov/Pregnancy-Vaccination/Weekly-Respiratory-Syncytial-Virus-RSV-Vaccination/uqxy-gepz/about_data)
+- [Monthly Nirsevimab Receipt and Intent Reported by Females Aged 18-49 Years Who Have a Baby <8 Months During the RSV Season, United States](https://data.cdc.gov/Pregnancy-Vaccination/Monthly-Nirsevimab-Receipt-and-Intent-Reported-by-/vdz4-qrri/about_data)
+- [Weekly Cumulative RSV Vaccination Coverage and Intent, Overall, by Selected Demographics and Jurisdiction, Among Adults 75 and Older and 60-74 Years with High-Risk Conditions Ever Vaccinated, United States](https://data.cdc.gov/Vaccinations/Weekly-Cumulative-RSV-Vaccination-Coverage-and-Int/k4cb-dxd7/about_data)
+- [Weekly Differences in Cumulative Respiratory Syncytial Virus (RSV) Vaccination Coverage and Comparison, Overall, by Jurisdiction, Among Adults 75 Years and Older and Adults 60─74 Years with High-Risk Conditions](https://data.cdc.gov/Vaccinations/Weekly-Differences-in-Cumulative-Respiratory-Syncy/qtvj-5vyb/about_data)
+
+### 2023 - 2024  Weekly Respiratory Virus Vaccination Data
+
+The repository also contains 3 CSV files about 
+[2023-2024 Weekly RSV vaccination data](./rsv/rsv-vax/20232024/).
+
+- [2023_24_observed_coverage_60plus_NIS.csv](./rsv/rsv-vax/20232024/2023_24_observed_coverage_60plus_NIS.csv)
+- [2023_2024_observed_coverage_maternal_vaccine_nirsevimab_NIS.csv](./rsv/rsv-vax/20232024/2023_2024_observed_coverage_maternal_vaccine_nirsevimab_NIS.csv) 
+contains the monthly estimates of receipt for nirsevimab reported by adult females 
+aged 18–49 years with infants under the age of 8 months. Data is from the 
+[National Immunization Survey-Adult COVID Module (NIS-ACM)](https://www.cdc.gov/rsvvaxview/dashboard/2023-24-nirsevimab-coverage-infants.html). Also contains maternal vaccine coverage estimates for pregnant persons 18-49 years old based on EHR data from the Vaccine Safety Datalink, obtained from [National Center for Immunization and Respiratory Diseases (NCIRD)](https://data.cdc.gov/Pregnancy-Vaccination/Weekly-Respiratory-Syncytial-Virus-RSV-Vaccination/g4jn-64pd/about_data) 
+- [2023_24_nirsevimab_coverage.csv](./rsv/rsv-vax/20232024/2023_24_nirsevimab_coverage.csv)
+from Monthly Cumulative Number and Percent of Children <20 Months Who Received Nirsevimab by 
+Age Group and Jurisdiction assessed through the Immunization Information System (IIS) obtained from 
+[National Center for Immunization and Respiratory Diseases (NCIRD)](https://data.cdc.gov/Vaccinations/Monthly-Cumulative-Number-and-Percent-of-Children-/ku7p-zn4c/about_data). Note that the IIS underestimates the true coverage. The file also contains monthly national estimates of eceipt for nirsevimab reported by adult females 
+ged 18–49 years with infants under the age of 8 months obtained from the 
+[National Immunization Survey-Adult COVID Module (NIS-ACM)](https://www.cdc.gov/rsvvaxview/dashboard/2023-24-nirsevimab-coverage-infants.html).
+
+The NIS and IIS estimates are based on different groups of children recommended to receive nirsevimab. 
+The IIS estimates include only "catch-up: babies" ie excludes babies who would become eligible on or 
+after October 1, 2023 (i.e., babies born October 2023 - March 2024 are excluded). Further, IIS is 
+based on an administrative database which may miss  a fraction of immunizations.
+
+### The National Respiratory and Enteric Virus Surveillance System (NREVSS)
+
+The [Percent Positivity of Respiratory Syncytial Virus Nucleic Acid Amplification Tests by HHS Region, National Respiratory and Enteric Virus Surveillance System](https://data.cdc.gov/Laboratory-Surveillance/Percent-Positivity-of-Respiratory-Syncytial-Virus-/3cxc-4k8q/about_data)
+is also downloaded weekly and output in a PARQUET file: 
+[rsv/nrevss/weekly_positivity.parquet](./rsv/nrevss/weekly_positivity.parquet).
+
+> More than 450 public health, clinical, and commercial laboratories located 
+> throughout the United States voluntarily participate in surveillance for 
+> respiratory syncytial virus (RSV) through CDC's National Respiratory and 
+> Enteric Virus Surveillance System (NREVSS). The data contain weekly, 
+> aggregate counts of RSV tests performed and RSV detections as reported to 
+> NREVSS since April 11, 2020. 
+
+For more information, please consult the 
+[homepage](https://data.cdc.gov/Laboratory-Surveillance/Percent-Positivity-of-Respiratory-Syncytial-Virus-/3cxc-4k8q/about_data) 
+of the data and the [NREVSS](https://www.cdc.gov/nrevss/php/dashboard/index.html) 
+webpage information
+
+### NSSP Emergency Department (ED) 
+
+Both the 
+[2023 Respiratory Virus Response - NSSP Emergency Department Visit Trajectories by State and Sub State Regions- COVID-19, Flu, RSV, Combined](https://data.cdc.gov/Public-Health-Surveillance/2023-Respiratory-Virus-Response-NSSP-Emergency-Dep/rdmq-nq56/about_data), 
+[2023 Respiratory Virus Response - NSSP Emergency Department Visits - COVID-19, Flu, RSV, Combined – by Demographic Category](https://data.cdc.gov/Public-Health-Surveillance/2023-Respiratory-Virus-Response-NSSP-Emergency-Dep/7xva-uux8/about_data)
+are downloaded weekly and output in PARQUET files: 
+- [rsv/nssp/ed_state.parquet](./rsv/nssp/ed_state.parquet)
+- [rsv/nssp/ed_demo.parquet](./rsv/nssp/ed_demo.parquet)
+
+> 2023 Respiratory Virus Response - NSSP Emergency Department (ED) Visit 
+> Trajectories by State and Sub-State Regions- COVID-19, Flu, RSV, Combined. 
+> This dataset provides the percentage of emergency department patient visits 
+> for the specified pathogen of all ED patient visits for the specified 
+> geography each part of the country that were observed for the given week 
+>  from data submitted to the National Syndromic Surveillance Program (NSSP).
+
+
+For more information, please consult the 
+[NSSP homepage](https://www.cdc.gov/nssp/index.html)
+
+
+## Rounds
+
+The [rounds](./rounds/) folder contains the round information in a markdown 
+format with a folder names roundX_viz with X being the round number, 
+containing associated visualization (for example, scenario table in a PNG 
+format).
+
+## Model examples
+
+The [model_examples](./model_examples/) folder contains model-output and 
+model-metadata examples, using round 1 specification. 
+
+## Archive
+
+The archive folder contains past data about: round 1 vaccine coverage, past
+NREVSS and NSSP version data.
+The folder contains documentation with detailed information on the source and
+processing of the data.
+
+

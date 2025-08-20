@@ -17,13 +17,13 @@ The GitHub Repository contains multiple example files reproducing the
 required and optional targets for RSV round 1 and different sample format: 
 
 - Team 2 - Model B: 
-  - Example file: [2023-11-12-team2-modelb.parquet](./team2-modelb)
+  - Example file: [2023-11-12-team2-modelb.parquet](../auxiliary-data/model_examples/team2-modelb)
 - Team 3 - Model C
-  - Example file: [2023-11-12-team3-modelc.parquet](./team3-modelc)
+  - Example file: [2023-11-12-team3-modelc.parquet](../auxiliary-data/model_examples/team3-modelc)
 - Team 4 - Model D:
-  - Example file: [2023-11-12-team4-modeld.parquet](./team4-modeld)
+  - Example file: [2023-11-12-team4-modeld.parquet](../auxiliary-data/model_examples/team4-modeld)
 - Team 5 - Model E:
-  - Example file: [2023-11-12-team5-modele.parquet](./team5-modele)
+  - Example file: [2023-11-12-team5-modele.parquet](../auxiliary-data/model_examples/team5-modele)
 
 For more information on the different sample format, please consult the 
 [Sample Format Wiki page](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki/Sample-File-Format).
@@ -97,7 +97,7 @@ The "arrow" library can be used to read/write the files in
 Other tools are also accessible, for example [parquet-tools](https://github.com/hangxie/parquet-tools)
 
 For example, in R:
-```
+```r
 # To write "parquet" file format:
 filename <- ”path/YYYY-MM-DD-team_model.parquet”
 arrow::write_parquet(df, filename)
@@ -196,11 +196,12 @@ The submission can contain multiple output type information:
   please consult the [cdf](.data-processed#cdf) 
   section. 
 
-The requested targets are (for "sample" type output):
+
+**The requested targets are (for "sample" type output):**
 
 - weekly incident hospitalizations
 
-Optional target (for "quantile" or "cdf" type output):
+**Optional target (for "quantile" or "cdf" type output):**
 
 - quantile:
     - weekly cumulative hospitalizations
@@ -208,6 +209,14 @@ Optional target (for "quantile" or "cdf" type output):
     - peak size hospitalizations
 - cdf:
     - weekly peak timing hospitalizations
+
+Additional optional target starting round 2:
+
+- sample:
+    - weekly incident infection
+- quantile:
+    - weekly incident infection
+    - weekly cumulative infection
 
 For the incident and cumulative targets, the age groups:
 `"0-0.99"`, `"1-4"`, `"5-64"`, `"65-130"`, and `"0-130"` are 
@@ -222,6 +231,8 @@ Values in the `target` column must be one of the following character strings:
 - `"cum hosp"`
 - `"peak size hosp"`
 - `"peak time hosp"`
+- `"inc inf"` (starting round 2)
+- `"cum inf"` (starting round 2)
 
 
 #### inc hosp
@@ -287,6 +298,26 @@ peak number of weekly hospitalized cases, as recorded by the
 laboratory-confirmed RSV hospitalizations from the RSV-NET surveillance 
 system.
 
+#### inc inf
+
+This target is the incident (weekly) number of infection
+predicted by the model during the week that is N weeks after
+`origin_date`.
+
+A week-ahead scenario should represent the total number of new
+infection reported during a given epiweek (from Sunday through
+Saturday, inclusive).
+
+#### cum inf
+
+This target is the cumulative number of incident (weekly) number of
+infection predicted by the model during the week that is N
+weeks after `model_projection_date`.  There should be 0 cumulative
+hospitalization on week 0 of projection.
+
+A week-ahead scenario should represent the cumulative number of
+infection reported up to the Saturday of a given epiweek.
+
 
 ### `horizon`
 
@@ -310,9 +341,9 @@ epiweek (epiweek ending on 2023-11-18, if start date is 2023-11-12)
 ### `location`
 
 Values in the `location` column must be one of the "locations" in this 
-[FIPS numeric code file](../data-locations/locations.csv) which includes 
-numeric FIPS codes for U.S. states, counties, territories, and districts as 
-well as "US" for national scenarios. 
+[FIPS numeric code file](../auxiliary-data/location_census/locations.csv) 
+which includes numeric FIPS codes for U.S. states, counties, and territories, 
+as well as "US" for national scenarios. 
 
 Please note that when writing FIPS codes, they should be written in as a 
 character string to preserve any leading zeroes.
@@ -320,6 +351,16 @@ character string to preserve any leading zeroes.
 For the round 1, only the location included in RSV-NET target data are 
 expected:
 `"US","06","08","09","13","24","26","27","35","36","41","47","49"`
+
+
+Starting round 2: 
+
+- the same location as in Round 1 are expected: 
+`"US","06","08","09","13","24","26","27","35","36","41","47","49"`
+
+- optional to submit additional state and territories. See 
+[location.csv](../auxiliary-data/location_census/locations.csv) for
+a complete list of all accepted location. 
 
 
 ### `output_type`
@@ -477,6 +518,8 @@ Accepted values in the  `age_group` column are:
 - "5-17"
 - "18-49"
 - "50-64"
+- "65-74"
+- "75-130" 
 - "65-130" (required)
 - "5-64" (required)
 - "0-130" (required)
