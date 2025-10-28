@@ -1,6 +1,6 @@
 # RSV Scenario Modeling Hub
 
-Last updated: 02-10-2024 for **Round 2 Scenarios**.
+Last updated: 23-10-2025 for **Round 3 Scenarios**.
 
 ## Rationale    
 
@@ -46,44 +46,72 @@ Technical instructions for submission and required file formats can be found
 [here, for the metadata file](./model_metadata/README.md) and in the 
 [Wiki](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki).
 
-## Round 2: Projections for the 2024-25 season
+## Round 3: Projections for the 2025-26 season
 
-The goal of this RSV round is to expand on RSV modeling capabilities developed 
-last year by the Scenario Modeling Hub to generate ensemble projections of RSV 
-hospitalizations for the 2024-25 season under different intervention scenarios. 
-Two questions of particular interest are (i) the potential impact of waning of 
-vaccine-induced immunity among seniors in the second year after vaccination and 
-(ii) the optimal timing of infant interventions. We will consider 5 scenarios 
-in total, following a 2 * 2 table describing the impact of infant products 
-(first dimension, early and classic timing of administration of nirsevimab 
-and maternal vaccine) and senior vaccination (second dimension, optimistic 
-and pessimistic waning of vaccine effectiveness). A 5th counterfactual scenario 
-will consider no RSV mitigation strategy implemented in either 2023-24 or 2024-25.
- Projections will be generated for a 45-week period, running Sun July 28, 2024 
- to Sat June 7, 2025. 
+The goal of this RSV round is to generate ensemble projections of RSV
+hospitalizations for the 2025-26 season under different intervention scenarios.
+Two questions of particular interest are (i) the potential impact of vaccine
+waning among seniors now in their second or third year after vaccination and
+(ii) the potential benefits of infant interventions at different coverage
+levels. We will consider 5 scenarios in total, following a 2*2 table describing
+the impact of infant products (first dimension; moderate vs high coverage of
+long-acting infant monoclonals and maternal vaccines) and senior vaccination
+(second dimension; optimistic vs pessimistic waning of senior vaccine immunity).
+A 5th counterfactual scenario will consider no RSV mitigation strategies
+implemented during the 2023-24,  2024-25, and 2025-26 seasons (during which
+these new products came to market). Projections will be generated for a 45-week
+period, running Sunday July 27, 2025 to Saturday June 6, 2026. 
+
 
 The scenario structure is as follows:
 
-<img src= "./auxiliary-data/rounds/round2_viz/rsv_round2.png">
+<img src= "./auxiliary-data/rounds/round3_viz/rsv_round3.png">
+
+### 2025-26 RSV Round Summary
+
+##### Timeline
+
+- **Scenarios set (no changes after)**: Friday, Oct 31, 2025
+- **Projections due**: Tuesday, Nov 11, 2025
+- **Report finalized**: End of November 2025
+
+##### Change from last round
+
+- **New age breakdown**: 
+    - 2025-26 Round: <1 yr, 1-4, **5-49**, **50-64**, 65+
+    - 2024-25 Round: <1 yr, 1-4, 5-64, 65+
+- **Senior vaccination expanded age**:
+    - 2025-26 Round: **50+ yrs (50-74 high risk, all 75+)**
+    - 2024-25 Round: 60+ yrs (60-74 high risk, all 75+)
+    - 2023-24 Round: 60+ yrs (all 60+ yrs based on clinical recommendations)
+- **Assumptions for VE against hospitalizations for maternal immunization**: 
+    - 2025-26 Round:  **75%**
+    - 2024-25 Round:  60%
+
 
 ### Assumptions regarding RSV interventions
 
-Weekly cumulative age-specific coverage for senior vaccines, maternal 
-vaccine, and monoclonals are available in the 
-[auxiliary data folder](./auxiliary-data/), in the 
-[vaccine_coverage subfolder](./auxiliary-data/vaccine_coverage/). 
+Weekly cumulative age-specific coverage for senior vaccines, maternal vaccine, 
+and monoclonals will be provided. Because of the shifting population denominator
+of infants coming in and aging out of eligibility, and the issue with seniors 
+not being recommended for revaccination, we will provide coverage as no. of 
+doses and no. of eligible population per week, in addition to percent immunized.
+**This year, we will consider state-specific differences in infant 
+immunization.** State-specific coverage curves will use NIS data reported for 
+2024-25 to establish a timeline and saturation point for vaccination nationally,
+while geographic differences will be indexed on last year’s state specific
+coverage reported to IIS. 
 
-Because of the shifting population denominator of infants coming in 
-and aging out of eligibility, and the issue with seniors not being 
-recommended for revaccination, we will provide coverage as no. of 
-doses and no. of eligible population per week. 
+For infants, we will consider two coverage assumptions depending on whether 
+immunization uptake is optimistic (sc A and B) or similar to last year in 
+2024-25 (sc C and D). In contrast, coverage assumptions for seniors do not 
+vary between scenarios.
 
 Below, we describe important details of the planned implementation of RSV 
 interventions as well as our rationale for intervention coverage and 
 effectiveness assumptions. 
 
 #### Implementation of RSV Interventions
-
 
 ##### Infants
 
@@ -97,72 +125,71 @@ are that all infants aged **≤ 7 months** who are born during or entering
 their first RSV season should be prioritized to receive the new monoclonals.
 Older children up to 19 months who are at increased risk for severe 
 RSV disease may also be recommended. **We require that teams implement 
-monoclonal interventions in infants ≤ 7 months** , while explicit 
-consideration of interventions in older high-risk babies (a small 
-fraction of all US babies, see later) is at teams’ discretion. The 
+monoclonal interventions in infants ≤ 7 months during the RSV season**, 
+while explicit consideration of interventions in older high-risk babies 
+(a small fraction of all US babies, see later) is at teams’ discretion. The 
 timing of administration of long-acting monoclonals depends on the 
 scenario modeled (Aug 15-Mar 30 or Oct 1-Mar 30). 
 The process is as follows: 
 
-  - Newborns: During the RSV campaign, a fraction of all newborns 
-    will receive long-acting monoclonals at birth (fraction based on 
-    weekly monoclonal coverage). Specifically, for scenarios A-B (early 
-    timing of interventions), a fraction of children born Aug 15 - Mar 
-    30 receive a birth dose of monoclonals based on weekly coverage. For 
-    scenarios C-D (classic timing of interventions), a fraction of 
-    children born Oct 1 - Mar 30 receive a birth dose of monoclonals 
-    based on weekly coverage.
-  - Babies (0-7m):  During the RSV campaign, a fraction of infants
-    who were born prior to the start of the RSV campaign and are aged
-    0-7 months at the start of the RSV campaign will receive a dose 
-    of monoclonals. This administration takes place at an accelerated 
-    pace during the first month of the campaign. Specifically, for 
-    scenarios A-B (early timing of interventions), babies born 
-    Apr 1 - Aug 14 receive a nirsevimab dose during the first month of 
-    the campaign, namely Aug 15 -Sep 15. For scenarios C-D (classic 
-    timing of interventions), babies born Apr 1 -Sep 30 receive a dose 
-    during Oct 1-31.
-
-b. *Maternal RSV vaccine.* Maternal vaccines were recommended in fall 
-2023 for women who are 32 through 36 weeks pregnant during the RSV 
-vaccine campaign. We assume that a fraction of eligible women will 
-get one dose of maternal RSV vaccine throughout the RSV campaign. Babies 
-will be protected at birth (approximately one month after mom’s vaccination) 
-and throughout the RSV season.  Specifically, for scenarios A-B (early 
-timing of interventions), a fraction of 32-36 wk pregnant women receive 
-vaccine during July 15-Jan 31 based on weekly coverage. For scenarios C-D 
-(classic timing of interventions), a fraction of 32-36 wk pregnant women 
-receive vaccine during Sep 1 -Jan 31 based on weekly coverage. For all 
-scenarios A-D, we assume that 25% of eligible women are immunized.
-
-c. *No double immunization:* We assume that nirsevimab is administered to 
-babies whose mother has not received the RSV vaccine. CDC recommendations 
-are that parents choose one of the two existing intervention strategies.  
-In other words, the coverage of nirsevimab and maternal vaccines should 
-be considered additive (ie these modes of immunization target different 
-babies).
+  - Newborns: During the RSV campaign, a fraction of all newborns will receive 
+    long-acting monoclonals at birth. Specifically, a fraction of children born 
+    Oct 1 - Mar 30 receive a birth dose of monoclonals based on specified 
+    weekly coverage.
+  - Babies born before RSV season and <7 months on October 1:  During the RSV 
+    campaign, a fraction of infants who were born prior to the start of the RSV 
+    campaign and are aged 0-7 months at the start of the RSV campaign will 
+    receive a dose of monoclonals. This administration takes place at an 
+    accelerated pace during the first month of the campaign. Specifically, 
+    babies born Apr 1 -Sep 30 receive a dose during Oct 1-31.
+  - Note: Two monoclonals will be available for the 2025-26 season, including 
+    nirsevimab and clorsevimab. The timing of administration and effectiveness of
+    the two products is assumed to be the same. Teams have discretion to model 
+    products separately or in combination. The provided immunization coverage 
+    curves represent combined coverage for both products.
 
 
-##### Seniors
+b. *Maternal RSV vaccine.* Maternal vaccines were recommended in fall 2023 for 
+women who are 32 through 36 weeks pregnant during the RSV vaccine campaign. We 
+assume that a fraction of eligible women will get one dose of maternal RSV 
+vaccine throughout the RSV campaign. Babies will be protected at birth 
+(approximately one month after mom’s vaccination) and throughout the RSV season. 
+Specifically, a fraction of 32-36 wk pregnant women will receive vaccination 
+during Sep 1 -Jan 31 based on weekly maternal vaccine coverage.
 
-Senior RSV vaccine recommendations were 
-[updated for the 2024-25 season](https://www.cdc.gov/rsv/vaccines/older-adults.html). 
-Current recommendations stipulate that 1) Seniors vaccinated during the 
-2023-24 season should not be revaccinated 2) All unvaccinated seniors 75+ 
-yrs are recommended for vaccination, and 3) All  high-risk seniors 60-74 
-not yet vaccinated are recommended for vaccination. 
 
-We recommend that teams consider vaccination in all individuals 60+ yrs, 
-even though the hospitalization target data is only available for individuals 
-65+ yrs. The exact implementation of targeting 60+ yrs is left at teams’ 
-discretion. Vaccine curves will be provided separately for high-risk 
-individuals 60-74 and those 75+, for both 2023-24 (reported vaccination) 
-and 2024-25 (hypothesized vaccination). 
+c. *No double immunization:* We assume that long-acting monoclonals are 
+administered to babies whose mothers have not received the RSV vaccine. CDC 
+recommendations are that parents choose one of the existing intervention 
+strategies. In other words, the coverage of long-acting monoclonals and 
+maternal vaccines should be considered additive (i.e. these modes of 
+immunization target different babies).
+
+
+##### Older Individuals
+
+Older individual RSV vaccine recommendations were
+[updated for the 2025-26 season](https://www.cdc.gov/rsv/vaccines/older-adults.html). 
+Current recommendations stipulate that 1) **Individuals vaccinated during prior 
+seasons should not be revaccinated** 2) All unvaccinated seniors 75+ 
+yrs are recommended for vaccination, and 3) All unvaccinated high-risk 
+individuals 50-74 are recommended for vaccination. 
+
+We recommend that teams consider vaccination in eligible individuals 50+ yrs. 
+Target data are available from RSV-NET for fine age groups, including 50-64, 
+65-74 and 75+. The exact implementation of targeting eligible 50+ yrs is left 
+at teams’ discretion.  **This year, to align with new recommendations, we will 
+request one more age breakdown, so that we can make projections for the 50-64 
+and 65+ separately from the non-intervened age groups 5-49.** Vaccine curves 
+will be provided separately for high-risk individuals 50-74 and those 75+, for 
+both 2023-24 and 2024-25 (reported vaccination) and 2025-26 (vaccination for 
+the projection period). 
 
 We assume that CDC revaccination guidelines are followed up closely, so 
 that seniors vaccinated last year ***will not*** get revaccinated this year. 
-**Hence the coverage from last year and this year should be considered as 
-additive (i.e., targeting different individuals).**
+**Hence the coverage from the past two seasons and this year should be 
+considered as additive (i.e., targeting different individuals).**
+
 
 Further, we also assume that high risk guidelines are followed closely. 
 **Is it estimated that 50% of 60-74 yo have high-risk conditions that 
@@ -172,47 +199,42 @@ compared to their healthy age peers (CDC personal communication and
 [slide 104](https://www.cdc.gov/acip/downloads/slides-2024-06-26-28/11-RSV-Adult-Melgar-Roper-Britton-508.pdf)).**
 
 
-##### Coverage assumptions
-
-Vaccination will proceed seasonally, similarly to the flu vaccine, 
-between Aug 2024 and June 2025. We will index the coverage of RSV 
-interventions on a combination of this past year’s coverage and the 
-flu vaccine 
-[coverage](https://www.cdc.gov/rsvvaxview/dashboard/index.html) 
-in a given state and relevant age group. Indexing on flu is meant 
-to address the potential increase of RSV coverage in 2024-25, compared 
-to 2023-24, and remedy the lack of state-specific coverage information 
-for infants, while reflecting the propensity of different states to 
-adopt health interventions. 
-**Senior and infant immunization coverage curves will be provided for all 
-projection weeks and target locations.**
-
-
 ##### Intervention effectiveness
 
-This year, we have updated VE estimates for RSV products in light of 
-real-world observational data published for the 2023-24 season (except 
-for maternal vaccines, for which there is no real world effectiveness 
-data). All VE estimates are against hospitalization. 
+This year, we have updated VE estimates for maternal vaccines in light of 
+recent real-world observational data. VE estimates for nirsevimab and senior 
+vaccines remain as in last year’s scenarios. **All VE estimates are against 
+hospitalization.**
 
-We assume that VE is 80% for infant monoclonals and 60% for maternal 
-vaccines. Waning immunity for these products is at teams discretion; 
+We assume that VE is **80%** for infant monoclonals and **75%** for maternal 
+vaccines based on 
+[recent CDC data](https://www.cdc.gov/acip/downloads/slides-2025-06-25-26/03-MacNeil-Mat-Peds-RSV-508.pdf). 
+Waning immunity for these products is at teams discretion; 
 we refer to a recent modeling paper by 
 [Hodgson et al](https://pubmed.ncbi.nlm.nih.gov/38476752/) describing 
 waning curves from RCT data  (see Fig SM3.6 SM3.9 in Supp).
 
 For senior vaccines, the VE in the first year of vaccination is set at 
-75%. The VE in the second year is reduced due to waning, with the level 
-of reduction depending on scenario. VE is reduced by 10% in the second 
-year in optimistic scenarios A, C, with a second year VE assumed to be 
-75 * .9 = 68%. VE is reduced by 50% in the second year in scenarios B 
-and D, so that VE = 75*.5=38%. The pessimistic assumption of 50% 
-reduction by the second year is based on the lower bound of VE estimates 
-from a RCT assessing VE in the second season after vaccine receipt, 
-[Ison at al.](https://pubmed.ncbi.nlm.nih.gov/38253338/).
-The waning distribution is left at team’s discretion provided that the 
-average VE level remains at 75% within one year of vaccination, and at 
-38% or 68% on average within the second year of vaccine.
+**75%**, which is an intermediate value between estimates from a recent 
+[meta-analysis](https://www.cdc.gov/acip/downloads/slides-2025-04-15-16/04-Ortega-Sanchez-Adult-RSV-508.pdf) and 
+[real-world data from the 2023-24 and 2024-25 seasons in the US](https://jamanetwork.com/journals/jama/article-abstract/2838490).
+The VE in the second and third years is reduced due to waning, with the level 
+of reduction depending on scenario. VE is reduced by 10% each year in 
+optimistic scenarios A, C, with VE assumed to be 75\*.9=68% in year 2 
+and 75\*.9\*.9=61%.  In pessimistic scenarios B and D, VE is halved each year, 
+so that VE = 75\*.5=38% in the second year and 75\*.5\*.5=19% in the first year. 
+The pessimistic assumption of 50% reduction by the second year is based on the 
+lower bound of VE estimates from a RCT assessing VE in the second season after 
+vaccine receipt, see [Ison at al.](https://pubmed.ncbi.nlm.nih.gov/38253338/) 
+and an observational case-control study assessing VE as a function of time since
+immunization, [Surie at al.](https://jamanetwork.com/journals/jama/fullarticle/2838490) 
+(VE declined from 69% in 1st year to 48% in 2nd year, a 30% relative decline in 
+VE). The waning distribution is left at team’s discretion provided that the 
+average VE level remains at the prescribed level each year after vaccination. 
+For models that consider an effect of the vaccine against infection, the waning 
+of VE against infection is at teams discretion, provided that the resulting VE 
+against hospitalization follows the prescribed decline.
+
 
 A few auxiliary references are provided below.
 
@@ -234,6 +256,9 @@ A few auxiliary references are provided below.
   - RCTS:
     - [Kampmann et al](https://www.nejm.org/doi/full/10.1056/NEJMoa2216480)
 
+
+##### Assumptions about vaccine effects on transmission 
+
 It is at teams’ discretion to proportionate VE values into protection against 
 infection, protection against severe disease given infection, and any effect on 
 transmission. However note that the current thinking and available data, 
@@ -245,14 +270,12 @@ moderate transmission effect cannot be ruled out.
 
 ##### Assumptions about duration of protection
 
-Teams can refer to existing literature cited in the above section. As a 
-general guideline, monoclonals and maternal vaccines are only expected to 
-provide sizable protection within the first 6 months after receipt, while 
-senior protection is expected to persist for 2 years. Within this timeframe, 
+Teams can refer to existing literature cited in the above section. As a general
+guideline, monoclonals and maternal vaccines are only expected to provide 
+sizable protection within the first 6 months after receipt, while senior 
+protection is expected to persist for multiple years. Within this timeframe, 
 there can be waning of VE. We will explore waning uncertainty via our scenarios 
-for seniors. Further, teams have discretion to explore waning for infant 
-products, which would potentially interact with the scenario assumptions 
-regarding early and late administration.
+for seniors. Teams have discretion to explore waning for infant products.
 
 
 ##### Other RSV-specific interventions
@@ -264,16 +287,15 @@ residual masking is allowed.
 ##### Counterfactual scenario (scenario E)
 
 In this scenario, we consider no change to the historic policy of RSV 
-mitigation, which consists in the absence of senior vaccination (neither 
-in 2023-24 nor 2024-25) and a limited coverage of palivizumab monoclonals 
-to high-risk premature infants (~2% of the US birth cohort receives a partial 
-or full dose,
+mitigation, namely no senior vaccination (none in 2023-24, 2024-25, or 2025-26) 
+and a limited coverage of palivizumab monoclonals to high-risk premature infants 
+(~2% of the US birth cohort receives a partial or full dose,
 [Ambrose et al](https://www.tandfonline.com/doi/full/10.4161/hv.32082)). The 
-calibration data available from 2017-present takes into account the impact 
-of palivizumab. Teams have discretion to consider this policy explicitly or 
-ignore it given the small fraction of infants covered. We note that high risk 
-premature infants <6mo who previously would have received palivizumab (the 
-older treatment) will now receive the new monoclonal nirsevimab, with comparable 
+calibration data available from 2017-2023 takes into account the impact of 
+palivizumab. Teams have discretion to consider this policy explicitly or ignore 
+it given the small fraction of infants covered. We note that high risk premature 
+infants <6mo who previously would have received palivizumab (the older 
+treatment) will now receive the new long-acting monoclonals, with comparable 
 effectiveness. 
 
 
@@ -291,42 +313,46 @@ the 2024-25 season). Age-specific weekly rates per 100,000 population are
 reported in this system. 
 
 The data has been standardized and posted on the [SMH RSV github](./target-data/) 
-and will be updated weekly. **The target in this data is the weekly number of 
-hospitalizations in each given state (inc_hosp variable), for all ages and by 
-age group.** To obtain counts, we have converted RSV-NET weekly rates based 
-on state population sizes. This method assumes that RSV-NET hospitals are 
-representative of the whole state. To obtain national US counts, we have used the 
-rates provided for the “overall RSV-NET network”. The data covers 2017-present. 
-Reported age groups include: [0-5 months], [6-11 months], [1 yr], [2-4 yr], 
-[5-17 yr], [18-49 yr], [50-64 yr], and [65-74] and 75+ years. The standardized 
-dataset provided by SMH includes week- state- and age-specific RSV counts 
-(the target), rates, and population sizes. 
+and is updated weekly. **The target in this data is the weekly number of 
+hospitalizations in each given state (`inc_hosp` variable), for all ages and by 
+age group.** To obtain counts, we have converted RSV-NET weekly rates based on 
+state population sizes. This method assumes that RSV-NET hospitals are 
+representative of the whole state. To obtain national US counts, we have used 
+the rates provided for the “overall RSV-NET network”. The data covers 
+2017-present. Reported age groups include: [0-6 months], [6-12 months], 
+[1-2 yr], [2-4 yr], [5-17 yr], [18-49 yr], [50-64 yr], and [65-74] and 
+75+ years. The standardized dataset provided by SMH includes week- state- and 
+age-specific RSV counts (the target), rates, and population sizes. 
 
-The source of age distribution used for calibration (RSV-NET vs other 
-estimates) should be provided in the abstract meta-data that is submitted 
-with the projections.
+The source of age distribution used for calibration (RSV-NET vs other estimates) 
+should be provided in the abstract meta-data that is submitted with the 
+projections.
 
 
 #### Other RSV datasets available for calibration
 
-A few auxiliary datasets have been posted in the GitHub repositority 
-[auxiliary-data/ folder](./auxiliary-data/) including: 
+A few auxiliary datasets, updated weekly (except POPHIVE), are available in the
+[auxiliary-data/rsv folder](./auxiliary-data/rsv) including: 
 
-- state-specific CDC surveillance from NVERSS (data available until end of
-  April 2024)
-- state-specific ED data from NSSP 
+- National and region-specific CDC surveillance from 
+  [NREVSS](https://www.cdc.gov/nrevss/php/dashboard/index.html)
+- State-specific and national ED data with demographic information 
+  (national only) 
+- Data on trends in RSV testing is available from 
+  [POPHIVE](https://github.com/PopHIVE).
 
-Given that the risk of RSV hospitalization changes substantially throughout 
-the first year of life, and that timing of interventions differs for catch-up 
-babies (who are older and less at risk) vs newborns (who are at highest risk), 
-we recommend that teams consider the risk profile of infants by month (or 
-2-month) of age. Detailed hospitalization risk estimates are available 
+
+Given that the risk of RSV hospitalization changes substantially throughout the 
+first year of life, and that timing of interventions differs for catch-up babies 
+(who are older and less at risk) vs newborns (who are at highest risk), we 
+recommend that teams consider the risk profile of infants by month (or 2-month) 
+of age. Detailed hospitalization risk estimates are available
 [here, Curns et al.](https://publications.aap.org/pediatrics/article/153/3/e2023062574/196566/Respiratory-Syncytial-Virus-Associated?autologincheck=redirected). 
 
 
 ### Targets
 
-In this round, we will **require submission of 100-300 individual trajectories 
+In this round, we will **require submission of 300-600 individual trajectories 
 for each target** while submission of **quantiles is optional**. Targets will 
 be based on the RSV-NET dataset. The required targets for trajectories **will 
 be weekly RSV incident hospital admissions. We request hospitalization counts 
@@ -336,17 +362,17 @@ below). Estimates of cumulative counts can be obtained from weekly trajectories
 and hence we do not require trajectories for cumulative counts. Similarly, peak 
 targets (peak hospital admission magnitude and peak timing) can be reconstructed 
 from weekly trajectories. Teams who wish to submit quantiles along with 
-trajectories should provide quantiles for weekly and cumulative counts, as 
-well as for hospital admission peak size and peak timing. 
+trajectories should provide quantiles for weekly and cumulative counts, as well 
+as for hospital admission peak size and peak timing.
 
 #### Weekly targets
 
 - Weekly *reported* all-age and age-specific state-level incident hospital 
   admissions, based on RSV-NET. This dataset is updated daily and covers 
-  2017-2024. There should be no adjustment for reporting (=raw data from 
+  2017-2025. There should be no adjustment for reporting (=raw data from 
   RSV-NET dataset to be projected). A current and standardized version of 
   the weekly data has been posted [here](./target-data/)
-- **Optional**, Weekly all-age and age-specific state-level incident hospital
+- **Optional**, Weekly all-age and age-specific state-level incident infection
 - No case target
 - No death target
 - All targets should be numbers of individuals, rather than rates
@@ -356,7 +382,7 @@ well as for hospital admission peak size and peak timing.
 ##### Required
 
 - Hospital admissions should be provided for the following age groups: 
-  all ages,  <1 yr, 1-4, 5-64, 65+. (Most of the RSV 
+  all ages,  <1 yr, 1-4, 5-49, 50-64, 65+. (Most of the RSV 
   burden on hospitalizations comes from the 0-1 and 65+ age groups.)
 
 
@@ -371,17 +397,15 @@ well as for hospital admission peak size and peak timing.
 #### Optional targets (if submitting quantiles in addition to trajectories)
 
 - Cumulative hospital admissions. Cumulative outcomes start at 0 at the start 
-  of projections, on Nov 12, 2023
-- Cumulative and incident infection. Cumulative outcomes start at 0 at the start 
-  of projections, on Nov 12, 2023
+  of projections, on July 27, 2025
 - State-level peak hospital admissions
 - State-level timing of peak hospital admission
 
 ### Timeline
 
-- **Scenarios set (no changes after)**: *Friday, Oct 4, 2024*
-- **Projections due**: *Tuesday, Oct 29, 2024*
-- **Report finalized**: *No later than November 13, 2024*
+- **Scenarios set (no changes after)**: *Friday, Oct 31, 2025*
+- **Projections due**: *Tuesday, Nov 11, 2025*
+- **Report finalized**: *End of November 2025*
 
 ### Other specifications and assumptions
 
@@ -433,8 +457,8 @@ and
 
 #### Projection Period
 
-- **Sun July 28, 2024 to Sat June 7, 2025 (45 weeks)**
-  - NO CALIBRATION TO DATA after July 28,2024
+- **Sun July 27, 2025 to Sat June 6, 2026 (45 weeks)**
+  - NO CALIBRATION TO DATA after July 27,2025
 
 #### State-level variability
 
@@ -474,35 +498,34 @@ discretion.
 
 | Scenario | Scenario name | Scenario ID for submission file (`scenario_id`) |
 | ---------------------------------------------- |:-----------------:|:--------------------:|
-| Scenario A. Optimistic senior waning and early infant interventions              | optSen_ealyrInf     | A-2024-09-20 |
-| Scenario B. Pessimistic senior waning and early infant interventions             | pessSen_ealyrInf    | B-2024-09-20 |
-| Scenario C. Optimistic senior waning and classic timing of infant interventions  | optSen_classicrInf  | C-2024-09-20 |
-| Scenario D. Pessimistic senior waning and classic timing of infant interventions | pessSen_classicrInf | D-2024-09-20 | 
-| Scenario E. Counterfactual                                                       | counter_fact        | E-2024-09-20 |
+| Scenario A. Optimistic senior waning and high coverage of infant interventions      | optSenWan_highInfCov  | A-2025-10-31 |
+| Scenario B. Pessimistic senior waning and high coverage of infant interventions     | pessSenWan_highInfCov | B-2025-10-31 |
+| Scenario C. Optimistic senior waning and moderate coverage of infant interventions  | optSenWan_modInfCov   | C-2025-10-31 |
+| Scenario D. Pessimistic senior waning and moderate coverage of infant interventions | pessSenWan_modInfCov  | D-2025-10-31 | 
+| Scenario E. Counterfactual                                                          | counterfactual        | E-2025-10-31 |
 
-*   **Projection Due date**: Tuesday, Oct 29, 2024
-*   **End date for fitting data**: July 27, 2024
-*   **Start date for scenarios**: Sunday July 28, 2024 (first date of simulated transmission/outcomes)
-*   **Simulation end date:** Saturday June 7, 2025 (45-week horizon)
+*   **Projection Due date**: Tuesday, Nov 11, 2025
+*   **End date for fitting data**: Saturday July 26, 2025
+*   **Start date for scenarios**: Sunday July 27, 2025 (first date of simulated transmission/outcomes)
+*   **Simulation end date:** Saturday June 6, 2026 (45-week horizon)
 
-*   Desire to release results by mid-November 2024
+*   Desire to release results by end November 2025
 
 #### Other submission requirements
 
-- Simulation trajectories: We ask that teams submit a sample of 100-300 
-  simulations replicates. Simulations should be sampled in such a way that 
-  they will be most likely to produce the uncertainty of the simulated process. 
-  For some models, this may mean a random sample of simulations, for others 
-  with larger numbers of simulations, it may require weighted sampling. 
-  Trajectories will need to be paired across **age, horizon, and scenarios** 
+- Simulation trajectories: We ask that teams submit a sample of 300-600 
+  trajectories most likely to capture the uncertainty of the simulated process. 
+  For some models, this may mean a random sample of simulations, for others with 
+  larger numbers of simulations, it may require weighted sampling. Trajectories 
+  will need to be paired across **age, horizon, and scenarios** 
   (e.g., for a given model, location, scenario and week, all age data for 
   simulation 1 corresponds to the sum of age-specific estimates for
-   simulation 1).
+  simulation 1).
 
 - Geographic scope: state-level and national projections
   - 12 states or a subset of 12 states, US overall recommended. We note 
-  that WA joined RSV-NET in 2024-25 and will not be considered here due 
-  to lack of historic data for calibration.
+  that WA joined RSV-NET in 2024-25 as a 13th participating state. 
+  **Projections for WA are optional.**
 
 - Results: 
   - Summary: Results must consist of a subset of weekly targets listed
@@ -511,17 +534,14 @@ discretion.
   - **Weekly Targets**: 
     - Weekly incident hospitalizations by location, all ages and 
     age-specific
-    - Weekly indicent infection by location, all ages and age-specific
-    (optional)
 
 - Metadata: We will require a brief meta-data form, from all teams.
 
 - Uncertainty: 
-  - For trajectories (required submission): we require 100 to 300 
-  trajectories.
+  - For trajectories (required submission): we require 300 to 600 
+    trajectories, paired.
   - For quantiles (optional submission) We ask for 0.01, 0.025, 0.05,
-    every 5% to 0.95, 0.975, and 0.99. Teams are also encouraged to submit 
-    0 (min value) and 1 (max) quantiles if possible. 
+    every 5% to 0.95, 0.975, and 0.99. 
 
 ## Target data
 
