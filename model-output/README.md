@@ -210,7 +210,7 @@ The submission can contain multiple output type information:
 - cdf:
     - weekly peak timing hospitalizations
 
-Additional optional target for round 2 (2024.25, round ID "2024-07-28"):
+Additional optional target starting round 2 (2024.25, round ID "2024-07-28"):
 
 - sample:
     - weekly incident infection
@@ -234,8 +234,8 @@ Values in the `target` column must be one of the following character strings:
 - `"cum hosp"`
 - `"peak size hosp"`
 - `"peak time hosp"`
-- `"inc inf"` (round 2)
-- `"cum inf"` (round 2)
+- `"inc inf"` (starting round 2)
+- `"cum inf"` (starting round 2)
 
 
 #### inc hosp

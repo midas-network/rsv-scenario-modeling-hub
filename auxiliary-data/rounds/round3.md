@@ -171,10 +171,11 @@ For senior vaccines, the VE in the first year of vaccination is set at
 [meta-analysis](https://www.cdc.gov/acip/downloads/slides-2025-04-15-16/04-Ortega-Sanchez-Adult-RSV-508.pdf) and 
 [real-world data from the 2023-24 and 2024-25 seasons in the US](https://jamanetwork.com/journals/jama/article-abstract/2838490).
 The VE in the second and third years is reduced due to waning, with the level 
-of reduction depending on scenario. VE is reduced by 10% each year in 
-optimistic scenarios A, C, with VE assumed to be 75\*.9=68% in year 2 
-and 75\*.9\*.9=61%.  In pessimistic scenarios B and D, VE is halved each year, 
-so that VE = 75\*.5=38% in the second year and 75\*.5\*.5=19% in the first year. 
+of reduction depending on scenario. VE is reduced by 10% each year in optimistic 
+scenarios A, C, with VE assumed to be  75% the first year, 75\*.9=68% in the 
+second year and 75\*.9\*.9=61% in the third year. In pessimistic scenarios B 
+and D, VE is halved each year, so that VE = 75% the first year,  75\*.5=38% in 
+the second year and 75\*.5\*.5=19% in the third year.
 The pessimistic assumption of 50% reduction by the second year is based on the 
 lower bound of VE estimates from a RCT assessing VE in the second season after 
 vaccine receipt, see [Ison at al.](https://pubmed.ncbi.nlm.nih.gov/38253338/) 
@@ -350,6 +351,8 @@ as for hospital admission peak size and peak timing.
 
 - Cumulative hospital admissions. Cumulative outcomes start at 0 at the start 
   of projections, on July 27, 2025
+- Cumulative and Incident infection. Cumulative outcomes start at 0 at the start 
+  of projections, on July 27, 2025
 - State-level peak hospital admissions
 - State-level timing of peak hospital admission
 
@@ -486,6 +489,8 @@ discretion.
   - **Weekly Targets**: 
     - Weekly incident hospitalizations by location, all ages and 
     age-specific
+    - Weekly incident infection by location, all ages and age-specific
+    (optional)
 
 - Metadata: We will require a brief meta-data form, from all teams.
 
