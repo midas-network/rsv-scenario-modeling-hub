@@ -288,11 +288,11 @@ A few auxiliary datasets, updated weekly (except POPHIVE), are available in the
 [auxiliary-data/rsv folder](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data/rsv) including: 
 
 - National and region-specific CDC surveillance from 
-  [NREVSS](https://www.cdc.gov/nrevss/php/dashboard/index.html)
+  [NREVSS](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data/rsv#the-national-respiratory-and-enteric-virus-surveillance-system-nrevss)
 - State-specific and national ED data with demographic information 
   (national only) 
 - Data on trends in RSV testing is available from 
-  [POPHIVE](https://github.com/PopHIVE).
+  [POPHIVE](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data/rsv#pophive).
 
 
 Given that the risk of RSV hospitalization changes substantially throughout the 
