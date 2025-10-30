@@ -5,7 +5,7 @@ one per each CDC source and the python code to extract and update the data.
 
 The data is updated weekly by the 
 [update-rsv-data](../.github/workflows/update-rsv-data.yaml) GitHub Action, 
-which runs weekly on Friday morning, 9:00 am UTC.
+which runs weekly on Friday morning, 9:00 am UTC, except POPHIVE Data
 
 ### Respiratory Syncytial Virus Hospitalization Surveillance Network (RSV-NET)
 
@@ -110,3 +110,12 @@ are downloaded weekly and output in PARQUET files:
 
 For more information, please consult the 
 [NSSP homepage](https://www.cdc.gov/nssp/index.html)
+
+### POPHIVE
+
+The [PopHIVE_DataHub](https://github.com/ysph-dsde/PopHIVE_DataHub) GitHub 
+repository contains multiple dataset that might be of intereston RSV testing 
+trends:
+- [2018 - 2024 Data (csv)](https://github.com/ysph-dsde/PopHIVE_DataHub/blob/main/Data/Plot%20Files/Cosmos%20ED/rsv_testing_freq.csv)
+- [2023 - Aug2025 Data (parquet)](https://github.com/PopHIVE/Ingest/blob/main/data/bundle_respiratory/dist/rsv_testing_pct.parquet)
+
