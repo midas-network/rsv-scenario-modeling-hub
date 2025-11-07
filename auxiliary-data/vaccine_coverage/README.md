@@ -22,7 +22,7 @@ weekly vaccine coverage for seniors for the 2025-2026 season (projected) and
 has weekly national coverage for the 2023-2024 and 2024-2025 seasons for 
 maternal vaccine and Nirsevimab
 
-- [Infants_state_coverage_2025_26](./Infants_state_coverage_2025_26.csv) 
-has weekly vaccine coverage at state level for the 2025-2026 season witg two coverage assumptions 
-depending on whether immunization uptake is optimistic (sc A and B) or similar to last year in 
-2024-25 (sc C and D)
+- [Infants_coverage_2025_26](./Infants_coverage_2025_26.csv) 
+has weekly vaccine coverage at state and national level for the 2025-2026 season witg two 
+coverage assumptions depending on whether immunization uptake is optimistic (sc A and B) or 
+similar to last year in 2024-25 (sc C and D)
