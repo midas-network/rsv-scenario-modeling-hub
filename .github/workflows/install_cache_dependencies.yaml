@@ -29,11 +29,12 @@ jobs:
             key: ${{ runner.os }}-${{ hashFiles('.github/requirements.txt') }}-1
 
         - name: Install dependencies
+          if: steps.cache.outputs.cache-hit != 'true'
           run: |
             R -e 'Sys.setenv("NOT_CRAN" = TRUE)
-                  install.packages(c("arrow", "gh", "remotes"))
+                  install.packages(c("purrr", "stringr", "gh", "remotes", "jsonlite"))
+                  install.packages("hubValidations", repos = c("https://hubverse-org.r-universe.dev", "https://cloud.r-project.org"))
                   Sys.unsetenv("NOT_CRAN")
-                  remotes::install_url("https://github.com/midas-network/SMHvalidation/archive/refs/heads/main.zip")
-                  remotes::install_url("https://github.com/Infectious-Disease-Modeling-Hubs/hubUtils/archive/refs/heads/main.zip")'
+                  remotes::install_url("https://github.com/midas-network/SMHvalidation/archive/refs/heads/main.zip")'
           env:
             GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}

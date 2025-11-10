@@ -1,193 +1,154 @@
-library(SMHvalidation)
-library(gh)
-library(dplyr)
-
-# Check if validation need to run
-if (nchar(Sys.getenv("GH_COMMIT_SHA")) > 1) {
-  test <- gh::gh(paste0("GET /repos/",
-                        "midas-network/rsv-scenario-modeling-hub/commits/",
-                        Sys.getenv("GH_COMMIT_SHA")))
-  check <- grepl("model-output/", unique(unlist(purrr::map(test$files,
-                                                           "filename"))))
-} else {
-  check <-  TRUE
-}
-
-if (isFALSE(all(check))) {
-  test_tot <- NA
-  print("no update in data-processed folder")
-} else {
-  # Prerequisite
-  pop_path <- "auxiliary-data/location_census/locations.csv"
-  js_def_file <- "hub-config/tasks.json"
-  lst_gs <- NULL
-
-  # check if submissions file
-  pr_files <- gh::gh(paste0("GET /repos/",
-                            "midas-network/rsv-scenario-modeling-hub/pulls/",
-                            Sys.getenv("GH_PR_NUMBER"), "/files"))
-
-  pr_files_name <- purrr::map(pr_files, "filename")
-  pr_files_name <- pr_files_name[!"removed" == purrr::map(pr_files, "status")]
-  pr_sub_files <-
-    stringr::str_extract(pr_files_name,
-                         "model-output/.+/\\d{4}-\\d{2}-\\d{2}(-.*)?")
-  pr_sub_files <- unique(na.omit(pr_sub_files))
-  pr_sub_files <- grep("(A|a)bstract", pr_sub_files, value = TRUE,
-                       invert = TRUE)
-  round_id <- unique(stringr::str_extract(pr_sub_files,
-                                          "\\d{4}-\\d{2}-\\d{2}"))
-  config_json <- jsonlite::read_json(js_def_file)
-  rounds_ids <- unique(hubUtils::get_round_ids(config_json))
-  sel_round <- grepl(paste(round_id, collapse = "|"), rounds_ids)
-  if (all(isFALSE(sel_round))) {
-    stop("The round id in the submission file was not recognized, please ",
-         "verify")
-  }
-  if (is.null(unlist(purrr::map(config_json$rounds[sel_round], "partition")))) {
-    partition = NULL
+read_config_val <- function(hub_path, config = "validation") {
+  path <- paste0(hub_path, "/hub-config/", config, ".json")
+  if (file.exists(path)) {
+    file <- jsonlite::read_json(path, simplifyVector = TRUE)
   } else {
-    partition = unlist(purrr::map(config_json$rounds[sel_round], "partition"))
-  }
-  # Run validation on file corresponding to the submission file format
-  if (length(pr_sub_files) > 0) {
-    if (!(dir.exists(paste0(getwd(), "/proj_plot"))))
-      dir.create(paste0(getwd(), "/proj_plot"))
-    sub_file_date <- unique(stringr::str_extract(basename(pr_sub_files),
-                                                 "\\d{4}-\\d{2}-\\d{2}"))
-    if (is.null(partition)) {
-      team_name <- unique(basename(dirname(pr_sub_files)))
-      group_files <- paste0(sub_file_date, "-", team_name)
-    } else {
-      group_files <- sub_file_date
-      file_paths <- stringr::str_extract(pr_sub_files,
-                                         "(?<=model-output/)(.+\\/)?")
-      team_name <- unique(unlist(purrr::map(strsplit(file_paths, "/"),1)))
-    }
-    test_tot <- lapply(group_files, function(y) {
-      # select submission files
-      pr_sub_files_group <- grep(y, pr_sub_files, value = TRUE)
-      pr_sub_files_lst <- pr_files[grepl(paste(pr_sub_files_group,
-                                               collapse = "|"),
-                                         purrr::map(pr_files, "filename"))]
-      pr_sub_files_lst <-
-        pr_sub_files_lst[!grepl("(A|a)bstract",
-                                purrr::map(pr_sub_files_lst, "filename"))]
-      # run validation on all files
-      test_tot <- lapply(seq_len(length(pr_sub_files_lst)), function(x) {
-        # submission file download
-        if (is.null(partition)) {
-          url_link <- URLdecode(pr_sub_files_lst[[x]]$raw_url)
-          download.file(url_link, basename(url_link))
-        } else {
-          file_part <- paste0(getwd(), "/part_sub/",
-                              pr_sub_files_lst[[x]]$filename)
-          if (!(dir.exists(dirname(file_part))))
-            dir.create(dirname(file_part), recursive = TRUE)
-          url_link <- pr_sub_files_lst[[x]]$raw_url
-          download.file(url_link, file_part)
-        }
-      })
-      gc()
-      # run validation
-      merge_col <- TRUE
-      if (sub_file_date > "2024-01-01") {
-        n_decimal <- 1
-      } else {
-        n_decimal <- NULL
-      }
-      if (is.null(partition)) {
-        val_path <- basename(pr_sub_files_group)
-        round_id <- NULL
-      } else {
-        val_path <- paste0(getwd(), "/part_sub/model-output/", team_name, "/")
-        round_id <- sub_file_date
-      }
-      arg_list <- list(path = val_path, js_def = js_def_file, lst_gs = lst_gs,
-                       pop_path = pop_path, merge_sample_col = merge_col,
-                       partition = partition, round_id = round_id,
-                       n_decimal = n_decimal)
-      test <- capture.output(try(do.call(SMHvalidation::validate_submission,
-                                         arg_list)))
-      gc()
-      if (length(grep("Run validation on fil", test, invert = TRUE)) == 0) {
-        test <- try(do.call(SMHvalidation::validate_submission, arg_list))
-        test <- test[1]
-        gc()
-      }
-      # Visualization
-      df <- try({
-        arrow::open_dataset(val_path, partitioning = partition) %>%
-          dplyr::filter(output_type == "quantile") %>%
-          dplyr::collect()
-      })
-      gc()
-      # print(head(df))
-      if (all(class(df) != "try-error") && nrow(df) > 0) {
-        test_viz <- try(generate_validation_plots(
-          path_proj = val_path, lst_gs = NULL,
-          save_path = paste0(getwd(), "/proj_plot"), y_sqrt = FALSE,
-          plot_quantiles = c(0.025, 0.975), partition = partition))
-      } else {
-        test_viz <- NA
-      }
-      gc()
-      if (class(test_viz) == "try-error")
-        file.remove(dir(paste0(getwd(), "/proj_plot"), full.names = TRUE))
-      # list of the viz and validation results
-      test_tot <- list(valid = test, viz = test_viz)
-      # returns all output
-      return(test_tot)
-    })
-  }  else {
-    test_tot <-
-      list(list(valid = paste0("No projection submission file in the standard ",
-                               "SMH file format found in the Pull-Request. No ",
-                               "validation was run.")))
+    message("Validation config file not found")
   }
 }
 
-if (!all(is.na(test_tot))) {
-  # Post validation results as comment on the open PR
-  test_valid <- purrr::map(test_tot, "valid")
-  message <- purrr::map(test_valid, paste, collapse = "\n")
+validate_subm <- function(x, ...) {
+  msg <- quiet_val_log(x, ...)
+  check_res <- unique(purrr::map_vec(purrr::map(msg$result,
+                                                ~attr(.x, "class")), 1))
+  check_res <- any(c("check_failure", "check_error") %in% check_res)
+  check_res2 <- grepl("Error|Warning", c(msg$warnings, msg$messages))
+  check_err <- any(c(check_res, check_res2))
+  out_res <- paste(msg$output, msg$messages,
+                   SMHvalidation::store_msg_val(msg$result), msg$warnings,
+                   sep = "\n")
+  list(msg = out_res, err = check_err)
+}
 
-  lapply(seq_len(length(message)), function(x) {
-    gh::gh(paste0("POST /repos/", "midas-network/rsv-scenario-modeling-hub/",
-                  "issues/", Sys.getenv("GH_PR_NUMBER"), "/comments"),
-           body = message[[x]],
-           .token = Sys.getenv("GH_TOKEN"))
-  })
+process_test <- function(test, file_path, section = "Model Output") {
+  msg <- paste(paste0("#### ", section, "\n",
+                      " --- ", file_path, " ---"),
+               SMHvalidation::store_msg_val(test), sep = "\n\n")
+  err <- unique(purrr::map_vec(purrr::map(test, ~ attr(.x, "class")), 1))
+  err <- any(c("check_failure", "check_error") %in% err)
+  list(err = err, msg = msg)
+}
 
-  # Post visualization results as comment on the open PR
-  test_viz <- purrr::map(test_tot, "viz")
-  if (any(!is.na(test_viz))) {
-    message_plot <- paste0(
-      "If the submission contains projection file(s) with quantile projection, ",
-      "a pdf containing visualization plots of the submission might be ",
-      "available and downloadable in the GitHub actions. Please click on 'details' ",
-      "on the right of the 'Validate submission' checks. The pdf is available in a ZIP ",
-      "file as an artifact of the GH Actions. For more information, please see ",
-      "[here](https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts)")
+extract_files <- function(list_files, folder, commit = FALSE) {
+  files <- select_files(list_files, commit = commit)
+  files <- purrr::keep(files, ~ grepl(folder, .x))
+  files <- purrr::map(files, ~ gsub(paste0(folder, "(/)?"), "", .x))
+}
 
-    if (any(unlist(purrr::map(test_viz, class)) == "try-error")) {
-      message_plot <- capture.output(
-        cat(message_plot, "\n\n\U000274c Error: ",
-            "The visualization encounters an issue and might not be available,",
-            " if the validation does not return any error, please feel free to",
-            " tag `@LucieContamin` for any question."))
+post_message <- function(res_list, repo_name, gh_pr_number, gh_token) {
+  lst_msg <- unlist(purrr::map(res_list, "msg"), FALSE)
+  purrr::map(lst_msg,
+             ~gh::gh(paste0("POST /repos/", repo_name, "/issues/", gh_pr_number,
+                            "/comments"), body = .x,
+                     .token = gh_token))
+}
+
+validate_model_output <- function(x, repo_name, gh_pr_number, gh_token,
+                                  hub_path = ".", post_msg = TRUE) {
+  # prerequisite
+  val_param <- read_config_val(hub_path)
+  round_id <- stringr::str_extract(x, "\\d{4}-\\d{2}-\\d{2}")
+  if (!(round_id %in% names(val_param))) {
+    msg <- paste0("The round id in the submission file was not recognized, ",
+                  "please verify")
+    if (post_msg) post_message(list("msg" = msg), repo_name, gh_pr_number,
+                               gh_token)
+    stop(msg)
+  }
+  if (grepl("Ensemble", x)) {
+    return(list(err = FALSE,
+                msg = paste0(basename(x), " seems to be an Ensemble file",
+                             " - validation not run")))
+  }
+
+  val_param <- val_param[[round_id]]
+  # partition validation
+  if (length(unlist(strsplit(x, "/"))) > 2) {
+    if (!"partition" %in% names(val_param)) {
+      msg <- paste0("The model output file seems to be partitioned, partition",
+                    "not accepted for this round, please verify")
+      if (post_msg) post_message(list("msg" = msg), repo_name, gh_pr_number,
+                                 gh_token)
+      stop(msg)
     }
-
-    gh::gh(paste0("POST /repos/", "midas-network/rsv-scenario-modeling-hub/",
-                  "issues/", Sys.getenv("GH_PR_NUMBER"),"/comments"),
-           body = message_plot,
-           .token = Sys.getenv("GH_TOKEN"))
+    test_mod_files <-
+      SMHvalidation::validate_part_file(".", x, val_param$partition) |>
+      process_test(file_path = x)
+    test_mod_content <- do.call(validate_subm,
+                                c(val_param, x = x, hub_path = hub_path,
+                                  round_id = round_id))
+  } else {
+    if ("partition" %in% names(val_param)) val_param$partition <- NULL
+    # simple validation
+    test_mod_files <- hubValidations::validate_model_file(".", x) |>
+      process_test(file_path = x)
+    test_mod_content <- do.call(validate_subm, c(val_param, x = x,
+                                                 hub_path = hub_path))
   }
+  # output
+  list(err =
+         unlist(purrr::map(list(test_mod_files, test_mod_content), "err")) |>
+         any(),
+       msg = paste(purrr::map(list(test_mod_files, test_mod_content), "msg"),
+                   collapse = "\n \n---\n \n"))
+}
 
-  # Validate or stop the github actions
-  if (any(grepl("(\U000274c )?Error", test_valid))) {
-    stop("The submission contains one or multiple issues")
-  } else if (any(grepl("Warning", test_valid))) {
-    warning(" The submission is accepted but contains some warnings")
+select_files <- function(files_list, commit = FALSE) {
+  if (commit) files_list <- files_list$files
+  pr_filenames <- purrr::map_vec(files_list, "filename")
+  pr_filenames <- pr_filenames[!"removed" == purrr::map(files_list, "status")]
+}
+
+quiet_val_log <- purrr::quietly(SMHvalidation::validate_submission)
+
+
+pr_validate <- function(repo_name, gh_pr_number, gh_commit_sha, hub_path,
+                        gh_token, post_msg = TRUE) {
+  # Files
+  if (nchar(gh_commit_sha) > 1) {
+    pr_files <- gh::gh(paste0("GET /repos/", repo_name, "/commits/",
+                              gh_commit_sha), .token = gh_token)
+    if (grepl("Merge .+ '.+/main'", pr_files$commit$message)) {
+      pr_files <- pr_filenames <- NULL
+    }
+    commit <- TRUE
+  } else {
+    pr_files <- gh::gh(paste0("GET /repos/", repo_name, "/pulls/", gh_pr_number,
+                              "/files"), .token = gh_token)
+    commit <- FALSE
   }
+  if (!is.null(pr_files))
+    pr_filenames <- select_files(pr_files, commit = commit)
+  # Metadata
+  if (any(grepl("model-metadata/", unique(pr_filenames)))) {
+    meta_files <- extract_files(pr_files, "model-metadata/", commit = commit)
+    test_meta <-
+      purrr::map(meta_files,
+                 ~ hubValidations::validate_model_metadata(hub_path = hub_path,
+                                                           .x) |>
+                   process_test(file_path = .x, section = "Model Metadata"))
+  } else {
+    test_meta <-  list(err = FALSE, msg = "No metadata files update")
+  }
+  if (post_msg) post_message(test_meta, repo_name, gh_pr_number, gh_token)
+  # Model output
+  if (any(grepl("model-output/", unique(pr_filenames)))) {
+    mod_files <- extract_files(pr_files, "model-output/", commit = commit)
+    test_mod <-
+      purrr::map(mod_files,
+                 ~ validate_model_output(.x, repo_name, gh_pr_number, gh_token,
+                                         hub_path = hub_path,
+                                         post_msg = post_msg))
+  } else {
+    test_mod <- list(err = FALSE,
+                     msg = "No model output submission files update")
+  }
+  if (post_msg) post_message(test_mod, repo_name, gh_pr_number, gh_token)
+  # Results
+  if (any(unlist(purrr::map(c(test_mod, test_meta), "err")))) {
+    stop("The submission contains one or multiple issues or warnings.")
+  } else {
+    message("Validation success")
+  }
+  list("meta" = test_meta, "mod_out" = test_mod)
 }
