@@ -5,7 +5,7 @@ hospitalizations for the 2025-26 season under different intervention scenarios.
 Two questions of particular interest are (i) the potential impact of vaccine
 waning among seniors now in their second or third year after vaccination and
 (ii) the potential benefits of infant interventions at different coverage
-levels. We will consider 5 scenarios in total, following a 2*2 table describing
+levels. We will consider 5 scenarios in total, following a 2\*2 table describing
 the impact of infant products (first dimension; moderate vs high coverage of
 long-acting infant monoclonals and maternal vaccines) and senior vaccination
 (second dimension; optimistic vs pessimistic waning of senior vaccine immunity).
@@ -44,15 +44,19 @@ The scenario structure is as follows:
 ### Assumptions regarding RSV interventions
 
 Weekly cumulative age-specific coverage for senior vaccines, maternal vaccine, 
-and monoclonals will be provided. Because of the shifting population denominator
+and monoclonals are available in the 
+[auxiliary-data/vaccine_coverage](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data/vaccine_coverage) folder. 
+Because of the shifting population denominator
 of infants coming in and aging out of eligibility, and the issue with seniors 
 not being recommended for revaccination, we will provide coverage as no. of 
 doses and no. of eligible population per week, in addition to percent immunized.
 **This year, we will consider state-specific differences in infant 
-immunization.** State-specific coverage curves will use NIS data reported for 
-2024-25 to establish a timeline and saturation point for vaccination nationally,
-while geographic differences will be indexed on last year’s state specific
-coverage reported to IIS. 
+immunization.** Coverage curves will use NIS data reported for
+2024-25 nationally and regionally to establish a timeline and saturation point 
+for vaccination. Each state will be assigned the vaccination rate reported 
+for the broader region in 2024-25, and scaled up to project coverage increase 
+in 2025-26. The same scaling factor will be applied to all states, based on the 
+national curve.
 
 For infants, we will consider two coverage assumptions depending on whether 
 immunization uptake is optimistic (sc A and B) or similar to last year in 
@@ -499,4 +503,4 @@ discretion.
     trajectories, paired.
   - For quantiles (optional submission) We ask for 0.01, 0.025, 0.05,
     every 5% to 0.95, 0.975, and 0.99. 
-
+    
