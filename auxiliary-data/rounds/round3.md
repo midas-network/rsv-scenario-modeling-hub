@@ -265,7 +265,7 @@ are available for 12 states and the US from RSV-NET spanning 2017-18 to present
 ([RSV-NET CDC Webpage](https://www.cdc.gov/rsv/php/surveillance/rsv-net.html)). 
 RSV-NET is an RSV hospitalization surveillance network that collects data on 
 laboratory-confirmed RSV-associated hospitalizations through a network of acute 
-care hospitals in a subset of states (13 states as of August 2024; WA joined for 
+care hospitals in a subset of states (13 states as of August 2024; NC joined for 
 the 2024-25 season). Age-specific weekly rates per 100,000 population are 
 reported in this system. 
 
@@ -483,8 +483,8 @@ discretion.
 
 - Geographic scope: state-level and national projections
   - 12 states or a subset of 12 states, US overall recommended. We note 
-  that WA joined RSV-NET in 2024-25 as a 13th participating state. 
-  **Projections for WA are optional.**
+  that NC joined RSV-NET in 2024-25 as a 13th participating state. 
+  **Projections for NC are optional.**
 
 - Results: 
   - Summary: Results must consist of a subset of weekly targets listed
