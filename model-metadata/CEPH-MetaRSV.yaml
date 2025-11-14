@@ -1,0 +1,48 @@
+team_name: "CEPH Lab at Indiana University"
+team_abbr: "CEPH"
+model_name: MetaRSV
+model_abbr: MetaRSV
+model_contributors: [
+    {
+        "name": "Marco Ajelli",
+        "affiliation": "Indiana University Bloomington",
+        "email": "majelli@iu.edu"
+    },
+    {
+        "name": "Shreeya Mhade",
+        "affiliation": "Indiana University Bloomington",
+        "email": "smhade@iu.edu"
+    },
+    {
+        "name": "Paulo C. Ventura",
+        "affiliation": "Indiana University Bloomington",
+        "email": "pventura@iu.edu"
+    },
+    {
+        "name": "Maria Litvinova",
+        "affiliation": "Indiana University Bloomington",
+        "email": "malitv@iu.edu"
+    },
+    {
+        "name": "Snigdha Agrawal",
+        "affiliation": "Indiana University Bloomington",
+        "email": "snagrawa@iu.edu"
+    },
+    {
+        "name": "Allisandra G. Kummer",
+        "affiliation": "Indiana University Bloomington",
+        "email": "alkummer@iu.edu"
+    },
+    {
+        "name": "Kedir Turi",
+        "affiliation": "Indiana University Bloomington",
+        "email": "knturi@iu.edu"
+    }
+]
+license: "CC-BY_SA-4.0"
+methods: "Age-structured ordinary differential equations model"
+methods_long: "The model framework is based on ordinary differential equations and age-stratified contact matrices derived from both macro (census) and micro (survey) data sources. RSV transmissibility follows a seonal pattern which is calibrated using  hospitalization data from RSV-Net for the 2021-2022, 2022-2023 and 2023-2024 seasons. Furthermore, our model uses age-dependent infection-to-hospitalization risks, whose posterior distribution is estimated by our optimization procedure and their prior distribution is based on RSV literature."
+model_version: "1.2"
+website_url: "https://publichealth.indiana.edu/research/faculty-directory/profile.html?user=majelli"
+team_funding: "Cooperative Agreement no. NU38OT000297 from the Council of State and Territorial Epidemiologists (CSTE)"
+data_inputs: "RSV-Net data taken from the RSV-Net webpage; demographic data from this repository; contact pattern data from Mistry et al. Nature Communications 2021."

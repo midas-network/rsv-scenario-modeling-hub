@@ -17,13 +17,13 @@ The GitHub Repository contains multiple example files reproducing the
 required and optional targets for RSV round 1 and different sample format: 
 
 - Team 2 - Model B: 
-  - Example file: [2023-11-12-team2-modelb.parquet](./team2-modelb)
+  - Example file: [2023-11-12-team2-modelb.parquet](../auxiliary-data/model_examples/team2-modelb)
 - Team 3 - Model C
-  - Example file: [2023-11-12-team3-modelc.parquet](./team3-modelc)
+  - Example file: [2023-11-12-team3-modelc.parquet](../auxiliary-data/model_examples/team3-modelc)
 - Team 4 - Model D:
-  - Example file: [2023-11-12-team4-modeld.parquet](./team4-modeld)
+  - Example file: [2023-11-12-team4-modeld.parquet](../auxiliary-data/model_examples/team4-modeld)
 - Team 5 - Model E:
-  - Example file: [2023-11-12-team5-modele.parquet](./team5-modele)
+  - Example file: [2023-11-12-team5-modele.parquet](../auxiliary-data/model_examples/team5-modele)
 
 For more information on the different sample format, please consult the 
 [Sample Format Wiki page](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki/Sample-File-Format).
@@ -97,7 +97,7 @@ The "arrow" library can be used to read/write the files in
 Other tools are also accessible, for example [parquet-tools](https://github.com/hangxie/parquet-tools)
 
 For example, in R:
-```
+```r
 # To write "parquet" file format:
 filename <- ”path/YYYY-MM-DD-team_model.parquet”
 arrow::write_parquet(df, filename)
@@ -144,6 +144,21 @@ No additional columns are allowed.
 Each row in the file is a specific type for a scenario for a location on
 a particular date for a particular target. 
 
+#### Column format
+
+|Column Name|Accepted Format|
+|:---:|:---:|
+|`origin_date`|character, date (datetime not accepted)|
+|`scenario_id`|character|
+|`target`|character|
+|`horizon`|numeric, integer|
+|`location`|character|
+|`age_group`|character|
+|`output_type`|character| 
+|`output_type_id`|numeric, character, logical (if all `NA`)| 
+|`value`|numeric|
+|`run_grouping`|numeric, integer|
+|`stochastic_run`|numeric, interger|
 
 ### `origin_date`
 
@@ -181,11 +196,12 @@ The submission can contain multiple output type information:
   please consult the [cdf](.data-processed#cdf) 
   section. 
 
-The requested targets are (for "sample" type output):
+
+**The requested targets are (for "sample" type output):**
 
 - weekly incident hospitalizations
 
-Optional target (for "quantile" or "cdf" type output):
+**Optional target (for "quantile" or "cdf" type output):**
 
 - quantile:
     - weekly cumulative hospitalizations
@@ -194,9 +210,20 @@ Optional target (for "quantile" or "cdf" type output):
 - cdf:
     - weekly peak timing hospitalizations
 
+Additional optional target starting round 2 (2024.25, round ID "2024-07-28"):
+
+- sample:
+    - weekly incident infection
+- quantile:
+    - weekly incident infection
+    - weekly cumulative infection
+
 For the incident and cumulative targets, the age groups:
-`"0-0.99"`, `"1-4"`, `"5-64"`, `"65-130"`, and `"0-130"` are 
-required, all the incident and cumulative targets can also include other age 
+- round 1 (2023-24) and 2 (2024-25): `"0-0.99"`, `"1-4"`, `"5-64"`, `"65-130"`, 
+  and `"0-130"` 
+- round 3 (2025-26) and ongoing: `"0-0.99"`, `"1-4"`, `"5-49"`, `"50-64"`, 
+  `"65-130"`, and `"0-130"` 
+are required, all the incident and cumulative targets can also include other age 
 group information (optional).
 
 For the peak targets, only the age groups `"0-130"` is accepted.
@@ -207,6 +234,8 @@ Values in the `target` column must be one of the following character strings:
 - `"cum hosp"`
 - `"peak size hosp"`
 - `"peak time hosp"`
+- `"inc inf"` (starting round 2)
+- `"cum inf"` (starting round 2)
 
 
 #### inc hosp
@@ -272,6 +301,26 @@ peak number of weekly hospitalized cases, as recorded by the
 laboratory-confirmed RSV hospitalizations from the RSV-NET surveillance 
 system.
 
+#### inc inf
+
+This target is the incident (weekly) number of infection
+predicted by the model during the week that is N weeks after
+`origin_date`.
+
+A week-ahead scenario should represent the total number of new
+infection reported during a given epiweek (from Sunday through
+Saturday, inclusive).
+
+#### cum inf
+
+This target is the cumulative number of incident (weekly) number of
+infection predicted by the model during the week that is N
+weeks after `model_projection_date`.  There should be 0 cumulative
+hospitalization on week 0 of projection.
+
+A week-ahead scenario should represent the cumulative number of
+infection reported up to the Saturday of a given epiweek.
+
 
 ### `horizon`
 
@@ -295,9 +344,9 @@ epiweek (epiweek ending on 2023-11-18, if start date is 2023-11-12)
 ### `location`
 
 Values in the `location` column must be one of the "locations" in this 
-[FIPS numeric code file](../data-locations/locations.csv) which includes 
-numeric FIPS codes for U.S. states, counties, territories, and districts as 
-well as "US" for national scenarios. 
+[FIPS numeric code file](../auxiliary-data/location_census/locations.csv) 
+which includes numeric FIPS codes for U.S. states, counties, and territories, 
+as well as "US" for national scenarios. 
 
 Please note that when writing FIPS codes, they should be written in as a 
 character string to preserve any leading zeroes.
@@ -305,6 +354,23 @@ character string to preserve any leading zeroes.
 For the round 1, only the location included in RSV-NET target data are 
 expected:
 `"US","06","08","09","13","24","26","27","35","36","41","47","49"`
+
+
+Round 2: 
+
+- the same location as in Round 1 are expected: 
+`"US","06","08","09","13","24","26","27","35","36","41","47","49"`
+
+- optional to submit additional state and territories. See 
+[location.csv](../auxiliary-data/location_census/locations.csv) for
+a complete list of all accepted location. 
+
+Round 3: 
+
+- the same location as in Round 1 are expected: 
+`"US","06","08","09","13","24","26","27","35","36","41","47","49"`
+
+- optional to submit WA as an optional location:  `"53"`
 
 
 ### `output_type`
@@ -343,9 +409,8 @@ The id sample number is input via two columns:
 
 Both columns should only contain integer number. 
 
-The submission file is expected to have 100 simulation samples 
+The submission file is expected to have simulation samples 
 (or trajectories) for each "group". 
-
 For round 1, it is required to have the trajectories grouped at least by 
 `"age_group"` and `"horizon"`, so it is required that the combination of 
 the `run_grouping` and `stochastic_run` columns contains at least an unique
@@ -385,8 +450,6 @@ Teams should provide the following 23 quantiles:
 0.010 0.025 0.050 0.100 0.150 0.200 0.250 0.300 0.350 0.400 0.450 0.500
 0.550 0.600 0.650 0.700 0.750, 0.800 0.850 0.900 0.950 0.975 0.990 
 ```
-
-An optional `0`  and `1` value can also be provided.
 
 For example:
 
@@ -462,15 +525,18 @@ Accepted values in the  `age_group` column are:
 - "5-17"
 - "18-49"
 - "50-64"
+- "65-74"
+- "75-130" 
 - "65-130" (required)
-- "5-64" (required)
+- "5-49" (required)
+- "50-64" (required)
 - "0-130" (required)
 
 Aggregation of the previous list, for example: "0-17" is NOT accepted. 
 
 Some of the `age_group` are optionals, however, the submission should contain 
-at least the age group marked as required:`"0-0.99"`, `"1-4"`, `"5-64"`, 
-`"65-130"`, and `"0-130"`.
+at least the age group marked as required:`"0-0.99"`, `"1-4"`, `"5-49"`, 
+`"50-64"`, `"65-130"`, and `"0-130"`.
 
 **For the peak targets, only the age-group 0-130 is required.**
 
@@ -507,21 +573,23 @@ quantiles projections of the requested targets at national and State
 level (only if available in the submission file).
 
     - The validation has 3 possible output:
-        - "Error": the validation has failled and returned a message 
+        - "Error" (red cross): the validation has failled and returned a message 
         indicating the error(s). The error(s) should be fixed to have the PR 
         accepted
-        - "Warning": the PR can be accepted. However, it might be necessary 
-        for the submitting team to validate if the warning(s) is expected or 
-        not before merging the PR.
-        - "Success": the validation did not found any issue and returns a message 
-        indicating that the validation is a success and the PR can be merged.
+        - "Warning" (red !): the PR will fail but it can be accepted. It is 
+        necessary for the submitting team to validate if the warning(s) is 
+        expected or not before merging the PR. If all warning are expected and
+        accepted, the PR will be merged without needed modification on those
+        warning. 
+        - "Success" (green check): the validation did not found any issue and 
+        returns a message indicating that the validation is a success
 
+If any issues or questions on a PR, please feel free to send them in the PR via
+comments.
 
 #### Run checks locally
 
 To run these checks locally rather than waiting for the results from a pull
-request, follow [these instructions](https://github.com/midas-network/rsv-scenario-modeling-hub/wiki/Validation#file-checks-running-locally)
-(section File Checks Running Locally).
-
-
-
+request, the package 
+[SMHvalidation](https://github.com/midas-network/SMHvalidation) contains 
+multiple documentation and vignettes. 

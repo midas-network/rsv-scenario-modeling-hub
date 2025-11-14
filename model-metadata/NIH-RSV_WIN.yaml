@@ -1,0 +1,26 @@
+team_name: "National Institutes of Health"
+team_abbr: "NIH"
+model_name: "RSV_WIN"
+model_abbr: "RSV_WIN"
+model_contributors: [
+   {
+   "name": "Chelsea Hansen",
+    "affiliation": "Fogarty International Center, National Institutes of Health",
+    "email": "chelsea.hansen@nih.gov"
+  },
+  {
+    "name": "Samantha Bents",
+    "affiliation": "Fogarty International Center, National Institutes of Health",
+    "email": "samantha.bents@nih.gov"
+  },
+  {
+   "name": "Cecile Viboud",
+    "affiliation": "Fogarty International Center, National Institutes of Health",
+    "email": "viboudc@mail.nih.gov"
+  }
+]
+license: "NA"
+methods: "Mechanistic age-structured MSIRS model with reduced susceptibility to non-primary infections."
+team_funding: "NA"
+website_url: "NA"
+model_version: "2024-11-04"

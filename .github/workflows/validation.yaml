@@ -1,18 +1,34 @@
 name: Validate Submission
 on:
   pull_request_target:
+    types: [synchronize, opened, reopened]
     branches:
       - main
+    paths:
+      - 'model-output/**.parquet'
+      - 'model-metadata/*'
+      - '!**README**'
 
 jobs:
     validates-viz-files:
         runs-on: ubuntu-latest
 
+        env:
+          GH_PR_NUMBER: ${{ github.event.pull_request.number }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
         steps:
         - name: Checkout repository
           uses: actions/checkout@v3
           with:
+            ref: ${{ github.event.pull_request.head.sha }}
             fetch-depth: 1
+            sparse-checkout: |
+              .github/
+              src
+              hub-config
+              model-output/
+              model-metadata/
 
         - name: Setup R
           uses: r-lib/actions/setup-r@v2
@@ -20,11 +36,9 @@ jobs:
         - name: Install system dependencies
           run: sudo apt-get install libcurl4-openssl-dev libudunits2-dev libgdal-dev
 
-
         - name: Cache R packages
           id: cache
-          if: runner.os != 'Windows'
-          uses: actions/cache@v2
+          uses: actions/cache@v4
           with:
             path: ${{ env.R_LIBS_USER }}
             key: ${{ runner.os }}-${{ hashFiles('.github/requirements.txt') }}-1
@@ -35,23 +49,26 @@ jobs:
             R -e 'Sys.setenv("NOT_CRAN" = TRUE)
                   install.packages(c("arrow", "gh", "remotes"))
                   Sys.unsetenv("NOT_CRAN")
-                  remotes::install_url("https://github.com/midas-network/SMHvalidation/archive/refs/heads/main.zip")
-                  remotes::install_url("https://github.com/Infectious-Disease-Modeling-Hubs/hubUtils/archive/refs/heads/main.zip")'
+                  remotes::install_url("https://github.com/midas-network/SMHvalidation/archive/refs/heads/main.zip")'
           env:
             GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
-        - name: Run Validation
+        - name: Run Validation - Open/reopen
+          if: ( github.event.action != 'synchronize' )
           run: |
-            Rscript code/validation/validation.R
+            R -e 'source("src/validation.R")
+                  pr_validate(Sys.getenv("GITHUB_REPOSITORY"),
+                              Sys.getenv("GH_PR_NUMBER"), "", ".",
+                              Sys.getenv("GH_TOKEN"))'
+
+        - name: Run Validation - Synchronize
+          if: ( github.event.action == 'synchronize' )
+          run: |
+            R -e 'source("src/validation.R")
+                  pr_validate(Sys.getenv("GITHUB_REPOSITORY"),
+                              Sys.getenv("GH_PR_NUMBER"),
+                              Sys.getenv("GH_COMMIT_SHA"), ".",
+                              Sys.getenv("GH_TOKEN"))'
           env:
-            GH_PR_NUMBER: ${{ github.event.pull_request.number }}
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
 
-
-        - name: Upload Projection Plot as Artifact
-          uses: actions/upload-artifact@v3
-          if: always()
-          with:
-            name: validation_plot_${{ github.event.pull_request.number }}
-            path: ./proj_plot/*
-            if-no-files-found: ignore

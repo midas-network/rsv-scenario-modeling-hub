@@ -1,0 +1,15 @@
+team_name: "Scenario Hub Coordination Group"
+team_abbr: ""
+model_name: "Ensemble LOP_all"
+model_abbr: "Ensemble_LOP_all"
+model_contributors: [
+  {
+    "name": "The Scenario Modeling Hub Coordination Group",
+    "affiliation": "",
+    "email": "scenariohub@midasnetwork.us"
+  }
+]
+license: "cc-by-4.0"
+methods: "For Round 1, an additional LOP ensemble projection is calculated, following the same method as the 'Ensemble_LOP' and including all participating team in the round"
+model_version: "1.0"
+website_url: "https://scenariomodelinghub.org/"

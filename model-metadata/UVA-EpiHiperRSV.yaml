@@ -1,0 +1,49 @@
+team_name: "University of Virginia"
+team_abbr: "UVA"
+model_name: "EpiHiper Scenario Modeling for RSV"
+model_abbr: "EpiHiperRSV"
+model_contributors: [
+  {
+    "name": "Jiangzhuo Chen",
+    "affiliation": "University of Virginia",
+    "email": "chenj@virginia.edu"
+  },
+  {
+    "name": "Stefan Hoops",
+    "affiliation": "University of Virginia",
+    "email": "shoops@virginia.edu"
+  },
+  {
+    "name": "Bryan Lewis",
+    "affiliation": "University of Virginia",
+    "email": "brylew@virginia.edu"
+  },
+  {
+    "name": "Srini Venkatramanan",
+    "affiliation": "University of Virginia",
+    "email": "srini@virginia.edu"
+  },
+  {
+    "name": "Parantapa Bhattacharya",
+    "affiliation": "University of Virginia",
+    "email": "parantapa@virginia.edu"
+  },
+  {
+    "name": "Dustin Machi",
+    "affiliation": "University of Virginia",
+    "email": "dm8qs@virginia.edu"
+  },
+  {
+    "name": "Madhav Marathe",
+    "affiliation": "University of Virginia",
+    "email": "marathe@virginia.edu"
+  }
+]
+license: "cc-by-4.0"
+methods: "EpiHiper is an agent-based model that computes stochastic transmissions of a disease in a synthetic contact network between individuals and stochastic state transitions within each individual. We extend it to model RSV."
+methods_long: "We use our agent-based model, called EpiHiper, which computes stochastic transmissions of a disease in a synthetic contact network between individuals and stochastic state transitions within each individual following a disease model. Our disease model is extended from SEIR to include susceptible states with different immunity levels, vaccinated states, hospitalized state, and waning of natural immunity. The disease model is stratified by age group. Each age group has its own immunity parameters and hospitalization rates.
+We run simulations for each state. Our simulations are initialized with data of prior infections (part of which have waned immunity); and calibrated to last season target data (age-stratified) provided by the hub. For the US, we use Virginia as a proxy to obtain VA hypothetical projections, which are scaled by population sizes to get US projections."
+model_version: "2024-12-07"
+website_url: "https://github.com/NSSAC/EpiHiper"
+data_inputs: "US synthetic populations and networks v2.4.0, hub-provided target data, vaccination coverage data and other auxiliary data"
+citation: "J. Chen, P. Bhattacharya, S. Hoops, D. Machi, A. Adiga, H. Mortveit, S. Venkatramanan, B. Lewis, and M. Marathe. Role of heterogeneity: National scale data-driven agent-based modeling for the US COVID-19 Scenario Modeling Hub. Epidemics, Volume 48, 100779, 2024. https://doi.org/10.1016/j.epidem.2024.100779."

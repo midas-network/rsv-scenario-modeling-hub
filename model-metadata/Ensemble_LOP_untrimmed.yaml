@@ -1,0 +1,15 @@
+team_name: "Scenario Hub Coordination Group"
+team_abbr: ""
+model_name: "Ensemble LOP untrimmed"
+model_abbr: "Ensemble_LOP_untrimmed"
+model_contributors: [
+  {
+    "name": "The Scenario Modeling Hub Coordination Group",
+    "affiliation": "",
+    "email": "scenariohub@midasnetwork.us"
+  }
+]
+license: "cc-by-4.0"
+methods: "The LOP untrimmed ensemble projection is calculated by averaging cumulative probabilities of a given value across submissions. All values are included in the average. From the resulting distribution, medians and uncertainty intervals are derived. Ensemble projection includes only those submissions that reported quantiles for their targets. Starting round 13, the ensemble is calculated by averaging cumulative probabilities of a given value across wighted submissions. By default a weight of 1 is assigned for each submission, 0.5 if a team makes two submissions."
+model_version: "1.0"
+website_url: "https://scenariomodelinghub.org/"

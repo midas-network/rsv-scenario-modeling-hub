@@ -1,25 +1,8 @@
-# Packages required for the validation (update cache on the 2023-11-14)
-SMHValidation #v0.0.21
-hubUtils
-arrow
-covidcast
-cowplot
-data.table
-dplyr
-ggplot2
-ggpubr
+# Packages required for the validation (update requirements (cache) on the 2025-11-10)
 gh
-glue
-grDevices
-grid
-gridExtra
-gtable
-lubridate
+hubValidations
+jsonlite
 purrr
-readr
 remotes
-scales
+SMHvalidation >= 1.1.0.9000
 stringr
-tibble
-tidyr
-tidyselect

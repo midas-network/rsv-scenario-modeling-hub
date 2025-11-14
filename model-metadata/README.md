@@ -6,6 +6,9 @@ RSV Scenario Modeling Hub.
 Each model is required to have metadata in yaml format and should contains
 required information and be stored in a team-model specific sub-directory.
 
+Examples files are available in the 
+[auxiliary-data/model_examples](../auxiliary-data/model_examples) folder
+
 ----
 
 ## Subdirectory
@@ -32,23 +35,27 @@ associated model-output folder containing the associated projections.
 
 ### `team_name`
 
-The name of your team that is less than 50 characters, no spaces. 
+The name of your team that is less than 50 characters. 
 Will be displayed online.
 
 ### `model_name`
 
-The name of your model that is less than 50 characters, no spaces.
+The name of your model that is less than 50 characters.
 Will be displayed online.
 
 ### Abbreviation
 
 #### `model_abbr`
 
-An abbreviated name for your model that is less than 30 alphanumeric characters. 
+An abbreviated name for your model that is less than 30 alphanumeric characters 
+(`_` also accepted, please avoid using other punctuation characters including `-`, 
+`/`, etc.). 
 
 #### `team_abbr`
 
 An abbreviated name for your team that is less than 30 alphanumeric characters. 
+(`_` also accepted, please avoid using other punctuation characters including `-`, 
+`/`, etc.). 
 
 #### Team-model name and filename
 
@@ -75,16 +82,16 @@ The syntax of this field should be
 ```yaml
 [
   {
-    "name": "Smith J",
+    "name": "LastName FirstName",
     "affiliation": "Affiliation",
     "email": "user@address"
   },
   {
-   "name": "Smith S",
+   "name": "LastName FirstName",
     "affiliation": "Affiliation"
   },
   {
-    "name": "Smith C",
+    "name": "LastName FirstName",
     "affiliation": "Affiliation",
     "email": "user3@address"
   }
