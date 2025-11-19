@@ -285,6 +285,15 @@ The source of age distribution used for calibration (RSV-NET vs other estimates)
 should be provided in the abstract meta-data that is submitted with the 
 projections.
 
+#### Reporting trends in RSV-NET dataset
+
+RSV testing has changed over time in the wake of the COVID-19 pandemic. **Teams 
+should assume that age-specific testing/reporting to RSV-NET is the same in
+2024-25 and 2025-26**. However teams can use rescaling factors to adjust 
+RSV-NET data for historic years (=calibration period) if needed. We have 
+provided data to adjust for historical reporting trends 
+[here](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data/rsv/pophive)
+
 
 #### Other RSV datasets available for calibration
 
@@ -296,7 +305,7 @@ A few auxiliary datasets, updated weekly (except POPHIVE), are available in the
 - State-specific and national ED data with demographic information 
   (national only) 
 - Data on trends in RSV testing is available from 
-  [POPHIVE](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data/rsv#pophive).
+  [PopHIVE](https://github.com/midas-network/rsv-scenario-modeling-hub/tree/main/auxiliary-data/rsv#pophive).
 
 
 Given that the risk of RSV hospitalization changes substantially throughout the 
@@ -503,4 +512,4 @@ discretion.
     trajectories, paired.
   - For quantiles (optional submission) We ask for 0.01, 0.025, 0.05,
     every 5% to 0.95, 0.975, and 0.99. 
-    
+
