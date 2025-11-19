@@ -333,6 +333,15 @@ The source of age distribution used for calibration (RSV-NET vs other estimates)
 should be provided in the abstract meta-data that is submitted with the 
 projections.
 
+#### Reporting trends in RSV-NET dataset
+
+RSV testing has changed over time in the wake of the COVID-19 pandemic. **Teams 
+should assume that age-specific testing/reporting to RSV-NET is the same in
+2024-25 and 2025-26**. However teams can use rescaling factors to adjust 
+RSV-NET data for historic years (=calibration period) if needed. We have 
+provided data to adjust for historical reporting trends 
+[here](./auxiliary-data/rsv/pophive)
+
 
 #### Other RSV datasets available for calibration
 

@@ -129,7 +129,10 @@ https://doi.org/10.5281/zenodo.17345935
 An associated scaling factors (csv) and graph (pdf) generated from the data is 
 also available in the [pophive folder](./pophive)
 
+#### Round 3 - 2025/26 projections
 
-
+Teams should assume that age-specific testing/reporting to RSV-NET is the same in 
+2024-25 and 2025-26. However  teams can use rescaling factors to adjust RSV-NET 
+data for historic years (=calibration period) if needed.
 
 
