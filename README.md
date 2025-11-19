@@ -344,7 +344,7 @@ A few auxiliary datasets, updated weekly (except POPHIVE), are available in the
 - State-specific and national ED data with demographic information 
   (national only) 
 - Data on trends in RSV testing is available from 
-  [POPHIVE](./auxiliary-data/rsv#pophive).
+  [PopHIVE](./auxiliary-data/rsv#pophive).
 
 
 Given that the risk of RSV hospitalization changes substantially throughout the 

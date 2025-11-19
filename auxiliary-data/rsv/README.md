@@ -111,11 +111,25 @@ are downloaded weekly and output in PARQUET files:
 For more information, please consult the 
 [NSSP homepage](https://www.cdc.gov/nssp/index.html)
 
-### POPHIVE
+### PopHIVE
 
-The [PopHIVE_DataHub](https://github.com/ysph-dsde/PopHIVE_DataHub) GitHub 
-repository contains multiple dataset that might be of intereston RSV testing 
-trends:
+The PopHIVE GitHub repositories contain multiple dataset that might be of 
+interested about RSV testing trends:
+
+- [Montly 2028 - 2025 Data (csv)](https://github.com/PopHIVE/Ingest/raw/refs/heads/main/data/epic/standard/monthly_tests.csv.gz)
+  with the associated [metadata](https://github.com/PopHIVE/Ingest/blob/main/data/epic/measure_info.json)
 - [2018 - 2024 Data (csv)](https://github.com/ysph-dsde/PopHIVE_DataHub/blob/main/Data/Plot%20Files/Cosmos%20ED/rsv_testing_freq.csv)
 - [2023 - Aug2025 Data (parquet)](https://github.com/PopHIVE/Ingest/blob/main/data/bundle_respiratory/dist/rsv_testing_pct.parquet)
+
+
+Results of research performed with Epic Cosmos were obtained from the [PopHIVE 
+platform](https://github.com/PopHIVE/Ingest/tree/main), 
+https://doi.org/10.5281/zenodo.17345935
+
+An associated scaling factors (csv) and graph (pdf) generated from the data is 
+also available in the [pophive folder](./pophive)
+
+
+
+
 
