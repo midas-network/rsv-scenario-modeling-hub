@@ -108,7 +108,7 @@ pr_validate <- function(repo_name, gh_pr_number, gh_commit_sha, hub_path,
   if (nchar(gh_commit_sha) > 1) {
     pr_files <- gh::gh(paste0("GET /repos/", repo_name, "/commits/",
                               gh_commit_sha), .token = gh_token)
-    if (grepl("Merge .+ '.+/main'", pr_files$commit$message)) {
+    if (grepl("Merge .+ '.+main'", pr_files$commit$message)) {
       pr_files <- pr_filenames <- NULL
     }
     commit <- TRUE
