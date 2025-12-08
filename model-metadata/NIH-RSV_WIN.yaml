@@ -18,7 +18,6 @@ model_contributors: [
     "affiliation": "Fogarty International Center, National Institutes of Health",
     "email": "viboudc@mail.nih.gov"
   }
-  
 ]
 license: "NA"
 methods: "Mechanistic age-structured MSIRS model with reduced susceptibility to non-primary infections."

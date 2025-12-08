@@ -1,0 +1,7 @@
+{
+  "2025-07-27": {
+    "n_decimal": 5,
+    "merge_sample_col": ["run_grouping", "stochastic_run"],
+    "partition": ["origin_date", "target"]
+  }
+}
