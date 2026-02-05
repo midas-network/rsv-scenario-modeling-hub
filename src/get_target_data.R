@@ -55,6 +55,7 @@ census_pop <- dplyr::mutate(
   dplyr::mutate(POPEST2023_CIV = POPEST2022_CIV) %>%
   dplyr::mutate(POPEST2024_CIV = POPEST2022_CIV) %>%
   dplyr::mutate(POPEST2025_CIV = POPEST2022_CIV) %>%
+  dplyr::mutate(POPEST2026_CIV = POPEST2022_CIV) %>%
   tidyr::pivot_longer(cols = contains("POPEST"), names_to = "year") %>%
   dplyr::mutate(year = as.numeric(gsub("[[:alpha:]]|_", "", year)))
 
