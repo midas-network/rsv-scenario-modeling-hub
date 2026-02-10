@@ -152,6 +152,14 @@ rsv_past_season <-
 rsv_past_season <- dplyr::filter(rsv_past_season, date < min(rsv_output$date))
 rsv_output <- rbind(rsv_output, rsv_past_season)
 
+# Remove duplicated rows with same location, date, age group and target
+rsv_output <- dplyr::distinct(rsv_output) |>
+  dplyr::mutate(duplicate = ifelse(length(date) > 1, 1, 0),
+                .by = c("location", "date", "age_group", "target",
+                        "population")) |>
+  dplyr::filter(duplicate != 1) |>
+  dplyr::select(-duplicate)
+
 # Archive complete version
 archive_name <- paste0("auxiliary-data/target-data/archive/",
                        as.Date(Sys.time()), "_rsvnet_hospitalization.csv")
