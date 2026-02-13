@@ -645,6 +645,31 @@ Grant U24GM132013 (2019-2024) and R24GM153920 (2024-2029) to the University of P
 
 ## Teams and models
 
+- [CEPH Lab at Indiana University — ASTRA_RSV](./model-metadata/CEPH-ASTRA_RSV.yaml)
+    - Marco Ajelli (Indiana University Bloomington),
+    Paulo C. Ventura (Indiana University Bloomington),
+    Shreeya Mhade (Indiana University Bloomington),
+    Allisandra G. Kummer (Indiana University Bloomington)
+ 
+- [Johns Hopkins University and University of North Carolina at Chapel Hill - flepiMoP](./model-metadata/JHU_UNC-flepiMop.yaml)
+    - Shaun Truelove (JHU), Alison Hill (JHU),
+    Justin Lessler (UNC), Sara Loo (JHU), 
+    Joseph Lemaitre (UNC), Anjalika Nande (JHU),
+    Madeleine Gastonguay (JHU), Sung-mok Jung (UNC), 
+    Timothy Willard (UNC), Carl Pearson (UNC),
+    Vivek Murali (JHU)
+
+- [University of North Carolina Charlotte - Hierbin](./model-metadata/UNCC-Hierbin.yaml)
+    -  Chen S (UNCC), Janies D (UNCC), Paul R (UNCC)
+
+- [University of Texas at Austin - UT-ImmunoSEIRS](./model-metadata/UT-ImmunoSEIRS.yaml)
+    -  Kaiming Bi (UTA), Shraddha Ramdas Bandekar (UTA), 
+    Anass Bouchnita (The University of Texas at El Paso), 
+    Spencer J. Fox (The University of Georgia),
+    Lauren Ancel Meyers (UTA)
+
+### Past Teams and Models
+
 - [CEPH Lab at Indiana University - MetaRSV](.model-metadata/CEPH-MetaRSV.yaml)
     -  Marco Ajelli (Indiana University Bloomington),
     Shreeya Mhade (Indiana University Bloomington),
@@ -656,14 +681,6 @@ Grant U24GM132013 (2019-2024) and R24GM153920 (2024-2029) to the University of P
 
 - [Columbia University — RSV_SVIRS](./model-metadata/CU-RSV_SVIRS.yaml)
     - Teresa Yamana (CU), Sen Pei (CU)
- 
-- [Johns Hopkins University and University of North Carolina at Chapel Hill - flepiMoP](./model-metadata/JHU_UNC-flepiMop.yaml)
-    - Shaun Truelove (JHU), Alison Hill (JHU),
-    Justin Lessler (UNC), Sara Loo (JHU), 
-    Joseph Lemaitre (UNC), Anjalika Nande (JHU),
-    Madeleine Gastonguay (JHU), Sung-mok Jung (UNC), 
-    Timothy Willard (UNC), Carl Pearson (UNC),
-    Vivek Murali (JHU)
 
 - [MOBS Lab at Northeastern University - GLEAM RSV Model](./model-metadata/MOBS_NEU-GLEAM_RSV.yaml)
     - Alessandro Vespignani (Network Science Institute, NEU), 
@@ -678,6 +695,10 @@ Grant U24GM132013 (2019-2024) and R24GM153920 (2024-2029) to the University of P
     - Kaiyuan Sun (Fogarty International Center, NIH), 
     Cécile Viboud (Fogarty International Center, NIH)
 
+- [National Institutes of Health - RSV_Phenomenological](./model-metadata/NIH-RSV_Phenomenological.yaml)
+    - Kaiyuan Sun (Fogarty International Center, NIH), 
+    Cécile Viboud (Fogarty International Center, NIH)
+
 - [National Institutes of Health - RSV_WIN](./model-metadata/NIH-RSV_WIN.yaml)
     - Chelsea Hansen (Fogarty International Center, NIH), 
     Samantha Bents (Fogarty International Center, NIH), 
@@ -687,9 +708,6 @@ Grant U24GM132013 (2019-2024) and R24GM153920 (2024-2029) to the University of P
     - James Turtle (Predictive Science Inc), 
     Michal Ben-Nun (Predictive Science Inc), 
     Pete Riley (Predictive Science Inc)
-    
-- [University of North Carolina Charlotte - Hierbin](./model-metadata/UNCC-Hierbin.yaml)
-    -  Chen S (UNCC), Janies D (UNCC), Paul R (UNCC)
 
 - [University of Notre Dame - FRED](./model-metadata/NotreDame-FRED.yaml)
     -  Sean Moore (UND), Alex Perkins (UND), Guido Espana (CDC Center for Forecasting and Analysis)
@@ -697,23 +715,10 @@ Grant U24GM132013 (2019-2024) and R24GM153920 (2024-2029) to the University of P
 - [University of Southern California - SIkJalpha](./model-metadata/USC-SIkJalpha.yaml)
     -  Ajitesh Srivastava (USC), Majd Al Aawar (USC)
 
-- [University of Texas at Austin - UT-ImmunoSEIRS](./model-metadata/UT-ImmunoSEIRS.yaml)
-    -  Kaiming Bi (UTA), Shraddha Ramdas Bandekar (UTA), 
-    Anass Bouchnita (The University of Texas at El Paso), 
-    Spencer J. Fox (The University of Georgia),
-    Lauren Ancel Meyers (UTA)
-
 - [University of Virginia - EpiHiper Scenario Modeling for RSV](./model-metadata/UVA-EpiHiperRSV.yaml)
     - Jiangzhuo Chen (UVA), Stefan Hoops (UVA), Bryan Lewis (UVA),
     Srini Venkatramanan (UVA), Parantapa Bhattacharya (UVA),
     Dustin Machi (UVA), Madhav Marathe (UVA)
-
-### Past Teams and Models
-
-- [National Institutes of Health - RSV_Phenomenological](./model-metadata/NIH-RSV_Phenomenological.yaml)
-    - Kaiyuan Sun (Fogarty International Center, NIH), 
-    Cécile Viboud (Fogarty International Center, NIH)
-
 
 ## The RSV Scenario Modeling Hub Coordination Team    
 
