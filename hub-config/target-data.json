@@ -1,0 +1,5 @@
+{
+    "schema_version":"https://raw.githubusercontent.com/hubverse-org/schemas/main/v6.0.0/target-data-schema.json",
+    "observable_unit": ["location", "age_group", "target", "date"],
+    "date_col": "date"
+}
