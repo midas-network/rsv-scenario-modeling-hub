@@ -19,15 +19,15 @@ model_contributors: [
         "email": "smhade@iu.edu"
     },
     {
-        "name": "Allisandra G. Kummer",
+        "name": "Maria Litvinova",
         "affiliation": "Indiana University Bloomington",
-        "email": "alkummer@iu.edu"
+        "email": "malitv@iu.edu"
     }
 ]
 license: "CC-BY_SA-4.0"
 methods: "Age-structured ordinary differential equations model"
 methods_long: "The model framework is based on ordinary differential equations and age-stratified contact matrices derived from both macro (census) and micro (survey) data sources. RSV transmissibility follows a seasonal pattern which is calibrated using  hospitalization data from RSV-Net for the 2022-2023, 2023-2024 and 2024-2025 seasons. Furthermore, our model uses age-dependent infection-to-hospitalization risks, whose posterior distribution is estimated by our optimization procedure and their prior distribution is based on RSV literature."
 model_version: "1.0"
-website_url: "https://github.com/CEPH-Lab"
+website_url: "https://ceph-lab.github.io/"
 team_funding: "Cooperative agreement CDC-RFA-FT-23-0069 from the CDC’s Center for Forecasting and Outbreak Analytics"
 data_inputs: "RSV-Net data taken from the RSV-Net webpage; demographic data from this repository; contact pattern data from Mistry et al. Nature Communications 2021."
