@@ -22,7 +22,7 @@ model_contributors: [
         "name": "Maria Litvinova",
         "affiliation": "Indiana University Bloomington",
         "email": "malitv@iu.edu"
-    },
+    }
 ]
 license: "CC-BY_SA-4.0"
 methods: "Age-structured ordinary differential equations model"
