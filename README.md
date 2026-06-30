@@ -649,7 +649,7 @@ Grant U24GM132013 (2019-2024) and R24GM153920 (2024-2029) to the University of P
     - Marco Ajelli (Indiana University Bloomington),
     Paulo C. Ventura (Indiana University Bloomington),
     Shreeya Mhade (Indiana University Bloomington),
-    Allisandra G. Kummer (Indiana University Bloomington)
+    Maria Litvinova (Indiana University Bloomington)
  
 - [Johns Hopkins University and University of North Carolina at Chapel Hill - flepiMoP](./model-metadata/JHU_UNC-flepiMop.yaml)
     - Shaun Truelove (JHU), Alison Hill (JHU),
@@ -674,10 +674,7 @@ Grant U24GM132013 (2019-2024) and R24GM153920 (2024-2029) to the University of P
     -  Marco Ajelli (Indiana University Bloomington),
     Shreeya Mhade (Indiana University Bloomington),
     Paulo C. Ventura (Indiana University Bloomington),
-    Maria Litvinova (Indiana University Bloomington),
-    Snigdha Agrawal (Indiana University Bloomington),
-    Allisandra G. Kummer (Indiana University Bloomington),
-    Kedir Turi (Indiana University Bloomington)
+    Maria Litvinova (Indiana University Bloomington)
 
 - [Columbia University — RSV_SVIRS](./model-metadata/CU-RSV_SVIRS.yaml)
     - Teresa Yamana (CU), Sen Pei (CU)
