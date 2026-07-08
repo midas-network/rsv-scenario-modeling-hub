@@ -164,3 +164,4 @@ cython_debug/
 .Rproj.user
 rsv-scenario-modeling-hub.Rproj
 .Rhistory
+/attic
