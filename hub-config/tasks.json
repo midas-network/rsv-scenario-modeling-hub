@@ -55,7 +55,7 @@
 						 	"target_keys":{
 						 		"target":"inc hosp"
 						 	},
-						 	"target_type":"discrete",
+						 	"target_type":"continuous",
 						 	"is_step_ahead":true,
 						 	"time_unit":"week",
 						 	"additional_metadata": {
@@ -113,7 +113,7 @@
 							"target_keys":{
 								"target":"inc hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -129,7 +129,7 @@
 							"target_keys":{
 								"target":"cum hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -187,7 +187,7 @@
 							"target_keys":{
 								"target":"inc hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -203,7 +203,7 @@
 							"target_keys":{
 								"target":"cum hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -260,7 +260,7 @@
 							"target_keys":{
 								"target":"peak size hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead":false,
 							"additional_metadata": {
 							  "alternative_name": "peak hospitalization count",
@@ -316,7 +316,7 @@
 							"target_keys":{
 								"target":"peak size hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead":false,
 							"additional_metadata": {
 							  "alternative_name": "peak hospitalization count",
@@ -374,7 +374,7 @@
 							"target_keys":{
 								"target":"peak time hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
