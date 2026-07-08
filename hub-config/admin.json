@@ -1,5 +1,5 @@
 {
-    "schema_version":"https://raw.githubusercontent.com/hubverse-org/schemas/main/v5.1.0/admin-schema.json",
+    "schema_version":"https://raw.githubusercontent.com/hubverse-org/schemas/main/v6.0.0/admin-schema.json",
     "name": "RSV Scenario Modeling Hub",
     "maintainer": "RSV Scenario Modeling Hub Coordination Team",
     "contact": {
@@ -12,6 +12,5 @@
         "name": "rsv-scenario-modeling-hub"
     },
     "timezone": "US/Eastern",
-    "file_format":["parquet"],
-    "model_output_dir": "model-output"
+    "file_format":["parquet"]
 }
