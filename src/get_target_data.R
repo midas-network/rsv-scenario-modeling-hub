@@ -13,6 +13,7 @@ library(lubridate)
 # Location
 df_loc <- read.csv("auxiliary-data/location_census/locations.csv")
 location2fips <- setNames(df_loc$location, df_loc$location_name)
+abbr2fips <- setNames(df_loc$location, df_loc$abbreviation)
 
 # Age Group
 age2st_age <-
@@ -93,8 +94,9 @@ df <- arrow::read_parquet(
 # - Recode age group information to US SMH format
 # - Standardize column names (lower case, without space, dot)
 rsv <- df %>%
+  dplyr::filter(`Date Type` == "Week Ending Date") |>
   dplyr::mutate(
-    date = as.Date(`Week ending date`,
+    date = as.Date(`Date`,
                    tryFormats = c("%m/%d/%Y", "%Y-%m-%d"))) %>%
   dplyr::filter(
     Sex == "All" & Race == "All" &
@@ -117,12 +119,24 @@ rsv_standard <- dplyr::full_join(rsv, full_df,
     week = lubridate::epiweek(date),
     year = lubridate::epiyear(date),
     location = gsub("Entire Network \\(RSV-NET\\)|RSV-NET", "US", State),
-    fips = location2fips[location],
+    fips = abbr2fips[location],
     age_group = age2st_age[`Age Category`]) %>%
-  dplyr::rename(value_rate = Rate, value_cumul_rate = `Cumulative Rate`,
+  dplyr::filter(`Rate Type` == "Observed")  %>%
+  tidyr::pivot_wider(names_from = "Data Type", values_from = "Estimate") %>%
+  dplyr::rename(value_rate = `Weekly Rate`,
+                value_cumul_rate = `Cumulative Rate`,
                 season = Season) %>%
   dplyr::select(location, fips, age_group, date, week, year, season, value_rate,
                 value_cumul_rate)
+
+# Test all rows is unique
+test <- dplyr::summarise(rsv_standard, n = dplyr::n(),
+                         .by = c("location", "age_group", "date", "week",
+                                 "year", "season"))
+if (!all(test$n == 1)) {
+  stop("The tables contains duplicate row, please check")
+}
+
 
 # Calculate hospitalization number:
 # - add population data per year, age_group, state
