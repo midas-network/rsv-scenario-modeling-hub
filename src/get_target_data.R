@@ -87,7 +87,7 @@ df <- arrow::read_parquet(
 
 # Standardize:
 # - Load relevant age groups
-# - Filter overall race, sex
+# - Filter overall race, sex, observed weekly data
 # - Remove seasonal summaries
 # - Standardize date format in "YYYY-MM-DD" format
 # - Add missing value in the time series
