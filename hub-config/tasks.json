@@ -391,6 +391,7 @@
 		},
 		"additional_metadata": {
 		    "round_name": "Round 1 - 2023-2024",
+		    "internal_round_name": "round1",
 			  "disease": [
   			  {
   			    "name": "respiratory syncytial virus infectious disease",
