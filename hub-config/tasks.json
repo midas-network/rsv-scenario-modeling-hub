@@ -33,7 +33,7 @@
 					},
 					"output_type":{
 						"sample":{
-							"output_type_id_params": {
+							"output_type_id_params":{
 								"type": "integer",
 							    "min_samples_per_task": 100,
 							    "max_samples_per_task": 100,
@@ -55,12 +55,12 @@
 						 	"target_keys":{
 						 		"target":"inc hosp"
 						 	},
-						 	"target_type": "discrete",
-						 	"is_step_ahead": true,
+						 	"target_type":"continuous",
+						 	"is_step_ahead":true,
 						 	"time_unit":"week",
 						 	"additional_metadata": {
-						 	  "alternative_name": "incident hospitalization count",
-							  "uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645"
+								"alternative_name": "incident hospitalization count",
+								"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645"
 						 	}
 						 }
 					]
@@ -95,8 +95,7 @@
 					"output_type":{
 						"quantile":{
 							"output_type_id":{
-								"required":[0.01,0.025,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,
-											0.75,0.8,0.85,0.9,0.95,0.975,0.99]
+								"required":[0.01,0.025,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.975,0.99]
 							},
 							"value":{
 								"type":"double",
@@ -114,7 +113,7 @@
 							"target_keys":{
 								"target":"inc hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -130,7 +129,7 @@
 							"target_keys":{
 								"target":"cum hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -188,7 +187,7 @@
 							"target_keys":{
 								"target":"inc hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -204,8 +203,8 @@
 							"target_keys":{
 								"target":"cum hosp"
 							},
-							"target_type": "discrete",
-							"is_step_ahead":true,
+							"target_type": "continuous",
+							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
 							  "alternative_name": "cumulative hospitalization count",
@@ -243,8 +242,7 @@
 					"output_type":{
 						"quantile":{
 							"output_type_id":{
-								"required":[0.01,0.025,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,
-											0.75,0.8,0.85,0.9,0.95,0.975,0.99]
+								"required":[0.01,0.025,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.975,0.99]
 							},
 							"value":{
 								"type":"double",
@@ -257,12 +255,12 @@
 						{
 							"target_id": "peak size hosp",
 							"target_name": "Peak size of hospitalization",
-							"description":"Magnitude of the peak of weekly incident hospitalizations ",
+							"description":"Magnitude of the peak of weekly incident hospitalizations",
 							"target_units":"count",
 							"target_keys":{
 								"target":"peak size hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead":false,
 							"additional_metadata": {
 							  "alternative_name": "peak hospitalization count",
@@ -313,12 +311,12 @@
 						{
 							"target_id": "peak size hosp",
 							"target_name": "Peak size of hospitalization",
-							"description":"Magnitude of the peak of weekly incident hospitalizations",
+							"description":"Magnitude of the peak of weekly incident hospitalizations ",
 							"target_units":"count",
 							"target_keys":{
 								"target":"peak size hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead":false,
 							"additional_metadata": {
 							  "alternative_name": "peak hospitalization count",
@@ -357,11 +355,7 @@
 					"output_type":{
 						"cdf":{
 							"output_type_id":{
-								"required":["EW202346","EW202347","EW202348","EW202349","EW202350","EW202351",
-											"EW202352","EW202401","EW202402","EW202403","EW202404","EW202405",
-											"EW202406","EW202407","EW202408","EW202409","EW202410","EW202411",
-											"EW202412","EW202413","EW202414","EW202415","EW202416","EW202417",
-											"EW202418","EW202419","EW202420","EW202421","EW202422"]
+								"required":["EW202346","EW202347","EW202348","EW202349","EW202350","EW202351","EW202352","EW202401","EW202402","EW202403","EW202404","EW202405","EW202406","EW202407","EW202408","EW202409","EW202410","EW202411","EW202412","EW202413","EW202414","EW202415","EW202416","EW202417","EW202418","EW202419","EW202420","EW202421","EW202422"]
 							},
 							"value":{
 								"type":"double",
@@ -380,7 +374,7 @@
 							"target_keys":{
 								"target":"peak time hosp"
 							},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -391,16 +385,21 @@
 					]
 				}
 			],
-		  "submissions_due":{"start":"2023-11-14","end":"2023-12-14"},
-			"additional_metadata": {
+		"submissions_due":{
+			"start":"2023-11-14",
+			"end":"2023-12-14"
+		},
+		"additional_metadata": {
+		    "round_name": "Round 1 - 2023-2024",
+		    "internal_round_name": "round1",
 			  "disease": [
   			  {
   			    "name": "respiratory syncytial virus infectious disease",
   			    "uri": "http://purl.obolibrary.org/obo/MONDO_0001577"
   			  }
   			]
-			}
-		},
+		}
+	},
 		{
 			"round_id_from_variable":true,
 			"round_id":"origin_date",
@@ -460,7 +459,7 @@
 						 	"target_name":"Weekly incident RSV hospitalizations",
 						 	"target_units":"count",
 						 	"target_keys":{"target":"inc hosp"},
-						 	"target_type":"discrete",
+						 	"target_type":"continuous",
 						 	"is_step_ahead":true,
 						 	"time_unit":"week",
 						 	"additional_metadata": {
@@ -473,7 +472,7 @@
 						 	"target_name":"Weekly incident RSV infection",
 						 	"target_units":"count",
 						 	"target_keys":{"target":"inc inf"},
-						 	"target_type":"discrete",
+						 	"target_type":"continuous",
 						 	"is_step_ahead":true,
 						 	"time_unit":"week",
 						 	"additional_metadata": {
@@ -538,7 +537,7 @@
 							"target_name":"Weekly incident RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"inc hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -551,7 +550,7 @@
 							"target_name":"Weekly cumulative RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"cum hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -564,7 +563,7 @@
 							"target_name":"Weekly incident RSV infection",
 							"target_units":"count",
 							"target_keys":{"target":"inc inf"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -577,12 +576,12 @@
 							"target_name":"Weekly cumulative RSV infection",
 							"target_units":"count",
 							"target_keys":{"target":"cum inf"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
-							  "alternative_name": "cumulative infection count",
-							  "uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000642"
+  							"alternative_name": "cumulative infection count",
+  							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000642"
 							}
 						}
 					]
@@ -641,12 +640,12 @@
 							"target_name":"Weekly incident RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"inc hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
-							  "alternative_name": "incident hospitalization count",
-							  "uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645"
+  							"alternative_name": "incident hospitalization count",
+  							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645"
 							}
 						},
 						{
@@ -654,12 +653,12 @@
 							"target_name":"Weekly cumulative RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"cum hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
-							  "alternative_name": "cumulative hospitalization count",
-							  "uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000644"
+  							"alternative_name": "cumulative hospitalization count",
+  							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000644"
 							}
 						},
 						{
@@ -667,12 +666,12 @@
 							"target_name":"Weekly incident RSV infection",
 							"target_units":"count",
 							"target_keys":{"target":"inc inf"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
-							  "alternative_name": "incident infection count",
-							  "uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000643"
+  							"alternative_name": "incident infection count",
+  							"uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000643"
 							}
 						},
 						{
@@ -680,7 +679,7 @@
 							"target_name":"Weekly cumulative RSV infection",
 							"target_units":"count",
 							"target_keys":{"target":"cum inf"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -740,10 +739,10 @@
 					"target_metadata":[
 						{
 							"target_id": "peak size hosp",
-							"target_name":"Magnitude of the peak of weekly incident hospitalizations ",
+							"target_name":"Magnitude of the peak of weekly incident hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"peak size hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead":false,
 							"additional_metadata": {
 							  "alternative_name": "peak hospitalization count",
@@ -804,10 +803,10 @@
 							"description":"Magnitude of the peak of weekly incident hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"peak size hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead":false,
 							"additional_metadata": {
-								"alternative_name": "peak hospitalization count",
+							  "alternative_name": "peak hospitalization count",
 							  "uri": "http://w3id.org/midas-metadata/midas100"
 							}
 						}
@@ -876,7 +875,7 @@
 							"description":"Cumulative probability of the incident hospitalization peak",
 							"target_units":"population",
 							"target_keys":{"target":"peak time hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -888,16 +887,19 @@
 				}
 			],
 		  "submissions_due":{
-			"start":"2024-10-29","end":"2024-12-14"},
-			"additional_metadata": {
-  			"disease": [
+			  "start":"2024-10-29",
+			  "end":"2024-12-14"
+		  },
+		  "additional_metadata": {
+		    "round_name": "Round 1 - 2024-2025",
+		    "internal_round_name": "round2",
+		    "disease": [
   			  {
   			    "name": "respiratory syncytial virus infectious disease",
   			    "uri": "http://purl.obolibrary.org/obo/MONDO_0001577"
   			  }
-  			]
-			}
-
+			  ]
+		  }
 		},
 		{
 			"round_id_from_variable":true,
@@ -951,7 +953,7 @@
 						 	"target_name":"Weekly incident RSV hospitalizations",
 						 	"target_units":"count",
 						 	"target_keys":{"target":"inc hosp"},
-						 	"target_type":"discrete",
+						 	"target_type":"continuous",
 						 	"is_step_ahead":true,
 						 	"time_unit":"week",
 						 	"additional_metadata": {
@@ -964,7 +966,7 @@
 						 	"target_name":"Weekly incident RSV infection",
 						 	"target_units":"count",
 						 	"target_keys":{"target":"inc inf"},
-						 	"target_type":"discrete",
+						 	"target_type":"continuous",
 						 	"is_step_ahead":true,
 						 	"time_unit":"week",
 						 	"additional_metadata": {
@@ -1024,7 +1026,7 @@
 							"target_name":"Weekly incident RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"inc hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -1037,7 +1039,7 @@
 							"target_name":"Weekly cumulative RSV hospitalizations",
 							"target_units":"count",
 							"target_keys":{"target":"cum hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -1050,7 +1052,7 @@
 							"target_name":"Weekly incident RSV infection",
 							"target_units":"count",
 							"target_keys":{"target":"inc inf"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -1063,7 +1065,7 @@
 							"target_name":"Weekly cumulative RSV infection",
 							"target_units":"count",
 							"target_keys":{"target":"cum inf"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -1121,7 +1123,7 @@
 							"target_name":"Magnitude of the peak of weekly incident hospitalizations ",
 							"target_units":"count",
 							"target_keys":{"target":"peak size hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead":false,
 							"additional_metadata": {
 								"alternative_name": "peak hospitalization count",
@@ -1189,7 +1191,7 @@
 							"description":"Cumulative probability of the incident hospitalization peak",
 							"target_units":"population",
 							"target_keys":{"target":"peak time hosp"},
-							"target_type": "discrete",
+							"target_type": "continuous",
 							"is_step_ahead": true,
 							"time_unit": "week",
 							"additional_metadata": {
@@ -1203,6 +1205,8 @@
 		  "submissions_due":{
 			"start":"2025-10-29","end":"2025-12-14"},
 			"additional_metadata": {
+		    "round_name": "Round 1 - 2025-2026",
+		    "internal_round_name": "round3",
 			  "disease": [
   			  {
   			    "name": "respiratory syncytial virus infectious disease",
