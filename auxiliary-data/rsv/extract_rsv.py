@@ -25,14 +25,17 @@ print("Downloading ...")
 # Weekly Rates of Laboratory-Confirmed RSV Hospitalizations - Respiratory Syncytial Virus
 # Hospitalization Surveillance Network (RSV-NET)
 df_rsvnet = (
-    request_get_link("https://data.cdc.gov/api/views/29hc-w46k/rows.csv?accessType=DOWNLOAD",
-                     output_dtype={'State': "string", 'Season': "string", 'MMWR Week': "string",
-                                   'Week ending date': "string", 'Age Category': "string",
-                                   'Sex': "string", 'Race': "string", 'Rate': "float",
-                                   'Cumulative Rate': "float"}))
+    request_get_link("https://data.cdc.gov/api/views/29hc-w46k/rows.csv?accessType=DOWNLOAD"))
 print("RSV-NET Downloaded")
 df_rsvnet.to_parquet("auxiliary-data/rsv/rsv-net/" + str(date.today()) +
                      "_weekly_rates_lab_confirmed_rsv_hosp.parquet")
+
+# RESP-NET Rates and Clinical Data
+df_respnet = (
+    request_get_link("https://data.cdc.gov/api/views/kvib-3txy/rows.csv?accessType=DOWNLOAD"))
+print("RESP-NET Downloaded")
+df_rsvnet.to_parquet("auxiliary-data/rsv/resp-net/" + str(date.today()) +
+                     "_weekly_rates_lab_confirmed_resp_hosp.parquet")
 
 # Weekly Respiratory Virus Vaccination Data, Children 6 Months-17 Years and Adults 18 Years and
 # Older, National Immunization Survey
