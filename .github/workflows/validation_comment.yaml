@@ -1,0 +1,31 @@
+name: Post PR validation comment
+
+on:
+  workflow_run:
+    workflows: ["Validate Submission"]
+    types: [completed]
+
+permissions:
+  pull-requests: write
+  actions: read
+
+jobs:
+    validation-comment:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Download artifact from the analysis run
+          uses: actions/download-artifact@v4
+          with:
+            name: pr-comment
+            run-id: ${{ github.event.workflow_run.id }}
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+
+        - name: Post comment on PR
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+            PR_NUMBER=$(cat pr_number.txt)
+            gh pr comment "$PR_NUMBER" \
+              --repo "${{ github.repository }}" \
+              --body-file comment.txt

@@ -51,8 +51,10 @@ validate_model_output <- function(x, repo_name, gh_pr_number, gh_token,
   if (!(round_id %in% names(val_param))) {
     msg <- paste0("The round id in the submission file was not recognized, ",
                   "please verify")
-    if (post_msg) post_message(list("msg" = msg), repo_name, gh_pr_number,
-                               gh_token)
+    if (post_msg) {
+      msg <- paste(msg, collapse = "\n\n")
+      writeLines(msg, paste0("comment.txt"))
+    }
     stop(msg)
   }
   if (grepl("Ensemble", x)) {
@@ -67,8 +69,10 @@ validate_model_output <- function(x, repo_name, gh_pr_number, gh_token,
     if (!"partition" %in% names(val_param)) {
       msg <- paste0("The model output file seems to be partitioned, partition",
                     "not accepted for this round, please verify")
-      if (post_msg) post_message(list("msg" = msg), repo_name, gh_pr_number,
-                                 gh_token)
+      if (post_msg) {
+        msg <- paste(msg, collapse = "\n\n")
+        writeLines(msg, paste0("comment.txt"))
+      }
       stop(msg)
     }
     test_mod_files <-
@@ -119,6 +123,7 @@ pr_validate <- function(repo_name, gh_pr_number, gh_commit_sha, hub_path,
   }
   if (!is.null(pr_files))
     pr_filenames <- select_files(pr_files, commit = commit)
+  pr_mess <- NULL
   # Metadata
   if (any(grepl("model-metadata/", unique(pr_filenames)))) {
     meta_files <- extract_files(pr_files, "model-metadata/", commit = commit)
@@ -130,7 +135,7 @@ pr_validate <- function(repo_name, gh_pr_number, gh_commit_sha, hub_path,
   } else {
     test_meta <-  list(err = FALSE, msg = "No metadata files update")
   }
-  if (post_msg) post_message(test_meta, repo_name, gh_pr_number, gh_token)
+  if (post_msg) pr_mess <- c(pr_mess, list(test_meta$msg))
   # Model output
   if (any(grepl("model-output/", unique(pr_filenames)))) {
     mod_files <- extract_files(pr_files, "model-output/", commit = commit)
@@ -143,7 +148,11 @@ pr_validate <- function(repo_name, gh_pr_number, gh_commit_sha, hub_path,
     test_mod <- list(err = FALSE,
                      msg = "No model output submission files update")
   }
-  if (post_msg) post_message(test_mod, repo_name, gh_pr_number, gh_token)
+  if (post_msg) {
+    pr_mess <- c(pr_mess, purrr::map(test_mod, "msg")) |> purrr::compact()
+    pr_mess <- paste(pr_mess, collapse = "\n\n")
+    writeLines(pr_mess, paste0("comment.txt"))
+  }
   # Results
   if (any(unlist(purrr::map(c(test_mod, test_meta), "err")))) {
     stop("The submission contains one or multiple issues or warnings.")
