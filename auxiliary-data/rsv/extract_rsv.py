@@ -34,7 +34,7 @@ df_rsvnet.to_parquet("auxiliary-data/rsv/rsv-net/" + str(date.today()) +
 df_respnet = (
     request_get_link("https://data.cdc.gov/api/views/kvib-3txy/rows.csv?accessType=DOWNLOAD"))
 print("RESP-NET Downloaded")
-df_rsvnet.to_parquet("auxiliary-data/rsv/resp-net/" + str(date.today()) +
+df_respnet.to_parquet("auxiliary-data/rsv/resp-net/" + str(date.today()) +
                      "_weekly_rates_lab_confirmed_resp_hosp.parquet")
 
 # Weekly Respiratory Virus Vaccination Data, Children 6 Months-17 Years and Adults 18 Years and
