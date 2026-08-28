@@ -18,31 +18,51 @@ abbr2fips <- setNames(df_loc$location, df_loc$abbreviation)
 # Age Group
 age2st_age <-
   setNames(c("0-130", "0-130",
-             "0-4",
-             "5-17",
-             "18-49",
-             "50-64",
-             "65-130", "65-130",
+             "0-4", "0-4",
+             "1-4", "1-4",
+             "5-11",
+             "5-17", "5-17",
+             "12-17",
+             "0-17", "0-17", "0-17",
+             "18-29",
+             "30-39",
+             "40-49",
+             "18-49", "18-49",
+             "50-64", "50-64",
+             "65-130", "65-130", "65-130",
+             "85-130", "85-130", "85-130",
              "0-0.49", "0-0.49",
              "0.5-0.99", "0.5-0.99",
-             "75-130", "75-130",
-             "65-74",
+             "75-84", "75-84",
+             "75-130", "75-130", "75-130",
+             "65-74", "65-74",
+             "0-0.99", "0-0.99",
              "1-1.99", "1-1.99",
              "2-4", "2-4",
-             "18-130", "18-130", "18-130"),
+             "18-130", "18-130", "18-130", "18-130"),
            c("Overall", "All",
-             "0-4 years",
-             "5-17 years",
-             "18-49 years",
-             "50-64 years",
-             "65+ years", "≥65 years",
+             "0-4 years", "0-4 yr",
+             "1-4 years" , "1-4 yr",
+             "5-11 yr",
+             "5-17 years", "5-17 yr",
+             "12-17 yr",
+             "0-17 years", "0-17 years (Children)", "Pediatrics",
+             "18-29 yr",
+             "30-39 yr",
+             "40-49 yr",
+             "18-49 years", "18-49 yr",
+             "50-64 years", "50-64 yr",
+             "65+ years", "≥65 years", "65+ yr",
+             "≥85 years", "85+ years", "85+ yr",
              "----0-<6 months", "0-<6 months",
              "6mo-<12 months", "----6-<12 months",
-             "75+ years", "≥75 years",
-             "65-74 years",
+             "75-84 years", "75-84 yr",
+             "75+ years", "≥75 years", "75+ yr",
+             "65-74 years", "65-74 yr",
+             "0-<1 year", "0-<1 yr",
              "----1-<2 years", "1-<2 years",
              "----2-4 years", "2-4 years",
-             "18+ (Adults)", "18+ years (Adults)", "≥18 years (Adults)"))
+             "18+ (Adults)", "18+ years (Adults)", "≥18 years (Adults)", "Adults"))
 
 # Census - From US Census Bureau
 # - Add columns for 2023 and 2024 with the same values as 2022
@@ -83,7 +103,7 @@ census_agegroup <- lapply(unique(age2st_age), function(age_grp) {
 
 # RSV-Net
 df <- arrow::read_parquet(
-  tail(sort(dir("auxiliary-data/rsv/rsv-net/", full.names = TRUE)), 1))
+  tail(sort(dir("auxiliary-data/rsv/resp-net/", full.names = TRUE)), 1))
 
 # Standardize:
 # - Load relevant age groups
@@ -94,19 +114,23 @@ df <- arrow::read_parquet(
 # - Recode age group information to US SMH format
 # - Standardize column names (lower case, without space, dot)
 rsv <- df %>%
-  dplyr::filter(`Date Type` == "Week Ending Date") |>
+  dplyr::filter(`Date Type` == "Week Ending Date",
+                `Surveillance Network` == "RSV-NET") |>
   dplyr::mutate(
     date = as.Date(`Date`,
                    tryFormats = c("%m/%d/%Y", "%Y-%m-%d"))) %>%
   dplyr::filter(
     Sex == "All" & Race == "All" &
       `Age Category` %in%
-      c("Overall", "All", "0-4 years", "5-17 years", "18-49 years",
-        "50-64 years", "65+ years", "≥65 years", "----0-<6 months",
-        "0-<6 months", "6mo-<12 months", "----6-<12 months", "75+ years",
-        "≥75 years", "65-74 years", "----1-<2 years", "1-<2 years",
-        "----2-4 years", "2-4 years", "18+ (Adults)", "18+ years (Adults)",
-        "≥18 years (Adults)")
+      c("Overall", "All", #"0-4 years", "0-4 yr",
+        "5-17 years", "5-17 yr",
+        "18-49 years", "18-49 yr", "50-64 years", "50-64 yr",
+        "65+ years", "≥65 years", "65+ yr",
+        #"----0-<6 months", "0-<6 months", "6mo-<12 months", "----6-<12 months",
+        "75+ years", "≥75 years", "75+ yr", "65-74 years", "65-74 yr",
+        "0-<1 yr", "1-4 yr",
+        #"----1-<2 years", "1-<2 years", "----2-4 years", "2-4 years",
+        "18+ (Adults)", "18+ years (Adults)", "≥18 years (Adults)", "Adults")
   )
 full_ts <- seq(min(rsv$date),max(rsv$date), by = "week")
 full_df <- tidyr::expand(rsv, tidyr::nesting(State, `Age Category`),
@@ -116,12 +140,14 @@ full_df <- tidyr::expand(rsv, tidyr::nesting(State, `Age Category`),
 rsv_standard <- dplyr::full_join(rsv, full_df,
                                  by = c("State", "Age Category", "date")) %>%
   dplyr::mutate(
-    week = lubridate::epiweek(date),
-    year = lubridate::epiyear(date),
-    location = gsub("Entire Network \\(RSV-NET\\)|RSV-NET", "US", State),
-    fips = abbr2fips[location],
+    week = MMWRweek::MMWRweek(date)$MMWRweek,
+    year = MMWRweek::MMWRweek(date)$MMWRyear,
+    location = gsub("Entire Network \\(RSV-NET\\)|RSV-NET|Overall", "US",
+                    State),
+    fips = location2fips[location],
     age_group = age2st_age[`Age Category`]) %>%
   dplyr::filter(`Rate Type` == "Observed")  %>%
+  dplyr::distinct() |>
   tidyr::pivot_wider(names_from = "Data Type", values_from = "Estimate") %>%
   dplyr::rename(value_rate = `Weekly Rate`,
                 value_cumul_rate = `Cumulative Rate`,
@@ -155,28 +181,29 @@ rsv_output <-
   dplyr::select(location = fips, date, age_group, target, value,
                 population = tot_pop)
 
-# Append previous season (removed on the new version of the data (2023-11-10))
-# Use last version of the file containing the 2014-2015 and 2015-2016 seasons
-# from the RSV SMH GitHub Repository (commit #f183e8a)
-rsv_past_season <-
-  read.csv(paste0("https://raw.githubusercontent.com/midas-network/",
-                  "rsv-scenario-modeling-hub/",
-                  "f183e8a1a8d2387f02c2e007527af48226370d03/",
-                  "target-data/rsvnet_hospitalization.csv"))
-rsv_past_season <- dplyr::filter(rsv_past_season, date < min(rsv_output$date))
-rsv_output <- rbind(rsv_output, rsv_past_season)
+## Append previous season (removed on the new version of the data (2023-11-10))
+## Use last version of the file containing the 2014-2015 and 2015-2016 seasons
+## from the RSV SMH GitHub Repository (commit #f183e8a) - stop when switched to
+## RESP-NET
+#rsv_past_season <-
+#  read.csv(paste0("https://raw.githubusercontent.com/midas-network/",
+#                  "rsv-scenario-modeling-hub/",
+#                  "f183e8a1a8d2387f02c2e007527af48226370d03/",
+#                  "target-data/rsvnet_hospitalization.csv"))
+#rsv_past_season <- dplyr::filter(rsv_past_season, date < min(rsv_output$date))
+#rsv_output <- rbind(rsv_output, rsv_past_season)
 
-# Remove duplicated rows with same location, date, age group and target
-rsv_output <- dplyr::distinct(rsv_output) |>
-  dplyr::mutate(duplicate = ifelse(length(date) > 1, 1, 0),
-                .by = c("location", "date", "age_group", "target",
-                        "population")) |>
-  dplyr::filter(duplicate != 1) |>
-  dplyr::select(-duplicate)
+# Test all rows is unique
+test <- dplyr::summarise(rsv_standard, n = dplyr::n(),
+                         .by = c("location", "age_group", "date", "week",
+                                 "year", "season"))
+if (!all(test$n == 1)) {
+  stop("The tables contains duplicate row, please check")
+}
 
 # Archive complete version
 archive_name <- paste0("auxiliary-data/target-data/archive/",
-                       as.Date(Sys.time()), "_rsvnet_hospitalization.csv")
+                       as.Date(Sys.time()), "_respnet_hospitalization.csv")
 archive_rsv_output <- dplyr::rename(rsv_output, signal = target,
                                     observation = value)
 write.csv(archive_rsv_output, archive_name, row.names = FALSE)
