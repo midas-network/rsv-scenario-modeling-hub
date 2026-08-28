@@ -106,6 +106,20 @@ For more information about RSV-NET, please consult the
 [CDC RSV-NET Overview and Methods](https://www.cdc.gov/rsv/research/rsv-net/overview-methods.html) 
 webpage. 
 
+### RESP-NET: Respiratory Virus Hospitalization Surveillance Network
+
+The [RESP-NET Rates and Clinical Data](https://data.cdc.gov/Public-Health-Surveillance/RESP-NET-Rates-and-Clinical-Data/kvib-3txy/)
+is downloaded weekly (starting 2026-08-28) and output in a PARQUET file with the download date added in the name of the file: 
+[resp-net/DATE_weekly_rates_lab_confirmed_resp_hosp.parquet](./resp-net/).
+
+> This dataset includes hospitalization rates and selected clinical characteristics from RESP-NET 
+for laboratory-confirmed RSV, COVID-19, and influenza-associated hospitalizations. The data can 
+be used to examine hospitalization burden, patient characteristics, clinical outcomes, and trends 
+over time across RESP-NET surveillance sites.
+
+For more information about RESP-NET, please consult the 
+[CDC RESP-NET Webpage](https://www.cdc.gov/resp-net/dashboard/index.html).
+
 ### Weekly Respiratory Virus Vaccination Data, National Immunization Survey
 
 The [Weekly Respiratory Virus Vaccination Data, Children 6 Months-17 Years and Adults 18 Years and Older, National Immunization Survey](https://data.cdc.gov/Vaccinations/Weekly-Respiratory-Virus-Vaccination-Data-Children/5c6r-xi2t/about_data)

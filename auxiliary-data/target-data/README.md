@@ -6,14 +6,14 @@ It contains the data and code used to generate the data.
 
 ## RSV-NET data
 
-The [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k)
-is used for the hospitalization target after standardization. 
-The standardization process is available in the 
-[get_target_data.R script](../../src/get_target_data.R)
+The RSV-NET data is used for the hospitalization target after standardization. 
+The standardization process is available in the [get_target_data.R script](../../src/get_target_data.R)
 
 The source data is downloaded and updated weekly in the 
 [auxiliary-data/](../../auxiliary-data/) folder. Please consult, the 
-associated documentation for more information.
+associated documentation for more information. 
+Until 2026-08-28, the data were extracted from [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k). 
+Starting 2026-08-28, the data are extracted from [RESP-NET Rates and Clinical Data](https://data.cdc.gov/Public-Health-Surveillance/RESP-NET-Rates-and-Clinical-Data/kvib-3txy/about_data).
 
 Following the source data update, the target data 
 [target_data/DATE_rsvnet_hospitalization.csv](./)
@@ -23,13 +23,18 @@ GitHub Action.
 
 ### Workflow
 
-As the source format of the data change on the 2023-11-09, the workflow and R
+As the source format of the data change on the 2026-11-09, the workflow and R
 script have been updated to adapt to the changes:
 - the overall age group has been removed from the selection for the seasons: 
   2014-2015, 2015-2016, 2016-2017, 2017-2018
 - the two seasons 2014-2015 and 2015-2016 has been removed 
 - some value and variable have been renamed, for example "All" instead of 
   "Overall"
+On the 2026-08-28, the workflow and R script have been updated to adapt to the source change:
+- The seasons 2014-2015, 2015-2016 are not included anymore
+- Age group selection has been updated and does not include: 0-<6 months (`"0-0.49"`), 6-<12 months (`"0.5-0.99"`), 0-4 years (`"0-4"`), 1-<2 years (`"1-1.99"`), 2-4 years (`"2-4"`) anymore.
+- Select only "RSV-NET" surveillance network, observed weekly rate
+- Archived output file renamed "resp" instead of "rsv" to easily identify the change in source file.
 
 The RSV-NET source files is standardized following these steps:
 
@@ -80,7 +85,7 @@ The RSV-NET source files is standardized following these steps:
         - `"rate hosp"`: number of hospitalization per 100 000 
      - `observation`: associated observation (before 2025-01-27: `'value'`)
      - `population`: associated population size
-6. Append previous season: 2014-2015 and 2015-2016 (removed on the new 
+6. *Deprecated step* Append previous season: 2014-2015 and 2015-2016 (removed on the new 
    version of the data (2023-11-10)) by using historical 
    data containing the last version of the 2014-2015 and 2015-2016 seasons
    (commit [#f183e8a](https://github.com/midas-network/rsv-scenario-modeling-hub/blob/f183e8a1a8d2387f02c2e007527af48226370d03/target-data/rsvnet_hospitalization.csv)) 

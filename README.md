@@ -564,10 +564,11 @@ discretion.
 ## Target data
 
 The [target-data/](./target-data/) folder contains the RSV hospitalization data
-(also called "truth data") standardized from the 
-[Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k).
-in the 
-[hubverse format](https://hubverse.io/en/latest/user-guide/target-data.html).
+(also called "truth data") standardized from:
+- [Weekly Rates of Laboratory-Confirmed RSV Hospitalizations from the RSV-NET Surveillance System](https://data.cdc.gov/Public-Health-Surveillance/Weekly-Rates-of-Laboratory-Confirmed-RSV-Hospitali/29hc-w46k) until 2026-08-28.
+- [RESP-NET Rates and Clinical Data](https://data.cdc.gov/Public-Health-Surveillance/RESP-NET-Rates-and-Clinical-Data/kvib-3txy/about_data), starting 2026-08-28.
+
+The target data is outputted in the [hubverse format](https://hubverse.io/en/latest/user-guide/target-data.html).
 
 The weekly hospitalization number per location is used as truth data in the hub.
 
