@@ -109,7 +109,7 @@ webpage.
 ### RESP-NET: Respiratory Virus Hospitalization Surveillance Network
 
 The [RESP-NET Rates and Clinical Data](https://data.cdc.gov/Public-Health-Surveillance/RESP-NET-Rates-and-Clinical-Data/kvib-3txy/)
-is downloaded weekly (starting 2026-08-11) and output in a PARQUET file with the download date added in the name of the file: 
+is downloaded weekly (starting 2026-08-28) and output in a PARQUET file with the download date added in the name of the file: 
 [resp-net/DATE_weekly_rates_lab_confirmed_resp_hosp.parquet](./resp-net/).
 
 > This dataset includes hospitalization rates and selected clinical characteristics from RESP-NET 
