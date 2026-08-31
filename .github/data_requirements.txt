@@ -1,5 +1,6 @@
-# Packages required for the data update (update requirements (cache) on the 2025-04-18)
+# Packages required for the data update (update requirements (cache) on the 2026-08-31)
 lubridate
 dplyr
 tidyr
 arrow
+MMWRweek
