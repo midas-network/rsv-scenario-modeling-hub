@@ -9,7 +9,7 @@ model_contributors: [
     "email": "samantha.bents@nih.gov"
   },
   {
-   "name": "Cecile Viboud",
+   "name": "Cécile Viboud",
     "affiliation": "Fogarty International Center, National Institutes of Health",
     "email": "viboudc@mail.nih.gov"
   },
@@ -19,7 +19,7 @@ model_contributors: [
     "email": "chelsea.hansen@nih.gov"
   }
 ]
-license: "NA"
+license: "MIT"
 methods: "Mechanistic age-structured susceptible-infected model with reduced susceptibility to non-primary infections adapted from Pitzer et al."
 team_funding: "NA"
 website_url: "NA"
