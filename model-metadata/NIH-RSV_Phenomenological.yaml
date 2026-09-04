@@ -9,13 +9,13 @@ model_contributors: [
     "email": "kaiyuan.sun@nih.gov"
   },
   {
-   "name": "Cecile Viboud",
+   "name": "Cécile Viboud",
     "affiliation": "Fogarty International Center, National Institutes of Health",
     "email": "viboudc@mail.nih.gov"
   }
 
 ]
-license: "NA"
+license: "MIT"
 methods: "Phenomenological model sampling from pre- and post- pandemic seasons"
 team_funding: "NA"
 website_url: "NA"
