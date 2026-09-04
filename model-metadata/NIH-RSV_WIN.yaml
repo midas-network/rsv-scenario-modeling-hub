@@ -14,13 +14,13 @@ model_contributors: [
     "email": "samantha.bents@nih.gov"
   },
   {
-   "name": "Cecile Viboud",
+   "name": "Cécile Viboud",
     "affiliation": "Fogarty International Center, National Institutes of Health",
     "email": "viboudc@mail.nih.gov"
   }
   
 ]
-license: "NA"
+license: "MIT"
 methods: "Mechanistic age-structured MSIRS model with reduced susceptibility to non-primary infections."
 team_funding: "NA"
 website_url: "NA"
