@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          R -e 'install.packages(c("lubridate", "dplyr", "tidyr", "arrow"))'
+          R -e 'install.packages(c("lubridate", "dplyr", "tidyr", "arrow", "MMWRweek"))'
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
