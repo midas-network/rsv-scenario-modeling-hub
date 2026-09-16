@@ -1214,6 +1214,280 @@
   			  }
   			]
 			}
+		},
+				{
+			"round_id_from_variable":true,
+			"round_id":"origin_date",
+			"model_tasks":[
+				{
+					"task_ids":
+					{
+						"origin_date":{
+							"required":["2026-08-02"],
+							"optional":null
+						}, "scenario_id":{
+							"required":["A-2026-08-01","B-2026-08-01","C-2026-08-01",
+							            "D-2026-08-01","E-2026-08-01"],
+							"optional": null
+						}, "target":{
+							"required":["inc hosp"],
+							"optional": null
+						}, "horizon":{
+							"required":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,
+							            22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,
+							            40,41,42,43,44],
+							"optional":null
+						},"location":{
+							"required":null,
+							"optional":["US","06","08","09","13","24","26","27","35","36",
+							            "37", "41","47", "49", "53"]
+						},"age_group":{
+							"required":["0-0.99","1-4","5-49", "50-64", "65-130", "0-130"],
+							"optional":["5-17","18-49", "65-74", "75-130"]
+						}
+					},
+					"output_type":{
+						"sample":{
+							"output_type_id_params":{
+							  "type": "integer",
+								"min_samples_per_task": 300,
+								"max_samples_per_task": 300,
+								"compound_taskid_set": ["origin_date", "target", "location"]
+							},
+							"value":{
+								"type":"double",
+								"minimum": 0
+							},
+							"is_required": true
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id":"inc hosp",
+						 	"target_name":"Weekly incident RSV hospitalizations",
+						 	"target_units":"count",
+						 	"target_keys":{"target":"inc hosp"},
+						 	"target_type":"continuous",
+						 	"is_step_ahead":true,
+						 	"time_unit":"week",
+						 	"additional_metadata": {
+						 	  "alternative_name": "incident hospitalization count",
+							  "uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645"
+						 	}
+						 }
+					]
+				},
+				{
+					"task_ids":
+					{
+					  "origin_date":{
+							"required":["2026-08-02"],
+							"optional":null
+						}, "scenario_id":{
+							"required":["A-2026-08-01","B-2026-08-01","C-2026-08-01",
+							            "D-2026-08-01","E-2026-08-01"],
+							"optional": null
+						},
+						"target":{
+							"required":null,
+							"optional":["inc hosp","cum hosp"]
+						},
+						"horizon":{
+							"required":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,
+							            22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,
+							            40,41,42,43,44],
+							"optional":null},
+						"location":{
+							"required":null,
+							"optional":["US","06","08","09","13","24","26","27","35","36",
+							            "37", "41","47", "49", "53"]
+						},
+						"age_group":{
+							"required":["0-0.99", "1-4","5-49", "50-64", "65-130", "0-130"],
+							"optional":["5-17", "18-49", "65-74", "75-130"]
+						}
+					},
+					"output_type":{
+						"quantile":{
+							"output_type_id":{
+								"required":[0.01,0.025,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,
+								            0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.975,
+								            0.99]
+							},
+							"value":{
+								"type":"double",
+								"minimum":0
+							},
+							"is_required": false
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id": "inc hosp",
+							"target_name":"Weekly incident RSV hospitalizations",
+							"target_units":"count",
+							"target_keys":{"target":"inc hosp"},
+							"target_type": "continuous",
+							"is_step_ahead": true,
+							"time_unit": "week",
+							"additional_metadata": {
+							  "alternative_name": "incident hospitalization count",
+							  "uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000645"
+							}
+						},
+						{
+							"target_id": "cum hosp",
+							"target_name":"Weekly cumulative RSV hospitalizations",
+							"target_units":"count",
+							"target_keys":{"target":"cum hosp"},
+							"target_type": "continuous",
+							"is_step_ahead": true,
+							"time_unit": "week",
+							"additional_metadata": {
+							  "alternative_name": "cumulative hospitalization count",
+							  "uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000644"
+							}
+						}
+					]
+				},
+				{
+					"task_ids":{
+						"origin_date":{
+							"required":["2026-08-02"],
+							"optional":null
+						}, "scenario_id":{
+							"required":["A-2026-08-01","B-2026-08-01","C-2026-08-01",
+							            "D-2026-08-01","E-2026-08-01"],
+							"optional": null
+						},
+						"target":{
+							"required":null,
+							"optional":["peak size hosp"]
+						},
+						"horizon":{
+							"required":null,
+							"optional":null
+						},
+						"location":{
+							"required":null,
+							"optional":["US","06","08","09","13","24","26","27","35","36",
+							            "37", "41","47", "49", "53"]
+						},
+						"age_group":{
+							"required":["0-130"],
+							"optional":null
+						}
+					},
+					"output_type":{
+						"quantile":{
+							"output_type_id":{
+								"required":[0.01,0.025,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,
+								            0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,0.975,
+								            0.99]
+							},
+							"value":{
+								"type":"double",
+								"minimum":0
+							},
+							"is_required": false
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id": "peak size hosp",
+							"target_name":"Magnitude of the peak of weekly incident hospitalizations ",
+							"target_units":"count",
+							"target_keys":{"target":"peak size hosp"},
+							"target_type": "continuous",
+							"is_step_ahead":false,
+							"additional_metadata": {
+								"alternative_name": "peak hospitalization count",
+							  "uri": "http://w3id.org/midas-metadata/midas100"
+							}
+						}
+					]
+				},
+				{
+					"task_ids":{
+						"origin_date":{
+							"required":["2026-08-02"],
+							"optional":null
+						}, "scenario_id":{
+							"required":["A-2026-08-01","B-2026-08-01","C-2026-08-01",
+							            "D-2026-08-01","E-2026-08-01"],
+							"optional": null
+						},
+						"target":{
+							"required":null,
+							"optional":["peak time hosp"]
+						},
+						"horizon":{
+							"required":null,
+							"optional":null
+						},
+						"location":{
+							"required":null,
+							"optional":["US","06","08","09","13","24","26","27","35","36",
+							            "37", "41", "47", "49", "53"]
+						},
+						"age_group":{
+							"required":["0-130"],
+							"optional":null
+						}
+					},
+					"output_type":{
+						"cdf":{
+							"output_type_id":{
+								"required":["EW202631", "EW202632", "EW202633", "EW202634",
+								            "EW202635", "EW202636", "EW202637", "EW202638",
+								            "EW202639", "EW202640", "EW202641", "EW202642",
+								            "EW202643", "EW202644", "EW202645", "EW202646",
+								            "EW202647", "EW202648", "EW202649", "EW202650",
+								            "EW202651", "EW202652", "EW202701", "EW202702",
+								            "EW202703", "EW202704", "EW202705", "EW202706",
+								            "EW202707", "EW202708", "EW202709", "EW202710",
+								            "EW202711", "EW202712", "EW202713", "EW202714",
+								            "EW202715", "EW202716", "EW202717", "EW202718",
+								            "EW202719", "EW202720", "EW202721", "EW202722"]
+							},
+							"value":{
+								"type":"double",
+								"minimum":0,
+								"maximum":1
+							},
+							"is_required": false
+						}
+					},
+					"target_metadata":[
+						{
+							"target_id": "peak time hosp",
+							"target_name": "Peak timing of hospitalization",
+							"description":"Cumulative probability of the incident hospitalization peak",
+							"target_units":"population",
+							"target_keys":{"target":"peak time hosp"},
+							"target_type": "continuous",
+							"is_step_ahead": true,
+							"time_unit": "week",
+							"additional_metadata": {
+							  "alternative_name": "peak hospitalization time cumulative distribution",
+							  "uri": "http://w3id.org/midas-metadata/midas101"
+							}
+						}
+					]
+				}
+			],
+		  "submissions_due":{
+			"start":"2026-10-20","end":"2026-12-14"},
+			"additional_metadata": {
+		    "round_name": "Round 1 - 2026-2027",
+		    "internal_round_name": "round4",
+			  "disease": [
+  			  {
+  			    "name": "respiratory syncytial virus infectious disease",
+  			    "uri": "http://purl.obolibrary.org/obo/MONDO_0001577"
+  			  }
+  			]
+			}
 		}
 	]
 }

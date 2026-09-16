@@ -3,5 +3,10 @@
     "n_decimal": 5,
     "merge_sample_col": ["run_grouping", "stochastic_run"],
     "partition": ["origin_date", "target"]
+  },
+    "2026-08-02": {
+    "n_decimal": 5,
+    "merge_sample_col": ["run_grouping", "stochastic_run"],
+    "partition": ["origin_date", "target"]
   }
 }
