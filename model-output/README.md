@@ -183,7 +183,8 @@ Scenario id's include a capitalized letter and date as YYYY-MM-DD, e.g.,
 
 The submission can contain multiple output type information: 
 
-- 100 representative trajectories from the model simulations. We will 
+- N (number depends on the round, see scenario information)
+  representative trajectories from the model simulations. We will 
   call this format "sample" output type. For more information, please
   consult the [sample](./data-processed#sample) 
   section.
@@ -234,8 +235,8 @@ Values in the `target` column must be one of the following character strings:
 - `"cum hosp"`
 - `"peak size hosp"`
 - `"peak time hosp"`
-- `"inc inf"` (starting round 2)
-- `"cum inf"` (starting round 2)
+- `"inc inf"` (round 2)
+- `"cum inf"` (round 2)
 
 
 #### inc hosp
@@ -365,7 +366,7 @@ Round 2:
 [location.csv](../auxiliary-data/location_census/locations.csv) for
 a complete list of all accepted location. 
 
-Round 3: 
+Round 3 and ongoing: 
 
 - the same location as in Round 1 are expected: 
 `"US","06","08","09","13","24","26","27","35","36","41","47","49"`
