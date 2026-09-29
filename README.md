@@ -495,7 +495,7 @@ discretion.
 | Scenario D. No senior revaccination and usual coverage of infant interventions | noSenRevax_usualInfCov | D-2026-08-01 | 
 | Scenario E. Counterfactual                                                     | counterfactual         | E-2026-08-01 |
 
-*   **Projection Due date**: Tuesday Oct 20, 2026
+*   **Projection Due date**: TBD
 *   **End date for fitting data**: Saturday Aug 1, 2026
 *   **Start date for scenarios**: Sunday Aug 2, 2026 (first date of simulated transmission/outcomes)
 *   **Simulation end date:** Saturday June 5, 2027 (44-week horizon)
