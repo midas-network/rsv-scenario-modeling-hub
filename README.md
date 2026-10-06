@@ -48,6 +48,8 @@ Technical instructions for submission and required file formats can be found
 
 ## Round 4: Projections for the 2026-27 season
 
+**Scenarios are still in discussion and might still be updated**
+
 The goal of this RSV round is to generate ensemble projections of RSV hospitalizations 
 for the 2026-27 season under different intervention scenarios. Two questions of 
 specific focus of this round are (i) the potential impact of revaccinating seniors who 
