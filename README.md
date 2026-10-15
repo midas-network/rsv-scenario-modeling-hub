@@ -397,7 +397,7 @@ peak size and peak timing.
 ### Timeline
 
 - **Scenarios set (no changes after)**: *Friday, Aug 28, 2026*
-- **Projections due**: *Tuesday, Oct 20, 2026*
+- **Projections due**: *TBD*
 - **Report finalized**: *November 2026*
 
 ### Other specifications and assumptions
