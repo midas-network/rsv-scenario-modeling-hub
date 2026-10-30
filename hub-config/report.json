@@ -1,0 +1,42 @@
+{
+    "rounds": [
+      {
+        "round_id": "2023-11-12",
+        "report": [
+          {
+            "filename": "RSVScenarioModelingHub_Round1_Report_20230226.pdf"
+          }
+        ]
+        ,
+        "path": "auxiliary-data/reports/"
+      },
+      {
+        "round_id": "2024-07-28",
+        "report": [
+          {
+            "filename": "RSVScenarioModelingHub_Round1-20242025_Report_20241217.pdf"
+          }
+        ]
+        ,
+        "path": "auxiliary-data/reports/"
+      },
+      {
+        "round_id": "2025-07-27",
+        "report": [
+          {
+            "filename": "ExecutiveSummary_RSV_round2025-2026_ScenarioModelingHub.pdf",
+            "short_description": "Executive Summary"
+          },
+          {
+            "filename":"Report_RSV_round2025-2026_ScenarioModelingHub-StateSupplement.pdf",
+            "short_description": "State Supplement"
+          },
+          {
+            "filename": "Report_RSV_round2025-2026_ScenarioModelingHub.pdf",
+            "short_description": "National Report"
+          }
+        ],
+        "path": "auxiliary-data/reports/"
+      }
+    ]
+}
