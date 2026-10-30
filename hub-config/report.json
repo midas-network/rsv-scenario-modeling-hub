@@ -1,0 +1,24 @@
+{
+    "rounds": [
+      {
+        "round_id": "2023-11-12",
+        "report": [
+          {
+            "filename": "RSVScenarioModelingHub_Round1_Report_20230226.pdf"
+          }
+        ]
+        ,
+        "path": "reports/"
+      },
+      {
+        "round_id": "2024-07-28",
+        "report": [
+          {
+            "filename": "RSVScenarioModelingHub_Round1-20242025_Report_20241217.pdf"
+          }
+        ]
+        ,
+        "path": "auxiliary-data/reports/"
+      }
+    ]
+}
