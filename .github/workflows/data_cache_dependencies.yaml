@@ -28,7 +28,7 @@ jobs:
           uses: actions/cache@v4
           with:
             path: ${{ env.R_LIBS_USER }}
-            key: ${{ runner.os }}-${{ hashFiles('.github/data-requirements.txt') }}-1
+            key: ${{ runner.os }}-${{ env.ImageOS }}-${{ hashFiles('.github/data-requirements.txt') }}-1
 
         - name: Install dependencies
           if: steps.cache.outputs.cache-hit != 'true'
